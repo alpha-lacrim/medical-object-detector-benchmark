@@ -108,9 +108,9 @@ adds Abstract/Introduction context, primary prior art in Section 2.4, methods
 in Section 3.9, results and Table 8 in Section 4.10, and bounded discussion,
 limitations and conclusion. Section 3.6 now dates the original absence of
 cross-domain contrasts; Supplement S11 links the new evidence. The existing
-PDF and build/QA receipts remain the prior 16-page reviewed snapshot. This
-task updated canonical Markdown; PDF regeneration and visual review remain
-necessary before submission. No updated PDF is claimed.
+PDF and build/QA receipts initially remained the prior 16-page reviewed
+snapshot. The subsequent user-requested PDF follow-up below resolves that
+remaining formatting task without changing scientific content.
 
 A local integrity check compared the current manifests/claims with the exact
 initial Git revision and compared science across the archived/accepted runs.
@@ -138,3 +138,17 @@ image-ID matches. CODEX.md, HANDOFF.md and all private data are excluded.
 The user authorized committing and pushing this follow-up to the existing
 GitHub main branch; no history rewrite or new inference is part of that action.
 The Git commit containing this record identifies the completed integration.
+
+## Subsequent PDF follow-up — 2026-10-29
+
+The user requested a refresh and visual review. The canonical PDF now contains
+all post-hoc manuscript additions and spans 19 pages. All pages were visually
+reviewed; a split bibliography entry was corrected, and the final two reference
+pages were reviewed again. The other 17 pages are pixel-identical to the reviewed
+render. Three configured TeX passes complete a fresh build without warnings.
+The automated check reports zero errors, 34 internal links and 39 URI targets.
+Build/QA receipts match exact inputs/output; the manuscript, scientific values
+and 468-row numerical trace are unchanged. Exact commands, hashes and remaining
+author decisions are in [the submission audit](FINAL_SUBMISSION_AUDIT.md).
+Core CPU analyses were reverified rather than recomputed: all 138 input bindings
+and 15 tables still pass, following the already completed full bootstrap replay.

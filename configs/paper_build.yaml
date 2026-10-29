@@ -3,13 +3,14 @@ manuscript: report/paper_draft.md
 bibliography: report/references.bib
 output: output/pdf/rsna_vindr_article.pdf
 manifest: report/paper_build_manifest.json
-work_directory: tmp/pdfs/batch52_article
+work_directory: tmp/pdfs/posthoc-generalization-20261029/final
 header: report/pdf/header.tex
 filter: report/pdf/layout.lua
-repository_url: https://github.com/Alpha-lacrim/medical-object-detector-benchmark
-# Supporting files are pinned to the completed numerical-path sensitivity revision.
-support_revision: 490c55794e2bfc163746089ffb44e7f195ef534b
+repository_url: https://github.com/alpha-lacrim/medical-object-detector-benchmark
+# Supporting files are pinned to the verified post-hoc analysis and manuscript.
+support_revision: d174611408cdc4673e8344b95e4ed0685844306e
 pdf_engine: pdflatex
+latex_passes: 3
 variables:
   documentclass: article
   fontsize: 10pt

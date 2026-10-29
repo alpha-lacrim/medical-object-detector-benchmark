@@ -5,10 +5,47 @@ external error, annotation-overlap, prevalence-weight and cross-domain-change
 analyses. Current verification and publication status are recorded in the
 [post-hoc verification record](POSTHOC_EXTERNAL_GENERALIZATION_VERIFICATION.md).
 There are 468 numerical bindings, 40 semantic guards and 106 publication
-artifacts; all prior scientific records remain unchanged. The PDF and its
-build/QA receipts below describe the prior 16-page reviewed snapshot and do
-not contain the new analyses. Refresh and visually review that derivative
-before submission. The numerical trace now follows current Markdown.
+artifacts; all prior scientific records remain unchanged. The subsequent
+PDF follow-up below includes the new analyses. The numerical trace follows
+current Markdown.
+
+## 2026-10-29 post-hoc PDF refresh and visual review
+
+At the user's request, rebuilt the canonical PDF from the unchanged manuscript
+and bibliography. The new Methods Section 3.9 is on page 7; Results Section
+4.10 and Table 8 are on page 14. The PDF has 19 pages. All pages were rendered
+with Poppler at 120 dpi and visually inspected for table/figure readability,
+captions, margins, page transitions, citations and declarations. A reference
+initially split across pages 18–19; the header now keeps each reference entry
+together. Those final pages were inspected again, and pages 1–17 are pixel
+identical to the initially reviewed rendering. No clipping, overlap, missing
+glyphs or unreadable numbers were found.
+
+The builder now takes its TeX pass count from configuration (`latex_passes: 3`).
+A fresh work directory verifies the three-pass build, resolving the first
+attempt's cross-reference rerun warning. The final log has no overflow,
+undefined-reference, missing-character or rerun warnings. The automated PDF
+check reports zero errors, 34 internal links and 39 distinct URI targets.
+Repository support links point to published analysis revision
+`d174611408cdc4673e8344b95e4ed0685844306e`; this is not a chosen submission release.
+
+- Manuscript SHA-256: `4f74655627ed83c894d7275e0f7d667dc0dbeb2415490be34037f4829429363f`.
+- PDF SHA-256: `c09f01b8ab1e0c04c452765b8af71eecfa884a85e8728341d84dfd37b821794e`.
+- [Build receipt](../report/paper_build_manifest.json) and
+  [QA receipt](../report/paper_pdf_qa.json) were checked against exact current bytes.
+- All 27 numerical values in Table 8 are present in the extracted PDF on page
+  14. Both distinct repository support files exist at the pinned Git revision.
+- All 468 numerical claims/40 guards and 106 publication artifacts/820 inputs
+  still verify. The original 38-file freeze and 72-artifact inventory remain
+  unchanged. No scientific source, value, claim locator or numerical trace changed.
+- The existing CPU analysis was reverified; its full 2,000-draw replay already
+  passed in the preceding session. Unchanged evidence did not warrant repeating
+  outcome computation. No new inference, training or data download occurred.
+
+Build, QA and rendering commands are in README. Local logs and previews are
+under `tmp/pdfs/posthoc-generalization-20261029/`. The previous PDF/receipts
+remain in Git history. The PDF refresh resolves the formatting deliverable;
+author review, ethics/journal decisions and submission-release selection remain.
 
 **2026-09-27 Batch 53 update:** The canonical Markdown now includes a verified
 [secondary YOLO numerical-path sensitivity](YOLO_NUMERICAL_PATH_SENSITIVITY_V1.md).
@@ -39,8 +76,9 @@ undefined-reference or missing-character warnings.
 
 - Manuscript SHA-256: `07ff736eb9c25a6b0178a67e7bafc8a6ceff75797ef45bbe30789a69a960c27c`.
 - PDF SHA-256: `fce7ac64779ef068b218ff0fcc66bd2bb6c9594566bfe08efbfb6a5551497f31`.
-- [Build receipt](../report/paper_build_manifest.json) binds current inputs/output;
-  [QA receipt](../report/paper_pdf_qa.json) records the rendered file checks.
+- The [historical build receipt](https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/d174611408cdc4673e8344b95e4ed0685844306e/report/paper_build_manifest.json)
+  and [historical QA receipt](https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/d174611408cdc4673e8344b95e4ed0685844306e/report/paper_pdf_qa.json)
+  preserve that rendered snapshot's checks.
 - Claim verification: 427 numerical claims and all 36 semantic guards pass.
   Scientific artifact verification: 88 artifacts, 646 present input bindings,
   212 result references, zero unavailable inputs.

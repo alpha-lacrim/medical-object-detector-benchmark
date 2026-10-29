@@ -983,3 +983,10 @@ outstanding. The [verification record](POSTHOC_EXTERNAL_GENERALIZATION_VERIFICAT
 gives checks, preserved iteration failures, restrictions and release status.
 The user subsequently authorized Git commits and pushes; that authorization
 supersedes the initial no-Git-write instruction for this work.
+
+The user-requested PDF follow-up on 2026-10-29 rebuilt and visually reviewed
+all 19 pages, including the post-hoc analysis and Table 8. Three configured
+TeX passes resolve fresh-build cross-references, and bibliography entries stay
+together across pages. Canonical scientific text/results and the numerical
+trace are unchanged. Current PDF hashes and checks are in the submission audit;
+the earlier PDF-refresh requirement is resolved.

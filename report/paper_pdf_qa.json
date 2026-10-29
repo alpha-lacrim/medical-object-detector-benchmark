@@ -1,128 +1,151 @@
 {
   "pdf": "output/pdf/rsna_vindr_article.pdf",
-  "sha256": "fce7ac64779ef068b218ff0fcc66bd2bb6c9594566bfe08efbfb6a5551497f31",
-  "page_count": 16,
+  "sha256": "c09f01b8ab1e0c04c452765b8af71eecfa884a85e8728341d84dfd37b821794e",
+  "page_count": 19,
   "pages": [
     {
       "page": 1,
-      "text_characters": 3646,
+      "text_characters": 3755,
+      "embedded_images": 0,
+      "links": 3,
+      "rotation": 0
+    },
+    {
+      "page": 2,
+      "text_characters": 4731,
+      "embedded_images": 0,
+      "links": 14,
+      "rotation": 0
+    },
+    {
+      "page": 3,
+      "text_characters": 4140,
+      "embedded_images": 0,
+      "links": 7,
+      "rotation": 0
+    },
+    {
+      "page": 4,
+      "text_characters": 4546,
       "embedded_images": 0,
       "links": 4,
       "rotation": 0
     },
     {
-      "page": 2,
-      "text_characters": 4745,
-      "embedded_images": 0,
-      "links": 15,
-      "rotation": 0
-    },
-    {
-      "page": 3,
-      "text_characters": 3539,
-      "embedded_images": 0,
-      "links": 1,
-      "rotation": 0
-    },
-    {
-      "page": 4,
-      "text_characters": 4903,
-      "embedded_images": 0,
-      "links": 6,
-      "rotation": 0
-    },
-    {
       "page": 5,
-      "text_characters": 5186,
+      "text_characters": 5008,
       "embedded_images": 0,
-      "links": 6,
+      "links": 8,
       "rotation": 0
     },
     {
       "page": 6,
-      "text_characters": 4352,
+      "text_characters": 4865,
       "embedded_images": 0,
-      "links": 5,
+      "links": 6,
       "rotation": 0
     },
     {
       "page": 7,
+      "text_characters": 3704,
+      "embedded_images": 0,
+      "links": 2,
+      "rotation": 0
+    },
+    {
+      "page": 8,
       "text_characters": 1830,
       "embedded_images": 1,
       "links": 0,
       "rotation": 0
     },
     {
-      "page": 8,
+      "page": 9,
       "text_characters": 2067,
       "embedded_images": 1,
       "links": 0,
       "rotation": 0
     },
     {
-      "page": 9,
-      "text_characters": 2259,
-      "embedded_images": 1,
-      "links": 0,
-      "rotation": 0
-    },
-    {
       "page": 10,
-      "text_characters": 1859,
+      "text_characters": 2260,
       "embedded_images": 1,
       "links": 0,
       "rotation": 0
     },
     {
       "page": 11,
+      "text_characters": 1859,
+      "embedded_images": 1,
+      "links": 0,
+      "rotation": 0
+    },
+    {
+      "page": 12,
       "text_characters": 3920,
       "embedded_images": 0,
       "links": 0,
       "rotation": 0
     },
     {
-      "page": 12,
+      "page": 13,
       "text_characters": 2458,
       "embedded_images": 1,
       "links": 0,
       "rotation": 0
     },
     {
-      "page": 13,
-      "text_characters": 4993,
-      "embedded_images": 0,
-      "links": 3,
-      "rotation": 0
-    },
-    {
       "page": 14,
-      "text_characters": 4794,
+      "text_characters": 4274,
       "embedded_images": 0,
       "links": 0,
       "rotation": 0
     },
     {
       "page": 15,
-      "text_characters": 2789,
+      "text_characters": 5397,
       "embedded_images": 0,
-      "links": 6,
+      "links": 3,
       "rotation": 0
     },
     {
       "page": 16,
-      "text_characters": 4465,
+      "text_characters": 4979,
       "embedded_images": 0,
-      "links": 23,
+      "links": 1,
+      "rotation": 0
+    },
+    {
+      "page": 17,
+      "text_characters": 2131,
+      "embedded_images": 0,
+      "links": 5,
+      "rotation": 0
+    },
+    {
+      "page": 18,
+      "text_characters": 4683,
+      "embedded_images": 0,
+      "links": 24,
+      "rotation": 0
+    },
+    {
+      "page": 19,
+      "text_characters": 1086,
+      "embedded_images": 0,
+      "links": 5,
       "rotation": 0
     }
   ],
-  "internal_links": 29,
+  "internal_links": 34,
   "external_uris": [
     "https://doi.org/10.1007/978-3-031-72664-4_11",
     "https://doi.org/10.1007/978-3-319-10602-1_48",
+    "https://doi.org/10.1038/s41592-023-02150-0",
     "https://doi.org/10.1038/s41597-022-01498-w",
     "https://doi.org/10.1038/s41598-024-52156-7",
     "https://doi.org/10.1038/s44360-026-00096-z",
+    "https://doi.org/10.1093/rpd/ncp305",
     "https://doi.org/10.1109/CCIC68129.2026.11485895",
     "https://doi.org/10.1109/CVPR.2017.106",
     "https://doi.org/10.1109/CVPRW50498.2020.00171",
@@ -130,20 +153,24 @@
     "https://doi.org/10.1148/ryai.240300",
     "https://doi.org/10.1201/9780429246593",
     "https://doi.org/10.13026/3akn-b287",
+    "https://doi.org/10.1371/journal.pmed.1002683",
     "https://doi.org/10.2202/1544-6115.1585",
     "https://doi.org/10.2307/4615733",
     "https://github.com/Alpha-lacrim/medical-object-detector-benchmark",
-    "https://github.com/Alpha-lacrim/medical-object-detector-benchmark/blob/490c55794e2bfc163746089ffb44e7f195ef534b/docs/COMPUTE_TIMING.md",
-    "https://github.com/Alpha-lacrim/medical-object-detector-benchmark/blob/490c55794e2bfc163746089ffb44e7f195ef534b/docs/SUPPLEMENTARY.md",
-    "https://github.com/Alpha-lacrim/medical-object-detector-benchmark/blob/490c55794e2bfc163746089ffb44e7f195ef534b/docs/SUPPLEMENTARY.md#s1-cohort-split-and-provenance-records",
-    "https://github.com/Alpha-lacrim/medical-object-detector-benchmark/blob/490c55794e2bfc163746089ffb44e7f195ef534b/docs/SUPPLEMENTARY.md#s10-yolo-numerical-inference-path-sensitivity",
-    "https://github.com/Alpha-lacrim/medical-object-detector-benchmark/blob/490c55794e2bfc163746089ffb44e7f195ef534b/docs/SUPPLEMENTARY.md#s3-operating-point-and-threshold-evidence",
-    "https://github.com/Alpha-lacrim/medical-object-detector-benchmark/blob/490c55794e2bfc163746089ffb44e7f195ef534b/docs/SUPPLEMENTARY.md#s4-calibration-and-exploratory-raw-score-utility",
-    "https://github.com/Alpha-lacrim/medical-object-detector-benchmark/blob/490c55794e2bfc163746089ffb44e7f195ef534b/docs/SUPPLEMENTARY.md#s5-complete-digital-corruption-and-acquisition-shift-grids",
-    "https://github.com/Alpha-lacrim/medical-object-detector-benchmark/blob/490c55794e2bfc163746089ffb44e7f195ef534b/docs/SUPPLEMENTARY.md#s8-decisions-limitations-and-reproduction",
-    "https://github.com/Alpha-lacrim/medical-object-detector-benchmark/blob/490c55794e2bfc163746089ffb44e7f195ef534b/docs/SUPPLEMENTARY.md#s9-frozen-external-testing-and-transportability",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/d174611408cdc4673e8344b95e4ed0685844306e/docs/COMPUTE_TIMING.md",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/d174611408cdc4673e8344b95e4ed0685844306e/docs/SUPPLEMENTARY.md",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/d174611408cdc4673e8344b95e4ed0685844306e/docs/SUPPLEMENTARY.md#s1-cohort-split-and-provenance-records",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/d174611408cdc4673e8344b95e4ed0685844306e/docs/SUPPLEMENTARY.md#s10-yolo-numerical-inference-path-sensitivity",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/d174611408cdc4673e8344b95e4ed0685844306e/docs/SUPPLEMENTARY.md#s11-post-hoc-external-generalization-analysis",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/d174611408cdc4673e8344b95e4ed0685844306e/docs/SUPPLEMENTARY.md#s3-operating-point-and-threshold-evidence",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/d174611408cdc4673e8344b95e4ed0685844306e/docs/SUPPLEMENTARY.md#s4-calibration-and-exploratory-raw-score-utility",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/d174611408cdc4673e8344b95e4ed0685844306e/docs/SUPPLEMENTARY.md#s5-complete-digital-corruption-and-acquisition-shift-grids",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/d174611408cdc4673e8344b95e4ed0685844306e/docs/SUPPLEMENTARY.md#s8-decisions-limitations-and-reproduction",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/d174611408cdc4673e8344b95e4ed0685844306e/docs/SUPPLEMENTARY.md#s9-frozen-external-testing-and-transportability",
     "https://github.com/ultralytics/ultralytics/blob/v8.4.110/ultralytics/cfg/models/11/yolo11.yaml",
     "https://physionet.org/content/vindr-cxr/1.0.0/",
+    "https://proceedings.mlr.press/v80/lipton18a.html",
+    "https://proceedings.mlsys.org/paper_files/paper/2021/file/0184b0cd3cfb185989f858a1d9f5c1eb-Paper.pdf",
     "https://proceedings.neurips.cc/paper/2015/hash/14bfa6bb14875e45bba028a21ed38046-Abstract.html",
     "https://pypi.org/project/ultralytics/8.4.110/",
     "https://www.kaggle.com/c/rsna-pneumonia-detection-challenge/data",

@@ -1,22 +1,22 @@
 # Graph Report - DP_Final_Project  (2026-10-29)
 
 ## Corpus Check
-- 427 files · ~2,913,258 words
+- 427 files · ~2,913,949 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 412 file(s) not represented in the graph (top: .csv 178, .gz 157, .jsonl 28)
 
 ## Summary
-- 4902 nodes · 12348 edges · 226 communities (199 shown, 27 thin omitted)
+- 4905 nodes · 12351 edges · 232 communities (208 shown, 24 thin omitted)
 - Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 478 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `40a272cd`
+- Built from commit: `d1746114`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- hashlib
+- Any
 - analyze_yolo_numerical_path.py
 - CocoDetectionDataset
 - threshold_calibration.py
@@ -29,18 +29,18 @@
 - analyze_validation_threshold_sensitivity.py
 - paired.py
 - test_external_generalization.py
-- sha256_file
-- test_transportability.py
+- selection.py
+- analyze_yolo_seed_stability.py
 - evaluate_threshold_sweep.py
 - run_vindr_statistics.py
 - verify_scientific_artifacts.py
 - run_explainability.py
 - meddet_benchmark/corruptions.py
-- evaluation.py
+- test_evaluation.py
 - radiography_shifts.py
 - YoloConfig
 - decision_curve_pre_batch30_nonstandard.py
-- test_train_faster_rcnn.py
+- seed_everything
 - faster_rcnn_config.py
 - seed.py
 - evaluate_threshold_selection.py
@@ -48,18 +48,18 @@
 - sanity_checks.py
 - meddet_benchmark/config.py
 - analyze_operating_regime_sensitivity.py
-- yaml
-- raw_score_utility.py
+- test_train_faster_rcnn.py
+- report_transportability.py
 - os
-- train_yolo.py
+- os
 - test_xai_sanity.py
 - 3. Materials and Methods
 - plot_pareto_frontier.py
 - evaluate_vindr_external.py
 - argparse
-- evaluate_coco
+- ImagePrediction
 - Medical Object Detector Benchmark
-- report_transportability.py
+- raw_score_utility.py
 - BATCH 52 — Final Adversarial Q2 Submission Gate and PDF
 - README.md
 - Important issues the prior response missed
@@ -69,18 +69,18 @@
 - batch52/paper_draft.md
 - Any
 - StrictModel
-- COMPUTE_TIMING.md
-- pathlib
+- Faster R-CNN Baseline Protocol
+- csv
 - StrictModel
 - BATCHES_V8.md
 - decision_curve.py
 - PROJECT_PLAN.md
-- verify_frozen_external.py
+- json
 - batch46/paper_draft.md
 - build_faster_rcnn
 - yolo_training.py
 - test_exact_score_froc.py
-- yolo_data.py
+- cohort_characteristics.py
 - AUTHOR-CONFIRMED FACTS
 - Project plan: controlled lung-opacity detector comparison
 - collections_abc
@@ -97,49 +97,49 @@
 - V7 Q2 / VinDr Baseline Audit
 - test_check_bibliography.py
 - load_faster_rcnn_config
-- Agreement
+- test_inference_timing.py
 - TASKS
 - BATCH 56 — Final Scientific-Concision and Positioning Pass
 - yolo_reporting.py
-- evaluate_box_attention
+- dataclasses
 - explainability/config.py
 - load_robustness_config
 - BATCHES_V6.md
 - BATCH 53 — YOLO Numerical-Inference-Path Transport Sensitivity
 - StrictModel
-- benchmark_inference.py
+- StrictModel
 - StrictModel
 - PRESENTATION POLICY
 - BATCH 57 — Ethics and Consent Determination Packet
 - analyze_exact_score_froc.py
 - Final adversarial submission audit
-- configure_reproducibility
-- _make_groups
+- .budgets
+- prepare.py
 - plot_raincloud_metrics.py
-- Grad-CAM Sensitivity Controls (v2)
+- ExperimentConfig
 - Review Remediation Audit
 - FINAL SUBMISSION AUDIT
-- cohort_characteristics.py
-- YoloConfig
+- test_cohort_characteristics.py
+- DecisionCurveConfig
 - GLOBAL RULES FOR EVERY BATCH
 - Statistical analysis
 - YOLO numerical-path sensitivity: results v1
 - Medical Object Detector Benchmark v2.0.0 — Research Artifact Release
 - StrictModel
-- maximum_scores_by_image
-- yaml
+- Confidence-Threshold and Precision-Recall Analysis
+- os
 - 21. FINAL AUDIT DOCUMENT
 - Unified quantitative comparison
 - 4. Results
 - AgeSettings
 - BATCH 54 — Publication Study/Data-Flow Figure
 - report_external_generalization.py
-- test_raw_score_utility.py
+- csv
 - BATCHES_V7_Q2_VINDR.md
 - Literature Review
 - Post-hoc external generalization results v1
 - StrictModel
-- test_validation_threshold_sensitivity.py
+- generate_cohort_characteristics
 - BATCHES.md — Session-by-Session Prompts
 - BATCHES_V3.md — Correctness Fixes, Then Research Paper Track (continued)
 - BATCHES_V4.md — Q1-Direction Extensions (Phases 9-14), Solo Track
@@ -158,7 +158,7 @@
 - Author Declarations — Action Required
 - Dataset choice
 - VinDr-CXR external testing protocol v1
-- math
+- data_audit.py
 - 3. Materials and Methods
 - _add_issue
 - 10. Give me a reviewer-style final report
@@ -195,20 +195,22 @@
 - Scientific interpretation of post-hoc external generalization v1
 - BATCH 48 — Build and Validate the VinDr External Adapter
 - Dataset workspace
-- VinDr-CXR adapter preflight — Batch 48
+- _aggregate_row
+- Accuracy-Efficiency Pareto Analysis
 - Frozen VinDr-CXR inference — Batch 49
-- main
 - YOLO numerical inference-path sensitivity, v1
-- RuntimeSettings
-- StrictModel
-- StrictModel
+- Free-Response ROC Analysis
+- SelectionSettings
+- test_raw_score_utility.py
 - 1. Audit four specific scientific interfaces
-- AuditResult
+- ExamRecord
 - SCIENTIFIC INVARIANTS
 - PART A — IMMUTABLE SUBMISSION RELEASE PREPARATION
+- aggregate_rows
+- test_data_audit.py
 - Research audit: external generalization v1
 - main
-- OutputSettings
+- VinDr-CXR adapter preflight — Batch 48
 - D-002 — Descope Track B and reframe the research contribution
 - D-004 — Keep later validation-threshold sensitivity separate from the primary thresholds
 - D-005 — Separate inferential targets and resample detector runs independently
@@ -224,12 +226,17 @@
 - D-015 — Report aggregate DICOM-header cohort characteristics with an age-unit caveat
 - D-003 — Decline to revive a Track-B-style native/best-practice comparison
 - D-001 — Two-track detector comparison design
+- typing
+- Standardized inference timing v1
 - D-019 — Separate observed ranking transport from frozen operating-point transport
 - VINDR_WGET_WINDOWS.md
 - run_downstream.ps1
+- digest
+- check_paper_pdf.py
 - build_parser
 - 5. Final response to me
 - batch52/README.md
+- conservative_frontier_bounds
 - meddet-benchmark
 
 ## God Nodes (most connected - your core abstractions)
@@ -259,23 +266,23 @@
 ## Import Cycles
 - None detected.
 
-## Communities (226 total, 27 thin omitted)
+## Communities (232 total, 24 thin omitted)
 
-### Community 0 - "hashlib"
-Cohesion: 0.09
-Nodes (33): _allocate_exact_counts(), _audit_summary(), build_coco(), convert_available_dicoms(), _convert_one_dicom(), _dataset_section(), ExamRecord, _input_file_metadata() (+25 more)
+### Community 0 - "Any"
+Cohesion: 0.17
+Nodes (13): _audit_summary(), build_coco(), convert_available_dicoms(), _dataset_section(), _input_file_metadata(), _path_from_config(), prepare_dataset(), _require_int() (+5 more)
 
 ### Community 1 - "analyze_yolo_numerical_path.py"
-Cohesion: 0.10
-Nodes (22): candidate_agreement(), canonical_bytes(), check_inputs(), digest(), distribution(), evaluate_pair(), forbid_training(), inference_only() (+14 more)
+Cohesion: 0.07
+Nodes (37): candidate_agreement(), canonical_bytes(), check_inputs(), digest(), distribution(), evaluate_pair(), forbid_training(), inference_only() (+29 more)
 
 ### Community 2 - "CocoDetectionDataset"
 Cohesion: 0.06
 Nodes (36): CocoAnnotation, CocoCategory, CocoDetectionDataset, CocoImageRecord, CocoValidationError, _configured_path(), DatasetPreflight, detection_collate_fn() (+28 more)
 
 ### Community 3 - "threshold_calibration.py"
-Cohesion: 0.06
-Nodes (46): AnalysisSettings, _artifact(), _atomic_bytes(), _atomic_csv(), _atomic_json(), _atomic_sensitivity_figure(), BootstrapPlan, compute_calibration_curve() (+38 more)
+Cohesion: 0.08
+Nodes (41): _artifact(), _atomic_bytes(), _atomic_csv(), _atomic_json(), _atomic_sensitivity_figure(), BootstrapPlan, build_bootstrap_plan(), compute_calibration_curve() (+33 more)
 
 ### Community 4 - "download.py"
 Cohesion: 0.05
@@ -283,131 +290,131 @@ Nodes (41): build_parser(), _child_environment(), ConfigurationError, _credentia
 
 ### Community 5 - "run_statistics.py"
 Cohesion: 0.08
-Nodes (43): DetectionEvidence, estimate_pair(), EvidencePair, AnalysisSettings, apply_grid_holm(), _artifact_hash(), _atomic_bytes(), _atomic_csv() (+35 more)
+Nodes (44): DetectionEvidence, estimate_pair(), EvidencePair, holm_adjust(), AnalysisSettings, apply_clean_holm(), apply_grid_holm(), _artifact_hash() (+36 more)
 
 ### Community 6 - "train_faster_rcnn.py"
-Cohesion: 0.08
-Nodes (25): config_fingerprint(), FasterRCNNConfig, _approved_benchmark(), _atomic_torch_save(), _available_subset(), _checkpoint_payload(), _completed_artifacts_intact(), _ensure_new_run() (+17 more)
+Cohesion: 0.07
+Nodes (26): config_fingerprint(), FasterRCNNConfig, serializable_config(), _approved_benchmark(), _atomic_torch_save(), _available_subset(), _checkpoint_payload(), _completed_artifacts_intact() (+18 more)
 
 ### Community 7 - "calibration.py"
 Cohesion: 0.06
 Nodes (49): _add_detector_summaries(), _atomic_binning_sensitivity_figure(), _atomic_bytes(), _atomic_csv(), _atomic_floor_sensitivity_figure(), _atomic_json(), _atomic_reliability_figure(), _atomic_support_figure() (+41 more)
 
 ### Community 8 - "faster_rcnn_reporting.py"
-Cohesion: 0.08
-Nodes (30): append_epoch_metrics(), _atomic_write_text(), build_benchmark_projection(), _csv_cell(), _csv_text(), _json_text(), _load_epoch_csv(), _load_epoch_jsonl() (+22 more)
+Cohesion: 0.07
+Nodes (32): append_epoch_metrics(), _atomic_write_text(), build_benchmark_projection(), _csv_cell(), _csv_text(), _json_text(), _load_epoch_csv(), _load_epoch_jsonl() (+24 more)
 
 ### Community 9 - "test_prepare_vindr.py"
-Cohesion: 0.08
-Nodes (31): Evidence baseline and implementation map, main(), build_targets(), decode_image(), ensure_private(), geometry_check(), main(), PreflightError (+23 more)
+Cohesion: 0.07
+Nodes (33): Evidence baseline and implementation map, Path comparison, Prerequisite evidence, YOLO numerical inference-path audit (Batch 53, v1), main(), Predictor, build_targets(), decode_image() (+25 more)
 
 ### Community 10 - "analyze_validation_threshold_sensitivity.py"
-Cohesion: 0.13
-Nodes (27): _aggregate_test_rows(), _artifact(), build_conclusion_rows(), build_parser(), _bundle_record(), collect_validation_predictions(), _compare_reference_operating_point(), _directional_conclusion() (+19 more)
+Cohesion: 0.09
+Nodes (38): _aggregate_test_rows(), _artifact(), build_conclusion_rows(), build_parser(), _bundle_record(), classify_margin_change(), collect_validation_predictions(), _compare_reference_operating_point() (+30 more)
 
 ### Community 11 - "paired.py"
-Cohesion: 0.06
-Nodes (48): evaluate_prediction_records(), aggregate_hybrid(), aggregate_prepared_hybrid(), _aggregate_single(), analyze_pair(), analyze_training_procedure(), _average_precision(), build_patient_clusters() (+40 more)
+Cohesion: 0.05
+Nodes (59): box_iou(), _boxes(), _image_size(), ImageMatchResult, _labels(), Match, match_image(), _pairwise_iou() (+51 more)
 
 ### Community 12 - "test_external_generalization.py"
-Cohesion: 0.09
-Nodes (32): ap_events(), distribution(), error_decomposition(), joint_bootstrap(), evaluate(), local_annotations(), prevalence_metrics(), prevalence_weights() (+24 more)
+Cohesion: 0.10
+Nodes (30): ap_events(), joint_bootstrap(), evaluate(), local_annotations(), prevalence_metrics(), prevalence_weights(), validate_domains(), weighted_ap() (+22 more)
 
-### Community 13 - "sha256_file"
-Cohesion: 0.19
-Nodes (17): _artifact_row(), _atomic_bytes(), _atomic_csv(), _atomic_json(), build_parser(), EvaluationSettings, _faster_contract(), _json_payload() (+9 more)
+### Community 13 - "selection.py"
+Cohesion: 0.23
+Nodes (10): _best_proxy(), operating_evidence(), _quantile_unique(), select_qualitative_cases(), _unique_top(), _prediction(), _target(), test_aggregation_excludes_zero_maps_and_reports_status() (+2 more)
 
-### Community 14 - "test_transportability.py"
-Cohesion: 0.06
-Nodes (31): _operating_ratios(), aligned_records(), APCache, bootstrap(), build_ap_cache(), build_froc_cache(), classify_change(), draw_observations() (+23 more)
+### Community 14 - "analyze_yolo_seed_stability.py"
+Cohesion: 0.14
+Nodes (22): _artifact(), _atomic_bytes(), _atomic_csv(), build_parser(), classify_convergence(), classify_operational(), InputSettings, load_config() (+14 more)
 
 ### Community 15 - "evaluate_threshold_sweep.py"
-Cohesion: 0.11
-Nodes (28): aggregate_threshold_rows(), _artifact(), _atomic_bytes(), _atomic_csv(), _atomic_figure(), _atomic_json(), build_parser(), _deserialize_predictions() (+20 more)
+Cohesion: 0.07
+Nodes (32): aggregate_threshold_rows(), _artifact(), _atomic_bytes(), _atomic_csv(), _atomic_figure(), _atomic_json(), build_parser(), _deserialize_predictions() (+24 more)
 
 ### Community 16 - "run_vindr_statistics.py"
 Cohesion: 0.07
-Nodes (35): binding(), extend(), main(), deserialize(), json_number(), aggregate(), analyze(), intervals() (+27 more)
+Nodes (35): binding(), extend(), main(), json_number(), aggregate(), analyze(), intervals(), main() (+27 more)
 
 ### Community 17 - "verify_scientific_artifacts.py"
 Cohesion: 0.08
 Nodes (32): ArtifactSpec, build_manifest(), committed(), external(), _input_payload(), InputSpec, main(), _schema() (+24 more)
 
 ### Community 18 - "run_explainability.py"
-Cohesion: 0.11
-Nodes (31): ExplainabilityConfig, _atomic_bytes(), _atomic_csv(), _atomic_json(), _best_candidate_index(), build_parser(), _cam_numpy(), _case_key() (+23 more)
+Cohesion: 0.13
+Nodes (30): ExplainabilityConfig, load_explainability_config(), aggregate_localization(), _atomic_bytes(), _atomic_csv(), _atomic_json(), _best_candidate_index(), build_parser() (+22 more)
 
 ### Community 19 - "meddet_benchmark/corruptions.py"
 Cohesion: 0.07
 Nodes (23): apply_corruption(), build_transform(), corruption_fingerprint(), CorruptionApplier, CorruptionCondition, CorruptionConfig, CorruptionDefinition, _derived_seed() (+15 more)
 
-### Community 20 - "evaluation.py"
-Cohesion: 0.07
-Nodes (41): _best_proxy(), operating_evidence(), _quantile_unique(), select_qualitative_cases(), _unique_top(), _record_maps(), box_iou(), _boxes() (+33 more)
+### Community 20 - "test_evaluation.py"
+Cohesion: 0.33
+Nodes (10): prediction(), target(), test_box_iou_uses_continuous_coordinates(), test_duplicate_and_wrong_class_predictions_are_errors(), test_empty_image_policy(), test_id_sets_and_known_classes_are_enforced(), test_malformed_records_are_rejected(), test_matching_is_score_first_and_stable() (+2 more)
 
 ### Community 21 - "radiography_shifts.py"
-Cohesion: 0.11
-Nodes (28): sha256_file(), AcquisitionShiftConfig, _audit_raw_files(), _audit_value(), build_parser(), _bundle_identity(), _bundle_path(), _condition_payload() (+20 more)
+Cohesion: 0.10
+Nodes (30): AcquisitionShiftConfig, _audit_raw_files(), _audit_value(), build_parser(), _bundle_identity(), _bundle_path(), _condition_payload(), _dataset_contract() (+22 more)
 
 ### Community 22 - "YoloConfig"
-Cohesion: 0.07
-Nodes (14): StrictModel, YoloAugmentationConfig, YoloBenchmarkConfig, YoloDataConfig, YoloEarlyStoppingConfig, YoloEvaluationConfig, YoloLossConfig, YoloModelConfig (+6 more)
+Cohesion: 0.06
+Nodes (18): load_yolo_config(), StrictModel, YoloAugmentationConfig, YoloBenchmarkConfig, YoloDataConfig, YoloEarlyStoppingConfig, YoloEvaluationConfig, YoloLossConfig (+10 more)
 
 ### Community 23 - "decision_curve_pre_batch30_nonstandard.py"
 Cohesion: 0.10
-Nodes (23): _artifact(), _atomic_bytes(), _atomic_csv(), _atomic_figure(), _atomic_json(), compute_decision_curves(), contiguous_ranges(), DecisionCurveConfig (+15 more)
+Nodes (22): _artifact(), _atomic_bytes(), _atomic_csv(), _atomic_figure(), _atomic_json(), compute_decision_curves(), contiguous_ranges(), _display_name() (+14 more)
 
-### Community 24 - "test_train_faster_rcnn.py"
-Cohesion: 0.13
-Nodes (12): sha256_file(), build_parser(), _dataset_summary(), split_summary(), main(), _coco_payload(), test_approved_benchmark_binds_data_execution_and_implementation(), test_complete_finalization_is_a_noop_only_while_artifacts_are_intact() (+4 more)
+### Community 24 - "seed_everything"
+Cohesion: 0.14
+Nodes (12): initialize_reproducibility(), seed_everything(), SeedReport, _random_sample(), test_initialization_can_defer_environment_writes_until_after_a_gate(), test_initialize_reproducibility_seeds_torch_and_writes_run_metadata(), test_nvidia_smi_parser_tolerates_quoted_and_unavailable_values(), test_package_logging_falls_back_when_pip_is_unavailable() (+4 more)
 
 ### Community 25 - "faster_rcnn_config.py"
-Cohesion: 0.13
-Nodes (30): BenchmarkSettings, _channel_values(), DataPaths, EarlyStoppingSettings, EvaluationSettings, _mapping(), _non_negative_int(), OptimizerSettings (+22 more)
+Cohesion: 0.10
+Nodes (32): BenchmarkSettings, _channel_values(), DataPaths, EarlyStoppingSettings, EvaluationSettings, _mapping(), _non_negative_int(), OptimizerSettings (+24 more)
 
 ### Community 26 - "seed.py"
-Cohesion: 0.08
-Nodes (24): _collect_nvidia_smi(), _collect_package_versions(), _collect_torch_environment(), _determinism_note(), _fallback_freeze(), initialize_reproducibility(), log_run_environment(), make_torch_generator() (+16 more)
+Cohesion: 0.12
+Nodes (10): _collect_nvidia_smi(), _collect_package_versions(), _collect_torch_environment(), _determinism_note(), _fallback_freeze(), make_torch_generator(), _optional_torch(), _pip_freeze_text() (+2 more)
 
 ### Community 27 - "evaluate_threshold_selection.py"
-Cohesion: 0.13
-Nodes (26): _artifact(), _atomic_bytes(), _atomic_csv(), _atomic_json(), build_parser(), collect_validation_predictions(), _frozen_faster_config_sha256(), _load_contract() (+18 more)
+Cohesion: 0.10
+Nodes (29): _targets_from_dataset(), _artifact(), _atomic_bytes(), _atomic_csv(), _atomic_json(), build_parser(), collect_validation_predictions(), _frozen_faster_config_sha256() (+21 more)
 
 ### Community 28 - "run_robustness.py"
 Cohesion: 0.12
 Nodes (29): _atomic_bytes(), _atomic_csv(), _atomic_json(), build_parser(), _bundle_identity(), _bundle_path(), _cached_result(), _clean_predictions() (+21 more)
 
 ### Community 29 - "sanity_checks.py"
-Cohesion: 0.14
-Nodes (23): aggregate_sanity(), assert_checkpoint_immutability(), _atomic_bytes(), _atomic_csv(), _atomic_json(), build_parser(), checkpoint_hashes(), _draw_candidate() (+15 more)
+Cohesion: 0.16
+Nodes (22): _atomic_bytes(), _atomic_csv(), _atomic_json(), build_parser(), checkpoint_hashes(), _detail_row(), _draw_candidate(), _historical_artifact_identity() (+14 more)
 
 ### Community 30 - "meddet_benchmark/config.py"
-Cohesion: 0.06
-Nodes (34): assert_run_allowed(), canonical_json(), config_fingerprint(), DataConfig, EvaluationConfig, ExperimentConfig, load_experiment(), Manifests (+26 more)
+Cohesion: 0.12
+Nodes (11): DataConfig, EvaluationConfig, Manifests, ModelSpec, OptimizerConfig, RuntimeConfig, SchedulerConfig, StrictModel (+3 more)
 
 ### Community 31 - "analyze_operating_regime_sensitivity.py"
 Cohesion: 0.10
 Nodes (26): _artifact(), _atomic_csv(), _atomic_json(), build_conclusion_rows(), build_fixed_threshold_tables(), build_inventory_rows(), build_parser(), classify_margin_change() (+18 more)
 
-### Community 32 - "yaml"
-Cohesion: 0.18
-Nodes (13): validate_contract(), prediction(), test_dtype_explicit(), test_empty_and_identical_agreement(), test_exclusive_deterministic_outputs(), test_existing_version_refused_before_inputs_or_gpu(), test_forbidden_actions(), test_frozen_evaluator_constants() (+5 more)
+### Community 32 - "test_train_faster_rcnn.py"
+Cohesion: 0.13
+Nodes (13): sha256_file(), build_parser(), _dataset_summary(), split_summary(), _load_datasets(), main(), _coco_payload(), test_approved_benchmark_binds_data_execution_and_implementation() (+5 more)
 
-### Community 33 - "raw_score_utility.py"
-Cohesion: 0.17
-Nodes (24): AnalysisSettings, _artifact(), _atomic_csv(), _atomic_figure(), _atomic_json(), _audit_archives(), _display_name(), _historical_config() (+16 more)
+### Community 33 - "report_transportability.py"
+Cohesion: 0.15
+Nodes (11): number(), plot_froc(), plot_scores(), plot_thresholds(), render(), report(), interval(), mean_sd() (+3 more)
 
 ### Community 34 - "os"
-Cohesion: 0.05
-Nodes (50): _artifact(), _atomic_bytes(), _atomic_csv(), build_parser(), classify_convergence(), classify_operational(), InputSettings, load_config() (+42 more)
+Cohesion: 0.08
+Nodes (28): aggregate_froc_curve(), AnalysisSettings, _artifact(), _atomic_csv(), _atomic_figure(), _atomic_json(), build_parser(), DetectorSettings (+20 more)
 
-### Community 35 - "train_yolo.py"
-Cohesion: 0.10
-Nodes (15): build_parser(), _copy_checkpoint(), _driver_version(), _execution_identity(), _git_commit(), _guard_new_run(), _implementation_identity(), _load_result_rows() (+7 more)
+### Community 35 - "os"
+Cohesion: 0.08
+Nodes (22): summarize_model_artifact(), write_atomic_json(), build_parser(), _copy_checkpoint(), _driver_version(), _execution_identity(), _finalize(), _git_commit() (+14 more)
 
 ### Community 36 - "test_xai_sanity.py"
-Cohesion: 0.10
-Nodes (20): audit_layer_group_partition(), DetectorLayerGroups, LayerGroup, _module_matches_prefix(), ParameterInitializationSettings, randomize_cumulative_model(), select_nested_stratified_rows(), select_panel_cases() (+12 more)
+Cohesion: 0.07
+Nodes (27): aggregate_sanity(), assert_checkpoint_immutability(), audit_layer_group_partition(), DetectorLayerGroups, LayerGroup, load_xai_sanity_config(), _module_matches_prefix(), ParameterInitializationSettings (+19 more)
 
 ### Community 37 - "3. Materials and Methods"
 Cohesion: 0.05
@@ -419,23 +426,23 @@ Nodes (17): aggregate_pareto_points(), _artifact(), _assert_close(), _atomic_csv
 
 ### Community 39 - "evaluate_vindr_external.py"
 Cohesion: 0.09
-Nodes (31): _serialize_prediction(), _targets_from_dataset(), aggregate_metrics(), flatten(), artifact(), compute_metrics(), dump_gzip(), main() (+23 more)
+Nodes (31): _serialize_prediction(), aggregate_metrics(), flatten(), artifact(), compute_metrics(), deserialize(), dump_gzip(), main() (+23 more)
 
 ### Community 40 - "argparse"
-Cohesion: 0.13
-Nodes (23): main(), _artifact_paths(), evaluate_source(), _filtered_csv_rows(), _json_pointer(), _load_yaml(), main(), _number() (+15 more)
+Cohesion: 0.14
+Nodes (22): _artifact_paths(), evaluate_source(), _filtered_csv_rows(), _json_pointer(), _load_yaml(), main(), _number(), PaperClaimVerificationError (+14 more)
 
-### Community 41 - "evaluate_coco"
-Cohesion: 0.17
-Nodes (12): _empty_results_dataset(), evaluate_coco(), _precision_curve(), _safe_average(), prediction(), target(), test_all_negative_dataset_returns_null_ap(), test_class_without_ground_truth_has_null_ap() (+4 more)
+### Community 41 - "ImagePrediction"
+Cohesion: 0.06
+Nodes (52): evaluate_prediction_records(), EvaluationSettings, _empty_results_dataset(), evaluate_coco(), _precision_curve(), _record_maps(), _safe_average(), evaluate_operating_point() (+44 more)
 
 ### Community 42 - "Medical Object Detector Benchmark"
 Cohesion: 0.05
 Nodes (38): 1. Create the pinned environment, 2. Acquire and prepare the dataset, 2a. Generate aggregate cohort characteristics, 3. Train and finalize the primary Faster R-CNN run, 4. Train and finalize the primary YOLO11s run, 5. Train the additional seeds and run the five-seed unified test evaluator, 5a. Reprocess the frozen bundles across confidence thresholds, 5b.1 Run the post-hoc five-validation-run selection sensitivity (+30 more)
 
-### Community 43 - "report_transportability.py"
-Cohesion: 0.14
-Nodes (11): number(), plot_froc(), plot_scores(), plot_thresholds(), render(), report(), interval(), mean_sd() (+3 more)
+### Community 43 - "raw_score_utility.py"
+Cohesion: 0.27
+Nodes (18): _artifact(), _atomic_csv(), _atomic_figure(), _atomic_json(), _audit_archives(), _display_name(), _historical_config(), _historical_numeric_audit() (+10 more)
 
 ### Community 44 - "BATCH 52 — Final Adversarial Q2 Submission Gate and PDF"
 Cohesion: 0.10
@@ -443,23 +450,23 @@ Nodes (21): ADVERSARIAL FROC AUDIT, ANALYSIS-SCOPE AUDIT, BATCH 52 — Final Adv
 
 ### Community 45 - "README.md"
 Cohesion: 0.15
-Nodes (9): Proposed retained-candidate sensitivity v2 — NOT EXECUTED, Prerequisite evidence, YOLO numerical inference-path audit (Batch 53, v1), 1. Introduction, 5. Discussion, 6. Limitations, 7. Conclusion, 8. Declarations (+1 more)
+Nodes (7): Proposed retained-candidate sensitivity v2 — NOT EXECUTED, 1. Introduction, 5. Discussion, 6. Limitations, 7. Conclusion, 8. Declarations, Abstract
 
 ### Community 46 - "Important issues the prior response missed"
 Cohesion: 0.06
 Nodes (32): 10. Detection calibration and DCA calibration are different objects, 1. `"Blocking statistical contradiction"`, 1. DCA interpretation is a major issue — CONFIRMED FROM THE V4 DESIGN, 1. The F-beta `"cost ratio"` construction is methodologically unsafe, 2. `"Choose one inferential population"` is directionally right but too binary, 2. Statistical uncertainty targets are mixed in the manuscript language — CONFIRMED AS A REPORTING/ESTIMAND PROBLEM, 2. The XAI `"data-randomization"` test is not the Adebayo test, 3. `"Calibrate detector confidence and DCA is fixed"` needs another limitation (+24 more)
 
 ### Community 47 - "visualize.py"
-Cohesion: 0.12
-Nodes (16): _balanced_sample(), build_parser(), _draw_centered_text(), _font(), _load_coco_records(), load_dataset_config(), main(), plot_annotation_samples() (+8 more)
+Cohesion: 0.14
+Nodes (14): _balanced_sample(), build_parser(), _draw_centered_text(), _font(), _load_coco_records(), load_dataset_config(), main(), plot_annotation_samples() (+6 more)
 
 ### Community 48 - "math"
 Cohesion: 0.14
 Nodes (11): EarlyStopObservation, EarlyStopper, estimate_training_seconds(), test_early_stopper_records_initial_and_later_improvements(), test_early_stopper_rejects_nonfinite_metrics(), test_early_stopper_requires_improvement_strictly_above_min_delta(), test_early_stopper_stops_at_patience_boundary(), test_early_stopper_tie_is_not_an_improvement() (+3 more)
 
 ### Community 49 - "test_radiography_shifts.py"
-Cohesion: 0.09
-Nodes (22): scale_radiograph_to_uint8(), apply_radiography_shift(), _derived_seed(), dicom_linear_window(), _metadata_audit_row(), _normalized_error_metrics(), RadiographyShift, RadiographyShiftSubsetDataset (+14 more)
+Cohesion: 0.11
+Nodes (19): scale_radiograph_to_uint8(), apply_radiography_shift(), _derived_seed(), dicom_linear_window(), _normalized_error_metrics(), test_constant_and_nonfinite_reference_contract(), _dicom_metadata(), _shift_metadata() (+11 more)
 
 ### Community 50 - "batch52/paper_draft.md"
 Cohesion: 0.06
@@ -473,13 +480,13 @@ Nodes (19): _artifact(), _atomic_csv(), _atomic_figure(), _atomic_json(), _candi
 Cohesion: 0.11
 Nodes (9): Hardware, Outputs, Versions, OutputSettings, RuntimeSettings, StrictModel, TimingReuseReview, TimingReuseReviews (+1 more)
 
-### Community 53 - "COMPUTE_TIMING.md"
-Cohesion: 0.06
-Nodes (32): Accepted laptop measurements, Claim limits and artifact provenance, Matched boundary and configuration, Parameter counts and incomplete operation profiles, Prediction agreement and timing statistics, Reporting hardware and reproducibility, Standardized inference timing v1, Artifacts (+24 more)
+### Community 53 - "Faster R-CNN Baseline Protocol"
+Cohesion: 0.20
+Nodes (9): Artifacts, Chosen configuration, Completed one-seed baseline (2026-08-09), Completed timing gate (2026-08-09), Faster R-CNN Baseline Protocol, Final profiling contract, Metrics, Scope and review gate (+1 more)
 
-### Community 54 - "pathlib"
-Cohesion: 0.12
-Nodes (9): digest(), main(), add(), binding(), main(), render(), number(), table() (+1 more)
+### Community 54 - "csv"
+Cohesion: 0.09
+Nodes (9): main(), binding(), main(), main(), number(), render(), test_run_eda_creates_distribution_samples_and_summary(), _write_manifest() (+1 more)
 
 ### Community 55 - "StrictModel"
 Cohesion: 0.07
@@ -490,36 +497,36 @@ Cohesion: 0.07
 Nodes (28): 10. EXTERNAL TRANSPORT AUDIT, 11. TRAINING / ARCHITECTURE AUDIT, 12. TIMING AUDIT, 13. ETHICS / CONSENT AUDIT, 14. FUNDING / COI / CRediT / PPI AUDIT, 15. RELEASE / AVAILABILITY AUDIT, 16. CLAIM 2024 REPORTING AUDIT, 17. REFERENCES / RELATED WORK (+20 more)
 
 ### Community 57 - "decision_curve.py"
-Cohesion: 0.15
-Nodes (13): CalibratedOutcomeProbabilities, DecisionThresholdProbability, RawDetectorConfidenceScores, RawDetectorConfidenceThreshold, _require_decision_threshold_probability(), standard_dca_actions(), standard_dca_net_benefit(), _validated_threshold_probability() (+5 more)
+Cohesion: 0.08
+Nodes (21): CalibratedOutcomeProbabilities, DecisionThresholdProbability, RawDetectorConfidenceScores, RawDetectorConfidenceThreshold, _require_decision_threshold_probability(), standard_dca_actions(), standard_dca_net_benefit(), _validated_threshold_probability() (+13 more)
 
 ### Community 58 - "PROJECT_PLAN.md"
-Cohesion: 0.07
-Nodes (23): Artifacts and reproduction, Current interpretation, Exact-score method and endpoint behavior, Free-Response ROC Analysis, Historical-grid reproduction and fixed protocol, Historical grid versus approved lower-floor exact-score frontier, Residual candidate-floor boundary and conservative bound, Scientific value of another lower-floor run (+15 more)
+Cohesion: 0.06
+Nodes (28): Explainability Analysis, Grad-CAM protocol, Qualitative selection and caveats, Quantitative results, Reproduction, Scope and provenance, Where are the models looking?, Common-Corruption Robustness (+20 more)
 
-### Community 59 - "verify_frozen_external.py"
-Cohesion: 0.17
-Nodes (10): baseline_paths(), historical_editorial_view(), read_baseline(), stat_baseline(), target(), main(), test_archive_tampering_fails(), test_archived_reads_and_sizes_preserve_live_bytes_even_on_exception() (+2 more)
+### Community 59 - "json"
+Cohesion: 0.11
+Nodes (15): baseline_paths(), historical_editorial_view(), read_baseline(), stat_baseline(), target(), main(), config(), fixture() (+7 more)
 
 ### Community 60 - "batch46/paper_draft.md"
 Cohesion: 0.07
 Nodes (26): 1. Introduction, 2.1 Detector scores and operating-point assessment, 2.2 RSNA methodology and direct detector comparisons, 2.3 Implementation and reporting context, 2. Related Work, 3.1 Dataset, target, and patient-disjoint split, 3.2 Detector pipelines and controlled training factors, 3.3 Five retained runs and common evaluation (+18 more)
 
 ### Community 61 - "build_faster_rcnn"
-Cohesion: 0.11
+Cohesion: 0.13
 Nodes (11): ModelSettings, apply_training_mode(), build_faster_rcnn(), count_parameters(), enforce_backbone_trainability(), freeze_batch_norm_statistics(), FakeBody, FakeParameter (+3 more)
 
 ### Community 62 - "yolo_training.py"
-Cohesion: 0.07
-Nodes (8): _atomic_json(), ComparableEarlyStopping, Float32DetectionLoss, _floating_tensors_to_float32(), YoloRunTracker, test_comparable_early_stopping_enforces_minimum_and_delta(), test_loss_prediction_cast_is_float32_and_preserves_gradient(), test_tracker_ignores_ultralytics_final_eval_callback()
+Cohesion: 0.06
+Nodes (9): _atomic_json(), ComparableEarlyStopping, Float32DetectionLoss, _floating_tensors_to_float32(), YoloRunTracker, test_comparable_early_stopping_enforces_minimum_and_delta(), test_loss_prediction_cast_is_float32_and_preserves_gradient(), test_tracker_ignores_ultralytics_final_eval_callback() (+1 more)
 
 ### Community 63 - "test_exact_score_froc.py"
-Cohesion: 0.15
-Nodes (21): audit_exact_score_monotonicity(), conservative_frontier_bounds(), exact_score_froc_rows(), load_exact_froc_config(), frozen_exact_inputs(), frozen_exact_rows(), lower_floor_exact_inputs(), lower_floor_exact_rows() (+13 more)
+Cohesion: 0.18
+Nodes (19): audit_exact_score_monotonicity(), exact_score_froc_rows(), load_exact_froc_config(), select_exact_operating_points(), frozen_exact_inputs(), frozen_exact_rows(), lower_floor_exact_inputs(), lower_floor_exact_rows() (+11 more)
 
-### Community 64 - "yolo_data.py"
-Cohesion: 0.11
-Nodes (14): _atomic_json(), _atomic_text(), _balanced_smoke(), CocoImageRecord, _ensure_hardlink(), _image_manifest_sha256(), _label_text(), _load_coco() (+6 more)
+### Community 64 - "cohort_characteristics.py"
+Cohesion: 0.14
+Nodes (8): AgeObservation, _build_parser(), main(), ManifestColumns, _read_manifest(), _resolved_dataset_config(), _safe_relative_name(), _update_accumulator()
 
 ### Community 65 - "AUTHOR-CONFIRMED FACTS"
 Cohesion: 0.08
@@ -530,7 +537,7 @@ Cohesion: 0.08
 Nodes (25): 10. Explainability plan as delivered, 11. Statistical analysis, 12. Implementation sequence and completion status, 13. Actual repository architecture, 14. Final report mapping, 15. Major risks and mitigations, 1. Aim and research questions, 2. Definition of success (+17 more)
 
 ### Community 67 - "collections_abc"
-Cohesion: 0.18
+Cohesion: 0.19
 Nodes (7): gradcam_for_score(), gradcam_from_tensors(), resolve_module(), restore_letterboxed_heatmap(), test_gradcam_uses_global_average_gradient_weights(), test_letterbox_restoration_removes_centered_padding(), test_module_resolution_supports_attributes_and_indices()
 
 ### Community 68 - "load_pareto_points"
@@ -542,8 +549,8 @@ Cohesion: 0.08
 Nodes (23): 10. Statistical Analysis, 11.1 Accuracy and operating-point behavior, 11.2 Robustness and explanation evidence, 11.3 Scenario-specific recommendation, 11.4 Limitations and scope of claims, 11. Discussion, 12. Conclusions and Future Work, 1. Introduction (+15 more)
 
 ### Community 70 - "StrictModel"
-Cohesion: 0.08
-Nodes (10): ArtifactBinding, ComparisonSettings, FrozenEvaluationSettings, InputSettings, OutputSettings, ProtectionSettings, ReferenceCheckSettings, ScopeSettings (+2 more)
+Cohesion: 0.09
+Nodes (9): ArtifactBinding, ComparisonSettings, FrozenEvaluationSettings, InputSettings, OutputSettings, ProtectionSettings, ScopeSettings, SelectionSettings (+1 more)
 
 ### Community 72 - "BATCH 52 — Final Adversarial Q2 Submission Gate and PDF"
 Cohesion: 0.09
@@ -555,11 +562,11 @@ Nodes (21): 0. Role and Framing, 1. Dataset — Decision Required First, 2. Rese
 
 ### Community 74 - "ActivationCapture"
 Cohesion: 0.15
-Nodes (9): ActivationCapture, _detail_row(), _extract_reference_map(), _faster_reference_score(), _pil_to_tensor(), _run_detector(), _select_trained_reference(), shuffle_pixel_vectors() (+1 more)
+Nodes (8): ActivationCapture, _validate_feature(), _yolo_forward(), _extract_reference_map(), _faster_reference_score(), _pil_to_tensor(), _select_trained_reference(), _yolo_reference_score()
 
 ### Community 75 - "sha256_file"
-Cohesion: 0.19
-Nodes (21): _aggregate_boundaries(), _artifact(), build_parser(), main(), preflight(), _read_bundle(), _read_json(), _relative() (+13 more)
+Cohesion: 0.11
+Nodes (38): _aggregate_boundaries(), _artifact(), build_parser(), main(), preflight(), _read_bundle(), _read_json(), _relative() (+30 more)
 
 ### Community 76 - "BATCHES_V5_RESEARCH_REPAIR.md — Independent Audit Remediation, Statistical Clarification, and Manuscript Hardening"
 Cohesion: 0.10
@@ -578,12 +585,12 @@ Cohesion: 0.15
 Nodes (10): citation_keys(), main(), parse_bibliography(), literal(), token(), verify(), test_duplicate_doi_rejected_even_with_different_keys(), test_literal_fields_and_metric_notation() (+2 more)
 
 ### Community 80 - "load_faster_rcnn_config"
-Cohesion: 0.37
-Nodes (15): load_faster_rcnn_config(), _config_payload(), test_batch_size_outside_hardware_scope_is_rejected(), test_coco_minimum_score_must_match_model_output_threshold(), test_loader_persistence_settings_require_booleans(), test_non_amp_runtime_is_rejected(), test_output_artifact_paths_reject_project_escape(), test_path_escape_is_rejected() (+7 more)
+Cohesion: 0.32
+Nodes (17): load_faster_rcnn_config(), _config_payload(), test_batch_size_outside_hardware_scope_is_rejected(), test_coco_minimum_score_must_match_model_output_threshold(), test_loader_persistence_settings_require_booleans(), test_non_amp_runtime_is_rejected(), test_output_artifact_paths_reject_project_escape(), test_path_escape_is_rejected() (+9 more)
 
-### Community 81 - "Agreement"
-Cohesion: 0.15
-Nodes (9): Agreement, compare_predictions(), synchronize(), time_call(), prediction(), test_empty_prediction_parity_is_valid(), test_prediction_parity_allows_order_and_bounded_numerical_error(), test_prediction_parity_fails_on_scientifically_different_output() (+1 more)
+### Community 81 - "test_inference_timing.py"
+Cohesion: 0.06
+Nodes (32): Agreement, compare_predictions(), hardware_snapshot(), load_config(), main(), preflight(), render(), run_timing() (+24 more)
 
 ### Community 82 - "TASKS"
 Cohesion: 0.10
@@ -594,16 +601,16 @@ Cohesion: 0.10
 Nodes (20): BATCH 56 — Final Scientific-Concision and Positioning Pass, CENTRAL THESIS LOCK, COMPLETION, Discussion, Limitations, Methods, PREREQUISITE GATE, PURPOSE (+12 more)
 
 ### Community 84 - "yolo_reporting.py"
-Cohesion: 0.09
-Nodes (10): Historical boundary reconstruction and preservation, _finalize(), evaluate_yolo_checkpoint(), plot_yolo_training_curves(), _profile_tensor(), profile_yolo_checkpoint(), summarize_yolo_artifact(), _target() (+2 more)
+Cohesion: 0.08
+Nodes (9): Historical boundary reconstruction and preservation, ParameterLike, summarize_parameter_counts(), plot_yolo_training_curves(), _profile_tensor(), profile_yolo_checkpoint(), summarize_yolo_artifact(), _target() (+1 more)
 
-### Community 85 - "evaluate_box_attention"
-Cohesion: 0.18
-Nodes (8): BoxAttentionResult, evaluate_box_attention(), pixel_center_box_mask(), _validated_box(), _validated_heatmap(), test_box_mask_rejects_out_of_bounds_boxes(), test_energy_and_pointing_use_pixel_center_box_mask(), test_zero_energy_is_explicitly_invalid()
+### Community 85 - "dataclasses"
+Cohesion: 0.16
+Nodes (11): build_parser(), main(), configure_reproducibility(), _optional_torch(), ReproducibilityReport, seed_worker(), sample_random_values(), test_cli_smoke_emits_strict_json() (+3 more)
 
 ### Community 86 - "explainability/config.py"
-Cohesion: 0.09
-Nodes (14): DetectorLayerSettings, GradCamSettings, load_explainability_config(), MetricSettings, OutputSettings, QualitativeSettings, RuntimeSettings, StrictModel (+6 more)
+Cohesion: 0.13
+Nodes (7): DetectorLayerSettings, GradCamSettings, MetricSettings, OutputSettings, QualitativeSettings, RuntimeSettings, StrictModel
 
 ### Community 87 - "load_robustness_config"
 Cohesion: 0.13
@@ -621,9 +628,9 @@ Nodes (19): BATCH 53 — YOLO Numerical-Inference-Path Transport Sensitivity, CO
 Cohesion: 0.11
 Nodes (7): AnalysisSettings, DetectorSettings, InferenceSensitivityProposal, InputSettings, OutputSettings, PlotSettings, StrictModel
 
-### Community 91 - "benchmark_inference.py"
-Cohesion: 0.08
-Nodes (23): hardware_snapshot(), load_config(), main(), preflight(), render(), run_timing(), select_indices(), Subset (+15 more)
+### Community 91 - "StrictModel"
+Cohesion: 0.12
+Nodes (6): AnalysisSettings, HypotheticalLossSettings, InputSettings, OutputSettings, PlotSettings, StrictModel
 
 ### Community 92 - "StrictModel"
 Cohesion: 0.11
@@ -639,27 +646,27 @@ Nodes (18): BATCH 57 — Ethics and Consent Determination Packet, COMPLETION, Co
 
 ### Community 95 - "analyze_exact_score_froc.py"
 Cohesion: 0.12
-Nodes (9): aggregate_exact_frontier(), audit_selected_points_against_canonical_matcher(), build_run_reachability(), compare_historical_and_exact(), compare_prior_and_current_exact(), compare_prior_and_current_runs(), _sample_std(), select_exact_operating_points() (+1 more)
+Nodes (8): aggregate_exact_frontier(), audit_selected_points_against_canonical_matcher(), build_run_reachability(), compare_historical_and_exact(), compare_prior_and_current_exact(), compare_prior_and_current_runs(), _sample_std(), _selection_key()
 
 ### Community 96 - "Final adversarial submission audit"
 Cohesion: 0.11
 Nodes (18): ANALYSIS-SCOPE SUMMARY, AUTHOR ACTION REQUIRED, BLOCKING FAILURES, CLEAN-CHECKOUT CI STATUS, COMMANDS / TESTS EXECUTED, EXTERNAL FROC SUPPORT / CAP STATUS, Final adversarial submission audit, Final rendered PDF (+10 more)
 
-### Community 97 - "configure_reproducibility"
-Cohesion: 0.21
-Nodes (9): configure_reproducibility(), _optional_torch(), ReproducibilityReport, seed_worker(), sample_random_values(), test_cli_smoke_emits_strict_json(), test_invalid_seed_is_rejected(), test_reseeding_repeats_python_and_numpy_streams() (+1 more)
+### Community 97 - ".budgets"
+Cohesion: 0.10
+Nodes (5): APCache, bootstrap(), validate_weights(), test_bootstrap_is_deterministic_and_propagates_undefined_selected_runs(), test_bootstrap_shares_observations_but_not_same_number_runs()
 
-### Community 98 - "_make_groups"
-Cohesion: 0.11
-Nodes (8): _balanced_group_order(), _group_count(), _make_groups(), PatientGroup, _record_distribution(), _record_field(), _select_groups_by_size(), _stable_key()
+### Community 98 - "prepare.py"
+Cohesion: 0.09
+Nodes (13): _allocate_exact_counts(), _balanced_group_order(), _convert_one_dicom(), main(), PatientGroup, _read_csv_rows(), _require_bool(), _require_seed() (+5 more)
 
 ### Community 99 - "plot_raincloud_metrics.py"
 Cohesion: 0.07
 Nodes (27): _assert_close(), build_parser(), DetectorConfig, _finite_or_none(), InputConfig, load_and_audit_observations(), load_config(), main() (+19 more)
 
-### Community 100 - "Grad-CAM Sensitivity Controls (v2)"
-Cohesion: 0.12
-Nodes (15): Explainability Analysis, Grad-CAM protocol, Qualitative selection and caveats, Quantitative results, Reproduction, Scope and provenance, Where are the models looking?, Cascading model-parameter randomization (+7 more)
+### Community 100 - "ExperimentConfig"
+Cohesion: 0.21
+Nodes (10): assert_run_allowed(), canonical_json(), config_fingerprint(), ExperimentConfig, load_experiment(), smoke_payload(), test_fingerprint_is_stable_and_json_is_strict(), test_invalid_protocol_is_rejected() (+2 more)
 
 ### Community 101 - "Review Remediation Audit"
 Cohesion: 0.12
@@ -669,13 +676,13 @@ Nodes (16): Adjudication summary, BibTeX citations used in repository Markdown, 
 Cohesion: 0.14
 Nodes (14): ANALYSIS-SCOPE SUMMARY, AUTHOR ACTION REQUIRED, BLOCKING FAILURES, CLEAN-CHECKOUT CI STATUS, COMMANDS / TESTS EXECUTED, EXTERNAL FROC SUPPORT / CAP STATUS, FINAL STATUS, FINAL SUBMISSION AUDIT (+6 more)
 
-### Community 103 - "cohort_characteristics.py"
-Cohesion: 0.07
-Nodes (30): AgeObservation, _aggregate_row(), AggregateAccumulator, _atomic_csv(), _atomic_json(), _build_parser(), CohortCharacteristicsConfig, _dicom_value_and_vr() (+22 more)
+### Community 103 - "test_cohort_characteristics.py"
+Cohesion: 0.21
+Nodes (10): load_cohort_characteristics_config(), parse_patient_age(), resolve_dicom_root(), test_committed_outputs_are_aggregate_only_and_match_the_immutable_total(), test_config_freezes_the_immutable_5000_study_cohort(), test_environment_dicom_root_overrides_dataset_config(), test_missing_dicom_root_requests_the_named_environment_variable(), test_patient_age_parser_distinguishes_standard_units_and_dataset_caveat() (+2 more)
 
-### Community 104 - "YoloConfig"
-Cohesion: 0.17
-Nodes (7): load_yolo_config(), YoloConfig, build_ultralytics_train_args(), test_real_yolo_config_pins_matched_hardware_and_augmentation(), test_yolo_config_rejects_protocol_drift(), test_yolo_config_rejects_unknown_keys(), test_ultralytics_arguments_explicitly_disable_augmentation_and_match_batch()
+### Community 104 - "DecisionCurveConfig"
+Cohesion: 0.11
+Nodes (10): DecisionCurveConfig, load_decision_curve_config(), main(), _parse_args(), AnalysisSettings, HistoricalArchive, InputSettings, OutputSettings (+2 more)
 
 ### Community 105 - "GLOBAL RULES FOR EVERY BATCH"
 Cohesion: 0.12
@@ -697,13 +704,13 @@ Nodes (15): Citation, Data availability, Documentation and infrastructure change
 Cohesion: 0.13
 Nodes (5): AnalysisSettings, InputSettings, OutputSettings, PlotSettings, StrictModel
 
-### Community 110 - "maximum_scores_by_image"
-Cohesion: 0.33
-Nodes (3): maximum_scores_by_image(), net_benefit(), treat_all_net_benefit()
+### Community 110 - "Confidence-Threshold and Precision-Recall Analysis"
+Cohesion: 0.20
+Nodes (9): Artifacts and reproduction, Confidence-Threshold and Precision-Recall Analysis, Fixed operating targets, Historical n=3 analysis and n=5 sensitivity, Plain finding, Post-hoc n=5 validation threshold-selection sensitivity, Protocol, Threshold behavior (+1 more)
 
-### Community 111 - "yaml"
-Cohesion: 0.10
-Nodes (10): main(), sha256(), binding(), main(), main(), number(), render(), load_config() (+2 more)
+### Community 111 - "os"
+Cohesion: 0.09
+Nodes (15): main(), sha256(), _atomic_json(), _atomic_text(), _balanced_smoke(), CocoImageRecord, _ensure_hardlink(), _image_manifest_sha256() (+7 more)
 
 ### Community 112 - "21. FINAL AUDIT DOCUMENT"
 Cohesion: 0.13
@@ -725,16 +732,16 @@ Nodes (7): AgeSettings, CategoricalTagSettings, ExpectedCohort, ExpectedCounts, 
 Cohesion: 0.14
 Nodes (14): BATCH 54 — Publication Study/Data-Flow Figure, COMPLETION, External, FIGURE DESIGN, IMPLEMENTATION, Left / upper branch — RSNA internal development/testing, MANUSCRIPT INTEGRATION, PREREQUISITE GATE (+6 more)
 
-### Community 118 - "test_raw_score_utility.py"
-Cohesion: 0.31
-Nodes (5): maximum_scores_by_image(), raw_score_utility_index(), test_exam_marker_is_maximum_emitted_box_confidence(), test_project_config_declares_nonstandard_interpretation_and_archives(), test_raw_score_utility_matches_historical_hand_calculation()
+### Community 118 - "csv"
+Cohesion: 0.36
+Nodes (9): load_and_audit_records(), load_dataset_config(), _base_config(), test_audit_reports_invalid_and_duplicate_boxes(), test_coco_conversion_preserves_boxes_and_negative_images(), test_preparation_is_deterministic_exact_and_patient_disjoint(), test_preparation_rejects_mismatched_official_mapping_hash(), _write_clean_fixture() (+1 more)
 
 ### Community 119 - "BATCHES_V7_Q2_VINDR.md"
 Cohesion: 0.11
 Nodes (18): BATCH 44 — RSNA Cohort Characteristics, BATCH 45 — Standardized End-to-End Inference Timing, BATCHES_V7_Q2_VINDR.md — Q2 Manuscript Consolidation and VinDr-CXR External Transportability, COMPLETION, COMPLETION, CURRENT CANONICAL HIERARCHY TO VERIFY IN BATCH 41, EXPLICIT V7 NON-GOALS, FINAL V7 PUBLICATION TARGET (+10 more)
 
 ### Community 120 - "Literature Review"
-Cohesion: 0.15
+Cohesion: 0.17
 Nodes (12): Alternatives and planned fallback order, Common-corruption robustness, Comparability gap and contribution of the present study, Detector selection: Ultralytics YOLO11s, Explainability for object detection, Grad-CAM, Implications for the experimental design, Literature Review (+4 more)
 
 ### Community 121 - "Post-hoc external generalization results v1"
@@ -745,9 +752,9 @@ Nodes (8): Candidate availability (assignment ignored), Candidate support, Cross
 Cohesion: 0.15
 Nodes (6): DiagnosticSettings, InputSettings, MetadataContract, OutputSettings, RuntimeSettings, StrictModel
 
-### Community 123 - "test_validation_threshold_sensitivity.py"
-Cohesion: 0.20
-Nodes (9): classify_margin_change(), load_sensitivity_config(), require_validation_selection(), validate_output_isolation(), test_config_preserves_historical_rule_and_declares_posthoc_scope(), test_historical_artifact_overwrite_is_rejected(), test_margin_change_classification_covers_all_outcomes(), test_seed_271_exclusion_is_rejected() (+1 more)
+### Community 123 - "generate_cohort_characteristics"
+Cohesion: 0.18
+Nodes (7): _atomic_csv(), _atomic_json(), CohortCharacteristicsConfig, _dicom_value_and_vr(), generate_cohort_characteristics(), _immutable_gate(), sha256_file()
 
 ### Community 124 - "BATCHES.md — Session-by-Session Prompts"
 Cohesion: 0.18
@@ -794,8 +801,8 @@ Cohesion: 0.18
 Nodes (4): AnalysisSettings, InputSettings, OutputSettings, StrictModel
 
 ### Community 135 - "load_phase5_config"
-Cohesion: 0.19
-Nodes (15): validate_protocol_contract(), aggregate_rows(), load_phase5_config(), _aggregation_row(), test_aggregation_rejects_invalid_missingness_contract(), test_aggregation_rejects_partially_defined_conditional_metrics(), test_aggregation_rejects_undefined_reason_that_disagrees_with_counts(), test_aggregation_retains_all_attempts_but_uses_defined_conditional_n() (+7 more)
+Cohesion: 0.33
+Nodes (8): validate_protocol_contract(), load_phase5_config(), test_archived_n3_config_remains_loadable_for_frozen_downstream_analyses(), test_phase5_config_declares_complete_five_seed_grid(), test_approved_lower_floor_config_changes_only_candidate_collection_floor(), test_approved_v4_floor_changes_only_candidate_collection_floor_from_v3(), test_lower_floor_contract_rejects_a_matching_change(), test_next_proposed_floor_is_detector_neutral_and_approval_gated()
 
 ### Community 136 - "BATCHES_V2.md — Research Paper Track"
 Cohesion: 0.20
@@ -821,13 +828,17 @@ Nodes (9): Annotation quality, Balance and task definition, Dataset choice, Deci
 Cohesion: 0.20
 Nodes (10): 1. Scientific question and prerequisite gate, 2. Release, access, provenance and sharing, 3. Population and strict target ontology, 4. Frozen DICOM and model execution contract, 5. Endpoints and candidate support, 6. Frozen threshold transport and score summaries, 7. Observational unit, aggregation and uncertainty, 8. Planned outputs and prohibited tuning (+2 more)
 
-### Community 142 - "math"
-Cohesion: 0.12
-Nodes (6): ParameterLike, _percentile(), _require_finite_non_negative_float(), summarize_inference_timings(), summarize_parameter_counts(), test_parameter_and_raw_inference_timing_summaries()
+### Community 142 - "data_audit.py"
+Cohesion: 0.49
+Nodes (5): audit_yolo_dataset(), _index_files(), _issue(), _parse_label(), _sha256()
 
 ### Community 143 - "3. Materials and Methods"
 Cohesion: 0.18
 Nodes (11): 3.1 Dataset, target, and patient-disjoint split, 3.2 Detector pipelines and controlled training factors, 3.3 Five retained runs and common evaluation, 3.4 Operating-point protocols and exact-score FROC, 3.5 Frozen VinDr external testing, 3.6 Estimands and uncertainty, 3.7 Standardized implementation timing, 3.8 Secondary analyses (+3 more)
+
+### Community 144 - "_add_issue"
+Cohesion: 0.25
+Nodes (3): _add_issue(), AuditIssue, _load_patient_mapping()
 
 ### Community 145 - "10. Give me a reviewer-style final report"
 Cohesion: 0.22
@@ -842,8 +853,8 @@ Cohesion: 0.22
 Nodes (8): Definition and verified implementation, Descriptive finding, Detection-Confidence Calibration, Population and decision-analysis boundary, Predeclared descriptive sensitivity, Primary support and occupancy, Reliability-diagram scope, Versioned artifacts and reproduction
 
 ### Community 149 - "map_similarity_metrics"
-Cohesion: 0.21
-Nodes (8): map_similarity_metrics(), normalize_map_for_similarity(), pearson_map_correlation(), _pearson_values(), spearman_map_correlation(), ssim_map_similarity(), test_pearson_map_correlation_handles_identity_inverse_and_constant(), test_similarity_metrics_handle_rank_structure_ssim_and_degenerate_maps()
+Cohesion: 0.26
+Nodes (6): map_similarity_metrics(), normalize_map_for_similarity(), pearson_map_correlation(), _pearson_values(), spearman_map_correlation(), ssim_map_similarity()
 
 ### Community 150 - "Research Question and Hypotheses"
 Cohesion: 0.22
@@ -890,11 +901,11 @@ Cohesion: 0.25
 Nodes (7): [1.0.0], [2.0.0] — Research Artifact Release, Changelog, Documentation, Infrastructure, Reproducibility and verification, Scientific analysis
 
 ### Community 161 - "Post-hoc external generalization v1 — execution and verification"
-Cohesion: 0.40
-Nodes (5): Evidence and preservation, Executed commands and outcomes, Figures, manuscript, privacy and remaining work, Implementation corrections and preserved attempts, Post-hoc external generalization v1 — execution and verification
+Cohesion: 0.29
+Nodes (7): Evidence and preservation, Executed commands and outcomes, Figures, manuscript, privacy and remaining work, Implementation corrections and preserved attempts, Post-hoc external generalization v1 — execution and verification, Publication gate, Subsequent PDF follow-up — 2026-10-29
 
 ### Community 162 - "Exploratory Raw-Score Threshold Utility/Sensitivity (Non-Standard DCA)"
-Cohesion: 0.22
+Cohesion: 0.25
 Nodes (8): Exploratory Raw-Score Threshold Utility/Sensitivity (Non-Standard DCA), Method references, Population and prevalence boundary, Preserved and relabeled artifacts, Reproduction, Status and corrective decision, Verified historical construction, Why probability-based salvage was not performed
 
 ### Community 163 - "Decision log"
@@ -902,8 +913,8 @@ Cohesion: 0.22
 Nodes (9): D-016 — Matched decoded-host timing v1 supersedes primary asymmetric timing, D-017 — Freeze VinDr-CXR external testing v1 before performance, D-018 — Retain complete frozen VinDr external inference and adverse results, D-020 — Integrate frozen external evidence and preserve the verification boundary, D-021 — Audit the final science and derive the author-review article, D-022 — Incorporate supplied author declarations and preserve the audited snapshot, D-023 — Retain numerical-path harmonisation as secondary sensitivity, D-024 — Post-hoc external generalization diagnostics (2026-10-29) (+1 more)
 
 ### Community 164 - "Final submission audit and author-declaration follow-up"
-Cohesion: 0.25
-Nodes (8): 2026-09-27 declaration wording and PDF refresh, Final submission audit and author-declaration follow-up, Historical author-review record: 2026-09-25, PDF inspection at 2026-09-25, Remaining author/submission actions, Repository and author state at 2026-09-25, Scientific audit and preserved evidence, Verification and reproducibility at 2026-09-25
+Cohesion: 0.22
+Nodes (9): 2026-09-27 declaration wording and PDF refresh, 2026-10-29 post-hoc PDF refresh and visual review, Final submission audit and author-declaration follow-up, Historical author-review record: 2026-09-25, PDF inspection at 2026-09-25, Remaining author/submission actions, Repository and author state at 2026-09-25, Scientific audit and preserved evidence (+1 more)
 
 ### Community 165 - "Hypothesis Traceability"
 Cohesion: 0.25
@@ -957,11 +968,15 @@ Nodes (6): BATCH 48 — Build and Validate the VinDr External Adapter, COMPLETIO
 Cohesion: 0.33
 Nodes (5): Acquire and prepare, Credentials and competition access, Dataset workspace, Locally inspected source files, Selected source
 
-### Community 179 - "VinDr-CXR adapter preflight — Batch 48"
-Cohesion: 0.33
-Nodes (6): Actual DICOM semantics and preprocessing, Cohort and annotation conversion, Frozen evaluator contract, Prerequisite and publication boundaries, Verification and review gate, VinDr-CXR adapter preflight — Batch 48
+### Community 179 - "_aggregate_row"
+Cohesion: 0.25
+Nodes (5): _aggregate_row(), AggregateAccumulator, MetadataSettings, _percent(), test_aggregate_row_contains_counts_percentages_and_no_identifier_fields()
 
-### Community 180 - "Frozen VinDr-CXR inference — Batch 49"
+### Community 180 - "Accuracy-Efficiency Pareto Analysis"
+Cohesion: 0.20
+Nodes (9): (a) mAP@0.5:0.95 versus FPS, Accuracy-Efficiency Pareto Analysis, (b) Recall versus latency, (c) mAP@0.5:0.95 versus parameters, (d) Recall versus estimated GFLOPs, Five-run sensitivity and aggregation definition, Historical n=3 scope and n=5 sensitivity, Protocol and dominance rule (+1 more)
+
+### Community 181 - "Frozen VinDr-CXR inference — Batch 49"
 Cohesion: 0.33
 Nodes (6): Evidence and replay, Frozen VinDr-CXR inference — Batch 49, Interpretation boundaries, Observed findings and adverse results, Prerequisite and implementation checks, Preserved initial implementation failure
 
@@ -969,17 +984,21 @@ Nodes (6): Evidence and replay, Frozen VinDr-CXR inference — Batch 49, Interpr
 Cohesion: 0.33
 Nodes (6): Candidate agreement, Completed result and interpretation, Frozen design and execution gate, Reproduction, Verification and review gate, YOLO numerical inference-path sensitivity, v1
 
-### Community 185 - "StrictModel"
-Cohesion: 0.15
-Nodes (4): InputSettings, OutputSettings, SelectionSettings, StrictModel
+### Community 184 - "Free-Response ROC Analysis"
+Cohesion: 0.22
+Nodes (8): Artifacts and reproduction, Current interpretation, Exact-score method and endpoint behavior, Free-Response ROC Analysis, Historical-grid reproduction and fixed protocol, Historical grid versus approved lower-floor exact-score frontier, Residual candidate-floor boundary and conservative bound, Scientific value of another lower-floor run
 
-### Community 186 - "StrictModel"
-Cohesion: 0.13
-Nodes (5): InputSettings, OutputSettings, PlotSettings, StrictModel, SweepSettings
+### Community 186 - "test_raw_score_utility.py"
+Cohesion: 0.31
+Nodes (5): maximum_scores_by_image(), raw_score_utility_index(), test_exam_marker_is_maximum_emitted_box_confidence(), test_project_config_declares_nonstandard_interpretation_and_archives(), test_raw_score_utility_matches_historical_hand_calculation()
 
 ### Community 187 - "1. Audit four specific scientific interfaces"
 Cohesion: 0.40
 Nodes (5): 1. Audit four specific scientific interfaces, A. COCO AP / prediction-floor semantics, B. FROC lower-bound behavior, C. Compute profiling boundary, D. D-ECE interpretation
+
+### Community 188 - "ExamRecord"
+Cohesion: 0.18
+Nodes (6): AuditResult, ExamRecord, _group_count(), _make_groups(), _record_distribution(), _record_field()
 
 ### Community 189 - "SCIENTIFIC INVARIANTS"
 Cohesion: 0.40
@@ -989,9 +1008,21 @@ Nodes (5): External ontology, Historical analysis integrity, Run integrity, SCIE
 Cohesion: 0.40
 Nodes (5): A1. RELEASE MODEL, A2. RELEASE METADATA AUDIT, A3. FINAL RELEASE CHECKLIST, A4. RELEASE-IDENTIFIER GUARD, PART A — IMMUTABLE SUBMISSION RELEASE PREPARATION
 
+### Community 191 - "aggregate_rows"
+Cohesion: 0.31
+Nodes (7): aggregate_rows(), _aggregation_row(), test_aggregation_rejects_invalid_missingness_contract(), test_aggregation_rejects_partially_defined_conditional_metrics(), test_aggregation_rejects_undefined_reason_that_disagrees_with_counts(), test_aggregation_retains_all_attempts_but_uses_defined_conditional_n(), test_aggregation_uses_sample_standard_deviation()
+
+### Community 192 - "test_data_audit.py"
+Cohesion: 0.61
+Nodes (6): add_case(), complete_layout(), test_audit_cli_returns_machine_readable_report(), test_clean_dataset_produces_deterministic_manifest(), test_invalid_annotation_and_cross_split_duplicate_fail_audit(), test_missing_label_is_visible_and_orphan_label_is_an_error()
+
 ### Community 193 - "Research audit: external generalization v1"
 Cohesion: 0.50
 Nodes (4): Bugs distinguished from limitations, Confirmed prior analyses and scientific limitations, Executable work and remaining prerequisites, Research audit: external generalization v1
+
+### Community 196 - "VinDr-CXR adapter preflight — Batch 48"
+Cohesion: 0.33
+Nodes (6): Actual DICOM semantics and preprocessing, Cohort and annotation conversion, Frozen evaluator contract, Prerequisite and publication boundaries, Verification and review gate, VinDr-CXR adapter preflight — Batch 48
 
 ### Community 198 - "D-002 — Descope Track B and reframe the research contribution"
 Cohesion: 0.50
@@ -1053,29 +1084,41 @@ Nodes (4): Consequences, Context, D-003 — Decline to revive a Track-B-style na
 Cohesion: 0.50
 Nodes (4): Context, D-001 — Two-track detector comparison design, Outcome, Proposal
 
+### Community 213 - "typing"
+Cohesion: 0.50
+Nodes (3): render(), number(), table()
+
+### Community 214 - "Standardized inference timing v1"
+Cohesion: 0.29
+Nodes (7): Accepted laptop measurements, Claim limits and artifact provenance, Matched boundary and configuration, Parameter counts and incomplete operation profiles, Prediction agreement and timing statistics, Reporting hardware and reproducibility, Standardized inference timing v1
+
 ### Community 215 - "D-019 — Separate observed ranking transport from frozen operating-point transport"
 Cohesion: 0.67
 Nodes (3): Context and decision, D-019 — Separate observed ranking transport from frozen operating-point transport, Interpretation and boundaries
 
+### Community 218 - "digest"
+Cohesion: 0.40
+Nodes (4): digest(), main(), add(), binding()
+
 ## Knowledge Gaps
 - **1 isolated node(s):** `meddet-benchmark`
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 2378 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **27 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 2381 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **24 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `ImagePrediction` connect `evaluation.py` to `analyze_yolo_numerical_path.py`, `threshold_calibration.py`, `run_statistics.py`, `calibration.py`, `load_phase5_config`, `test_prepare_vindr.py`, `paired.py`, `test_external_generalization.py`, `sha256_file`, `test_transportability.py`, `evaluate_threshold_sweep.py`, `run_vindr_statistics.py`, `run_explainability.py`, `evaluate_threshold_selection.py`, `run_robustness.py`, `meddet_benchmark/config.py`, `yaml`, `os`, `evaluate_vindr_external.py`, `evaluate_coco`, `Any`, `test_exact_score_froc.py`, `sha256_file`, `yolo_reporting.py`, `explainability/config.py`, `analyze_exact_score_froc.py`, `Unified quantitative comparison`?**
-  _High betweenness centrality (0.042) - this node is a cross-community bridge._
+- **Why does `ImagePrediction` connect `ImagePrediction` to `analyze_yolo_numerical_path.py`, `threshold_calibration.py`, `run_statistics.py`, `calibration.py`, `test_prepare_vindr.py`, `analyze_validation_threshold_sensitivity.py`, `paired.py`, `test_external_generalization.py`, `selection.py`, `analyze_yolo_seed_stability.py`, `evaluate_threshold_sweep.py`, `run_explainability.py`, `test_evaluation.py`, `evaluate_threshold_selection.py`, `run_robustness.py`, `os`, `evaluate_vindr_external.py`, `Any`, `test_exact_score_froc.py`, `sha256_file`, `yolo_reporting.py`, `analyze_exact_score_froc.py`, `Unified quantitative comparison`?**
+  _High betweenness centrality (0.050) - this node is a cross-community bridge._
 - **Are the 34 inferred relationships involving `ImagePrediction` (e.g. with `One prediction-to-metric path` and `exact_score_froc_rows()`) actually correct?**
   _`ImagePrediction` has 34 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `meddet-benchmark` to the rest of the system?**
   _1 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `hashlib` be split into smaller, more focused modules?**
-  _Cohesion score 0.09044289044289044 - nodes in this community are weakly interconnected._
-- **Why does `Standardized inference timing v1` connect `COMPUTE_TIMING.md` to `yolo_reporting.py`?**
-  _High betweenness centrality (0.033) - this node is a cross-community bridge._
 - **Should `analyze_yolo_numerical_path.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
-- **Why does `Historical boundary reconstruction and preservation` connect `yolo_reporting.py` to `COMPUTE_TIMING.md`, `train_faster_rcnn.py`?**
-  _High betweenness centrality (0.032) - this node is a cross-community bridge._
+  _Cohesion score 0.06582952815829528 - nodes in this community are weakly interconnected._
+- **Why does `One prediction-to-metric path` connect `Unified quantitative comparison` to `ImagePrediction`?**
+  _High betweenness centrality (0.036) - this node is a cross-community bridge._
+- **Should `CocoDetectionDataset` be split into smaller, more focused modules?**
+  _Cohesion score 0.057181942544459644 - nodes in this community are weakly interconnected._
+- **Should `threshold_calibration.py` be split into smaller, more focused modules?**
+  _Cohesion score 0.07660455486542443 - nodes in this community are weakly interconnected._

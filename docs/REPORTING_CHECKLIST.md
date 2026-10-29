@@ -3,8 +3,10 @@
 Audit date: 2026-09-25 (author declarations follow-up; scientific audit 2026-09-24)
 
 Updated for the internal/external manuscript with supplied author declarations.
-Current manuscript SHA-256: `fc38d6e3a819acdcb05647a2a18e2b0abc5615b9f39f637dbb2cb2c83b959910`.
-The [submission audit](FINAL_SUBMISSION_AUDIT.md) records the 16-page PDF review;
+Manuscript/PDF pointers refreshed 2026-10-29; the earlier crosswalk rows below
+retain their original audit scope. Current manuscript SHA-256:
+`4f74655627ed83c894d7275e0f7d667dc0dbeb2415490be34037f4829429363f`.
+The [submission audit](FINAL_SUBMISSION_AUDIT.md) records the 19-page PDF review;
 the journal's official checklist and final submission pagination remain author action.
 The paper separates ranking, operating rules, training variability, observed
 FROC support, implementation timing and cross-dataset transportability. All five

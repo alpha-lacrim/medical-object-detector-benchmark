@@ -6,9 +6,11 @@
 [README commands](../README.md#post-hoc-external-generalization-v1) cover the
 executed CPU analysis and exact 2,000-draw replay. It binds 138 inputs and adds
 18 aggregate artifacts while preserving the previous 88 publication entries.
-Current Markdown has 468 numerical bindings and 40 guards. The PDF and its
-receipts remain the earlier reviewed snapshot; the new numerical trace follows
-Markdown. Full replay requires authorized private annotations, predictions,
+Current Markdown has 468 numerical bindings and 40 guards. The subsequent
+2026-10-29 PDF refresh includes these analyses; all 19 pages were visually
+reviewed and exact build/QA receipts updated. The three-pass TeX build and
+reference-entry pagination are documented in the submission audit. The numerical
+trace follows Markdown. Full replay requires authorized private annotations, predictions,
 checkpoints and saved draws; portable tests do not substitute for that replay.
 Earlier dated counts below describe their own snapshots.
 
@@ -28,13 +30,13 @@ PDF links use the completed numerical-path sensitivity commit
 **Batch 52 audit and author follow-up:** The [current record](FINAL_SUBMISSION_AUDIT.md)
 links the [preserved scientific gate](FINAL_SUBMISSION_AUDIT_2026-09-24.md), including
 a fresh portable checkout and authorized source/metric/bootstrap replay. The
-[complete numerical trace](SUBMISSION_NUMERICAL_TRACE.csv) now exports 427 bindings
+[complete numerical trace](SUBMISSION_NUMERICAL_TRACE.csv) then exported 427 bindings
 with exact locators and rounding. Build commands are in
 [README](../README.md#final-submission-audit-and-article-pdf-batch-52).
 The article PDF derives only from `report/paper_draft.md`; its separate document
 tools and hash receipt do not change the scientific lock or make private
 checkpoints/data publicly available. Supplied author declarations are incorporated
-in the current 16-page PDF; exact prior reviewed bytes are archived under
+in that 16-page PDF snapshot; exact prior reviewed bytes are archived under
 `report/provenance/batch52/`. The authors have chosen to keep all ten trained
 checkpoint binaries unpublished at initial submission.
 

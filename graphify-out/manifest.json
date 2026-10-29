@@ -24,15 +24,15 @@
     "semantic_hash": ""
   },
   "report/paper_build_manifest.json": {
-    "mtime": 1790464415.0019596,
-    "seen": 1793261255.2461512,
-    "ast_hash": "a82832f5c12a15d41ed60def0c35a6ce",
+    "mtime": 1793282712.07272,
+    "seen": 1793282998.9936373,
+    "ast_hash": "899bde8c4eb44eeca346447566793725",
     "semantic_hash": ""
   },
   "report/paper_pdf_qa.json": {
-    "mtime": 1790464415.0019596,
-    "seen": 1793261255.2461512,
-    "ast_hash": "99bd541d7f422d0ce308398f6ffd852b",
+    "mtime": 1793282712.5692399,
+    "seen": 1793282998.9936373,
+    "ast_hash": "f73d0d110e251de0b9dd25b6196c2163",
     "semantic_hash": ""
   },
   "report/pdf/layout.lua": {
@@ -1260,9 +1260,9 @@
     "semantic_hash": ""
   },
   "scripts/build_paper_pdf.py": {
-    "mtime": 1790263891.8950992,
-    "seen": 1793261255.2461512,
-    "ast_hash": "1f9019fddc6dc8ba40466d6e0a42bae9",
+    "mtime": 1793282701.0842223,
+    "seen": 1793282999.0131562,
+    "ast_hash": "6897fae48349fd26b2c9f9346f106b45",
     "semantic_hash": ""
   },
   "scripts/build_publication_manifest.py": {
@@ -2160,9 +2160,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1793279607.5069966,
-    "seen": 1793279920.423072,
-    "ast_hash": "8b6ae6821ce1799851bcb598cad5fa6a",
+    "mtime": 1793284140.6128113,
+    "seen": 1793284888.7849894,
+    "ast_hash": "b40d84b5ea93730b1c29fdb8c85ff62e",
     "semantic_hash": ""
   },
   "RELEASE_NOTES_v2.0.0.md": {
@@ -2328,9 +2328,9 @@
     "semantic_hash": ""
   },
   "configs/paper_build.yaml": {
-    "mtime": 1790464315.5691981,
-    "seen": 1793261255.2471507,
-    "ast_hash": "ab6735e43e760f1e20631783bdf23b76",
+    "mtime": 1793282701.0842223,
+    "seen": 1793282999.0301583,
+    "ast_hash": "7682a539f334de656289d25e3092e5c8",
     "semantic_hash": ""
   },
   "configs/pareto.yaml": {
@@ -2550,9 +2550,9 @@
     "semantic_hash": ""
   },
   "docs/DECISION_LOG.md": {
-    "mtime": 1793279607.507998,
-    "seen": 1793279920.4289038,
-    "ast_hash": "5fb07a10b62213db88d24b081fc415d3",
+    "mtime": 1793284874.5113964,
+    "seen": 1793284888.79192,
+    "ast_hash": "e121cd1b59ac730987b2273806e5c85c",
     "semantic_hash": ""
   },
   "docs/EXPLAINABILITY.md": {
@@ -2574,9 +2574,9 @@
     "semantic_hash": ""
   },
   "docs/FINAL_SUBMISSION_AUDIT.md": {
-    "mtime": 1793279539.0900464,
-    "seen": 1793279920.4294703,
-    "ast_hash": "45385047a5283c54eb9b1b64c03db2ed",
+    "mtime": 1793284874.5103955,
+    "seen": 1793284888.79192,
+    "ast_hash": "cdb86a4942081811ba2438e4906cc63a",
     "semantic_hash": ""
   },
   "docs/FINAL_SUBMISSION_AUDIT_2026-09-01.md": {
@@ -2664,15 +2664,15 @@
     "semantic_hash": ""
   },
   "docs/REPORTING_CHECKLIST.md": {
-    "mtime": 1790464315.5669923,
-    "seen": 1793261255.2471507,
-    "ast_hash": "2bc2ac347e9f9f940c75eaf4819d805f",
+    "mtime": 1793284140.6148095,
+    "seen": 1793284888.7939208,
+    "ast_hash": "a90475efc63c7c5439092b58c4e24072",
     "semantic_hash": ""
   },
   "docs/REPRODUCIBILITY.md": {
-    "mtime": 1793279539.091046,
-    "seen": 1793279920.4306664,
-    "ast_hash": "fb02e74ef6bbe0198ac34d51a45cf5db",
+    "mtime": 1793284874.5103955,
+    "seen": 1793284888.7939208,
+    "ast_hash": "f415a9cec5cfdc1e21b4458ec9e18184",
     "semantic_hash": ""
   },
   "docs/REVIEW_REMEDIATION_AUDIT.md": {
@@ -3282,9 +3282,9 @@
     "semantic_hash": ""
   },
   "output/pdf/rsna_vindr_article.pdf": {
-    "mtime": 1790464333.062492,
-    "seen": 1793261255.2471507,
-    "ast_hash": "3028a2a9518531caa80c1b5ab0ec93c7",
+    "mtime": 1793282711.7054625,
+    "seen": 1793282999.045158,
+    "ast_hash": "32cd10bbd48a07216e634b8c36b2fb08",
     "semantic_hash": ""
   },
   "report/A_Controlled_Comparative_Study___article.pdf": {
@@ -3618,9 +3618,9 @@
     "semantic_hash": ""
   },
   "docs/POSTHOC_EXTERNAL_GENERALIZATION_VERIFICATION.md": {
-    "mtime": 1793280059.39332,
-    "seen": 1793280172.1431541,
-    "ast_hash": "6973c286867ccdd561c5c0eb65d6ddab",
+    "mtime": 1793284140.6148095,
+    "seen": 1793284888.7939208,
+    "ast_hash": "4451e2f5ba9ad1b2f1102e1bc8918d97",
     "semantic_hash": ""
   }
 }

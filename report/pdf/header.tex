@@ -14,5 +14,6 @@
 \setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.15}
 \AtBeginEnvironment{longtable}{\small}
-\AtBeginEnvironment{CSLReferences}{\small}
+% Keep each bibliography entry together across page boundaries.
+\AtBeginEnvironment{CSLReferences}{\small\interlinepenalty=10000}
 \apptocmd{\CSLReferences}{\setlength{\itemsep}{0.7\baselineskip}}{}{}

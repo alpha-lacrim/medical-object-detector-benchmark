@@ -1182,9 +1182,9 @@ author-declaration update and links the preserved [full scientific gate](docs/FI
 exact-HEAD Windows/Ubuntu CI, fresh public checkout, authorized replay,
 21 analysis scopes and a 51-value review selection. The
 [complete numerical trace](docs/SUBMISSION_NUMERICAL_TRACE.csv) contains all
-427 verified bindings with current manuscript lines. Supplied author details,
+468 verified bindings with current manuscript lines. Supplied author details,
 declarations and the Batch 53 sensitivity are incorporated into
-the 16-page review PDF. The two pending declaration items use factual status
+the refreshed 19-page review PDF, including the post-hoc analyses. The two pending declaration items use factual status
 statements rather than drafting instructions.
 Ethics/consent applicability, the exact submission release and journal decisions
 remain unresolved; the disposition is **ready for author review**. The authors
@@ -1210,15 +1210,16 @@ unchanged), with pdfLaTeX/TeX Live, Latin Modern fonts and Poppler available on 
 uv venv --python .venv/Scripts/python.exe .tools/paper-build
 uv pip install --python .tools/paper-build/Scripts/python.exe -r report/pdf/requirements.txt
 & .tools/paper-build/Scripts/python.exe -m scripts.build_paper_pdf --config configs/paper_build.yaml
-& .tools/paper-build/Scripts/python.exe -m scripts.check_paper_pdf --pdf output/pdf/rsna_vindr_article.pdf --output report/paper_pdf_qa.json --text tmp/pdfs/batch52_article/extracted-final.txt
-pdftoppm -r 110 -png output/pdf/rsna_vindr_article.pdf tmp/pdfs/batch52_article/page
+& .tools/paper-build/Scripts/python.exe -m scripts.check_paper_pdf --pdf output/pdf/rsna_vindr_article.pdf --output report/paper_pdf_qa.json --text tmp/pdfs/posthoc-generalization-20261029/final/extracted-final.txt
+pdftoppm -r 120 -png output/pdf/rsna_vindr_article.pdf tmp/pdfs/posthoc-generalization-20261029/final/page
 ```
 
 The builder uses Pandoc/citeproc, the versioned formatting filter/header, and
-two pdfLaTeX passes. It preserves captions and scientific content, sizes table
+three configured pdfLaTeX passes to resolve cross-references from a fresh build.
+It preserves captions and scientific content, sizes table
 columns for portrait pages, and pins supporting repository links to commit
-`490c55794e2bfc163746089ffb44e7f195ef534b`, the completed numerical-path
-sensitivity revision. This supporting revision is not a selected submission
+`d174611408cdc4673e8344b95e4ed0685844306e`, the verified post-hoc analysis and
+manuscript integration. This supporting revision is not a selected submission
 release. The source/output hash receipt is
 [`report/paper_build_manifest.json`](report/paper_build_manifest.json).
 PDF timestamps and tool versions can alter byte hashes; matching scientific
@@ -1413,6 +1414,7 @@ command, which refuses repeat registration and preserves all 88 prior entries:
 ```
 
 Canonical Markdown now includes these results, with 468 numerical bindings.
-The existing PDF and build receipts remain the prior reviewed 16-page snapshot;
-refresh and visually review the PDF before submission. Current execution,
-privacy checks, remaining author decisions and Git status are in the verification record.
+The PDF was refreshed on 2026-10-29 and all 19 pages visually reviewed; build/QA
+receipts bind the current source and rendered output. No scientific values
+changed. Current execution, privacy checks and remaining author decisions are
+in the verification record and submission audit.

@@ -1,25 +1,25 @@
 {
   "status": "author_review_derivative_not_submission_clearance",
   "canonical_manuscript": "report/paper_draft.md",
-  "support_revision": "490c55794e2bfc163746089ffb44e7f195ef534b",
+  "support_revision": "d174611408cdc4673e8344b95e4ed0685844306e",
   "pandoc_version": "pandoc 3.9",
   "tex_version": "pdfTeX 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX)",
   "inputs": [
     {
       "path": "configs/paper_build.yaml",
-      "sha256": "11fd5ccb9a3c46673a2fed41e7c3ad9e1bd2e2b51bdefe154a2d222558db1c76"
+      "sha256": "6213e33e3517be278cb5b847755180d48de393019046e2e45ad54547e4b29fd1"
     },
     {
       "path": "report/paper_draft.md",
-      "sha256": "07ff736eb9c25a6b0178a67e7bafc8a6ceff75797ef45bbe30789a69a960c27c"
+      "sha256": "4f74655627ed83c894d7275e0f7d667dc0dbeb2415490be34037f4829429363f"
     },
     {
       "path": "report/references.bib",
-      "sha256": "c653346178ed24165662546976933ec39dab1db53dc7e946c1c2a09d6e6e9efa"
+      "sha256": "49eb2c3006cc68a2c6587000edcc1ffaf7c20d5a278a86f04e13f15685f4a072"
     },
     {
       "path": "report/pdf/header.tex",
-      "sha256": "6547d36ed4ec9e24f3d4f8ea6248bd13ebf4d35e5e80f7365f27dd64866ab4b7"
+      "sha256": "00291c750944a5f38e38682a2937de084a038e9250bbffd9d68a3f4b396de9d1"
     },
     {
       "path": "report/pdf/layout.lua",
@@ -27,7 +27,7 @@
     },
     {
       "path": "scripts/build_paper_pdf.py",
-      "sha256": "95ce43e27bbe3a766c1d8c59fc658c77c7f4f920ac5dc7d8e2cd77c11fcc08dd"
+      "sha256": "d06cfdfbd16aed592a319787179b0c0f3ebb82655e72d424854637d94cc72fa9"
     },
     {
       "path": "results/figures/precision_recall_curves_n5_sensitivity.png",
@@ -52,8 +52,8 @@
   ],
   "output": {
     "path": "output/pdf/rsna_vindr_article.pdf",
-    "sha256": "fce7ac64779ef068b218ff0fcc66bd2bb6c9594566bfe08efbfb6a5551497f31",
-    "size_bytes": 977187
+    "sha256": "c09f01b8ab1e0c04c452765b8af71eecfa884a85e8728341d84dfd37b821794e",
+    "size_bytes": 989305
   },
   "reproduction": "python -m scripts.build_paper_pdf --config configs/paper_build.yaml",
   "note": "PDF timestamps/tool versions can change byte hashes; scientific content comes only from the canonical source."

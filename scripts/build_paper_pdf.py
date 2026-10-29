@@ -67,7 +67,7 @@ def main() -> None:
         "-output-directory=" + str(work),
         str(tex),
     ]
-    for run in range(2):
+    for run in range(config["latex_passes"]):
         with (work / f"tex-{run + 1}.log").open("w", encoding="utf-8") as log:
             subprocess.run(
                 latex_command,
