@@ -1,7 +1,0 @@
-{
-  "amp_scale": 4.0,
-  "epoch": 2,
-  "epoch_batch": 138,
-  "failure": "zero_classification_loss_collapse",
-  "test_split_accessed": false
-}

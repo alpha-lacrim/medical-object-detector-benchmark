@@ -64,3 +64,29 @@ tmp/
 temp/
 *.tmp
 *.log
+
+# Local agent tools, instructions, session memory, and work queues
+/.codex/
+/AGENTS.md
+/CODEX.md
+/HANDOFF.md
+/PROJECT_SPEC.md
+/BATCHES*.md
+/CHAT_RESPONSE_AUDIT&PRIORITY.md
+/docs/POSTHOC_EXTERNAL_GENERALIZATION_CHECKPOINT.md
+
+# Keep the published knowledge graph, but not its cache or machine state
+/graphify-out/cache/
+/graphify-out/.graphify_*
+
+# Local setup failures and orchestration; accepted scientific runs stay tracked
+/results/logs/*_aborted-*/
+/results/logs/*_aborted_*/
+/results/logs/*_failed-*/
+/results/logs/*_rejected-*/
+/results/logs/*_smoke_*/
+/results/logs/phase5_orchestration/
+/results/logs/phase16_orchestration/
+
+# Historical alternate; the current article is output/pdf/rsna_vindr_article.pdf
+/report/A_Controlled_Comparative_Study___article.pdf

@@ -1,6 +1,0 @@
-train batch 100/1750 loss=0.02650
-train batch 200/1750 loss=0.14978
-train batch 300/1750 loss=0.14968
-train batch 400/1750 loss=0.00904
-train batch 500/1750 loss=0.01206
-train batch 600/1750 loss=0.19875

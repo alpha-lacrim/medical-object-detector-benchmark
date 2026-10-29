@@ -35,6 +35,13 @@ See [`RELEASE_NOTES_v2.0.0.md`](RELEASE_NOTES_v2.0.0.md) for the release scope
 and delta from `v1.0.0`, [`CHANGELOG.md`](CHANGELOG.md) for release history, and
 [`CITATION.cff`](CITATION.cff) for the available software citation metadata.
 
+The current GitHub tree retains source, configs, tests, dependency locks,
+manuscripts and the current PDF, protocols, scientific tables/figures, accepted
+run records, provenance manifests and the published knowledge graph. Local
+agent instructions, session queues, graph caches, orchestration logs, abandoned
+setup runs and the superseded alternate PDF are ignored. Their local copies
+are preserved; older commits and release tags retain their historical contents.
+
 ## Canonical document hierarchy
 
 | Location | Canonical role |
@@ -1200,8 +1207,9 @@ The current article derivative is
 [`output/pdf/rsna_vindr_article.pdf`](output/pdf/rsna_vindr_article.pdf), built
 only from `report/paper_draft.md` and `report/references.bib` using
 `configs/paper_build.yaml`. The earlier `report/A_Controlled_Comparative_Study___article.pdf`
-is an unchanged, noncanonical alternate. No build recipe for that historical PDF
-was committed; the current canonical source now has the reproducible route below.
+is a noncanonical alternate preserved locally and in Git history, but excluded
+from the current GitHub tree. No build recipe for that historical PDF was
+committed; the current canonical source has the reproducible route below.
 
 Install the **separate document tool environment** (the scientific lock is
 unchanged), with pdfLaTeX/TeX Live, Latin Modern fonts and Poppler available on PATH:

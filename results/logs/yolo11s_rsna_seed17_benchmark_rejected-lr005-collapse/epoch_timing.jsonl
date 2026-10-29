@@ -1,3 +1,0 @@
-{"best_fitness": 0.0, "epoch": 1, "epoch_seconds": 119.97038310000062, "epochs_without_improvement": 0, "fitness": 0.0, "learning_rates": {"lr/pg0": 0.004994285714285714, "lr/pg1": 0.004994285714285714, "lr/pg2": 0.004994285714285714}, "peak_gpu_memory_mib": 1087.9423828125}
-{"best_fitness": 0.0, "epoch": 2, "epoch_seconds": 118.26424849999967, "epochs_without_improvement": 1, "fitness": 0.0, "learning_rates": {"lr/pg0": 0.005, "lr/pg1": 0.005, "lr/pg2": 0.005}, "peak_gpu_memory_mib": 1114.74072265625}
-{"best_fitness": 0.0, "epoch": 3, "epoch_seconds": 116.11186459999954, "epochs_without_improvement": 2, "fitness": 0.0, "learning_rates": {"lr/pg0": 0.005, "lr/pg1": 0.005, "lr/pg2": 0.005}, "peak_gpu_memory_mib": 1114.74072265625}
