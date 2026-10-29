@@ -957,3 +957,29 @@ artifacts and require a fresh reviewed derivative before submission. No training
 threshold reselection, external inference, seed removal, publication or Git
 write action occurred in this batch. The separate concurrent Batch 52 commit
 advanced HEAD to `4e66e3e`; it did not alter these scientific inputs.
+
+## D-024 — Post-hoc external generalization diagnostics (2026-10-29)
+
+Executed the standalone research request against baseline `801a6c9`, preserving
+all frozen primary evidence. Reference errors, strict-FP local-label overlap,
+population weighting and checkpoint-coupled domain-change bootstrap use all
+five runs per detector. The [protocol](POSTHOC_EXTERNAL_GENERALIZATION_PROTOCOL.md)
+defines the new estimands; the [interpretation](POSTHOC_EXTERNAL_GENERALIZATION_INTERPRETATION.md)
+records noncausal, nonclinical conclusions. Compatible candidates below the
+historical cutoff are more common for Faster R-CNN, whereas YOLO more often
+lacks a retained candidate with substantial overlap. Population weighting
+does not recreate external scores. Absolute AP and recall losses are larger
+for Faster R-CNN from its higher internal baseline; the FROC difference in
+changes remains uncertain. No intrinsic architecture claim follows.
+
+The accepted summary hash is
+`a8f39dd5b22683f35e2363b39e9415d41b580c85bfd5af389eab1647df999106`.
+Full CPU replay reproduces all 2,000 draws and 15 tables exactly. No clinical
+ontology merging or new candidate-support inference was performed. New
+publication entries extend the prior 88 without changing them; all original
+427 numerical bindings retain their sources and tolerances. Current Markdown
+and numerical trace include the exploratory findings; PDF refresh remains
+outstanding. The [verification record](POSTHOC_EXTERNAL_GENERALIZATION_VERIFICATION.md)
+gives checks, preserved iteration failures, restrictions and release status.
+The user subsequently authorized Git commits and pushes; that authorization
+supersedes the initial no-Git-write instruction for this work.

@@ -271,3 +271,30 @@ The historical analyses and their intervals are unchanged. This sensitivity
 narrows the precision concern but does not remove cross-dataset confounding,
 finite candidate support or prove numerical equivalence. Exact reproduction
 and read-only replay commands are in the README Batch 53 section.
+
+## S11. Post-hoc external generalization analysis
+
+This exploratory CPU analysis reuses the original ten checkpoints' retained
+predictions. It does not replace the external freeze or alter a target,
+threshold, floor, cap or run inclusion rule.
+
+- [Versioned protocol](POSTHOC_EXTERNAL_GENERALIZATION_PROTOCOL.md) and
+  [evidence/code audit](POSTHOC_EXTERNAL_GENERALIZATION_AUDIT.md).
+- [Complete generated results](POSTHOC_EXTERNAL_GENERALIZATION_RESULTS.md):
+  exclusive reference-error categories, candidate availability, strict-FP
+  categories, nonexclusive local-label overlaps, score/IoU distributions,
+  population weighting, candidate support and cross-domain change intervals.
+- [Scientific interpretation and prior art](POSTHOC_EXTERNAL_GENERALIZATION_INTERPRETATION.md)
+  distinguishes executed findings from causal, clinical and novelty claims.
+- [Summary and exact provenance](../results/external_generalization_v1/summary.json)
+  binds 15 CSVs, two figures, inputs, code, configuration and private draws.
+- [Verification record](POSTHOC_EXTERNAL_GENERALIZATION_VERIFICATION.md) and
+  [reproduction commands](../README.md#post-hoc-external-generalization-v1).
+- [Broader-support proposal](POSTHOC_CANDIDATE_SUPPORT_V2_PROPOSAL.md) remains
+  unexecuted and requires separate inference authorization. Merged-target AP
+  remains unresolved pending expert ontology and instance review.
+
+All five runs remain represented. Undefined zero-FP fractions are explicitly
+reported; they are not zero-imputed. Weighted AP is custom, with fixed observed
+external positive frequency. Domain-change uncertainty couples the same
+checkpoint across domains without pairing different detectors' seed numbers.

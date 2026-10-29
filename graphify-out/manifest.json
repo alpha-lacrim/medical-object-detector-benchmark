@@ -1224,9 +1224,9 @@
     "semantic_hash": ""
   },
   "results/publication_artifact_manifest.json": {
-    "mtime": 1790461687.9571157,
-    "seen": 1793261255.2461512,
-    "ast_hash": "02cc74dab5858455631f56545c5dbd0e",
+    "mtime": 1793262320.476372,
+    "seen": 1793279920.407428,
+    "ast_hash": "1b201fd50e02ad492fcb5d367524749f",
     "semantic_hash": ""
   },
   "results/scientific_artifact_manifest.json": {
@@ -1704,9 +1704,9 @@
     "semantic_hash": ""
   },
   "src/stats/report_external_generalization.py": {
-    "mtime": 1793260727.7972543,
-    "seen": 1793261255.2461512,
-    "ast_hash": "9c70f201fc2db0ce42977518a99505e3",
+    "mtime": 1793261475.0404024,
+    "seen": 1793279920.4154382,
+    "ast_hash": "fd8c86783f6430023a460d79462bcb89",
     "semantic_hash": ""
   },
   "src/stats/report_transportability.py": {
@@ -2160,9 +2160,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1790464315.567985,
-    "seen": 1793261255.2461512,
-    "ast_hash": "9142c7baccac9ed1dbf474db2b15454e",
+    "mtime": 1793279607.5069966,
+    "seen": 1793279920.423072,
+    "ast_hash": "8b6ae6821ce1799851bcb598cad5fa6a",
     "semantic_hash": ""
   },
   "RELEASE_NOTES_v2.0.0.md": {
@@ -2520,9 +2520,9 @@
     "semantic_hash": ""
   },
   "docs/CITATION_AUDIT.md": {
-    "mtime": 1790358322.1451998,
-    "seen": 1793261255.2471507,
-    "ast_hash": "5548025c7a44085b94274effdc0e58d7",
+    "mtime": 1793279539.0920477,
+    "seen": 1793279920.4289038,
+    "ast_hash": "e1e60a8e88534541cfda648f1f403d6f",
     "semantic_hash": ""
   },
   "docs/COMPUTE_TIMING.md": {
@@ -2550,9 +2550,9 @@
     "semantic_hash": ""
   },
   "docs/DECISION_LOG.md": {
-    "mtime": 1790462086.1450653,
-    "seen": 1793261255.2471507,
-    "ast_hash": "004de78cfa254438c2fa5c6e4c31944e",
+    "mtime": 1793279607.507998,
+    "seen": 1793279920.4289038,
+    "ast_hash": "5fb07a10b62213db88d24b081fc415d3",
     "semantic_hash": ""
   },
   "docs/EXPLAINABILITY.md": {
@@ -2574,9 +2574,9 @@
     "semantic_hash": ""
   },
   "docs/FINAL_SUBMISSION_AUDIT.md": {
-    "mtime": 1790464415.0019596,
-    "seen": 1793261255.2471507,
-    "ast_hash": "9aef7a1c85997a7b8891ad723dc080ad",
+    "mtime": 1793279539.0900464,
+    "seen": 1793279920.4294703,
+    "ast_hash": "45385047a5283c54eb9b1b64c03db2ed",
     "semantic_hash": ""
   },
   "docs/FINAL_SUBMISSION_AUDIT_2026-09-01.md": {
@@ -2616,9 +2616,9 @@
     "semantic_hash": ""
   },
   "docs/LIMITATIONS.md": {
-    "mtime": 1790461770.2195566,
-    "seen": 1793261255.2471507,
-    "ast_hash": "85e649f014917e4d0f7b1ff16a3a02de",
+    "mtime": 1793279539.091046,
+    "seen": 1793279920.4300468,
+    "ast_hash": "11052e9761006e3beddcf1141cba25db",
     "semantic_hash": ""
   },
   "docs/LITERATURE_REVIEW.md": {
@@ -2640,9 +2640,9 @@
     "semantic_hash": ""
   },
   "docs/POSTHOC_EXTERNAL_GENERALIZATION_CHECKPOINT.md": {
-    "mtime": 1793185450.0017018,
-    "seen": 1793261255.2471507,
-    "ast_hash": "b7cbbeee6cfd0a8e802b0b272683b551",
+    "mtime": 1793279778.42895,
+    "seen": 1793279920.4300468,
+    "ast_hash": "5e17c68f7ef215096c2057e569c75054",
     "semantic_hash": ""
   },
   "docs/POSTHOC_EXTERNAL_GENERALIZATION_PROTOCOL.md": {
@@ -2670,9 +2670,9 @@
     "semantic_hash": ""
   },
   "docs/REPRODUCIBILITY.md": {
-    "mtime": 1790464315.567985,
-    "seen": 1793261255.2471507,
-    "ast_hash": "7c75e1e580a222f5288c2fed1fb22bf0",
+    "mtime": 1793279539.091046,
+    "seen": 1793279920.4306664,
+    "ast_hash": "fb02e74ef6bbe0198ac34d51a45cf5db",
     "semantic_hash": ""
   },
   "docs/REVIEW_REMEDIATION_AUDIT.md": {
@@ -2694,9 +2694,9 @@
     "semantic_hash": ""
   },
   "docs/SUPPLEMENTARY.md": {
-    "mtime": 1790461771.3270476,
-    "seen": 1793261255.2471507,
-    "ast_hash": "088dc4b01362677841648518d97271da",
+    "mtime": 1793279539.0900464,
+    "seen": 1793279920.4306664,
+    "ast_hash": "efeb61daaa234642cfbd9e02648b5b3b",
     "semantic_hash": ""
   },
   "docs/THRESHOLD_ANALYSIS.md": {
@@ -2796,15 +2796,15 @@
     "semantic_hash": ""
   },
   "report/paper_claim_sources.yaml": {
-    "mtime": 1790461908.903398,
-    "seen": 1793261255.2471507,
-    "ast_hash": "0499a8ccac821b5a656eefc5253dece3",
+    "mtime": 1793279539.0890484,
+    "seen": 1793279920.432088,
+    "ast_hash": "0f4c84a1b05c811df8a44a2331d78748",
     "semantic_hash": ""
   },
   "report/paper_draft.md": {
-    "mtime": 1790464315.565984,
-    "seen": 1793261255.2471507,
-    "ast_hash": "c3e94e9c5c14d61044039ab009f6749b",
+    "mtime": 1793279440.8732848,
+    "seen": 1793279920.432088,
+    "ast_hash": "da9413ffdf81aaa3667936641e51c62e",
     "semantic_hash": ""
   },
   "report/pdf/requirements.txt": {
@@ -3567,6 +3567,60 @@
     "mtime": 1790198653.2632356,
     "seen": 1793261255.2471507,
     "ast_hash": "2df15f4070254f4dd4199b5e3b6e340a",
+    "semantic_hash": ""
+  },
+  "results/external_generalization_v1/summary.json": {
+    "mtime": 1793261799.522983,
+    "seen": 1793279920.3894289,
+    "ast_hash": "f852d216d2aad6bb4069dbd4950f3201",
+    "semantic_hash": ""
+  },
+  "scripts/extend_external_generalization_manifest.py": {
+    "mtime": 1793261809.8202777,
+    "seen": 1793279920.4084282,
+    "ast_hash": "0612a461988c785b3e93e8c81e0319cf",
+    "semantic_hash": ""
+  },
+  "tests/test_external_generalization_manifest.py": {
+    "mtime": 1793261809.8202777,
+    "seen": 1793279920.4174354,
+    "ast_hash": "0fc8277ab1691f9e7e30e70acb3ef3ab",
+    "semantic_hash": ""
+  },
+  "docs/POSTHOC_CANDIDATE_SUPPORT_V2_PROPOSAL.md": {
+    "mtime": 1793261657.6598492,
+    "seen": 1793279920.4300468,
+    "ast_hash": "9008d37bd566c4571a86e4321ea0a3b5",
+    "semantic_hash": ""
+  },
+  "docs/POSTHOC_EXTERNAL_GENERALIZATION_INTERPRETATION.md": {
+    "mtime": 1793261657.6588707,
+    "seen": 1793279920.4300468,
+    "ast_hash": "ac6cb8e4fc5d87dc1aa50aa7c17df93a",
+    "semantic_hash": ""
+  },
+  "docs/POSTHOC_EXTERNAL_GENERALIZATION_RESULTS.md": {
+    "mtime": 1793261799.506946,
+    "seen": 1793279920.4300468,
+    "ast_hash": "f9ec504e0129faf4fac99445360dd509",
+    "semantic_hash": ""
+  },
+  "results/external_generalization_v1/error_and_annotation_sensitivity.png": {
+    "mtime": 1793261799.3514664,
+    "seen": 1793279920.4395115,
+    "ast_hash": "7abef426eaf7d3f7872a3690c3a42d7e",
+    "semantic_hash": ""
+  },
+  "results/external_generalization_v1/prevalence_and_domain_changes.png": {
+    "mtime": 1793261799.5058825,
+    "seen": 1793279920.4395115,
+    "ast_hash": "d5b06a533035a99ee7f98779cd0ca750",
+    "semantic_hash": ""
+  },
+  "docs/POSTHOC_EXTERNAL_GENERALIZATION_VERIFICATION.md": {
+    "mtime": 1793280059.39332,
+    "seen": 1793280172.1431541,
+    "ast_hash": "6973c286867ccdd561c5c0eb65d6ddab",
     "semantic_hash": ""
   }
 }

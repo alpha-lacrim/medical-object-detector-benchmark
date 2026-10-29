@@ -1,5 +1,17 @@
 # Reproducibility contract
 
+**2026-10-29 post-hoc analysis:** The new
+[protocol](POSTHOC_EXTERNAL_GENERALIZATION_PROTOCOL.md),
+[verification record](POSTHOC_EXTERNAL_GENERALIZATION_VERIFICATION.md), and
+[README commands](../README.md#post-hoc-external-generalization-v1) cover the
+executed CPU analysis and exact 2,000-draw replay. It binds 138 inputs and adds
+18 aggregate artifacts while preserving the previous 88 publication entries.
+Current Markdown has 468 numerical bindings and 40 guards. The PDF and its
+receipts remain the earlier reviewed snapshot; the new numerical trace follows
+Markdown. Full replay requires authorized private annotations, predictions,
+checkpoints and saved draws; portable tests do not substitute for that replay.
+Earlier dated counts below describe their own snapshots.
+
 **Batch 53 secondary numerical-path sensitivity:** All five immutable internal
 YOLO checkpoints were evaluated with the frozen external bfloat16 numerical
 path and fully replayed on CPU. [Protocol, caveats and commands](YOLO_NUMERICAL_PATH_SENSITIVITY_V1.md)

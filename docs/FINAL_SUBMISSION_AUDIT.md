@@ -1,10 +1,20 @@
 # Final submission audit and author-declaration follow-up
 
+**2026-10-29 post-hoc update:** The canonical Markdown now adds executed
+external error, annotation-overlap, prevalence-weight and cross-domain-change
+analyses. Current verification and publication status are recorded in the
+[post-hoc verification record](POSTHOC_EXTERNAL_GENERALIZATION_VERIFICATION.md).
+There are 468 numerical bindings, 40 semantic guards and 106 publication
+artifacts; all prior scientific records remain unchanged. The PDF and its
+build/QA receipts below describe the prior 16-page reviewed snapshot and do
+not contain the new analyses. Refresh and visually review that derivative
+before submission. The numerical trace now follows current Markdown.
+
 **2026-09-27 Batch 53 update:** The canonical Markdown now includes a verified
 [secondary YOLO numerical-path sensitivity](YOLO_NUMERICAL_PATH_SENSITIVITY_V1.md).
 Historical primary/external evidence remains unchanged. The declaration-wording
 follow-up below refreshes the PDF and numerical trace to include this sensitivity.
-Current verification has 427 numerical bindings/36 semantic guards and 88
+That snapshot's verification had 427 numerical bindings/36 semantic guards and 88
 publication artifacts; the experiment retains its own protocol, provenance and
 complete metric replay. Final author review is still required before submission.
 

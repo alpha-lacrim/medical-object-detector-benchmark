@@ -88,6 +88,14 @@ manuscript_semantic_guards:
   required_regex: not an equivalence test, and historical TF32 flags were not recorded
 - id: numerical_path_preserves_primary
   required_regex: Historical\s+primary values and their uncertainty analyses remain unchanged
+- id: generalization_is_posthoc
+  required_regex: After observing external outcomes, a versioned exploratory protocol reused
+- id: custom_weighted_ap_is_not_coco
+  required_regex: metric, not official COCO AP or replicated-image COCO tie handling
+- id: checkpoint_resampling_coupled_across_domains
+  required_regex: Run multiplicities were independent between detector families\s+but identical across domains for each trained checkpoint
+- id: other_findings_do_not_redefine_strict_target
+  required_regex: overlap never changes a strict false positive into a true positive
 claims:
 - id: source_radiograph_count
   description: Full labeled RSNA source cohort size.
@@ -5788,3 +5796,510 @@ claims:
       metric: score_summaries.all_retained_candidates.max
     column: bfloat16
   absolute_tolerance: 5.0e-07
+- id: generalization_ap50_a_estimate
+  manuscript:
+    section: Post-hoc external generalization
+    regex: \|\ AP50\ change\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: ap50
+    column: a_estimate
+  absolute_tolerance: 5.0e-07
+- id: generalization_ap50_a_ci_low
+  manuscript:
+    section: Post-hoc external generalization
+    regex: '\|\ AP50\ change\ \|\ \-0\.301719\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ '
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: ap50
+    column: a_ci_low
+  absolute_tolerance: 5.0e-07
+- id: generalization_ap50_a_ci_high
+  manuscript:
+    section: Post-hoc external generalization
+    regex: '\|\ AP50\ change\ \|\ \-0\.301719\ \[\-0\.366983,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ \|\ '
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: ap50
+    column: a_ci_high
+  absolute_tolerance: 5.0e-07
+- id: generalization_ap50_b_estimate
+  manuscript:
+    section: Post-hoc external generalization
+    regex: \|\ AP50\ change\ \|\ \-0\.301719\ \[\-0\.366983,\ \-0\.232342\]\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\
+      \[
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: ap50
+    column: b_estimate
+  absolute_tolerance: 5.0e-07
+- id: generalization_ap50_b_ci_low
+  manuscript:
+    section: Post-hoc external generalization
+    regex: '\|\ AP50\ change\ \|\ \-0\.301719\ \[\-0\.366983,\ \-0\.232342\]\ \|\ \-0\.162111\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ '
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: ap50
+    column: b_ci_low
+  absolute_tolerance: 5.0e-07
+- id: generalization_ap50_b_ci_high
+  manuscript:
+    section: Post-hoc external generalization
+    regex: '\|\ AP50\ change\ \|\ \-0\.301719\ \[\-0\.366983,\ \-0\.232342\]\ \|\ \-0\.162111\ \[\-0\.224218,\
+      (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ \|\ '
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: ap50
+    column: b_ci_high
+  absolute_tolerance: 5.0e-07
+- id: generalization_ap50_difference_estimate
+  manuscript:
+    section: Post-hoc external generalization
+    regex: \|\ AP50\ change\ \|\ \-0\.301719\ \[\-0\.366983,\ \-0\.232342\]\ \|\ \-0\.162111\ \[\-0\.224218,\
+      \-0\.103034\]\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: ap50
+    column: difference_estimate
+  absolute_tolerance: 5.0e-07
+- id: generalization_ap50_difference_ci_low
+  manuscript:
+    section: Post-hoc external generalization
+    regex: '\|\ AP50\ change\ \|\ \-0\.301719\ \[\-0\.366983,\ \-0\.232342\]\ \|\ \-0\.162111\ \[\-0\.224218,\
+      \-0\.103034\]\ \|\ \-0\.139607\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ '
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: ap50
+    column: difference_ci_low
+  absolute_tolerance: 5.0e-07
+- id: generalization_ap50_difference_ci_high
+  manuscript:
+    section: Post-hoc external generalization
+    regex: \|\ AP50\ change\ \|\ \-0\.301719\ \[\-0\.366983,\ \-0\.232342\]\ \|\ \-0\.162111\ \[\-0\.224218,\
+      \-0\.103034\]\ \|\ \-0\.139607\ \[\-0\.179174,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ \|
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: ap50
+    column: difference_ci_high
+  absolute_tolerance: 5.0e-07
+- id: generalization_froc_0_25_a_estimate
+  manuscript:
+    section: Post-hoc external generalization
+    regex: \|\ FROC\ at\ 0\.25\ FP/image\ change\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: froc_0.25
+    column: a_estimate
+  absolute_tolerance: 5.0e-07
+- id: generalization_froc_0_25_a_ci_low
+  manuscript:
+    section: Post-hoc external generalization
+    regex: '\|\ FROC\ at\ 0\.25\ FP/image\ change\ \|\ \-0\.280102\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ '
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: froc_0.25
+    column: a_ci_low
+  absolute_tolerance: 5.0e-07
+- id: generalization_froc_0_25_a_ci_high
+  manuscript:
+    section: Post-hoc external generalization
+    regex: '\|\ FROC\ at\ 0\.25\ FP/image\ change\ \|\ \-0\.280102\ \[\-0\.367012,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\
+      \|\ '
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: froc_0.25
+    column: a_ci_high
+  absolute_tolerance: 5.0e-07
+- id: generalization_froc_0_25_b_estimate
+  manuscript:
+    section: Post-hoc external generalization
+    regex: \|\ FROC\ at\ 0\.25\ FP/image\ change\ \|\ \-0\.280102\ \[\-0\.367012,\ \-0\.188567\]\ \|\
+      (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: froc_0.25
+    column: b_estimate
+  absolute_tolerance: 5.0e-07
+- id: generalization_froc_0_25_b_ci_low
+  manuscript:
+    section: Post-hoc external generalization
+    regex: '\|\ FROC\ at\ 0\.25\ FP/image\ change\ \|\ \-0\.280102\ \[\-0\.367012,\ \-0\.188567\]\ \|\
+      \-0\.232734\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ '
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: froc_0.25
+    column: b_ci_low
+  absolute_tolerance: 5.0e-07
+- id: generalization_froc_0_25_b_ci_high
+  manuscript:
+    section: Post-hoc external generalization
+    regex: '\|\ FROC\ at\ 0\.25\ FP/image\ change\ \|\ \-0\.280102\ \[\-0\.367012,\ \-0\.188567\]\ \|\
+      \-0\.232734\ \[\-0\.305797,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ \|\ '
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: froc_0.25
+    column: b_ci_high
+  absolute_tolerance: 5.0e-07
+- id: generalization_froc_0_25_difference_estimate
+  manuscript:
+    section: Post-hoc external generalization
+    regex: \|\ FROC\ at\ 0\.25\ FP/image\ change\ \|\ \-0\.280102\ \[\-0\.367012,\ \-0\.188567\]\ \|\
+      \-0\.232734\ \[\-0\.305797,\ \-0\.159547\]\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: froc_0.25
+    column: difference_estimate
+  absolute_tolerance: 5.0e-07
+- id: generalization_froc_0_25_difference_ci_low
+  manuscript:
+    section: Post-hoc external generalization
+    regex: '\|\ FROC\ at\ 0\.25\ FP/image\ change\ \|\ \-0\.280102\ \[\-0\.367012,\ \-0\.188567\]\ \|\
+      \-0\.232734\ \[\-0\.305797,\ \-0\.159547\]\ \|\ \-0\.047368\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ '
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: froc_0.25
+    column: difference_ci_low
+  absolute_tolerance: 5.0e-07
+- id: generalization_froc_0_25_difference_ci_high
+  manuscript:
+    section: Post-hoc external generalization
+    regex: \|\ FROC\ at\ 0\.25\ FP/image\ change\ \|\ \-0\.280102\ \[\-0\.367012,\ \-0\.188567\]\ \|\
+      \-0\.232734\ \[\-0\.305797,\ \-0\.159547\]\ \|\ \-0\.047368\ \[\-0\.105416,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\
+      \|
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: froc_0.25
+    column: difference_ci_high
+  absolute_tolerance: 5.0e-07
+- id: generalization_primary_recall_a_estimate
+  manuscript:
+    section: Post-hoc external generalization
+    regex: \|\ Historical\ recall\ change\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: primary_recall
+    column: a_estimate
+  absolute_tolerance: 5.0e-07
+- id: generalization_primary_recall_a_ci_low
+  manuscript:
+    section: Post-hoc external generalization
+    regex: '\|\ Historical\ recall\ change\ \|\ \-0\.331799\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ '
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: primary_recall
+    column: a_ci_low
+  absolute_tolerance: 5.0e-07
+- id: generalization_primary_recall_a_ci_high
+  manuscript:
+    section: Post-hoc external generalization
+    regex: '\|\ Historical\ recall\ change\ \|\ \-0\.331799\ \[\-0\.411787,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\
+      \|\ '
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: primary_recall
+    column: a_ci_high
+  absolute_tolerance: 5.0e-07
+- id: generalization_primary_recall_b_estimate
+  manuscript:
+    section: Post-hoc external generalization
+    regex: \|\ Historical\ recall\ change\ \|\ \-0\.331799\ \[\-0\.411787,\ \-0\.240161\]\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\
+      \[
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: primary_recall
+    column: b_estimate
+  absolute_tolerance: 5.0e-07
+- id: generalization_primary_recall_b_ci_low
+  manuscript:
+    section: Post-hoc external generalization
+    regex: '\|\ Historical\ recall\ change\ \|\ \-0\.331799\ \[\-0\.411787,\ \-0\.240161\]\ \|\ \-0\.190566\
+      \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ '
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: primary_recall
+    column: b_ci_low
+  absolute_tolerance: 5.0e-07
+- id: generalization_primary_recall_b_ci_high
+  manuscript:
+    section: Post-hoc external generalization
+    regex: '\|\ Historical\ recall\ change\ \|\ \-0\.331799\ \[\-0\.411787,\ \-0\.240161\]\ \|\ \-0\.190566\
+      \[\-0\.292613,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ \|\ '
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: primary_recall
+    column: b_ci_high
+  absolute_tolerance: 5.0e-07
+- id: generalization_primary_recall_difference_estimate
+  manuscript:
+    section: Post-hoc external generalization
+    regex: \|\ Historical\ recall\ change\ \|\ \-0\.331799\ \[\-0\.411787,\ \-0\.240161\]\ \|\ \-0\.190566\
+      \[\-0\.292613,\ \-0\.081589\]\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: primary_recall
+    column: difference_estimate
+  absolute_tolerance: 5.0e-07
+- id: generalization_primary_recall_difference_ci_low
+  manuscript:
+    section: Post-hoc external generalization
+    regex: '\|\ Historical\ recall\ change\ \|\ \-0\.331799\ \[\-0\.411787,\ \-0\.240161\]\ \|\ \-0\.190566\
+      \[\-0\.292613,\ \-0\.081589\]\ \|\ \-0\.141233\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ '
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: primary_recall
+    column: difference_ci_low
+  absolute_tolerance: 5.0e-07
+- id: generalization_primary_recall_difference_ci_high
+  manuscript:
+    section: Post-hoc external generalization
+    regex: \|\ Historical\ recall\ change\ \|\ \-0\.331799\ \[\-0\.411787,\ \-0\.240161\]\ \|\ \-0\.190566\
+      \[\-0\.292613,\ \-0\.081589\]\ \|\ \-0\.141233\ \[\-0\.250947,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\
+      \|
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: primary_recall
+    column: difference_ci_high
+  absolute_tolerance: 5.0e-07
+- id: generalization_below_a
+  manuscript:
+    section: Post-hoc external generalization
+    regex: only\ below\ the\ historical\ threshold\ were\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ for\ Faster\
+      R\-CNN
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/reference_errors_means.csv
+    filters:
+      detector: faster_rcnn
+      category: below_threshold
+      quantity: fraction
+    column: mean
+  absolute_tolerance: 5.0e-07
+- id: generalization_below_b
+  manuscript:
+    section: Post-hoc external generalization
+    regex: 'only\ below\ the\ historical\ threshold\ were\ 0\.549474\ for\ Faster\ R\-CNN\ and\
+
+      (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ for\ YOLO11s\.'
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/reference_errors_means.csv
+    filters:
+      detector: yolo11s
+      category: below_threshold
+      quantity: fraction
+    column: mean
+  absolute_tolerance: 5.0e-07
+- id: generalization_absent_a
+  manuscript:
+    section: Post-hoc external generalization
+    regex: 0\.25\ were\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ and\ 0\.602105,\ respectively\.
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/reference_errors_means.csv
+    filters:
+      detector: faster_rcnn
+      category: no_relevant_retained
+      quantity: fraction
+    column: mean
+  absolute_tolerance: 5.0e-07
+- id: generalization_absent_b
+  manuscript:
+    section: Post-hoc external generalization
+    regex: 0\.25\ were\ 0\.181053\ and\ (?P<value>[+-]?[\d,]+(?:\.\d+)?),\ respectively\.
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/reference_errors_means.csv
+    filters:
+      detector: yolo11s
+      category: no_relevant_retained
+      quantity: fraction
+    column: mean
+  absolute_tolerance: 5.0e-07
+- id: generalization_overlap_a
+  manuscript:
+    section: Post-hoc external generalization
+    regex: to\ overlap\ with\ another\ local\ finding\ were\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ and\ 0\.377949,\
+      respectively\.
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/false_positives_means.csv
+    filters:
+      detector: faster_rcnn
+      support: historical
+      category: other_local_finding
+      quantity: fraction
+    column: mean
+  absolute_tolerance: 5.0e-07
+- id: generalization_overlap_b
+  manuscript:
+    section: Post-hoc external generalization
+    regex: to\ overlap\ with\ another\ local\ finding\ were\ 0\.536561\ and\ (?P<value>[+-]?[\d,]+(?:\.\d+)?),\
+      respectively\.
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/false_positives_means.csv
+    filters:
+      detector: yolo11s
+      support: historical
+      category: other_local_finding
+      quantity: fraction
+    column: mean
+  absolute_tolerance: 5.0e-07
+- id: generalization_defined_a
+  manuscript:
+    section: Post-hoc external generalization
+    regex: Those\ fractions\ were\ defined\ for\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ Faster\ R\-CNN\ runs
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/false_positives_means.csv
+    filters:
+      detector: faster_rcnn
+      support: historical
+      category: other_local_finding
+      quantity: fraction
+    column: defined_runs
+  absolute_tolerance: 0
+- id: generalization_defined_b
+  manuscript:
+    section: Post-hoc external generalization
+    regex: Faster\ R\-CNN\ runs\ and\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ YOLO11s\ runs;
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/false_positives_means.csv
+    filters:
+      detector: yolo11s
+      support: historical
+      category: other_local_finding
+      quantity: fraction
+    column: defined_runs
+  absolute_tolerance: 0
+- id: generalization_weighted_ap_a
+  manuscript:
+    section: Post-hoc external generalization
+    regex: 'After\ positive\-frequency\ standardization,\ mean\ custom\ weighted\ AP\ was\
+
+      (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ for\ Faster\ R\-CNN'
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/prevalence_intervals.csv
+    filters:
+      mode: standardized
+      metric: custom_weighted_ap50
+    column: a_estimate
+  absolute_tolerance: 5.0e-07
+- id: generalization_weighted_ap_b
+  manuscript:
+    section: Post-hoc external generalization
+    regex: 0\.108684\ for\ Faster\ R\-CNN\ and\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ for\ YOLO11s;
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/prevalence_intervals.csv
+    filters:
+      mode: standardized
+      metric: custom_weighted_ap50
+    column: b_estimate
+  absolute_tolerance: 5.0e-07
+- id: generalization_weighted_precision_a
+  manuscript:
+    section: Post-hoc external generalization
+    regex: 'mean\ weighted\ precision\
+
+      was\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ and\ 0\.062173,\ respectively\.'
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/prevalence_intervals.csv
+    filters:
+      mode: standardized
+      metric: historical_precision
+    column: a_estimate
+  absolute_tolerance: 5.0e-07
+- id: generalization_weighted_precision_b
+  manuscript:
+    section: Post-hoc external generalization
+    regex: 'mean\ weighted\ precision\
+
+      was\ 0\.086639\ and\ (?P<value>[+-]?[\d,]+(?:\.\d+)?),\ respectively\.'
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/prevalence_intervals.csv
+    filters:
+      mode: standardized
+      metric: historical_precision
+    column: b_estimate
+  absolute_tolerance: 5.0e-07
+- id: generalization_draws_method
+  manuscript:
+    section: Post-hoc external generalization
+    regex: We\ used\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ joint\ bootstrap\ draws
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: ap50
+    column: bootstrap_resamples
+  absolute_tolerance: 0
+- id: generalization_draws_results
+  manuscript:
+    section: Post-hoc external generalization
+    regex: had\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ valid\ draws\ and\ no\ undefined\ draws\.
+  source:
+    kind: csv_cell
+    path: results/external_generalization_v1/change_intervals.csv
+    filters:
+      metric: ap50
+    column: a_valid
+  absolute_tolerance: 0

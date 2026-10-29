@@ -1,5 +1,21 @@
 # Limitations
 
+## Post-hoc external generalization update (2026-10-29)
+
+The [executed post-hoc analysis](POSTHOC_EXTERNAL_GENERALIZATION_INTERPRETATION.md)
+describes retained-candidate failure, local-annotation overlap, population
+weighting and checkpoint-coupled domain-change intervals. It cannot recover
+pre-NMS candidates or remove floor/cap restrictions. Overlapping other findings
+does not establish clinical correctness, interchangeable targets or causality;
+merged-target scoring awaits expert review. Custom weighted AP changes event
+masses and preserves internal conditional case mix, with external prevalence
+held fixed. It is not official COCO AP, causal adjustment or a reconstruction
+of VinDr. Change intervals are marginal and exploratory; larger absolute loss
+from a higher internal baseline is not intrinsic architectural inferiority.
+Existing data, implementation and unknown-patient-dependence limits remain.
+Earlier statements about absent cross-domain inference refer to the original
+analysis; the new change intervals are a separately versioned extension.
+
 This benchmark is a controlled course-project comparison, not a clinical
 validation study. It evaluates detector behavior on a fixed retrospective
 dataset and must not be used to diagnose pneumonia, exclude disease, prioritize

@@ -815,7 +815,11 @@ had 2,000 valid draws and no undefined draws. FROC remains restricted to
 retained support. Larger absolute losses from a higher internal baseline do
 not establish poorer intrinsic architectural robustness.
 
-POSTHOC_CHANGE_TABLE
+| Endpoint | A change [95% CI] | B change [95% CI] | A-minus-B change [95% CI] |
+|---|---:|---:|---:|
+| AP50 change | -0.301719 [-0.366983, -0.232342] | -0.162111 [-0.224218, -0.103034] | -0.139607 [-0.179174, -0.101154] |
+| FROC at 0.25 FP/image change | -0.280102 [-0.367012, -0.188567] | -0.232734 [-0.305797, -0.159547] | -0.047368 [-0.105416, 0.023884] |
+| Historical recall change | -0.331799 [-0.411787, -0.240161] | -0.190566 [-0.292613, -0.081589] | -0.141233 [-0.250947, -0.051971] |
 
 Both detectors had negative change intervals at all three endpoints. The
 difference-in-changes interval included zero for FROC, while AP and historical

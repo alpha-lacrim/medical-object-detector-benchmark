@@ -1,4 +1,11 @@
-# External generalization work checkpoint — paused by user
+# Historical external generalization pause checkpoint
+
+**Resumed and completed 2026-10-29:** The user resumed this work and later
+authorized Git commits and pushes. The loader mismatch was resolved, synthetic
+tests passed, all supported CPU analyses executed and the full bootstrap
+replayed exactly. Manuscript integration and current checks are in
+[the verification record](POSTHOC_EXTERNAL_GENERALIZATION_VERIFICATION.md).
+The text below preserves the original pause state, not current project status.
 
 Date: 2026-10-28. **IMPLEMENTATION INCOMPLETE; NO NEW SCIENTIFIC RESULTS.**
 User explicitly requested a safe pause because of token limits. Resume this

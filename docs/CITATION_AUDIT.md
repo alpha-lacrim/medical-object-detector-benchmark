@@ -1,5 +1,18 @@
 # Citation Verification Audit
 
+## Post-hoc extension — 2026-10-29
+
+Five primary references were added for the executed exploratory analysis:
+Zech (PLOS Medicine, 2018, cross-site chest-radiograph generalization), Reinke
+(Nature Methods, 2024, metric pitfalls), Lipton (PMLR 80, 2018, label-shift
+assumptions), Bouthillier (MLSys 2021, benchmark variability), and Chakraborty
+(Radiation Protection Dosimetry, 2010, free-response analysis). Primary-source
+links and bounded uses are in the
+[interpretation report](POSTHOC_EXTERNAL_GENERALIZATION_INTERPRETATION.md).
+The PMLR page supplies Lipton's pages 3122–3130. These references establish
+prior art and limitations; none establishes novelty or clinical utility here.
+Earlier citation counts below belong to their dated snapshots.
+
 Batch 52 independently rechecked current citation resolution and refreshed the
 primary CLAIM, calibration, official VinDr release and direct RSNA-comparison
 sources on 2026-09-24. The [preserved scientific audit](FINAL_SUBMISSION_AUDIT_2026-09-24.md#references-reporting-and-availability)

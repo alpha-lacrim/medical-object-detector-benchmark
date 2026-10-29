@@ -1342,5 +1342,77 @@ That command refuses an existing extension; never refresh scientific hashes to
 hide changes. Historical uncertainty intervals are not re-estimated by this
 sensitivity. The September 27 declaration-wording follow-up refreshed the
 16-page PDF, build/QA receipts and 427-row numerical trace from the current
-Markdown. The [submission audit](docs/FINAL_SUBMISSION_AUDIT.md) records that
+Markdown as of that review. The [submission audit](docs/FINAL_SUBMISSION_AUDIT.md) records that
 review and the supporting Git revision.
+
+## Post-hoc external generalization v1
+
+The [protocol](docs/POSTHOC_EXTERNAL_GENERALIZATION_PROTOCOL.md),
+[audit](docs/POSTHOC_EXTERNAL_GENERALIZATION_AUDIT.md),
+[executed results](docs/POSTHOC_EXTERNAL_GENERALIZATION_RESULTS.md),
+[interpretation](docs/POSTHOC_EXTERNAL_GENERALIZATION_INTERPRETATION.md), and
+[verification record](docs/POSTHOC_EXTERNAL_GENERALIZATION_VERIFICATION.md)
+document reference-box errors, local-label overlap, prevalence sensitivity,
+candidate support and checkpoint-coupled cross-domain changes. These are
+post-hoc analyses of frozen saved predictions; primary targets, thresholds,
+candidate support and original artifacts are unchanged. All five runs remain.
+Weighted AP is custom, not official COCO AP. Broader ontology scoring awaits
+expert review; [new inference](docs/POSTHOC_CANDIDATE_SUPPORT_V2_PROPOSAL.md)
+is proposed separately and has not been executed.
+
+Use the pinned Python 3.11 CPU environment and `configs/external_generalization_v1.yaml`.
+Full execution requires authorized local VinDr source annotations, prepared
+canonical targets, both cohorts' frozen prediction bundles, the ten checkpoint
+files and original provenance receipts. No download or GPU inference occurs.
+The config fixes 2,000 draws, base seed 20261028 (the derived stream seed is
+recorded in summary JSON), matching boundaries and output paths. Preflight
+validates every source hash, run identity and strict target geometry. The
+runner uses the archived editorial baseline for legacy freeze checks.
+
+```powershell
+$env:VINDR_CXR_ROOT = (Resolve-Path data/raw/vindr-cxr).Path
+& .\.venv\Scripts\python.exe -m src.stats.run_external_generalization --config configs/external_generalization_v1.yaml --mode preflight
+# First creation only: refuses an existing public/private output or report.
+& .\.venv\Scripts\python.exe -m src.stats.run_external_generalization --config configs/external_generalization_v1.yaml --mode run
+# For an existing completed analysis: hashes and saved-draw interval reconstruction.
+& .\.venv\Scripts\python.exe -m src.stats.run_external_generalization --config configs/external_generalization_v1.yaml --mode verify
+# Recompute all points, tables and 2,000 draws; exact equality required, no writes.
+& .\.venv\Scripts\python.exe -m src.stats.run_external_generalization --config configs/external_generalization_v1.yaml --mode replay
+```
+
+Do not remove prior results to rerun. A fresh first execution needs a new
+versioned config/output location; use replay for the accepted v1. Public
+outputs are 15 CSVs, two PNGs and `results/external_generalization_v1/summary.json`.
+Private draws stay under the ignored prepared-data directory. The generated
+results report and all inputs/code/config are hash-bound. Do not refresh those
+hashes after editing a source file; create a new analysis version instead.
+
+```powershell
+& .\.venv\Scripts\python.exe -m pytest -q
+& .\.venv\Scripts\python.exe -m pytest -q --run-scientific
+& .\.venv\Scripts\python.exe -m ruff check src tests scripts
+& .\.venv\Scripts\python.exe -m ruff format --check src tests scripts
+& .\.venv\Scripts\python.exe -m scripts.verify_paper_claims
+& .\.venv\Scripts\python.exe -m scripts.verify_scientific_artifacts
+& .\.venv\Scripts\python.exe -m scripts.verify_scientific_artifacts --manifest results/publication_artifact_manifest.json
+& .\.venv\Scripts\python.exe -m scripts.verify_frozen_external --mode freeze
+& .\.venv\Scripts\python.exe -m scripts.verify_frozen_external --mode statistics
+& .\.venv\Scripts\python.exe -m scripts.export_paper_trace --manifest report/paper_claim_sources.yaml --output docs/SUBMISSION_NUMERICAL_TRACE.csv
+git diff --check
+```
+
+Portable tests and public artifact checks do not imply authorized-data replay.
+The frozen-statistics wrapper preserves the archived editorial baseline and
+calls the legacy verifier read-only; its default check reconstructs intervals
+from saved draws, whereas the new `--mode replay` recomputes the new bootstrap.
+The publication manifest was extended once with the following maintenance
+command, which refuses repeat registration and preserves all 88 prior entries:
+
+```powershell
+& .\.venv\Scripts\python.exe -m scripts.extend_external_generalization_manifest --config configs/external_generalization_v1.yaml --manifest results/publication_artifact_manifest.json
+```
+
+Canonical Markdown now includes these results, with 468 numerical bindings.
+The existing PDF and build receipts remain the prior reviewed 16-page snapshot;
+refresh and visually review the PDF before submission. Current execution,
+privacy checks, remaining author decisions and Git status are in the verification record.
