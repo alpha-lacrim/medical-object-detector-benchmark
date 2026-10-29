@@ -1,0 +1,401 @@
+detector,seed,support,class_name,count,denominator,fraction
+faster_rcnn,17,historical,Aortic enlargement,0,241,0.0
+faster_rcnn,17,historical,Atelectasis,1,241,0.004149377593360996
+faster_rcnn,17,historical,Calcification,0,241,0.0
+faster_rcnn,17,historical,Cardiomegaly,0,241,0.0
+faster_rcnn,17,historical,Clavicle fracture,0,241,0.0
+faster_rcnn,17,historical,Consolidation,23,241,0.0954356846473029
+faster_rcnn,17,historical,Emphysema,0,241,0.0
+faster_rcnn,17,historical,Enlarged PA,0,241,0.0
+faster_rcnn,17,historical,ILD,42,241,0.17427385892116182
+faster_rcnn,17,historical,Infiltration,11,241,0.04564315352697095
+faster_rcnn,17,historical,Lung cavity,1,241,0.004149377593360996
+faster_rcnn,17,historical,Lung cyst,0,241,0.0
+faster_rcnn,17,historical,Mediastinal shift,0,241,0.0
+faster_rcnn,17,historical,Nodule/Mass,12,241,0.04979253112033195
+faster_rcnn,17,historical,Other lesion,0,241,0.0
+faster_rcnn,17,historical,Pleural effusion,1,241,0.004149377593360996
+faster_rcnn,17,historical,Pleural thickening,0,241,0.0
+faster_rcnn,17,historical,Pneumothorax,0,241,0.0
+faster_rcnn,17,historical,Pulmonary fibrosis,1,241,0.004149377593360996
+faster_rcnn,17,historical,Rib fracture,0,241,0.0
+faster_rcnn,17,retained,Aortic enlargement,53,299948,0.00017669729419766094
+faster_rcnn,17,retained,Atelectasis,69,299948,0.00023003987357808687
+faster_rcnn,17,retained,Calcification,26,299948,8.668169149319215e-05
+faster_rcnn,17,retained,Cardiomegaly,210,299948,0.0007001213543680905
+faster_rcnn,17,retained,Clavicle fracture,1,299948,3.333911211276621e-06
+faster_rcnn,17,retained,Consolidation,220,299948,0.0007334604664808567
+faster_rcnn,17,retained,Emphysema,6,299948,2.0003467267659727e-05
+faster_rcnn,17,retained,Enlarged PA,4,299948,1.3335644845106485e-05
+faster_rcnn,17,retained,ILD,454,299948,0.001513595689919586
+faster_rcnn,17,retained,Infiltration,127,299948,0.00042340672383213093
+faster_rcnn,17,retained,Lung cavity,5,299948,1.6669556056383107e-05
+faster_rcnn,17,retained,Lung cyst,2,299948,6.667822422553242e-06
+faster_rcnn,17,retained,Mediastinal shift,4,299948,1.3335644845106485e-05
+faster_rcnn,17,retained,Nodule/Mass,198,299948,0.000660114419832771
+faster_rcnn,17,retained,Other lesion,43,299948,0.00014335818208489472
+faster_rcnn,17,retained,Pleural effusion,73,299948,0.00024337551842319336
+faster_rcnn,17,retained,Pleural thickening,9,299948,3.0005200901489592e-05
+faster_rcnn,17,retained,Pneumothorax,11,299948,3.667302332404283e-05
+faster_rcnn,17,retained,Pulmonary fibrosis,212,299948,0.0007067891767906437
+faster_rcnn,17,retained,Rib fracture,0,299948,0.0
+faster_rcnn,42,historical,Aortic enlargement,0,167,0.0
+faster_rcnn,42,historical,Atelectasis,1,167,0.005988023952095809
+faster_rcnn,42,historical,Calcification,2,167,0.011976047904191617
+faster_rcnn,42,historical,Cardiomegaly,0,167,0.0
+faster_rcnn,42,historical,Clavicle fracture,0,167,0.0
+faster_rcnn,42,historical,Consolidation,30,167,0.17964071856287425
+faster_rcnn,42,historical,Emphysema,0,167,0.0
+faster_rcnn,42,historical,Enlarged PA,0,167,0.0
+faster_rcnn,42,historical,ILD,36,167,0.2155688622754491
+faster_rcnn,42,historical,Infiltration,12,167,0.0718562874251497
+faster_rcnn,42,historical,Lung cavity,0,167,0.0
+faster_rcnn,42,historical,Lung cyst,0,167,0.0
+faster_rcnn,42,historical,Mediastinal shift,0,167,0.0
+faster_rcnn,42,historical,Nodule/Mass,14,167,0.08383233532934131
+faster_rcnn,42,historical,Other lesion,0,167,0.0
+faster_rcnn,42,historical,Pleural effusion,3,167,0.017964071856287425
+faster_rcnn,42,historical,Pleural thickening,0,167,0.0
+faster_rcnn,42,historical,Pneumothorax,0,167,0.0
+faster_rcnn,42,historical,Pulmonary fibrosis,3,167,0.017964071856287425
+faster_rcnn,42,historical,Rib fracture,0,167,0.0
+faster_rcnn,42,retained,Aortic enlargement,33,297508,0.00011092138698791292
+faster_rcnn,42,retained,Atelectasis,73,297508,0.000245371553033868
+faster_rcnn,42,retained,Calcification,28,297508,9.411511623216855e-05
+faster_rcnn,42,retained,Cardiomegaly,217,297508,0.0007293921507993062
+faster_rcnn,42,retained,Clavicle fracture,0,297508,0.0
+faster_rcnn,42,retained,Consolidation,234,297508,0.0007865334713688372
+faster_rcnn,42,retained,Emphysema,3,297508,1.008376245344663e-05
+faster_rcnn,42,retained,Enlarged PA,2,297508,6.7225083022977535e-06
+faster_rcnn,42,retained,ILD,530,297508,0.0017814647001089046
+faster_rcnn,42,retained,Infiltration,129,297508,0.0004336017854982051
+faster_rcnn,42,retained,Lung cavity,12,297508,4.033504981378652e-05
+faster_rcnn,42,retained,Lung cyst,0,297508,0.0
+faster_rcnn,42,retained,Mediastinal shift,1,297508,3.3612541511488768e-06
+faster_rcnn,42,retained,Nodule/Mass,206,297508,0.0006924183551366686
+faster_rcnn,42,retained,Other lesion,46,297508,0.00015461769095284834
+faster_rcnn,42,retained,Pleural effusion,51,297508,0.0001714239617085927
+faster_rcnn,42,retained,Pleural thickening,10,297508,3.361254151148877e-05
+faster_rcnn,42,retained,Pneumothorax,13,297508,4.36963039649354e-05
+faster_rcnn,42,retained,Pulmonary fibrosis,228,297508,0.0007663659464619438
+faster_rcnn,42,retained,Rib fracture,4,297508,1.3445016604595507e-05
+faster_rcnn,137,historical,Aortic enlargement,0,46,0.0
+faster_rcnn,137,historical,Atelectasis,0,46,0.0
+faster_rcnn,137,historical,Calcification,0,46,0.0
+faster_rcnn,137,historical,Cardiomegaly,0,46,0.0
+faster_rcnn,137,historical,Clavicle fracture,0,46,0.0
+faster_rcnn,137,historical,Consolidation,6,46,0.13043478260869565
+faster_rcnn,137,historical,Emphysema,0,46,0.0
+faster_rcnn,137,historical,Enlarged PA,0,46,0.0
+faster_rcnn,137,historical,ILD,13,46,0.2826086956521739
+faster_rcnn,137,historical,Infiltration,3,46,0.06521739130434782
+faster_rcnn,137,historical,Lung cavity,1,46,0.021739130434782608
+faster_rcnn,137,historical,Lung cyst,0,46,0.0
+faster_rcnn,137,historical,Mediastinal shift,0,46,0.0
+faster_rcnn,137,historical,Nodule/Mass,4,46,0.08695652173913043
+faster_rcnn,137,historical,Other lesion,0,46,0.0
+faster_rcnn,137,historical,Pleural effusion,0,46,0.0
+faster_rcnn,137,historical,Pleural thickening,0,46,0.0
+faster_rcnn,137,historical,Pneumothorax,0,46,0.0
+faster_rcnn,137,historical,Pulmonary fibrosis,1,46,0.021739130434782608
+faster_rcnn,137,historical,Rib fracture,0,46,0.0
+faster_rcnn,137,retained,Aortic enlargement,37,299943,0.0001233567711198461
+faster_rcnn,137,retained,Atelectasis,72,299943,0.00024004560866564649
+faster_rcnn,137,retained,Calcification,25,299943,8.334916967557169e-05
+faster_rcnn,137,retained,Cardiomegaly,277,299943,0.0009235088000053343
+faster_rcnn,137,retained,Clavicle fracture,3,299943,1.0001900361068604e-05
+faster_rcnn,137,retained,Consolidation,245,299943,0.0008168218628206025
+faster_rcnn,137,retained,Emphysema,3,299943,1.0001900361068604e-05
+faster_rcnn,137,retained,Enlarged PA,4,299943,1.3335867148091471e-05
+faster_rcnn,137,retained,ILD,496,299943,0.0016536475263633423
+faster_rcnn,137,retained,Infiltration,124,299943,0.0004134118815908356
+faster_rcnn,137,retained,Lung cavity,10,299943,3.333966787022868e-05
+faster_rcnn,137,retained,Lung cyst,2,299943,6.667933574045736e-06
+faster_rcnn,137,retained,Mediastinal shift,5,299943,1.666983393511434e-05
+faster_rcnn,137,retained,Nodule/Mass,212,299943,0.0007068009588488479
+faster_rcnn,137,retained,Other lesion,68,299943,0.000226709741517555
+faster_rcnn,137,retained,Pleural effusion,59,299943,0.0001967040404343492
+faster_rcnn,137,retained,Pleural thickening,8,299943,2.6671734296182943e-05
+faster_rcnn,137,retained,Pneumothorax,11,299943,3.667363465725154e-05
+faster_rcnn,137,retained,Pulmonary fibrosis,245,299943,0.0008168218628206025
+faster_rcnn,137,retained,Rib fracture,0,299943,0.0
+faster_rcnn,271,historical,Aortic enlargement,0,131,0.0
+faster_rcnn,271,historical,Atelectasis,0,131,0.0
+faster_rcnn,271,historical,Calcification,0,131,0.0
+faster_rcnn,271,historical,Cardiomegaly,1,131,0.007633587786259542
+faster_rcnn,271,historical,Clavicle fracture,0,131,0.0
+faster_rcnn,271,historical,Consolidation,30,131,0.22900763358778625
+faster_rcnn,271,historical,Emphysema,0,131,0.0
+faster_rcnn,271,historical,Enlarged PA,0,131,0.0
+faster_rcnn,271,historical,ILD,23,131,0.17557251908396945
+faster_rcnn,271,historical,Infiltration,11,131,0.08396946564885496
+faster_rcnn,271,historical,Lung cavity,1,131,0.007633587786259542
+faster_rcnn,271,historical,Lung cyst,0,131,0.0
+faster_rcnn,271,historical,Mediastinal shift,0,131,0.0
+faster_rcnn,271,historical,Nodule/Mass,14,131,0.10687022900763359
+faster_rcnn,271,historical,Other lesion,0,131,0.0
+faster_rcnn,271,historical,Pleural effusion,0,131,0.0
+faster_rcnn,271,historical,Pleural thickening,0,131,0.0
+faster_rcnn,271,historical,Pneumothorax,0,131,0.0
+faster_rcnn,271,historical,Pulmonary fibrosis,3,131,0.022900763358778626
+faster_rcnn,271,historical,Rib fracture,0,131,0.0
+faster_rcnn,271,retained,Aortic enlargement,24,299947,8.001413583066342e-05
+faster_rcnn,271,retained,Atelectasis,74,299947,0.00024671025214454556
+faster_rcnn,271,retained,Calcification,19,299947,6.334452419927521e-05
+faster_rcnn,271,retained,Cardiomegaly,103,299947,0.00034339399960659715
+faster_rcnn,271,retained,Clavicle fracture,0,299947,0.0
+faster_rcnn,271,retained,Consolidation,236,299947,0.0007868056690015236
+faster_rcnn,271,retained,Emphysema,4,299947,1.333568930511057e-05
+faster_rcnn,271,retained,Enlarged PA,3,299947,1.0001766978832927e-05
+faster_rcnn,271,retained,ILD,501,299947,0.0016702950854650988
+faster_rcnn,271,retained,Infiltration,122,299947,0.0004067385238058724
+faster_rcnn,271,retained,Lung cavity,10,299947,3.3339223262776424e-05
+faster_rcnn,271,retained,Lung cyst,0,299947,0.0
+faster_rcnn,271,retained,Mediastinal shift,1,299947,3.3339223262776424e-06
+faster_rcnn,271,retained,Nodule/Mass,241,299947,0.0008034752806329118
+faster_rcnn,271,retained,Other lesion,42,299947,0.00014002473770366098
+faster_rcnn,271,retained,Pleural effusion,79,299947,0.00026337986377593375
+faster_rcnn,271,retained,Pleural thickening,6,299947,2.0003533957665855e-05
+faster_rcnn,271,retained,Pneumothorax,6,299947,2.0003533957665855e-05
+faster_rcnn,271,retained,Pulmonary fibrosis,217,299947,0.0007234611448022484
+faster_rcnn,271,retained,Rib fracture,5,299947,1.6669611631388212e-05
+faster_rcnn,314,historical,Aortic enlargement,0,130,0.0
+faster_rcnn,314,historical,Atelectasis,2,130,0.015384615384615385
+faster_rcnn,314,historical,Calcification,0,130,0.0
+faster_rcnn,314,historical,Cardiomegaly,0,130,0.0
+faster_rcnn,314,historical,Clavicle fracture,0,130,0.0
+faster_rcnn,314,historical,Consolidation,25,130,0.19230769230769232
+faster_rcnn,314,historical,Emphysema,0,130,0.0
+faster_rcnn,314,historical,Enlarged PA,0,130,0.0
+faster_rcnn,314,historical,ILD,28,130,0.2153846153846154
+faster_rcnn,314,historical,Infiltration,8,130,0.06153846153846154
+faster_rcnn,314,historical,Lung cavity,1,130,0.007692307692307693
+faster_rcnn,314,historical,Lung cyst,0,130,0.0
+faster_rcnn,314,historical,Mediastinal shift,0,130,0.0
+faster_rcnn,314,historical,Nodule/Mass,12,130,0.09230769230769231
+faster_rcnn,314,historical,Other lesion,0,130,0.0
+faster_rcnn,314,historical,Pleural effusion,2,130,0.015384615384615385
+faster_rcnn,314,historical,Pleural thickening,0,130,0.0
+faster_rcnn,314,historical,Pneumothorax,0,130,0.0
+faster_rcnn,314,historical,Pulmonary fibrosis,2,130,0.015384615384615385
+faster_rcnn,314,historical,Rib fracture,0,130,0.0
+faster_rcnn,314,retained,Aortic enlargement,56,248356,0.00022548277472660215
+faster_rcnn,314,retained,Atelectasis,66,248356,0.00026574755592778107
+faster_rcnn,314,retained,Calcification,19,248356,7.650308428224001e-05
+faster_rcnn,314,retained,Cardiomegaly,149,248356,0.0005999452398975664
+faster_rcnn,314,retained,Clavicle fracture,2,248356,8.05295624023579e-06
+faster_rcnn,314,retained,Consolidation,244,248356,0.0009824606613087665
+faster_rcnn,314,retained,Emphysema,5,248356,2.0132390600589477e-05
+faster_rcnn,314,retained,Enlarged PA,3,248356,1.2079434360353685e-05
+faster_rcnn,314,retained,ILD,506,248356,0.002037397928779655
+faster_rcnn,314,retained,Infiltration,116,248356,0.00046707146193367583
+faster_rcnn,314,retained,Lung cavity,12,248356,4.831773744141474e-05
+faster_rcnn,314,retained,Lung cyst,0,248356,0.0
+faster_rcnn,314,retained,Mediastinal shift,0,248356,0.0
+faster_rcnn,314,retained,Nodule/Mass,177,248356,0.0007126866272608675
+faster_rcnn,314,retained,Other lesion,38,248356,0.00015300616856448002
+faster_rcnn,314,retained,Pleural effusion,64,248356,0.00025769459968754527
+faster_rcnn,314,retained,Pleural thickening,8,248356,3.221182496094316e-05
+faster_rcnn,314,retained,Pneumothorax,9,248356,3.6238303081061056e-05
+faster_rcnn,314,retained,Pulmonary fibrosis,180,248356,0.0007247660616212211
+faster_rcnn,314,retained,Rib fracture,4,248356,1.610591248047158e-05
+yolo11s,17,historical,Aortic enlargement,0,110,0.0
+yolo11s,17,historical,Atelectasis,1,110,0.00909090909090909
+yolo11s,17,historical,Calcification,0,110,0.0
+yolo11s,17,historical,Cardiomegaly,0,110,0.0
+yolo11s,17,historical,Clavicle fracture,0,110,0.0
+yolo11s,17,historical,Consolidation,14,110,0.12727272727272726
+yolo11s,17,historical,Emphysema,0,110,0.0
+yolo11s,17,historical,Enlarged PA,0,110,0.0
+yolo11s,17,historical,ILD,13,110,0.11818181818181818
+yolo11s,17,historical,Infiltration,7,110,0.06363636363636363
+yolo11s,17,historical,Lung cavity,1,110,0.00909090909090909
+yolo11s,17,historical,Lung cyst,0,110,0.0
+yolo11s,17,historical,Mediastinal shift,0,110,0.0
+yolo11s,17,historical,Nodule/Mass,9,110,0.08181818181818182
+yolo11s,17,historical,Other lesion,0,110,0.0
+yolo11s,17,historical,Pleural effusion,4,110,0.03636363636363636
+yolo11s,17,historical,Pleural thickening,0,110,0.0
+yolo11s,17,historical,Pneumothorax,0,110,0.0
+yolo11s,17,historical,Pulmonary fibrosis,1,110,0.00909090909090909
+yolo11s,17,historical,Rib fracture,0,110,0.0
+yolo11s,17,retained,Aortic enlargement,0,16048,0.0
+yolo11s,17,retained,Atelectasis,17,16048,0.001059322033898305
+yolo11s,17,retained,Calcification,4,16048,0.0002492522432701894
+yolo11s,17,retained,Cardiomegaly,5,16048,0.0003115653040877368
+yolo11s,17,retained,Clavicle fracture,0,16048,0.0
+yolo11s,17,retained,Consolidation,97,16048,0.0060443668993020935
+yolo11s,17,retained,Emphysema,0,16048,0.0
+yolo11s,17,retained,Enlarged PA,0,16048,0.0
+yolo11s,17,retained,ILD,183,16048,0.011403290129611167
+yolo11s,17,retained,Infiltration,51,16048,0.0031779661016949155
+yolo11s,17,retained,Lung cavity,3,16048,0.00018693918245264209
+yolo11s,17,retained,Lung cyst,0,16048,0.0
+yolo11s,17,retained,Mediastinal shift,0,16048,0.0
+yolo11s,17,retained,Nodule/Mass,44,16048,0.0027417746759720836
+yolo11s,17,retained,Other lesion,8,16048,0.0004985044865403788
+yolo11s,17,retained,Pleural effusion,20,16048,0.0012462612163509472
+yolo11s,17,retained,Pleural thickening,0,16048,0.0
+yolo11s,17,retained,Pneumothorax,0,16048,0.0
+yolo11s,17,retained,Pulmonary fibrosis,31,16048,0.001931704885343968
+yolo11s,17,retained,Rib fracture,0,16048,0.0
+yolo11s,42,historical,Aortic enlargement,0,84,0.0
+yolo11s,42,historical,Atelectasis,1,84,0.011904761904761904
+yolo11s,42,historical,Calcification,0,84,0.0
+yolo11s,42,historical,Cardiomegaly,0,84,0.0
+yolo11s,42,historical,Clavicle fracture,0,84,0.0
+yolo11s,42,historical,Consolidation,12,84,0.14285714285714285
+yolo11s,42,historical,Emphysema,0,84,0.0
+yolo11s,42,historical,Enlarged PA,0,84,0.0
+yolo11s,42,historical,ILD,10,84,0.11904761904761904
+yolo11s,42,historical,Infiltration,6,84,0.07142857142857142
+yolo11s,42,historical,Lung cavity,0,84,0.0
+yolo11s,42,historical,Lung cyst,0,84,0.0
+yolo11s,42,historical,Mediastinal shift,0,84,0.0
+yolo11s,42,historical,Nodule/Mass,8,84,0.09523809523809523
+yolo11s,42,historical,Other lesion,0,84,0.0
+yolo11s,42,historical,Pleural effusion,3,84,0.03571428571428571
+yolo11s,42,historical,Pleural thickening,0,84,0.0
+yolo11s,42,historical,Pneumothorax,0,84,0.0
+yolo11s,42,historical,Pulmonary fibrosis,2,84,0.023809523809523808
+yolo11s,42,historical,Rib fracture,0,84,0.0
+yolo11s,42,retained,Aortic enlargement,2,12874,0.00015535187199005747
+yolo11s,42,retained,Atelectasis,15,12874,0.0011651390399254312
+yolo11s,42,retained,Calcification,1,12874,7.767593599502873e-05
+yolo11s,42,retained,Cardiomegaly,4,12874,0.00031070374398011494
+yolo11s,42,retained,Clavicle fracture,0,12874,0.0
+yolo11s,42,retained,Consolidation,104,12874,0.008078297343482988
+yolo11s,42,retained,Emphysema,0,12874,0.0
+yolo11s,42,retained,Enlarged PA,0,12874,0.0
+yolo11s,42,retained,ILD,158,12874,0.012272797887214542
+yolo11s,42,retained,Infiltration,33,12874,0.0025633058878359485
+yolo11s,42,retained,Lung cavity,2,12874,0.00015535187199005747
+yolo11s,42,retained,Lung cyst,0,12874,0.0
+yolo11s,42,retained,Mediastinal shift,1,12874,7.767593599502873e-05
+yolo11s,42,retained,Nodule/Mass,58,12874,0.004505204287711667
+yolo11s,42,retained,Other lesion,8,12874,0.0006214074879602299
+yolo11s,42,retained,Pleural effusion,16,12874,0.0012428149759204598
+yolo11s,42,retained,Pleural thickening,0,12874,0.0
+yolo11s,42,retained,Pneumothorax,0,12874,0.0
+yolo11s,42,retained,Pulmonary fibrosis,36,12874,0.0027963336958210347
+yolo11s,42,retained,Rib fracture,0,12874,0.0
+yolo11s,137,historical,Aortic enlargement,0,132,0.0
+yolo11s,137,historical,Atelectasis,1,132,0.007575757575757576
+yolo11s,137,historical,Calcification,0,132,0.0
+yolo11s,137,historical,Cardiomegaly,0,132,0.0
+yolo11s,137,historical,Clavicle fracture,0,132,0.0
+yolo11s,137,historical,Consolidation,16,132,0.12121212121212122
+yolo11s,137,historical,Emphysema,1,132,0.007575757575757576
+yolo11s,137,historical,Enlarged PA,0,132,0.0
+yolo11s,137,historical,ILD,9,132,0.06818181818181818
+yolo11s,137,historical,Infiltration,2,132,0.015151515151515152
+yolo11s,137,historical,Lung cavity,0,132,0.0
+yolo11s,137,historical,Lung cyst,0,132,0.0
+yolo11s,137,historical,Mediastinal shift,0,132,0.0
+yolo11s,137,historical,Nodule/Mass,5,132,0.03787878787878788
+yolo11s,137,historical,Other lesion,0,132,0.0
+yolo11s,137,historical,Pleural effusion,0,132,0.0
+yolo11s,137,historical,Pleural thickening,0,132,0.0
+yolo11s,137,historical,Pneumothorax,0,132,0.0
+yolo11s,137,historical,Pulmonary fibrosis,1,132,0.007575757575757576
+yolo11s,137,historical,Rib fracture,0,132,0.0
+yolo11s,137,retained,Aortic enlargement,2,2380,0.0008403361344537816
+yolo11s,137,retained,Atelectasis,5,2380,0.0021008403361344537
+yolo11s,137,retained,Calcification,1,2380,0.0004201680672268908
+yolo11s,137,retained,Cardiomegaly,0,2380,0.0
+yolo11s,137,retained,Clavicle fracture,0,2380,0.0
+yolo11s,137,retained,Consolidation,67,2380,0.02815126050420168
+yolo11s,137,retained,Emphysema,1,2380,0.0004201680672268908
+yolo11s,137,retained,Enlarged PA,0,2380,0.0
+yolo11s,137,retained,ILD,58,2380,0.024369747899159664
+yolo11s,137,retained,Infiltration,16,2380,0.0067226890756302525
+yolo11s,137,retained,Lung cavity,3,2380,0.0012605042016806723
+yolo11s,137,retained,Lung cyst,0,2380,0.0
+yolo11s,137,retained,Mediastinal shift,0,2380,0.0
+yolo11s,137,retained,Nodule/Mass,21,2380,0.008823529411764706
+yolo11s,137,retained,Other lesion,2,2380,0.0008403361344537816
+yolo11s,137,retained,Pleural effusion,2,2380,0.0008403361344537816
+yolo11s,137,retained,Pleural thickening,0,2380,0.0
+yolo11s,137,retained,Pneumothorax,0,2380,0.0
+yolo11s,137,retained,Pulmonary fibrosis,10,2380,0.004201680672268907
+yolo11s,137,retained,Rib fracture,0,2380,0.0
+yolo11s,271,historical,Aortic enlargement,0,0,
+yolo11s,271,historical,Atelectasis,0,0,
+yolo11s,271,historical,Calcification,0,0,
+yolo11s,271,historical,Cardiomegaly,0,0,
+yolo11s,271,historical,Clavicle fracture,0,0,
+yolo11s,271,historical,Consolidation,0,0,
+yolo11s,271,historical,Emphysema,0,0,
+yolo11s,271,historical,Enlarged PA,0,0,
+yolo11s,271,historical,ILD,0,0,
+yolo11s,271,historical,Infiltration,0,0,
+yolo11s,271,historical,Lung cavity,0,0,
+yolo11s,271,historical,Lung cyst,0,0,
+yolo11s,271,historical,Mediastinal shift,0,0,
+yolo11s,271,historical,Nodule/Mass,0,0,
+yolo11s,271,historical,Other lesion,0,0,
+yolo11s,271,historical,Pleural effusion,0,0,
+yolo11s,271,historical,Pleural thickening,0,0,
+yolo11s,271,historical,Pneumothorax,0,0,
+yolo11s,271,historical,Pulmonary fibrosis,0,0,
+yolo11s,271,historical,Rib fracture,0,0,
+yolo11s,271,retained,Aortic enlargement,9,45480,0.00019788918205804749
+yolo11s,271,retained,Atelectasis,24,45480,0.0005277044854881266
+yolo11s,271,retained,Calcification,5,45480,0.00010993843447669306
+yolo11s,271,retained,Cardiomegaly,17,45480,0.0003737906772207564
+yolo11s,271,retained,Clavicle fracture,0,45480,0.0
+yolo11s,271,retained,Consolidation,134,45480,0.0029463500439753736
+yolo11s,271,retained,Emphysema,2,45480,4.397537379067722e-05
+yolo11s,271,retained,Enlarged PA,0,45480,0.0
+yolo11s,271,retained,ILD,266,45480,0.00584872471416007
+yolo11s,271,retained,Infiltration,74,45480,0.0016270888302550573
+yolo11s,271,retained,Lung cavity,3,45480,6.596306068601583e-05
+yolo11s,271,retained,Lung cyst,1,45480,2.198768689533861e-05
+yolo11s,271,retained,Mediastinal shift,0,45480,0.0
+yolo11s,271,retained,Nodule/Mass,72,45480,0.0015831134564643799
+yolo11s,271,retained,Other lesion,12,45480,0.0002638522427440633
+yolo11s,271,retained,Pleural effusion,25,45480,0.0005496921723834653
+yolo11s,271,retained,Pleural thickening,0,45480,0.0
+yolo11s,271,retained,Pneumothorax,3,45480,6.596306068601583e-05
+yolo11s,271,retained,Pulmonary fibrosis,74,45480,0.0016270888302550573
+yolo11s,271,retained,Rib fracture,0,45480,0.0
+yolo11s,314,historical,Aortic enlargement,0,80,0.0
+yolo11s,314,historical,Atelectasis,1,80,0.0125
+yolo11s,314,historical,Calcification,0,80,0.0
+yolo11s,314,historical,Cardiomegaly,0,80,0.0
+yolo11s,314,historical,Clavicle fracture,0,80,0.0
+yolo11s,314,historical,Consolidation,9,80,0.1125
+yolo11s,314,historical,Emphysema,0,80,0.0
+yolo11s,314,historical,Enlarged PA,0,80,0.0
+yolo11s,314,historical,ILD,12,80,0.15
+yolo11s,314,historical,Infiltration,4,80,0.05
+yolo11s,314,historical,Lung cavity,1,80,0.0125
+yolo11s,314,historical,Lung cyst,0,80,0.0
+yolo11s,314,historical,Mediastinal shift,0,80,0.0
+yolo11s,314,historical,Nodule/Mass,5,80,0.0625
+yolo11s,314,historical,Other lesion,0,80,0.0
+yolo11s,314,historical,Pleural effusion,0,80,0.0
+yolo11s,314,historical,Pleural thickening,0,80,0.0
+yolo11s,314,historical,Pneumothorax,0,80,0.0
+yolo11s,314,historical,Pulmonary fibrosis,2,80,0.025
+yolo11s,314,historical,Rib fracture,0,80,0.0
+yolo11s,314,retained,Aortic enlargement,15,23215,0.0006461339651087659
+yolo11s,314,retained,Atelectasis,20,23215,0.0008615119534783546
+yolo11s,314,retained,Calcification,2,23215,8.615119534783545e-05
+yolo11s,314,retained,Cardiomegaly,16,23215,0.0006892095627826836
+yolo11s,314,retained,Clavicle fracture,0,23215,0.0
+yolo11s,314,retained,Consolidation,122,23215,0.005255222916217962
+yolo11s,314,retained,Emphysema,1,23215,4.3075597673917726e-05
+yolo11s,314,retained,Enlarged PA,0,23215,0.0
+yolo11s,314,retained,ILD,203,23215,0.008744346327805299
+yolo11s,314,retained,Infiltration,49,23215,0.0021107042860219684
+yolo11s,314,retained,Lung cavity,3,23215,0.0001292267930217532
+yolo11s,314,retained,Lung cyst,0,23215,0.0
+yolo11s,314,retained,Mediastinal shift,0,23215,0.0
+yolo11s,314,retained,Nodule/Mass,68,23215,0.002929140641826405
+yolo11s,314,retained,Other lesion,9,23215,0.00038768037906525954
+yolo11s,314,retained,Pleural effusion,23,23215,0.0009907387465001077
+yolo11s,314,retained,Pleural thickening,0,23215,0.0
+yolo11s,314,retained,Pneumothorax,1,23215,4.3075597673917726e-05
+yolo11s,314,retained,Pulmonary fibrosis,29,23215,0.001249192332543614
+yolo11s,314,retained,Rib fracture,0,23215,0.0

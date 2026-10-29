@@ -1,0 +1,44 @@
+﻿{
+    "status":  "complete",
+    "started_at":  "2026-08-18T23:50:06.0793492Z",
+    "completed_at":  "2026-08-19T04:35:39.5660897Z",
+    "active_job":  null,
+    "jobs":  [
+                 {
+                     "name":  "faster_rcnn_seed271",
+                     "status":  "complete",
+                     "started_at":  "2026-08-18T23:50:06.0832791Z",
+                     "completed_at":  "2026-08-19T01:31:39.4310343Z",
+                     "exit_code":  0,
+                     "stdout":  "C:\\Users\\Pouyan\\PycharmProjects\\Uni\\Deep Learning\\DP_Final_Project\\results\\logs\\phase16_orchestration\\faster_rcnn_seed271.out",
+                     "stderr":  "C:\\Users\\Pouyan\\PycharmProjects\\Uni\\Deep Learning\\DP_Final_Project\\results\\logs\\phase16_orchestration\\faster_rcnn_seed271.err"
+                 },
+                 {
+                     "name":  "faster_rcnn_seed314",
+                     "status":  "complete",
+                     "started_at":  "2026-08-19T01:31:39.4370329Z",
+                     "completed_at":  "2026-08-19T03:56:37.8671867Z",
+                     "exit_code":  0,
+                     "stdout":  "C:\\Users\\Pouyan\\PycharmProjects\\Uni\\Deep Learning\\DP_Final_Project\\results\\logs\\phase16_orchestration\\faster_rcnn_seed314.out",
+                     "stderr":  "C:\\Users\\Pouyan\\PycharmProjects\\Uni\\Deep Learning\\DP_Final_Project\\results\\logs\\phase16_orchestration\\faster_rcnn_seed314.err"
+                 },
+                 {
+                     "name":  "yolo11s_seed271",
+                     "status":  "complete",
+                     "started_at":  "2026-08-19T03:56:37.8705255Z",
+                     "completed_at":  "2026-08-19T04:15:11.2144817Z",
+                     "exit_code":  0,
+                     "stdout":  "C:\\Users\\Pouyan\\PycharmProjects\\Uni\\Deep Learning\\DP_Final_Project\\results\\logs\\phase16_orchestration\\yolo11s_seed271.out",
+                     "stderr":  "C:\\Users\\Pouyan\\PycharmProjects\\Uni\\Deep Learning\\DP_Final_Project\\results\\logs\\phase16_orchestration\\yolo11s_seed271.err"
+                 },
+                 {
+                     "name":  "yolo11s_seed314",
+                     "status":  "complete",
+                     "started_at":  "2026-08-19T04:15:11.2164693Z",
+                     "completed_at":  "2026-08-19T04:35:39.5611652Z",
+                     "exit_code":  0,
+                     "stdout":  "C:\\Users\\Pouyan\\PycharmProjects\\Uni\\Deep Learning\\DP_Final_Project\\results\\logs\\phase16_orchestration\\yolo11s_seed314.out",
+                     "stderr":  "C:\\Users\\Pouyan\\PycharmProjects\\Uni\\Deep Learning\\DP_Final_Project\\results\\logs\\phase16_orchestration\\yolo11s_seed314.err"
+                 }
+             ]
+}

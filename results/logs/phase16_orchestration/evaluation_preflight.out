@@ -1,0 +1,15 @@
+{
+  "experiment_id": "rsna-phase5-five-seed-comparison",
+  "missing_artifacts": [],
+  "ready": true,
+  "run_count": 10,
+  "seeds": [
+    17,
+    42,
+    137,
+    271,
+    314
+  ],
+  "split": "test",
+  "training_contracts_validated": 10
+}

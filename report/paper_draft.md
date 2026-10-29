@@ -32,7 +32,10 @@ the same checkpoints without adaptation to 3,000 VinDr-CXR images, including
 84 images with 95 strict-target boxes. Historical three-run RSNA validation
 thresholds remained primary; five-run selection was post-hoc sensitivity.
 Primary uncertainty resampled held-out observations and independent detector
-runs. Timing used a matched boundary on an RTX 4060 laptop.
+runs. Timing used a matched boundary on an RTX 4060 laptop. Subsequent post-hoc
+analyses decomposed retained-candidate errors, inspected overlap with other
+local findings, reweighted internal positive frequency, and estimated changes
+with the same checkpoints coupled across datasets.
 
 **Results:** Mean AP@0.50 fell from 0.304224 to 0.002505 for Faster R-CNN and
 from 0.162612 to 0.000501 for YOLO11s. External AP contrasts retained positive
@@ -44,7 +47,10 @@ included zero. Missing candidate support allowed an ordering reversal beyond
 the observed frontier at the upper budgets; detection-cap saturation imposed
 an additional limit. One low-score YOLO run emitted nothing at the historical
 threshold and remained included. YOLO11s had 2.75-fold higher measured
-throughput under the matched timing protocol.
+throughput under the matched timing protocol. Post-hoc diagnostics showed
+different mixtures of below-threshold localization and missing retained
+candidates. Other-finding overlap and population weighting informed sensitivity
+without identifying causes of external failure.
 
 **Conclusions:** Preserved observed AP ordering did not imply preserved
 performance or successful operating-point transport. Ranking, score scale,
@@ -88,6 +94,12 @@ remain disclosed, so conclusions apply to the evaluated pipelines. Secondary
 calibration, stress-test, and explanation analyses are indexed in the
 [supplement](../docs/SUPPLEMENTARY.md). The internal analysis is retrospective and was not preregistered. The external
 protocol was locally frozen before full inference, not publicly preregistered.
+
+The subsequent exploratory contribution is an auditable decomposition of
+failure within retained predictions, annotation-overlap and population-weight
+sensitivities, and uncertainty in within-checkpoint cross-dataset changes.
+These analyses preserve the frozen target and distinguish measurable failure
+patterns from unidentifiable explanations.
 
 ## 2. Related Work
 
@@ -152,6 +164,20 @@ therefore assesses cross-dataset and cross-annotation-ontology transportability.
 Holding checkpoints and operating rules fixed allows ranking transport to be
 examined separately from the transport of absolute performance and emissions.
 It does not isolate which dataset or implementation difference causes a shift.
+
+Zech et al. demonstrated variable cross-hospital chest-radiograph performance
+and dataset-associated signals in pneumonia classification
+[@zech2018generalization]; that evidence motivates external testing without
+providing a localization benchmark interchangeable with ours. Reinke et al.
+describe how prevalence, reference definitions and aggregation affect image
+analysis metrics [@reinke2024pitfalls]. Positive-frequency standardization here
+is a sensitivity calculation, not a fitted label-shift correction: label-shift
+methods rely on assumptions about stable conditional distributions that are
+not established across these datasets [@lipton2018labelshift]. Training-run
+resampling reflects benchmark variability [@bouthillier2021variance], while
+FROC describes lesion localization against false-positive burden
+[@chakraborty2010freeresponse]. None of these established ideas is claimed as
+a new method; the contribution is their joint, reproducible empirical use.
 
 ## 3. Materials and Methods
 
@@ -372,7 +398,9 @@ selected thresholds and retained floor/cap support; neither threshold-selection
 uncertainty nor missing candidate support is resolved. Undefined draws are
 reported without retrying or imputing. The post-hoc five-run threshold policy
 and score/emission summaries remain descriptive. Cohorts and predictions were
-never pooled, and no cross-dataset interaction test was performed. Labels such
+never pooled, and no cross-dataset interaction test was performed in that
+original analysis. The later post-hoc change intervals are specified in
+Section 3.9. Labels such
 as unchanged, strengthened, weakened, and reversed describe observed ordering
 or raw gaps, not significance decisions. Full estimands and all intervals are in
 [Supplementary Section S9](../docs/SUPPLEMENTARY.md#s9-frozen-external-testing-and-transportability).
@@ -430,6 +458,45 @@ hypothetical linear-loss analyses remain in
 [Supplementary Section S3](../docs/SUPPLEMENTARY.md#s3-operating-point-and-threshold-evidence);
 their thresholds were not applied to test data. Conventional decision-curve
 analysis and clinical net benefit were not evaluated.
+
+### 3.9 Post-hoc external failure and change analyses
+
+After observing external outcomes, a versioned exploratory protocol reused
+all frozen predictions and historical thresholds. Strict reference boxes were
+classified in order as matched, unmatched despite an above-threshold compatible
+candidate, compatible only below threshold, partially localized, or without a
+relevant retained candidate. Compatibility required IoU at least 0.50; partial
+localization required best retained IoU from 0.25 to below 0.50. Candidate
+availability ignores assignment competition and cannot establish recall.
+Strict false positives were classified in order by overlap with an already
+claimed strict target, another local finding at IoU at least 0.50, partial local
+overlap, or no substantial local overlap. Nonexclusive class flags additionally
+describe Consolidation, Infiltration, Atelectasis and ILD. Global labels were
+excluded. No broader merged target was scored without expert instance review;
+overlap never changes a strict false positive into a true positive.
+
+For prevalence sensitivity, internal positive and negative images received
+weights q/p and (1-q)/(1-p), respectively, where p is internal positive-image
+frequency and q is the observed external frequency. Every event and reference
+box inherits its image weight. Weighted precision uses weighted counts;
+custom weighted AP integrates the interpolated precision envelope on the
+canonical recall grid. Unit-weight observed AP agrees with canonical COCO AP,
+but fractional event masses and bootstrap multiplicities define a custom
+metric, not official COCO AP or replicated-image COCO tie handling. Recall
+is invariant to this weighting. The calculation preserves internal conditional
+case mix and cannot recreate external acquisition or annotation changes.
+
+We used 2,000 joint bootstrap draws for external-minus-internal AP, FROC at
+0.25 FP/image, historical-threshold recall, and differences in those changes.
+Patient clusters were sampled internally and released images externally;
+cohort draws were independent, and each draw was shared across all models
+within a cohort. Run multiplicities were independent between detector families
+but identical across domains for each trained checkpoint. The same draws
+produced prevalence-sensitivity intervals, re-estimating p while holding q
+fixed. Undefined draws were recorded without replacement. Intervals are
+marginal and conditional on fixed thresholds, training data and retained
+support. Full definitions, tests and source hashes are in
+[Supplementary Section S11](../docs/SUPPLEMENTARY.md#s11-post-hoc-external-generalization-analysis).
 
 ## 4. Results
 
@@ -719,6 +786,43 @@ transport failure intact; it reduces the numerical-path concern without
 identifying the causes of the remaining cross-dataset differences. Historical
 primary values and their uncertainty analyses remain unchanged.
 
+### 4.10 Post-hoc failure decomposition and domain-change sensitivity
+
+The equal-run fractions of strict reference boxes with compatible candidates
+only below the historical threshold were 0.549474 for Faster R-CNN and
+0.176842 for YOLO11s. Fractions without any retained candidate at IoU at least
+0.25 were 0.181053 and 0.602105, respectively. These describe saved output;
+they cannot distinguish absent proposals from floor, NMS or cap removal.
+
+At historical thresholds, mean fractions of strict false positives assigned
+to overlap with another local finding were 0.536561 and 0.377949, respectively.
+Those fractions were defined for 5 Faster R-CNN runs and 4 YOLO11s runs;
+the zero-emission YOLO11s run remained in all count summaries and the full
+analysis. Overlap is evidence of reference-definition sensitivity, not evidence
+that these detections are clinically correct or that labels should be merged.
+
+After positive-frequency standardization, mean custom weighted AP was
+0.108684 for Faster R-CNN and 0.055072 for YOLO11s; mean weighted precision
+was 0.086639 and 0.062173, respectively. Recall was unchanged by construction.
+The reweighted values remained well above the external values. This restricted
+case-mix calculation neither attributes a fraction of failure to prevalence
+nor proves stable conditional distributions.
+
+Table 8. Post-hoc external-minus-internal changes and marginal 95% intervals.
+A is Faster R-CNN; B is YOLO11s. The final column is the difference in changes,
+not a subtraction of independently estimated confidence limits. All endpoints
+had 2,000 valid draws and no undefined draws. FROC remains restricted to
+retained support. Larger absolute losses from a higher internal baseline do
+not establish poorer intrinsic architectural robustness.
+
+POSTHOC_CHANGE_TABLE
+
+Both detectors had negative change intervals at all three endpoints. The
+difference-in-changes interval included zero for FROC, while AP and historical
+recall showed larger absolute decreases for Faster R-CNN. Per-run categories,
+SDs, overlap classes, support diagnostics and prevalence intervals appear in
+Supplementary Section S11. No external threshold or candidate support was tuned.
+
 ## 5. Discussion
 
 The central finding is the separation between relative ordering and performance
@@ -770,6 +874,18 @@ attribute the collapse to any one factor. Nor would combining labels after seein
 that inference. The adverse result motivates separately designed future
 transport studies; it does not justify post-hoc tuning on this external test set.
 
+The post-hoc decomposition makes these limits more specific. Compatible
+below-threshold candidates coexist with localization failures and missing
+retained support, in different proportions across pipelines. Overlap with
+other local findings makes annotation mismatch plausible, while preserving
+the strict evaluation. Population weighting lowers internal precision and
+custom AP without reproducing the external results. Together these observations
+constrain explanations; they do not partition causation among prevalence,
+ontology, image appearance or model behavior. The paired cross-domain changes
+quantify absolute loss, conditional on retained candidates, rather than rank
+intrinsic detector robustness. The FROC difference-in-changes interval remains
+compatible with either direction.
+
 ## 6. Limitations
 
 **Data and reference standards.** The hardware-scoped 5,000-study RSNA subset
@@ -800,8 +916,9 @@ postprocessing. The internal floor-bound no-reversal result does not transport
 to VinDr's upper budgets. External YOLO candidate-floor limits and substantial
 Faster R-CNN detection-cap saturation preclude a full-frontier conclusion.
 Marginal intervals offer no familywise coverage, omit threshold-selection
-uncertainty, and cannot recover missing support. No cross-dataset interaction
-test was conducted. Conditional IoU/Dice exclude misses and use unequal numbers
+uncertainty, and cannot recover missing support. The later cross-domain change
+intervals are exploratory marginal contrasts, with no multiplicity-adjusted
+interaction test. Conditional IoU/Dice exclude misses and use unequal numbers
 of defined runs. Historical internal YOLO accuracy inference used FP32 while
 external inference used verified bfloat16 AMP. The secondary internal sensitivity
 found modest aggregate changes but non-identical candidate composition; it is
@@ -809,6 +926,16 @@ not an equivalence test, and historical TF32 flags were not recorded. It does
 not identify a dataset-only cause for the remaining shifts. No calibration map was fitted.
 Detection-level D-ECE remains descriptive, emitted-population dependent,
 binning/support dependent, and not patient-level clinical-risk calibration.
+
+**Post-hoc diagnostic scope.** Error categories and best-IoU summaries depend
+on post-NMS retained output and cannot diagnose pre-NMS proposal failure.
+Other-finding overlap lacks expert adjudication and does not validate a merged
+target. Population weighting holds internal conditional case mix and observed
+external positive frequency fixed; its custom AP is not an official COCO
+metric. These analyses were specified after the original external results,
+and neither threshold-selection uncertainty nor missing candidate support is
+recovered by the joint bootstrap. A broader-support inference experiment has
+been proposed but not executed.
 
 **Secondary analyses and compute.** Corruption, acquisition stress, and Grad-CAM
 analyses use one primary checkpoint per detector and limited samples. Synthetic
@@ -839,7 +966,9 @@ training variability, and measured implementation efficiency. Frozen VinDr
 testing preserved the observed equal-run AP ordering while exposing severe
 loss of absolute performance and failure of internal operating rules to
 transport well. Uncertain endpoint contrasts and finite FROC support limit
-broader ordering claims. Reporting these evaluation objects separately makes
+broader ordering claims. Post-hoc error, annotation-overlap and weighting
+analyses sharpen the description of failure without isolating its causes.
+Reporting these evaluation objects separately makes
 the comparison informative without implying clinical validation or universal
 superiority of either detector family.
 

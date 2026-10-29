@@ -1,0 +1,17 @@
+﻿{
+    "timestamp":  "2026-08-19T04:42:24.3889383Z",
+    "status":  "alert",
+    "alerts":  [
+                   "downstream queue reported failure"
+               ],
+    "training_status":  "complete",
+    "downstream_status":  "failed",
+    "active_name":  "",
+    "active_log_age_minutes":  null,
+    "python_process_count":  0,
+    "gpu_utilization_percent":  0,
+    "gpu_memory_used_mib":  742,
+    "gpu_memory_free_mib":  7215,
+    "gpu_temperature_celsius":  58,
+    "gpu_pstate":  "P8"
+}

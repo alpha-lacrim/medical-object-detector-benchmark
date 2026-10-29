@@ -1,0 +1,38 @@
+schema_version: 1
+analysis_id: posthoc-external-generalization-v1
+status: posthoc_exploratory
+baseline_commit: 801a6c90afa480351a9e0d72ca7709b47da95e2e
+statistics_config: configs/vindr_statistics_v1.yaml
+protocol_document: docs/POSTHOC_EXTERNAL_GENERALIZATION_PROTOCOL.md
+analysis:
+  canonical_image_suffix: .png
+  no_finding_label: No finding
+  partial_iou: 0.25
+  iou_grid: [0.25, 0.50, 0.75]
+  overlap_iou: 0.50
+  non_target_classes: [Consolidation, Infiltration, Atelectasis, ILD]
+  global_labels_excluded: [Lung tumor, Pneumonia, Tuberculosis, Other diseases, COPD, No finding]
+  broader_target_status: requires_expert_review_not_executed
+  bootstrap_resamples: 2000
+  bootstrap_seed: 20261028
+  confidence_level: 0.95
+  change_endpoints: [ap50, froc_0.25, primary_recall]
+  change_froc_budget: 0.25
+  prevalence_recall_points: 101
+  progress_every: 100
+outputs:
+  public_root: results/external_generalization_v1
+  private_root: data/processed/vindr-cxr-external-v1/generalization_v1
+  report: docs/POSTHOC_EXTERNAL_GENERALIZATION_RESULTS.md
+  summary: summary.json
+  draws: bootstrap_draws.npz
+plot:
+  dpi: 180
+  size: [11, 5]
+  colors: {faster_rcnn: '#176B9B', yolo11s: '#C65D20'}
+source_files:
+  - src/stats/external_generalization.py
+  - src/stats/run_external_generalization.py
+  - src/stats/report_external_generalization.py
+  - scripts/verify_frozen_external.py
+  - tests/test_external_generalization.py

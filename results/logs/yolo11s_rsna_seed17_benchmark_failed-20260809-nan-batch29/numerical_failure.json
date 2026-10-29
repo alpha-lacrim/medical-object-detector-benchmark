@@ -1,0 +1,9 @@
+{
+  "amp_scale": 64.0,
+  "epoch": 1,
+  "epoch_batch": 29,
+  "loss_items": {
+    "cls_loss": NaN
+  },
+  "test_split_accessed": false
+}

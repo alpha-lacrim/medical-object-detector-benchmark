@@ -14,6 +14,8 @@ diagnostic system.
 
 ## Research artifact release
 
+Windows acquisition setup: [GNU Wget for the VinDr-CXR test folder only](docs/VINDR_WGET_WINDOWS.md).
+
 This tree declares release version `2.0.0`. The Python project, importable
 package, and research artifact release use one version; the corresponding Git
 tag is `v2.0.0`. The release is identified by the exact reviewed repository

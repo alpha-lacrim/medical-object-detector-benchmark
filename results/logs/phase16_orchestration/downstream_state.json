@@ -1,0 +1,30 @@
+﻿{
+    "status":  "failed",
+    "started_at":  "2026-08-18T23:56:44.6747086Z",
+    "completed_at":  "2026-08-19T04:41:36.2632566Z",
+    "active_step":  null,
+    "robustness_table_sha256_before":  "59c9ec17abacef102f854e463039e569fa22bac97e6fbc55c99af7f20f2dcb02",
+    "robustness_table_sha256_after":  null,
+    "phase6_summary_sha256_before":  "4fe09e19bc7b7d620ab9e6a3785ecae0bb2ef16cb517fce1bc287b2de2fafb2b",
+    "phase6_summary_sha256_after":  null,
+    "steps":  [
+                  {
+                      "name":  "evaluation_preflight",
+                      "status":  "complete",
+                      "started_at":  "2026-08-19T04:35:50.3470321Z",
+                      "completed_at":  "2026-08-19T04:35:53.4120141Z",
+                      "exit_code":  0,
+                      "stdout":  "C:\\Users\\Pouyan\\PycharmProjects\\Uni\\Deep Learning\\DP_Final_Project\\results\\logs\\phase16_orchestration\\evaluation_preflight.out",
+                      "stderr":  "C:\\Users\\Pouyan\\PycharmProjects\\Uni\\Deep Learning\\DP_Final_Project\\results\\logs\\phase16_orchestration\\evaluation_preflight.err"
+                  },
+                  {
+                      "name":  "evaluation_n5",
+                      "status":  "failed",
+                      "started_at":  "2026-08-19T04:35:53.4170084Z",
+                      "completed_at":  "2026-08-19T04:41:36.2632566Z",
+                      "exit_code":  1,
+                      "stdout":  "C:\\Users\\Pouyan\\PycharmProjects\\Uni\\Deep Learning\\DP_Final_Project\\results\\logs\\phase16_orchestration\\evaluation_n5.out",
+                      "stderr":  "C:\\Users\\Pouyan\\PycharmProjects\\Uni\\Deep Learning\\DP_Final_Project\\results\\logs\\phase16_orchestration\\evaluation_n5.err"
+                  }
+              ]
+}
