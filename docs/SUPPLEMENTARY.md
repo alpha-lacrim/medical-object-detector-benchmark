@@ -298,3 +298,25 @@ All five runs remain represented. Undefined zero-FP fractions are explicitly
 reported; they are not zero-imputed. Weighted AP is custom, with fixed observed
 external positive frequency. Domain-change uncertainty couples the same
 checkpoint across domains without pairing different detectors' seed numbers.
+
+## S12. Controlled external failure diagnostic
+
+This subsequent post-hoc diagnostic tests fixed display and retention controls.
+The original external and S11 results remain unchanged.
+
+- [Versioned protocol](EXTERNAL_FAILURE_ISOLATION_V1.md) fixes image selection,
+  window mapping, floor/cap factorial, estimands and stratified paired bootstrap.
+- [Generated results](EXTERNAL_FAILURE_ISOLATION_RESULTS_V1.md) and
+  [bound summary](../results/external_failure_isolation_v1/summary.json) retain
+  every arm and run, three aggregate tables and private draw provenance.
+- [Interpretation and verification](EXTERNAL_FAILURE_ISOLATION_VERIFICATION_V1.md)
+  distinguish recovered candidate geometry from threshold recall and causal
+  claims. The independent verifier compares saved baseline/retention arrays.
+- [Reproduction commands](../README.md#controlled-external-failure-isolation-v1)
+  distinguish existing-bundle CPU replay from the earlier GPU collection.
+
+Negative-control FP/image is conditional on the fixed sample. Maximum geometric
+coverage is annotation-informed, rather than canonical score-ordered recall.
+Marginal arm intervals do not define a simultaneous or between-detector test.
+The full-cohort AP-floor control changes evaluation support only; no threshold,
+target mapping or checkpoint is selected using its outcome.

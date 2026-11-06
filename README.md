@@ -1421,8 +1421,61 @@ command, which refuses repeat registration and preserves all 88 prior entries:
 & .\.venv\Scripts\python.exe -m scripts.extend_external_generalization_manifest --config configs/external_generalization_v1.yaml --manifest results/publication_artifact_manifest.json
 ```
 
-Canonical Markdown now includes these results, with 468 numerical bindings.
-The PDF was refreshed on 2026-10-29 and all 19 pages visually reviewed; build/QA
-receipts bind the current source and rendered output. No scientific values
-changed. Current execution, privacy checks and remaining author decisions are
-in the verification record and submission audit.
+The initial integration added these results with 468 numerical bindings.
+Its PDF was refreshed on 2026-10-29 and all 19 pages visually reviewed; build/QA
+receipts bind that source snapshot and rendered output. The subsequent
+controlled diagnostic below brings current Markdown to 478 bindings. Its
+execution, privacy checks and remaining author decisions are in the linked
+verification record and submission audit.
+
+## Controlled external failure isolation v1
+
+The [diagnostic protocol](docs/EXTERNAL_FAILURE_ISOLATION_V1.md) tests two
+implementation factors with unchanged checkpoints: fixed DICOM-header
+windowing and a factorial change to the candidate collection floor/cap.
+All strict-positive external images and a fixed random negative-control sample
+are paired across arms and all five checkpoints per detector. Historical
+predictions and nested retention must replay exactly. The separate full-cohort
+CPU control varies only the AP evaluation floor on existing saved predictions.
+This is exploratory evidence about the specified implementation controls;
+it does not identify the causes of the entire dataset difference.
+
+Commands require the existing authorized local data/checkpoints. Preparation,
+collection and first analysis refuse existing outputs. The GPU collector uses
+the existing pinned CUDA environment, mandatory AMP, batch one and a measured
+one-hour resource gate. Restricted images and predictions remain local.
+
+```powershell
+$env:VINDR_CXR_ROOT = (Resolve-Path data/raw/vindr-cxr).Path
+# First execution only, in a fresh versioned output location:
+& .\.venv\Scripts\python.exe -m src.collect_external_failure --config configs/external_failure_isolation_v1.yaml --mode prepare
+& C:\Users\Pouyan\.conda\envs\torch-gpu\python.exe -m src.collect_external_failure --config configs/external_failure_isolation_v1.yaml --mode collect
+& .\.venv\Scripts\python.exe -m src.analyze_external_failure --config configs/external_failure_isolation_v1.yaml
+# Recompute all diagnostic tables and paired bootstrap draws from saved bundles:
+& .\.venv\Scripts\python.exe -m scripts.verify_external_failure --config configs/external_failure_isolation_v1.yaml
+& .\.venv\Scripts\python.exe -m src.analyze_external_failure --config configs/external_failure_isolation_v1.yaml --replay
+& .\.venv\Scripts\python.exe -m scripts.report_external_failure --config configs/external_failure_isolation_v1.yaml
+& .\.venv\Scripts\python.exe -m pytest tests/test_external_failure.py -q
+& .\.venv\Scripts\python.exe -m pytest tests/test_external_failure_verification.py tests/test_external_failure_manifest.py -q
+```
+
+Aggregates and provenance are under `results/external_failure_isolation_v1/`;
+the generated [results report](docs/EXTERNAL_FAILURE_ISOLATION_RESULTS_V1.md)
+lists all arms and marginal intervals. Diagnostic negative-control FP/image
+is conditional on the sampled negatives, and geometric coverage is an
+annotation-informed upper bound rather than operating-point recall.
+
+CPU analysis and exact replay completed on 2026-11-05 using the already
+completed collection; no additional GPU inference was launched. All original
+post-hoc results also passed a fresh full bootstrap replay. The
+[interpretation and verification record](docs/EXTERNAL_FAILURE_ISOLATION_VERIFICATION_V1.md)
+records evidence, limitations and commands. Current Markdown includes the new
+diagnostic in Methods/Results and Supplement S12. The existing 2026-10-29 PDF
+is the preceding reviewed snapshot and does not yet include this extension.
+
+After complete collection, exact CPU replay and report review, register the
+new public aggregates once without refreshing any previous evidence:
+
+```powershell
+& .\.venv\Scripts\python.exe -m scripts.register_external_failure --config configs/external_failure_isolation_v1.yaml --manifest results/publication_artifact_manifest.json
+```

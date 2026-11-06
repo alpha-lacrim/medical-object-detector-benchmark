@@ -498,6 +498,22 @@ marginal and conditional on fixed thresholds, training data and retained
 support. Full definitions, tests and source hashes are in
 [Supplementary Section S11](../docs/SUPPLEMENTARY.md#s11-post-hoc-external-generalization-analysis).
 
+### 3.10 Subsequent controlled implementation diagnostic
+
+A separate exploratory protocol, designed after the preceding results were
+known, compared fixed DICOM-header windowing and a factorial change in the
+collection floor and detection cap. It used every strict-positive external
+image and an equally sized, fixed random sample of strict negatives, with all
+retained checkpoints. Historical and nested baseline predictions had to replay
+exactly. Maximum one-to-one geometric coverage used bipartite matching and
+was an annotation-informed upper bound, distinct from canonical threshold
+recall. Paired bootstrap draws shared images and checkpoints across arms,
+resampling positive and negative images separately. Marginal intervals were
+conditional on this diagnostic cohort; negative-control FP/image did not
+estimate full-cohort FP/image. A separate full-cohort control changed only the
+AP evaluation floor on the original saved predictions. The protocol, complete
+arm results and verification are in [Supplementary Section S12](../docs/SUPPLEMENTARY.md#s12-controlled-external-failure-diagnostic).
+
 ## 4. Results
 
 All detector summaries weight the five retained runs equally. AP is on the
@@ -827,6 +843,21 @@ recall showed larger absolute decreases for Faster R-CNN. Per-run categories,
 SDs, overlap classes, support diagnostics and prevalence intervals appear in
 Supplementary Section S11. No external threshold or candidate support was tuned.
 
+### 4.11 Controlled retention and display diagnostic
+
+Lowering the collection floor increased YOLO11s' maximum one-to-one coverage
+at canonical match IoU from 0.181053 to 0.324211 (change 0.143158;
+marginal interval [0.082605, 0.210538]). For Faster R-CNN, the combined
+floor/cap change increased coverage by 0.025263 [0.006186, 0.052002].
+None of the retention arms changed historical-threshold recall. Header
+windowing changed retained geometry, but historical-recall change intervals
+included zero for both detectors. On the full external cohort, lowering only
+the AP evaluation floor left mean AP50 at 0.002698 for Faster R-CNN and
+0.000888 for YOLO11s. All arm results, including unchanged and adverse outcomes,
+are retained in Supplementary Section S12. These measurements establish
+sensitivity to the tested controls, without validating a new operating rule
+or explaining the total cross-dataset loss.
+
 ## 5. Discussion
 
 The central finding is the separation between relative ordering and performance
@@ -890,6 +921,15 @@ quantify absolute loss, conditional on retained candidates, rather than rank
 intrinsic detector robustness. The FROC difference-in-changes interval remains
 compatible with either direction.
 
+The subsequent controlled diagnostic confirms that some apparent candidate
+absence depends on the collection floor. Recovering low-score geometric
+coverage did not recover historical-threshold recall, and relaxing the AP
+evaluation floor left absolute performance very low. The tested header-window
+mapping likewise did not establish improved threshold recall. These bounded
+interventions narrow specific implementation explanations; they do not isolate
+population, acquisition or annotation effects, or demonstrate that a different
+preprocessing policy would generalize.
+
 ## 6. Limitations
 
 **Data and reference standards.** The hardware-scoped 5,000-study RSNA subset
@@ -938,8 +978,13 @@ target. Population weighting holds internal conditional case mix and observed
 external positive frequency fixed; its custom AP is not an official COCO
 metric. These analyses were specified after the original external results,
 and neither threshold-selection uncertainty nor missing candidate support is
-recovered by the joint bootstrap. A broader-support inference experiment has
-been proposed but not executed.
+recovered by the joint bootstrap. The controlled diagnostic used a fixed
+negative-control sample; its FP/image cannot characterize the complete external
+population. Geometric coverage uses annotation-informed assignment and is not
+an achievable operating point. The specific header window is not validated as
+clinical vendor display processing, and zero-containing change intervals do
+not establish equivalence. The separate full-cohort broader-support inference
+proposal remains unexecuted.
 
 **Secondary analyses and compute.** Corruption, acquisition stress, and Grad-CAM
 analyses use one primary checkpoint per detector and limited samples. Synthetic

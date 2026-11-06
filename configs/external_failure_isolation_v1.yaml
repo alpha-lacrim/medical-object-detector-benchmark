@@ -1,0 +1,47 @@
+schema_version: 1
+analysis_id: external-failure-isolation-v1
+status: posthoc_exploratory_controlled_diagnostic
+baseline_commit: b49569d6b7d87e38674d42769ea2412d504b3e84
+authorization_context: User requested trying to isolate causes of external collapse and resumed that work on 2026-10-30; bounded diagnostic inference is within this new task.
+protocol: docs/EXTERNAL_FAILURE_ISOLATION_V1.md
+baseline_analysis_config: configs/external_generalization_v1.yaml
+external_config: configs/vindr_external_v1.yaml
+operation_config: configs/vindr_inference_v1.yaml
+adapter_config: configs/vindr_adapter_v1.yaml
+private_audit: data/processed/vindr-cxr-external-v1/preflight_private.json
+selection:
+  positive_images: all_strict_target_positive
+  negative_images: 84
+  seed: 20261030
+  rule: numpy_default_rng_choice_from_sorted_strict_negatives_without_replacement
+arms:
+  baseline: {floor: 0.00001, cap: 100, image: canonical}
+  lower_floor: {floor: 0.000001, cap: 100, image: canonical}
+  higher_cap: {floor: 0.00001, cap: 300, image: canonical}
+  expanded: {floor: 0.000001, cap: 300, image: canonical}
+  dicom_window: {floor: 0.00001, cap: 100, image: dicom_window}
+window:
+  index: 0
+  missing: identical_canonical_pixels
+  output_max: 255
+runtime:
+  max_seconds: 3600
+  max_reserved_memory_gib: 7
+  probe_images: 4
+  progress_every: 28
+  required_gpu_name: NVIDIA GeForce RTX 4060 Laptop GPU
+analysis:
+  support_ious: [0.25, 0.50]
+  bootstrap_resamples: 2000
+  bootstrap_seed: 20261030
+  confidence_level: 0.95
+  full_cohort_ap_floors: [0.001, 0.00001]
+outputs:
+  private_root: data/processed/vindr-cxr-external-v1/failure_isolation_v1
+  public_root: results/external_failure_isolation_v1
+  report: docs/EXTERNAL_FAILURE_ISOLATION_RESULTS_V1.md
+source_files:
+  - src/analyze_external_failure.py
+  - src/collect_external_failure.py
+  - src/analyze_yolo_numerical_path.py
+  - tests/test_external_failure.py

@@ -1,5 +1,14 @@
 # Final submission audit and author-declaration follow-up
 
+**2026-11-05 controlled-diagnostic update:** Current Markdown additionally
+contains Methods 3.10, Results 4.11 and bounded discussion/limitations, with
+Supplement S12. The [new verification record](EXTERNAL_FAILURE_ISOLATION_VERIFICATION_V1.md)
+reports exact CPU replay, 478 numerical bindings, 42 semantic guards and 112
+publication artifacts. Earlier scientific entries and claims are unchanged.
+The PDF and build/QA receipts below remain the reviewed 2026-10-29 snapshot;
+they do not represent this latest Markdown extension. A fresh build and visual
+review remain necessary before submitting that PDF.
+
 **2026-10-29 post-hoc update:** The canonical Markdown now adds executed
 external error, annotation-overlap, prevalence-weight and cross-domain-change
 analyses. Current verification and publication status are recorded in the

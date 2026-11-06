@@ -990,3 +990,26 @@ TeX passes resolve fresh-build cross-references, and bibliography entries stay
 together across pages. Canonical scientific text/results and the numerical
 trace are unchanged. Current PDF hashes and checks are in the submission audit;
 the earlier PDF-refresh requirement is resolved.
+
+## D-025 — Complete saved controlled-diagnostic analysis (2026-11-05)
+
+Resuming the research request found the separately designed diagnostic
+collection complete. The existing CPU analyzer and paired bootstrap were
+executed and replayed; no further GPU inference was launched. Added an
+independent read-only verifier of saved baseline, nested retention and image
+provenance. See [interpretation and checks](EXTERNAL_FAILURE_ISOLATION_VERIFICATION_V1.md).
+
+Lower collection floors expose additional geometric support, particularly for
+YOLO, without recovering recall at the historical thresholds. The tested header
+window changes geometry but does not establish improved historical recall.
+Lowering the evaluation floor on the full cohort leaves absolute AP very low.
+These are bounded post-hoc effects, not a causal decomposition of the domain
+gap or a newly validated preprocessing/threshold policy. All original findings
+and adverse runs remain. The separate full-cohort support proposal is unexecuted.
+
+The publication inventory appends six records, preserving all prior entries.
+Current Markdown adds Methods 3.10, Results 4.11, discussion/limitations and
+Supplement S12, with ten additional numerical bindings and two guards. The
+prior reviewed PDF remains unchanged and needs refresh before submission.
+No commit/push authorization was inferred from local historical session notes;
+this continuation leaves reviewable working-tree changes.

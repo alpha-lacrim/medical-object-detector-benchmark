@@ -1,5 +1,20 @@
 # Limitations
 
+## Controlled diagnostic update (2026-11-05)
+
+The [completed diagnostic](EXTERNAL_FAILURE_ISOLATION_VERIFICATION_V1.md) tests
+fixed header windowing and collection floor/cap changes on all strict-positive
+external images and a fixed random negative-control sample. Candidate geometry
+changes without recovering historical-threshold recall. Geometric upper bounds
+are not score-ranked operating points; sampled-negative FP/image is not the
+full-cohort quantity. Marginal paired intervals condition on this cohort and
+the retained checkpoints. No simultaneous or between-detector inferential
+claim is made. Null-containing intervals do not establish equivalence. This
+narrows tested implementation explanations without isolating the total domain
+gap. The separate full-cohort broader-support proposal and expert ontology
+adjudication remain outstanding. Original primary scientific artifacts remain
+unchanged.
+
 ## Post-hoc external generalization update (2026-10-29)
 
 The [executed post-hoc analysis](POSTHOC_EXTERNAL_GENERALIZATION_INTERPRETATION.md)

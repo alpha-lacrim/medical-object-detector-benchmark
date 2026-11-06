@@ -96,6 +96,12 @@ manuscript_semantic_guards:
   required_regex: Run multiplicities were independent between detector families\s+but identical across domains for each trained checkpoint
 - id: other_findings_do_not_redefine_strict_target
   required_regex: overlap never changes a strict false positive into a true positive
+- id: controlled_diagnostic_is_exploratory
+  required_regex: A separate exploratory protocol, designed after the preceding results
+    were\s+known
+- id: geometric_coverage_not_operating_recall
+  required_regex: was an annotation-informed upper bound, distinct from canonical
+    threshold\s+recall
 claims:
 - id: source_radiograph_count
   description: Full labeled RSNA source cohort size.
@@ -6303,3 +6309,133 @@ claims:
       metric: ap50
     column: a_valid
   absolute_tolerance: 0
+- id: failure_diagnostic_yolo_baseline
+  manuscript:
+    section: Controlled retention and display diagnostic
+    regex: at\ canonical\ match\ IoU\ from\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ to\
+      0\.324211
+  source:
+    kind: csv_cell
+    path: results/external_failure_isolation_v1/paired_changes.csv
+    filters:
+      detector: yolo11s
+      arm: lower_floor
+      endpoint: geometric_coverage_iou_0.5
+    column: baseline
+  absolute_tolerance: 5.0e-07
+- id: failure_diagnostic_yolo_lower
+  manuscript:
+    section: Controlled retention and display diagnostic
+    regex: at\ canonical\ match\ IoU\ from\ 0\.181053\ to\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)
+  source:
+    kind: csv_cell
+    path: results/external_failure_isolation_v1/paired_changes.csv
+    filters:
+      detector: yolo11s
+      arm: lower_floor
+      endpoint: geometric_coverage_iou_0.5
+    column: mean
+  absolute_tolerance: 5.0e-07
+- id: failure_diagnostic_yolo_delta
+  manuscript:
+    section: Controlled retention and display diagnostic
+    regex: 0\.324211\ \(change\ (?P<value>[+-]?[\d,]+(?:\.\d+)?);
+  source:
+    kind: csv_cell
+    path: results/external_failure_isolation_v1/paired_changes.csv
+    filters:
+      detector: yolo11s
+      arm: lower_floor
+      endpoint: geometric_coverage_iou_0.5
+    column: delta
+  absolute_tolerance: 5.0e-07
+- id: failure_diagnostic_yolo_low
+  manuscript:
+    section: Controlled retention and display diagnostic
+    regex: marginal\ interval\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.210538\]
+  source:
+    kind: csv_cell
+    path: results/external_failure_isolation_v1/paired_changes.csv
+    filters:
+      detector: yolo11s
+      arm: lower_floor
+      endpoint: geometric_coverage_iou_0.5
+    column: ci_lower
+  absolute_tolerance: 5.0e-07
+- id: failure_diagnostic_yolo_high
+  manuscript:
+    section: Controlled retention and display diagnostic
+    regex: marginal\ interval\ \[0\.082605,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]
+  source:
+    kind: csv_cell
+    path: results/external_failure_isolation_v1/paired_changes.csv
+    filters:
+      detector: yolo11s
+      arm: lower_floor
+      endpoint: geometric_coverage_iou_0.5
+    column: ci_upper
+  absolute_tolerance: 5.0e-07
+- id: failure_diagnostic_frcnn_delta
+  manuscript:
+    section: Controlled retention and display diagnostic
+    regex: floor/cap\ change\ increased\ coverage\ by\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\
+      \[0\.006186,\ 0\.052002\]
+  source:
+    kind: csv_cell
+    path: results/external_failure_isolation_v1/paired_changes.csv
+    filters:
+      detector: faster_rcnn
+      arm: expanded
+      endpoint: geometric_coverage_iou_0.5
+    column: delta
+  absolute_tolerance: 5.0e-07
+- id: failure_diagnostic_frcnn_low
+  manuscript:
+    section: Controlled retention and display diagnostic
+    regex: coverage\ by\ 0\.025263\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.052002\]
+  source:
+    kind: csv_cell
+    path: results/external_failure_isolation_v1/paired_changes.csv
+    filters:
+      detector: faster_rcnn
+      arm: expanded
+      endpoint: geometric_coverage_iou_0.5
+    column: ci_lower
+  absolute_tolerance: 5.0e-07
+- id: failure_diagnostic_frcnn_high
+  manuscript:
+    section: Controlled retention and display diagnostic
+    regex: coverage\ by\ 0\.025263\ \[0\.006186,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]
+  source:
+    kind: csv_cell
+    path: results/external_failure_isolation_v1/paired_changes.csv
+    filters:
+      detector: faster_rcnn
+      arm: expanded
+      endpoint: geometric_coverage_iou_0.5
+    column: ci_upper
+  absolute_tolerance: 5.0e-07
+- id: failure_diagnostic_full_cohort_ap_a
+  manuscript:
+    section: Controlled retention and display diagnostic
+    regex: the\ AP\ evaluation\ floor\ left\ mean\ AP50\ at\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\
+      for\ Faster\ R\-CNN
+  source:
+    kind: csv_mean
+    path: results/external_failure_isolation_v1/ap_floor_control.csv
+    filters:
+      detector: faster_rcnn
+    column: lower_evaluation_floor_ap50
+  absolute_tolerance: 5.0e-07
+- id: failure_diagnostic_full_cohort_ap_b
+  manuscript:
+    section: Controlled retention and display diagnostic
+    regex: (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ for\ YOLO11s\.\ All\ arm\ results,\ including\
+      unchanged\ and\ adverse\ outcomes,
+  source:
+    kind: csv_mean
+    path: results/external_failure_isolation_v1/ap_floor_control.csv
+    filters:
+      detector: yolo11s
+    column: lower_evaluation_floor_ap50
+  absolute_tolerance: 5.0e-07

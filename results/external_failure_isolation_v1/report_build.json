@@ -1,0 +1,31 @@
+{
+  "inputs": [
+    {
+      "path": "configs/external_failure_isolation_v1.yaml",
+      "sha256": "298216e59314dd9aac1345cf08b29bfc8c05942b462044d257ad3ff67644f1f6",
+      "size_bytes": 1901
+    },
+    {
+      "path": "results/external_failure_isolation_v1/summary.json",
+      "sha256": "2cced016913cf2c75e89f77cf435ac18c9b358b228679340f8ddbaf2d827945a",
+      "size_bytes": 52901
+    },
+    {
+      "path": "scripts/report_external_failure.py",
+      "sha256": "407d38e534368d306912165bbb916215cec24b2cb22d0775e95798aa81ca73ba",
+      "size_bytes": 6676
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/EXTERNAL_FAILURE_ISOLATION_RESULTS_V1.md",
+      "sha256": "ea0211069fd3eb3d51abb288fcbc675d6c672f11dbba9b5a1f3546ffa835543e",
+      "size_bytes": 5728
+    },
+    {
+      "path": "results/external_failure_isolation_v1/paired_changes.png",
+      "sha256": "6cb3e62f920e939a50edcaabdc81aa624659223eb478aebbd6b1c9a095612bb2",
+      "size_bytes": 198932
+    }
+  ]
+}
