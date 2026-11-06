@@ -1,0 +1,216 @@
+{
+  "analysis_id": "threshold-repairability-v1",
+  "status": "exploratory_public_aggregate_feasibility",
+  "scope": "Descriptive aggregate recombination; not a new clinical or causal result",
+  "uncertainty": "Ceiling intervals copied from verified source; no component intervals",
+  "inventory": "Separate feasibility package; not integrated into the manuscript inventory",
+  "candidate_floor": 1e-05,
+  "candidate_cap": 100,
+  "match_iou": 0.5,
+  "inputs": [
+    {
+      "path": "configs/vindr_external_v1.yaml",
+      "sha256": "9516d62b8164ca25794ad0be3ba3f13eec32e29b2377442194a3095b2671a19b"
+    },
+    {
+      "path": "results/vindr_external_v1/statistics/per_run.csv",
+      "sha256": "eab7f5b18b18961d8e9020466bb8a14993e604df18dd27ff6c2faa0c31c143d1"
+    },
+    {
+      "path": "results/external_failure_isolation_v1/per_run.csv",
+      "sha256": "def50badc25ebfaa1507761f29c40302d5b193e20368ef3fbf7fbb2e38870ab2"
+    },
+    {
+      "path": "results/vindr_external_v1/statistics/intervals.csv",
+      "sha256": "23f0f7aa8612aa6939c1888041dd18697269d1bf3092ecd81b8ea0e64f16e024"
+    },
+    {
+      "path": "configs/threshold_repairability_v1.yaml",
+      "sha256": "50349c3d261d6ff2161f7065e9a3eb29ff94396b1baf89f3904d8900b0692d9d"
+    },
+    {
+      "path": "scripts/analyze_threshold_repairability.py",
+      "sha256": "190c8399deeaabf62d0e50598c704177ee0b1f84d9f8230585b7a47106e82d99"
+    },
+    {
+      "path": "tests/test_threshold_repairability.py",
+      "sha256": "734417f80cb42ce31d0866bda967ef4a18c46963586375e0642e8cbb5b65989e"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "results/threshold_repairability_v1/per_run.csv",
+      "sha256": "4076372f5844c907849c21998b32d102944fbd7bf7032fcd008ea9324c003021"
+    },
+    {
+      "path": "results/threshold_repairability_v1/aggregate.csv",
+      "sha256": "7abbd489cbfe1d07f602e3dc2d4d768c6c37545bd7cdbd2eace25b99c6f288d8"
+    },
+    {
+      "path": "results/threshold_repairability_v1/repairability.png",
+      "sha256": "7e54c084d0d1c80d97ab69546f4fa31eb2897aeeec8b3b5c6a88614dea489aea"
+    }
+  ],
+  "aggregate": [
+    {
+      "detector": "faster_rcnn",
+      "budget": 0.125,
+      "runs": 5,
+      "historical_recall": 0.018947368421052633,
+      "cutoff_headroom": 0.03789473684210526,
+      "budget_barrier": 0.5115789473684211,
+      "assignment_gap": 0.0,
+      "unavailable_geometry": 0.43157894736842106,
+      "threshold_ceiling": 0.056842105263157895,
+      "geometry_ceiling": 0.5684210526315789,
+      "threshold_ceiling_ci_low": 0.01568627450980392,
+      "threshold_ceiling_ci_high": 0.11251358695652167,
+      "source_interval_draws": 2000,
+      "floor_limited_runs": 0
+    },
+    {
+      "detector": "faster_rcnn",
+      "budget": 0.25,
+      "runs": 5,
+      "historical_recall": 0.018947368421052633,
+      "cutoff_headroom": 0.06736842105263158,
+      "budget_barrier": 0.4821052631578947,
+      "assignment_gap": 0.0,
+      "unavailable_geometry": 0.43157894736842106,
+      "threshold_ceiling": 0.0863157894736842,
+      "geometry_ceiling": 0.5684210526315789,
+      "threshold_ceiling_ci_low": 0.03703344120819849,
+      "threshold_ceiling_ci_high": 0.15384955752212387,
+      "source_interval_draws": 2000,
+      "floor_limited_runs": 0
+    },
+    {
+      "detector": "faster_rcnn",
+      "budget": 0.5,
+      "runs": 5,
+      "historical_recall": 0.018947368421052633,
+      "cutoff_headroom": 0.07578947368421052,
+      "budget_barrier": 0.4736842105263158,
+      "assignment_gap": 0.0,
+      "unavailable_geometry": 0.43157894736842106,
+      "threshold_ceiling": 0.09473684210526315,
+      "geometry_ceiling": 0.5684210526315789,
+      "threshold_ceiling_ci_low": 0.044736068111455106,
+      "threshold_ceiling_ci_high": 0.1618424947145876,
+      "source_interval_draws": 2000,
+      "floor_limited_runs": 0
+    },
+    {
+      "detector": "faster_rcnn",
+      "budget": 1.0,
+      "runs": 5,
+      "historical_recall": 0.018947368421052633,
+      "cutoff_headroom": 0.09894736842105263,
+      "budget_barrier": 0.45052631578947366,
+      "assignment_gap": 0.0,
+      "unavailable_geometry": 0.43157894736842106,
+      "threshold_ceiling": 0.11789473684210525,
+      "geometry_ceiling": 0.5684210526315789,
+      "threshold_ceiling_ci_low": 0.05687917014178483,
+      "threshold_ceiling_ci_high": 0.19382344109698724,
+      "source_interval_draws": 2000,
+      "floor_limited_runs": 0
+    },
+    {
+      "detector": "faster_rcnn",
+      "budget": 2.0,
+      "runs": 5,
+      "historical_recall": 0.018947368421052633,
+      "cutoff_headroom": 0.14526315789473682,
+      "budget_barrier": 0.40421052631578946,
+      "assignment_gap": 0.0,
+      "unavailable_geometry": 0.43157894736842106,
+      "threshold_ceiling": 0.16421052631578947,
+      "geometry_ceiling": 0.5684210526315789,
+      "threshold_ceiling_ci_low": 0.09165277777777779,
+      "threshold_ceiling_ci_high": 0.2538541666666666,
+      "source_interval_draws": 2000,
+      "floor_limited_runs": 0
+    },
+    {
+      "detector": "yolo11s",
+      "budget": 0.125,
+      "runs": 5,
+      "historical_recall": 0.004210526315789474,
+      "cutoff_headroom": 0.01473684210526316,
+      "budget_barrier": 0.16210526315789472,
+      "assignment_gap": 0.0,
+      "unavailable_geometry": 0.8189473684210526,
+      "threshold_ceiling": 0.01894736842105263,
+      "geometry_ceiling": 0.18105263157894738,
+      "threshold_ceiling_ci_low": 0.001866289555664868,
+      "threshold_ceiling_ci_high": 0.044449838187702234,
+      "source_interval_draws": 2000,
+      "floor_limited_runs": 0
+    },
+    {
+      "detector": "yolo11s",
+      "budget": 0.25,
+      "runs": 5,
+      "historical_recall": 0.004210526315789474,
+      "cutoff_headroom": 0.02947368421052632,
+      "budget_barrier": 0.1473684210526316,
+      "assignment_gap": 0.0,
+      "unavailable_geometry": 0.8189473684210526,
+      "threshold_ceiling": 0.033684210526315796,
+      "geometry_ceiling": 0.18105263157894738,
+      "threshold_ceiling_ci_low": 0.00888644688644689,
+      "threshold_ceiling_ci_high": 0.07126493683851143,
+      "source_interval_draws": 2000,
+      "floor_limited_runs": 0
+    },
+    {
+      "detector": "yolo11s",
+      "budget": 0.5,
+      "runs": 5,
+      "historical_recall": 0.004210526315789474,
+      "cutoff_headroom": 0.056842105263157895,
+      "budget_barrier": 0.12000000000000002,
+      "assignment_gap": 0.0,
+      "unavailable_geometry": 0.8189473684210526,
+      "threshold_ceiling": 0.06105263157894737,
+      "geometry_ceiling": 0.18105263157894738,
+      "threshold_ceiling_ci_low": 0.024786761266178087,
+      "threshold_ceiling_ci_high": 0.10667326732673263,
+      "source_interval_draws": 2000,
+      "floor_limited_runs": 0
+    },
+    {
+      "detector": "yolo11s",
+      "budget": 1.0,
+      "runs": 5,
+      "historical_recall": 0.004210526315789474,
+      "cutoff_headroom": 0.07368421052631578,
+      "budget_barrier": 0.10315789473684212,
+      "assignment_gap": 0.0,
+      "unavailable_geometry": 0.8189473684210526,
+      "threshold_ceiling": 0.07789473684210527,
+      "geometry_ceiling": 0.18105263157894738,
+      "threshold_ceiling_ci_low": 0.03719743711438066,
+      "threshold_ceiling_ci_high": 0.13258649460451663,
+      "source_interval_draws": 2000,
+      "floor_limited_runs": 1
+    },
+    {
+      "detector": "yolo11s",
+      "budget": 2.0,
+      "runs": 5,
+      "historical_recall": 0.004210526315789474,
+      "cutoff_headroom": 0.09473684210526315,
+      "budget_barrier": 0.08210526315789474,
+      "assignment_gap": 0.0,
+      "unavailable_geometry": 0.8189473684210526,
+      "threshold_ceiling": 0.09894736842105264,
+      "geometry_ceiling": 0.18105263157894738,
+      "threshold_ceiling_ci_low": 0.04841534559289792,
+      "threshold_ceiling_ci_high": 0.1555691056910568,
+      "source_interval_draws": 2000,
+      "floor_limited_runs": 1
+    }
+  ]
+}

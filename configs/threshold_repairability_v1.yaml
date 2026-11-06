@@ -1,0 +1,35 @@
+schema_version: 1
+analysis_id: threshold-repairability-v1
+status: exploratory_public_aggregate_feasibility
+baseline_commit: 3194243974a748ea818bda9b2b1b4f7997f2caf9
+dataset: external
+baseline_arm: baseline
+geometry_endpoint: geometric_coverage_iou_0.5
+focus_budget: 0.25
+sources:
+  protocol:
+    path: configs/vindr_external_v1.yaml
+    sha256: 9516d62b8164ca25794ad0be3ba3f13eec32e29b2377442194a3095b2671a19b
+  statistics:
+    path: results/vindr_external_v1/statistics/per_run.csv
+    sha256: eab7f5b18b18961d8e9020466bb8a14993e604df18dd27ff6c2faa0c31c143d1
+  geometry:
+    path: results/external_failure_isolation_v1/per_run.csv
+    sha256: def50badc25ebfaa1507761f29c40302d5b193e20368ef3fbf7fbb2e38870ab2
+  intervals:
+    path: results/vindr_external_v1/statistics/intervals.csv
+    sha256: 23f0f7aa8612aa6939c1888041dd18697269d1bf3092ecd81b8ea0e64f16e024
+source_files:
+  - scripts/analyze_threshold_repairability.py
+  - tests/test_threshold_repairability.py
+outputs:
+  root: results/threshold_repairability_v1
+  per_run: per_run.csv
+  aggregate: aggregate.csv
+  figure: repairability.png
+  summary: summary.json
+figure:
+  size_inches: [11, 5.6]
+  dpi: 160
+  names: {faster_rcnn: Faster R-CNN, yolo11s: YOLO11s}
+  colors: ['#0072B2', '#009E73', '#E69F00', '#CC79A7', '#D55E00']

@@ -93,6 +93,15 @@ because its computation was replayed exactly.
 
 ## Decisions for the supervisor
 
+**Follow-up constraint:** the user reports no access to radiologists. Expert
+adjudication therefore remains an unresolved evidence gap, not the immediate
+work plan. A [proposed computational focus](THRESHOLD_REPAIRABILITY_RESEARCH_DIRECTION.md)
+asks what a confidence cutoff can and cannot repair within a fixed FP budget.
+It includes an executed public-table feasibility analysis and a Persian pitch.
+The potential contribution needs further joint uncertainty/controlled-output
+validation and comparison with existing methods; novelty is not established by
+the new framing. The current manuscript has not been replaced by this proposal.
+
 **Recommend proceeding to substantive author review of a methods/transportability
 paper, with a NO-GO for full-cohort expanded-candidate inference at present.**
 The current claims expressly condition on retained support. A larger collection
@@ -100,8 +109,8 @@ could resolve selected FROC/false-positive questions, but it would not adjudicat
 labels or identify the total domain-gap cause. The [scientific review](SUPERVISOR_SCIENTIFIC_REVIEW_2026-11-06.md)
 gives the decision rationale and conditions for reconsideration.
 
-Prioritize expert scrutiny of the opacity construct over additional performance
-curves. The [annotation-adjudication protocol](CLINICAL_ANNOTATION_ADJUDICATION_V1.md)
+Expert scrutiny of the opacity construct would be needed to support a broader
+ontology claim. The [annotation-adjudication protocol](CLINICAL_ANNOTATION_ADJUDICATION_V1.md)
 is specified for future independent reads, with predictions withheld until
 reference assessments are locked. No reader has approved or executed it. A
 review could support a future separate annotation-sensitivity task; it cannot

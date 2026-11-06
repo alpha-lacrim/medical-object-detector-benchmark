@@ -18,15 +18,15 @@
     "semantic_hash": ""
   },
   "report/paper_build_manifest.json": {
-    "mtime": 1793282712.07272,
-    "seen": 1793282998.9936373,
-    "ast_hash": "899bde8c4eb44eeca346447566793725",
+    "mtime": 1793949652.3342638,
+    "seen": 1793991166.2531753,
+    "ast_hash": "622b4955522afb4ea265ba519f2d52a4",
     "semantic_hash": ""
   },
   "report/paper_pdf_qa.json": {
-    "mtime": 1793282712.5692399,
-    "seen": 1793282998.9936373,
-    "ast_hash": "f73d0d110e251de0b9dd25b6196c2163",
+    "mtime": 1793949712.38582,
+    "seen": 1793991166.2531753,
+    "ast_hash": "f38ff73f456fb4afa0a3116fb1147a90",
     "semantic_hash": ""
   },
   "report/pdf/layout.lua": {
@@ -1638,9 +1638,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1793902073.717101,
-    "seen": 1793902088.3083436,
-    "ast_hash": "6724a960a567434291675fda13795420",
+    "mtime": 1793991112.6076834,
+    "seen": 1793991166.2741668,
+    "ast_hash": "7c9fa6f6f64b44a9e004142ae08408d5",
     "semantic_hash": ""
   },
   "RELEASE_NOTES_v2.0.0.md": {
@@ -1806,9 +1806,9 @@
     "semantic_hash": ""
   },
   "configs/paper_build.yaml": {
-    "mtime": 1793282701.0842223,
-    "seen": 1793282999.0301583,
-    "ast_hash": "7682a539f334de656289d25e3092e5c8",
+    "mtime": 1793948651.2051334,
+    "seen": 1793991166.2892313,
+    "ast_hash": "295c54f60642acb3e58fd619e62c3bab",
     "semantic_hash": ""
   },
   "configs/pareto.yaml": {
@@ -2028,9 +2028,9 @@
     "semantic_hash": ""
   },
   "docs/DECISION_LOG.md": {
-    "mtime": 1793901979.6377473,
-    "seen": 1793902088.3153481,
-    "ast_hash": "5fbda567261d52f8748cafcc1206e52e",
+    "mtime": 1793950525.918401,
+    "seen": 1793991166.2935505,
+    "ast_hash": "d742ce0e8b480258fc8ab274ee19209a",
     "semantic_hash": ""
   },
   "docs/EXPLAINABILITY.md": {
@@ -2052,9 +2052,9 @@
     "semantic_hash": ""
   },
   "docs/FINAL_SUBMISSION_AUDIT.md": {
-    "mtime": 1793902073.7181027,
-    "seen": 1793902088.3153481,
-    "ast_hash": "46fa5bbc6942797bcfc8c643ac3ff933",
+    "mtime": 1793950246.0258305,
+    "seen": 1793991166.2935505,
+    "ast_hash": "a0ffd46fcae609548ff61408519e7aa3",
     "semantic_hash": ""
   },
   "docs/FINAL_SUBMISSION_AUDIT_2026-09-01.md": {
@@ -2136,9 +2136,9 @@
     "semantic_hash": ""
   },
   "docs/REPORTING_CHECKLIST.md": {
-    "mtime": 1793284140.6148095,
-    "seen": 1793284888.7939208,
-    "ast_hash": "a90475efc63c7c5439092b58c4e24072",
+    "mtime": 1793950431.8835092,
+    "seen": 1793991166.2955484,
+    "ast_hash": "29300a581e3870e51b1844717c3694eb",
     "semantic_hash": ""
   },
   "docs/REPRODUCIBILITY.md": {
@@ -2166,9 +2166,9 @@
     "semantic_hash": ""
   },
   "docs/SUPPLEMENTARY.md": {
-    "mtime": 1793901674.9549086,
-    "seen": 1793902088.3173475,
-    "ast_hash": "b9a9d2198d09bcabfa37a43c801fcac7",
+    "mtime": 1793949597.1018426,
+    "seen": 1793991166.2965484,
+    "ast_hash": "8df5a77b2e847dfd795fcbb777d8d8fd",
     "semantic_hash": ""
   },
   "docs/THRESHOLD_ANALYSIS.md": {
@@ -2274,9 +2274,9 @@
     "semantic_hash": ""
   },
   "report/paper_draft.md": {
-    "mtime": 1793901674.953908,
-    "seen": 1793902088.319351,
-    "ast_hash": "e39f50199b1ba82681c49f999f52560e",
+    "mtime": 1793948651.204133,
+    "seen": 1793991166.2975483,
+    "ast_hash": "35a61b7e9ffa1547c61f36017fe02471",
     "semantic_hash": ""
   },
   "report/pdf/requirements.txt": {
@@ -2538,9 +2538,9 @@
     "semantic_hash": ""
   },
   "output/pdf/rsna_vindr_article.pdf": {
-    "mtime": 1793282711.7054625,
-    "seen": 1793282999.045158,
-    "ast_hash": "32cd10bbd48a07216e634b8c36b2fb08",
+    "mtime": 1793949651.949795,
+    "seen": 1793991166.3026738,
+    "ast_hash": "c4a7cdce59c4631a6cc732e0c464bccf",
     "semantic_hash": ""
   },
   "report/provenance/batch52/rsna_vindr_article.pdf": {
@@ -2961,6 +2961,66 @@
     "mtime": 1793900811.1710706,
     "seen": 1793902088.3233688,
     "ast_hash": "bf9e3e697965202bf8d6f7c5b2b085e1",
+    "semantic_hash": ""
+  },
+  "results/threshold_repairability_v1/summary.json": {
+    "mtime": 1793991154.4998016,
+    "seen": 1793991166.271425,
+    "ast_hash": "40e6773ea928d6f951afdb89e3af0dc5",
+    "semantic_hash": ""
+  },
+  "scripts/analyze_threshold_repairability.py": {
+    "mtime": 1793990997.644765,
+    "seen": 1793991166.2724252,
+    "ast_hash": "88839d79d3400ab7d0e971660cb9634d",
+    "semantic_hash": ""
+  },
+  "tests/test_threshold_repairability.py": {
+    "mtime": 1793991066.968584,
+    "seen": 1793991166.2741668,
+    "ast_hash": "c99997f939fdefacd734c4e3bd9188de",
+    "semantic_hash": ""
+  },
+  "configs/threshold_repairability_v1.yaml": {
+    "mtime": 1793988793.1314096,
+    "seen": 1793991166.2892313,
+    "ast_hash": "4fd7e0a5a4a484681a0648b11d3dd175",
+    "semantic_hash": ""
+  },
+  "docs/CLINICAL_ANNOTATION_ADJUDICATION_V1.md": {
+    "mtime": 1793950431.885508,
+    "seen": 1793991166.2924387,
+    "ast_hash": "a56f4f12ae71983d7d5ee8177c7eccb7",
+    "semantic_hash": ""
+  },
+  "docs/SUPERVISOR_BRIEFING_2026-11-06.md": {
+    "mtime": 1793991148.7868967,
+    "seen": 1793991166.2965484,
+    "ast_hash": "05e69e11e4b7cd6e38cc58a56012613d",
+    "semantic_hash": ""
+  },
+  "docs/SUPERVISOR_REVIEW_VERIFICATION_2026-11-06.md": {
+    "mtime": 1793950581.0166068,
+    "seen": 1793991166.2965484,
+    "ast_hash": "e5496d66ac52604b6dbed9c0e47d6dbf",
+    "semantic_hash": ""
+  },
+  "docs/SUPERVISOR_SCIENTIFIC_REVIEW_2026-11-06.md": {
+    "mtime": 1793949144.1010313,
+    "seen": 1793991166.2965484,
+    "ast_hash": "1dc23e28ded65580b9b27f7be149bfbd",
+    "semantic_hash": ""
+  },
+  "docs/THRESHOLD_REPAIRABILITY_RESEARCH_DIRECTION.md": {
+    "mtime": 1793991148.7868967,
+    "seen": 1793991166.2965484,
+    "ast_hash": "0b58ef3fd8de35a94058b7a17155adfc",
+    "semantic_hash": ""
+  },
+  "results/threshold_repairability_v1/repairability.png": {
+    "mtime": 1793991154.4985878,
+    "seen": 1793991166.304466,
+    "ast_hash": "10feee8509c43045df8054b42e5e4155",
     "semantic_hash": ""
   }
 }

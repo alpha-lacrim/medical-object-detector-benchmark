@@ -1507,3 +1507,33 @@ clearance. No GPU inference, training, threshold tuning, ontology merging,
 commit or push was performed during that preparation task. The completed
 diagnostic was subsequently published in commit `0b5e1dd`, and the review package
 and refreshed PDF in `85269e5`; both are on `origin/main`.
+
+## Proposed research focus: limits of threshold repair
+
+The [research-direction note](docs/THRESHOLD_REPAIRABILITY_RESEARCH_DIRECTION.md)
+examines a computational follow-up that does not require radiologist access:
+how much external recall a global confidence cutoff can recover within a fixed
+FP/image budget. It contains a primary-literature comparison, a Persian pitch,
+scope conditions and the work needed before claiming a stronger contribution.
+
+A separate exploratory feasibility package recombines already verified public
+per-run tables. It preserves every checkpoint and original FROC budget, separates
+cutoff headroom, the budget barrier, assignment competition and missing retained
+geometry, and reuses the source intervals for the FROC ceilings only. New
+component intervals are not estimated. The script does not access images,
+predictions or checkpoints, run models, fit calibration or export score cutoffs.
+
+```powershell
+.venv/Scripts/python.exe -m scripts.analyze_threshold_repairability --config configs/threshold_repairability_v1.yaml
+.venv/Scripts/python.exe -m scripts.analyze_threshold_repairability --config configs/threshold_repairability_v1.yaml --verify
+```
+
+The first command creates `results/threshold_repairability_v1/` once and refuses
+to overwrite it. On an existing checkout use `--verify`: it checks pinned source
+hashes and reproduces both tables, the figure and summary exactly. See the
+[aggregate table](results/threshold_repairability_v1/aggregate.csv),
+[figure](results/threshold_repairability_v1/repairability.png) and
+[input/output bindings](results/threshold_repairability_v1/summary.json).
+This feasibility package is separate from the current manuscript's unchanged
+112-artifact publication inventory; it is not a new validated method or clinical
+result. The canonical manuscript and PDF retain their reviewed conclusions.
