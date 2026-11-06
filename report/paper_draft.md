@@ -35,7 +35,8 @@ Primary uncertainty resampled held-out observations and independent detector
 runs. Timing used a matched boundary on an RTX 4060 laptop. Subsequent post-hoc
 analyses decomposed retained-candidate errors, inspected overlap with other
 local findings, reweighted internal positive frequency, and estimated changes
-with the same checkpoints coupled across datasets.
+with the same checkpoints coupled across datasets. A separate exploratory
+diagnostic tested fixed retention and display controls.
 
 **Results:** Mean AP@0.50 fell from 0.304224 to 0.002505 for Faster R-CNN and
 from 0.162612 to 0.000501 for YOLO11s. External AP contrasts retained positive
@@ -57,7 +58,9 @@ performance or successful operating-point transport. Ranking, score scale,
 training variability, false-positive regimes, and implementation efficiency
 require separate interpretation. This is cross-dataset and cross-annotation-
 ontology transportability testing, with remaining confounding among dataset
-and pipeline factors; it does not establish diagnostic utility.
+and pipeline factors; it does not establish diagnostic utility. Code and
+aggregate results are public; source-data access is governed by provider terms,
+and trained checkpoints are not publicly released.
 
 ## 1. Introduction
 
@@ -318,7 +321,7 @@ including images with other abnormalities; those findings were not ignore region
 
 The protocol fixed cohort inclusion, ontology, preprocessing, checkpoints,
 endpoints, candidate floor, cap, and both transported threshold policies before
-full external inference. No VinDr annotations were used for training,
+full external inference. For this original frozen evaluation, no VinDr annotations were used for training,
 fine-tuning, model or checkpoint selection, threshold selection, calibration
 fitting, or outcome-guided ontology, preprocessing, NMS, or endpoint changes.
 No VinDr-optimized threshold was created. All ten RSNA-trained checkpoints were
@@ -626,6 +629,10 @@ Table 3. Historical internal uncertainty, with distinct inferential targets.
 | mAP@0.5 | 5/5 | Unconditional | 0.1416 (0.1013, 0.1845) | Both ranked bundles contribute | **0.0208** |
 | mAP@0.5:0.95 | 5/5 | Unconditional | 0.0453 (0.0313, 0.0599) | Both ranked bundles contribute | **0.0342** |
 
+In Table 3, "Unconditional" means that an endpoint does not condition on a
+matched detection. All intervals still condition on the fixed training data,
+recipe, threshold policy and retained candidate support.
+
 Under the primary estimand, the recall, F1, and both AP intervals remained
 wholly above zero. Fixed-threshold precision did not: its interval crossed
 zero, so it did not support a training-procedure difference. The
@@ -769,12 +776,13 @@ maximum of 1.0 gives conservative aggregate upper bounds of 0.258947 and
 Thus, unlike the internal bound, the external missing-support bound does not
 rule out an ordering reversal beyond retained candidates. These are support
 bounds, not confidence bounds; bootstrapping cannot restore unobserved support.
-The floor was not lowered after external results.
+The floor for these original results remained frozen. The separate post-hoc
+retention diagnostic in Section 4.11 did not replace this analysis.
 
 Faster R-CNN reached the collection cap on 3,000/2,635/3,000/3,000/209 images
 for seeds 17/42/137/271/314; no YOLO11s image reached it. This substantial cap
 saturation is another limitation on the observed frontier, not corrected by
-the YOLO floor bound. The cap remained frozen. No unrestricted or full-frontier
+the YOLO floor bound. The cap for this analysis remained frozen. No unrestricted or full-frontier
 external FROC superiority is established.
 
 Checkpoint conditioning also changed the comparison. For the seed-17 pair,
@@ -814,8 +822,9 @@ At historical thresholds, mean fractions of strict false positives assigned
 to overlap with another local finding were 0.536561 and 0.377949, respectively.
 Those fractions were defined for 5 Faster R-CNN runs and 4 YOLO11s runs;
 the zero-emission YOLO11s run remained in all count summaries and the full
-analysis. Overlap is evidence of reference-definition sensitivity, not evidence
-that these detections are clinically correct or that labels should be merged.
+analysis. Overlap describes disagreement with the strict reference definition;
+it does not measure performance under an expert-adjudicated alternative target
+or establish that detections are clinically correct or labels should be merged.
 
 After positive-frequency standardization, mean custom weighted AP was
 0.108684 for Faster R-CNN and 0.055072 for YOLO11s; mean weighted precision
@@ -841,7 +850,8 @@ Both detectors had negative change intervals at all three endpoints. The
 difference-in-changes interval included zero for FROC, while AP and historical
 recall showed larger absolute decreases for Faster R-CNN. Per-run categories,
 SDs, overlap classes, support diagnostics and prevalence intervals appear in
-Supplementary Section S11. No external threshold or candidate support was tuned.
+Supplementary Section S11. This analysis reused the original thresholds and
+retained candidates; the separate retention controls are reported below.
 
 ### 4.11 Controlled retention and display diagnostic
 
@@ -902,8 +912,8 @@ measures transport of established pipelines and rules. Its strict local opacity
 ontology differs from RSNA's reference standard. Acquisition, hospital/site,
 country, population, annotation ontology and preprocessing effects remain
 confounded. Internal numerical-path harmonisation produced modest aggregate
-changes and preserved the major observed comparisons, weakening precision
-asymmetry as an explanation for the severe transport collapse in this sensitivity.
+changes and preserved the major observed comparisons. This tested numerical-path
+change did not reproduce the magnitude of the observed cross-dataset loss.
 It does not establish that every remaining difference is a dataset effect or
 attribute the collapse to any one factor. Nor would combining labels after seeing results repair
 that inference. The adverse result motivates separately designed future

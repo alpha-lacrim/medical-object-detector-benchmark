@@ -1,5 +1,20 @@
 # Supplementary Materials Index
 
+## Reading guide for supervisor review (2026-11-06)
+
+For the main scientific argument, start with S1-S3, the current uncertainty
+records in S7, matched timing in S8, and external/diagnostic evidence in S9-S12.
+S4-S6 answer secondary calibration, synthetic-stress and explanation questions;
+they do not establish clinical utility or external generalization. Historical
+timing/Pareto panels and superseded audits are provenance, not competing current
+estimates. All original artifacts and S1-S12 anchors remain intact.
+
+The [briefing](SUPERVISOR_BRIEFING_2026-11-06.md) and
+[scientific review](SUPERVISOR_SCIENTIFIC_REVIEW_2026-11-06.md) guide decisions;
+the [CLAIM crosswalk](REPORTING_CHECKLIST.md) tracks reporting gaps. A journal
+supplement should select the necessary current tables rather than concatenate
+this repository's historical audits and long reports.
+
 **Primary runtime update (Batch 45):** [Matched v1 timing protocol](COMPUTE_TIMING.md),
 [aggregate table](../results/tables/inference_timing_v1.csv),
 [complete repetitions](../results/tables/inference_timing_v1_repetitions.csv),

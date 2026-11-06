@@ -1,17 +1,17 @@
 {
   "status": "author_review_derivative_not_submission_clearance",
   "canonical_manuscript": "report/paper_draft.md",
-  "support_revision": "d174611408cdc4673e8344b95e4ed0685844306e",
+  "support_revision": "0b5e1dd4b7ff1cd94072ebc981d18c3cea2d9c2b",
   "pandoc_version": "pandoc 3.9",
   "tex_version": "pdfTeX 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX)",
   "inputs": [
     {
       "path": "configs/paper_build.yaml",
-      "sha256": "6213e33e3517be278cb5b847755180d48de393019046e2e45ad54547e4b29fd1"
+      "sha256": "569b873fb0ce96dc3244bcdf77b72e6fc41fbf7e20134d25bd41fba5c1bb9d0d"
     },
     {
       "path": "report/paper_draft.md",
-      "sha256": "4f74655627ed83c894d7275e0f7d667dc0dbeb2415490be34037f4829429363f"
+      "sha256": "c7c83a98cfd48674e726f93d3fcfc9e4e4a787eca5dc5400287b56f8f53455bd"
     },
     {
       "path": "report/references.bib",
@@ -52,8 +52,8 @@
   ],
   "output": {
     "path": "output/pdf/rsna_vindr_article.pdf",
-    "sha256": "c09f01b8ab1e0c04c452765b8af71eecfa884a85e8728341d84dfd37b821794e",
-    "size_bytes": 989305
+    "sha256": "06d3d38b36f2eaa9a04920ab28e39ad5a4ba7136d2dcfb3224172cd830a22215",
+    "size_bytes": 993010
   },
   "reproduction": "python -m scripts.build_paper_pdf --config configs/paper_build.yaml",
   "note": "PDF timestamps/tool versions can change byte hashes; scientific content comes only from the canonical source."

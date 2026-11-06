@@ -1013,3 +1013,31 @@ Supplement S12, with ten additional numerical bindings and two guards. The
 prior reviewed PDF remains unchanged and needs refresh before submission.
 No commit/push authorization was inferred from local historical session notes;
 this continuation leaves reviewable working-tree changes.
+
+
+## D-026 - Supervisor review, expert protocol and expanded-support priority
+
+- **Date:** 2026-11-06
+- **Status:** Review preparation completed; scientific recommendation, not author approval
+
+Prepared a concise supervisor briefing, critical manuscript review, prospective
+specification for future clinical annotation adjudication, and an updated
+44-item CLAIM 2024 readiness crosswalk. Scoped frozen-study statements separately
+from later fixed-control diagnostics; clarified Table 3 conditioning and
+reference-overlap interpretation. Original metrics, claim bindings, checkpoints,
+labels and scientific/publication manifests remain unchanged.
+
+Recommend NO-GO for full-cohort expanded-candidate inference for the current
+bounded paper. It could strengthen expanded-support false-positive/FROC analysis,
+but would not resolve annotation equivalence or the overall cause of external
+collapse. Reconsider only if a support-sensitive question becomes central or a
+reproducible support defect undermines current claims; see the scientific review.
+
+The expert protocol is unexecuted and requires qualified-reader/author sign-off
+before selection or reads. The manuscript PDF was rebuilt and all 19 pages
+visually inspected. Complete existing-evidence verification and software suites
+passed; no new clinical validation follows. Ethics/data-use, authorship/journal,
+model-access and final-release decisions remain author responsibilities. No
+GPU inference, training, threshold tuning, merging, commit or push was performed.
+
+Evidence: docs/SUPERVISOR_REVIEW_VERIFICATION_2026-11-06.md.

@@ -1189,9 +1189,10 @@ author-declaration update and links the preserved [full scientific gate](docs/FI
 exact-HEAD Windows/Ubuntu CI, fresh public checkout, authorized replay,
 21 analysis scopes and a 51-value review selection. The
 [complete numerical trace](docs/SUBMISSION_NUMERICAL_TRACE.csv) contains all
-468 verified bindings with current manuscript lines. Supplied author details,
+478 verified bindings with current manuscript lines. Supplied author details,
 declarations and the Batch 53 sensitivity are incorporated into
-the refreshed 19-page review PDF, including the post-hoc analyses. The two pending declaration items use factual status
+the refreshed 19-page review PDF, including the controlled diagnostic and
+2026-11-06 supervisor-review clarifications. The two pending declaration items use factual status
 statements rather than drafting instructions.
 Ethics/consent applicability, the exact submission release and journal decisions
 remain unresolved; the disposition is **ready for author review**. The authors
@@ -1218,16 +1219,16 @@ unchanged), with pdfLaTeX/TeX Live, Latin Modern fonts and Poppler available on 
 uv venv --python .venv/Scripts/python.exe .tools/paper-build
 uv pip install --python .tools/paper-build/Scripts/python.exe -r report/pdf/requirements.txt
 & .tools/paper-build/Scripts/python.exe -m scripts.build_paper_pdf --config configs/paper_build.yaml
-& .tools/paper-build/Scripts/python.exe -m scripts.check_paper_pdf --pdf output/pdf/rsna_vindr_article.pdf --output report/paper_pdf_qa.json --text tmp/pdfs/posthoc-generalization-20261029/final/extracted-final.txt
-pdftoppm -r 120 -png output/pdf/rsna_vindr_article.pdf tmp/pdfs/posthoc-generalization-20261029/final/page
+& .tools/paper-build/Scripts/python.exe -m scripts.check_paper_pdf --pdf output/pdf/rsna_vindr_article.pdf --output report/paper_pdf_qa.json --text tmp/pdfs/supervisor-review-20261106/final/extracted-final.txt
+pdftoppm -r 120 -png output/pdf/rsna_vindr_article.pdf tmp/pdfs/supervisor-review-20261106/final/page
 ```
 
 The builder uses Pandoc/citeproc, the versioned formatting filter/header, and
 three configured pdfLaTeX passes to resolve cross-references from a fresh build.
 It preserves captions and scientific content, sizes table
 columns for portrait pages, and pins supporting repository links to commit
-`d174611408cdc4673e8344b95e4ed0685844306e`, the verified post-hoc analysis and
-manuscript integration. This supporting revision is not a selected submission
+`0b5e1dd4b7ff1cd94072ebc981d18c3cea2d9c2b`, the committed controlled-diagnostic
+evidence supporting Supplement S12. This supporting revision is not a selected submission
 release. The source/output hash receipt is
 [`report/paper_build_manifest.json`](report/paper_build_manifest.json).
 PDF timestamps and tool versions can alter byte hashes; matching scientific
@@ -1470,8 +1471,9 @@ completed collection; no additional GPU inference was launched. All original
 post-hoc results also passed a fresh full bootstrap replay. The
 [interpretation and verification record](docs/EXTERNAL_FAILURE_ISOLATION_VERIFICATION_V1.md)
 records evidence, limitations and commands. Current Markdown includes the new
-diagnostic in Methods/Results and Supplement S12. The existing 2026-10-29 PDF
-is the preceding reviewed snapshot and does not yet include this extension.
+diagnostic in Methods/Results and Supplement S12. The PDF was rebuilt and all
+19 pages visually reviewed on 2026-11-06; the current review record below
+binds its source, output and supporting evidence revision.
 
 After complete collection, exact CPU replay and report review, register the
 new public aggregates once without refreshing any previous evidence:
@@ -1479,3 +1481,25 @@ new public aggregates once without refreshing any previous evidence:
 ```powershell
 & .\.venv\Scripts\python.exe -m scripts.register_external_failure --config configs/external_failure_isolation_v1.yaml --manifest results/publication_artifact_manifest.json
 ```
+
+
+## Supervisor review and publication gaps (2026-11-06)
+
+Start with the [supervisor briefing](docs/SUPERVISOR_BRIEFING_2026-11-06.md).
+The [scientific review](docs/SUPERVISOR_SCIENTIFIC_REVIEW_2026-11-06.md) records
+scope corrections and recommends deferring full-cohort expanded-candidate
+inference unless its narrower question becomes central to the paper.
+The [clinical-adjudication protocol](docs/CLINICAL_ANNOTATION_ADJUDICATION_V1.md)
+is specified for future expert sign-off; no expert reads or new labels exist.
+The updated [CLAIM 2024 crosswalk](docs/REPORTING_CHECKLIST.md) separates
+reporting evidence from author-only ethics, data-use, authorship, journal,
+checkpoint-access and final-release decisions.
+
+The [execution/verification record](docs/SUPERVISOR_REVIEW_VERIFICATION_2026-11-06.md)
+records fresh saved-inference checks, full original/generalization/diagnostic
+bootstrap replays, all software checks, PDF provenance and every-page visual QA.
+The canonical PDF is current with the reviewed Markdown; 478 claims/42 guards
+pass and frozen scientific artifacts are unchanged. Software correctness is
+not clinical correctness. This is an author-review package, not submission
+clearance. No GPU inference, training, threshold tuning, ontology merging,
+commit or push was performed for this preparation task.

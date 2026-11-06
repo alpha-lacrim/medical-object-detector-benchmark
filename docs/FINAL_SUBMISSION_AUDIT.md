@@ -1,5 +1,36 @@
 # Final submission audit and author-declaration follow-up
 
+## 2026-11-06 supervisor-review preparation and current PDF
+
+The current [review record](SUPERVISOR_REVIEW_VERIFICATION_2026-11-06.md)
+supersedes the pending-PDF status in the dated entries below. The canonical
+Markdown includes the controlled diagnostic and this review's scope/conditioning
+clarifications. Its 19-page PDF was rebuilt using the existing workflow and
+all pages were individually inspected at 120 dpi. Automated PDF QA reports
+zero errors; all 11 build inputs/output hashes, 34 internal links and 11 pinned
+supporting repository paths were checked. Ten Section 4.11 values and all 27
+Table 8 values are present in the extracted PDF.
+
+Current PDF SHA-256:
+`06d3d38b36f2eaa9a04920ab28e39ad5a4ba7136d2dcfb3224172cd830a22215`.
+
+Fresh verification passed the original freeze, both artifact inventories,
+saved inference, full original/post-hoc/diagnostic bootstrap replays, 478 claims,
+42 guards, bibliography, Ruff and portable/scientific tests (510/517 passed).
+See the linked record for exact commands, skips and scope. Original scientific
+results and provenance records remain unchanged. The support pin identifies
+committed evidence; it is not a selected final submission release.
+
+The [briefing](SUPERVISOR_BRIEFING_2026-11-06.md),
+[critical review](SUPERVISOR_SCIENTIFIC_REVIEW_2026-11-06.md),
+[future expert protocol](CLINICAL_ANNOTATION_ADJUDICATION_V1.md) and
+[44-item checklist](REPORTING_CHECKLIST.md) are ready for author/supervisor review.
+Clinical expert approval, ethics/data-use determinations, journal and release
+selection remain unresolved. No expert study or new inference was executed;
+no commit or push was made. Passing code checks is not clinical validation.
+
+---
+
 **2026-11-05 controlled-diagnostic update:** Current Markdown additionally
 contains Methods 3.10, Results 4.11 and bounded discussion/limitations, with
 Supplement S12. The [new verification record](EXTERNAL_FAILURE_ISOLATION_VERIFICATION_V1.md)

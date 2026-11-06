@@ -1,94 +1,115 @@
-# Reporting Checklist Crosswalk
+# Publication readiness and CLAIM 2024 crosswalk
 
-Audit date: 2026-09-25 (author declarations follow-up; scientific audit 2026-09-24)
+Current review: **6 November 2026**, against canonical `report/paper_draft.md`
+and the rebuilt author-review PDF. This supersedes the dated primary crosswalk;
+older secondary-framework discussion below is historical context. It is not a
+compliance certificate, clinical validation, or journal submission approval.
 
-Updated for the internal/external manuscript with supplied author declarations.
-Manuscript/PDF pointers refreshed 2026-10-29; the earlier crosswalk rows below
-retain their original audit scope. Current manuscript SHA-256:
-`4f74655627ed83c894d7275e0f7d667dc0dbeb2415490be34037f4829429363f`.
-The [submission audit](FINAL_SUBMISSION_AUDIT.md) records the 19-page PDF review;
-the journal's official checklist and final submission pagination remain author action.
-The paper separates ranking, operating rules, training variability, observed
-FROC support, implementation timing and cross-dataset transportability. All five
-runs per detector remain represented. External testing is complete;
-funding, conflicts, contributions and no-PPI facts are now supplied. Ethics/consent
-applicability, submission revision and journal-specific requirements remain open.
+The [official 44-item checklist](https://rsna.github.io/claim/checklist.html)
+and [2024 publication](https://doi.org/10.1148/ryai.240300) were checked for this
+review. Short topic labels below are navigation aids, not reproduced checklist
+text. Use the publisher's exact form for submission. Yes denotes available
+reporting evidence, not absence of methodological limitations. No identifies an
+incomplete applicable item; NA explains an inapplicable item. Current page/line
+locations are provided in the review verification record; final journal
+pagination and author attestations must be reconfirmed.
 
-This audit is against the **current manuscript**,
-[`report/paper_draft.md`](../report/paper_draft.md). It is not an audit of the
-historical/full technical report in `report/report.md`. Repository artifacts
-are cited when the user-requested evidence rule permits an exact artifact to
-support a `Yes` response.
+## Author-only release gates
 
-This is an internal reporting crosswalk. It is not an official journal
-submission checklist, a reporting-quality score, or a claim of compliance.
-An official checklist must be completed in the publisher's required form at
-submission and updated against the final paginated manuscript.
-
-## Framework choice and applicability
-
-| Framework | Applicability decision | Use here |
+| Gate | Current evidence | Decision and owner |
 |---|---|---|
-| CLAIM 2024 | Directly applicable. The work develops, internally tests and externally tests two AI object detectors on medical images. | **Primary checklist.** All 44 items use the official `Yes` / `No` / `Not Applicable` response structure. |
-| STARD-AI 2025 | Not a clean primary fit. Final STARD-AI covers diagnostic-accuracy studies of an AI-based index test. This benchmark estimates object-localization performance against boxes, allows multiple detections and false positives per image, and does not estimate participant-level diagnostic accuracy against a clinical reference standard. | Selected reporting concepts are mapped **by analogy only**. This is not the official STARD-AI submission checklist and does not establish STARD-AI compliance. |
-| TRIPOD+AI 2024 | Outside primary scope. The study does not develop or evaluate an individualized diagnostic or prognostic prediction model that returns a person-level outcome probability. Detector boxes and confidence scores are not such a model. | Selected transparency concepts are mapped **by analogy only**. This is not a TRIPOD+AI compliance assessment. |
+| Ethics and consent | Authors previously reported no separate institutional determination; source-study approval and consent waiver are described separately in Section 8. | Responsible authors must establish applicable institutional/journal requirements and retain any written determination. Do not invent exemption or retrospective approval. |
+| Data-use compliance | Authorized local access and private-derivative boundaries are recorded; this review checks file exposure only. | Authors/data custodian must confirm current RSNA/NIH and VinDr/PhysioNet terms, permitted secondary use and reader access. A Git privacy scan is not a legal compliance determination. |
+| Authorship and approval | Two named authors, affiliations, CRediT roles, funding/conflict and no-PPI facts were supplied previously. | Both authors must confirm contribution accuracy, accountability, final text and journal forms; consider any subsequent expert contributions without promising authorship. |
+| Journal selection | No journal is selected. | Supervisor/authors choose fit for an empirical methods/transportability paper, then check scope, word/figure limits, supplement format, fees, AI-use disclosure and data/model-access policy. No journal acceptance is implied. |
+| Final release | Evidence support is pinned to existing commit 0b5e1dd; this review's working-tree edits are not published. | Authors choose the exact final commit/archive and designate it after all accepted edits. No tag, archive, commit or push is created here. |
+| Model access | All ten checkpoint binaries remain unpublished by the existing author decision, explicitly disclosed. | Authors decide whether the chosen journal accepts this restriction and whether an approved access mechanism is possible. Do not promise availability on request without a real process. |
+| Expert study | Future adjudication protocol is specified, without approvals, recruited readers or reader results. | Clinical lead and authors must approve before executing it. Preserve overlap-only claims if it is not undertaken. |
 
 ## CLAIM 2024 primary crosswalk
 
-The official 2024 update defines 44 items and the three responses `Yes`, `No`,
-and `Not Applicable`. For `Yes`, the evidence column names a manuscript section
-or exact repository artifact. For `No` and `Not Applicable`, the unresolved or
-out-of-scope reason is explicit. CLAIM terminology is followed: the
-patient-disjoint RSNA held-out split is **internal testing**; VinDr is
-**external testing** under a non-identical opacity ontology, not identical-task
-validation. `Validation` denotes the RSNA model/threshold-selection partition.
+All manuscript references below are to the current canonical paper; S1-S12 are
+sections of [the supplementary index](SUPPLEMENTARY.md). The exact manuscript,
+PDF hashes and verification outcomes are in
+[the review record](SUPERVISOR_REVIEW_VERIFICATION_2026-11-06.md).
 
-| Item | Reporting topic (paraphrased) | Response | Evidence or explanation |
+| Item | Topic | Response | Current evidence and remaining action |
 |---:|---|---|---|
-| 1 | Identify the work as AI methodology and name the technology category in the title or abstract | Yes | The [structured abstract](../report/paper_draft.md#abstract) explicitly identifies two deep-learning object-detection pipelines and names Faster R-CNN and YOLO11s. |
-| 2 | Structured abstract with design, population, partitions, retrospective/prospective status, statistics, outcomes, implications, and availability | No | The structured abstract reports retrospective internal/external testing, both cohorts, patient-disjoint internal partitions, all runs, estimands, absolute collapse and bounded ordering. Release-ready software/data/model availability remains an unresolved author-controlled declaration. |
-| 3 | Scientific/clinical background, intended use, current practice, and rationale | Yes | [`paper_draft.md` §1](../report/paper_draft.md#1-introduction) and [§5](../report/paper_draft.md#5-discussion) define the scientific comparison, intended research use, and non-clinical boundary. |
-| 4 | A priori aims, objectives, and hypotheses | No | Internal aims/hypotheses are retrospective. External aims, ontology, endpoints and policies were locally frozen before full inference in [the protocol](VINDR_EXTERNAL_PROTOCOL.md); this is not public preregistration. The final narrative does not retrospectively convert internal H1--H6 into prospective hypotheses. |
-| 5 | State whether the study is prospective or retrospective | Yes | The abstract and §1 identify retrospective secondary analysis and distinguish locally prespecified external testing from the retrospective internal analysis. |
-| 6 | State the study goal, modeling task, target, and intended role | Yes | [`paper_draft.md` §§1 and 3.1](../report/paper_draft.md#31-dataset-target-and-patient-disjoint-split) define a controlled, non-clinical lung-opacity object-localization benchmark. |
-| 7 | Identify data sources and their match to the intended population | Yes | Manuscript §§3.1 and 3.5 identify RSNA/NIH and official PhysioNet VinDr-CXR v1.0.0, with exact strict local-target mapping and research-only scope. |
-| 8 | Eligibility, setting, location, dates, demographics, and sampling method | No | RSNA subset, sampling and limited header demographics are reported; VinDr includes its complete released test set and strict support. Detailed RSNA source accrual/eligibility, broader clinical variables and a locally verified external demographic table remain unavailable. No consecutive clinical-sampling claim follows. |
-| 9 | Preprocessing steps | Yes | Manuscript §§3.1/3.5, [dataset config](../configs/dataset.yaml), [frozen external config](../configs/vindr_external_v1.yaml) and [adapter receipt](../results/vindr_external_v1/adapter_preflight.json) record conversion, inversion, native transforms and technical integrity checks. |
-| 10 | Selection of data subsets | Yes | [`paper_draft.md` §3.1](../report/paper_draft.md#31-dataset-target-and-patient-disjoint-split), [`configs/dataset.yaml`](../configs/dataset.yaml), and [`docs/DATASET_CHOICE.md`](DATASET_CHOICE.md) record seed-17 SHA-256 ordering, label-stratum tracking, patient grouping, and the hardware-scoped 5,000-study selection. |
-| 11 | De-identification method | No | VinDr source de-identification is documented by the release and absent usable patient identity tags were verified locally; this does not provide defensible patient grouping. Complete RSNA upstream/local de-identification reporting remains unavailable. |
-| 12 | Missing-data assessment and handling | Yes | Box-coordinate/conversion completeness and `PatientAge`/`PatientSex`/`ViewPosition` missingness are explicit. The sole out-of-range age is excluded from age summaries; numeric ages without encoded units are retained only as nominal years with a caveat. Uncollected clinical variables are named as unavailable rather than silently imputed. |
-| 13 | Image-acquisition protocol and equipment detail | No | [`paper_draft.md` §§3.7 and 6](../report/paper_draft.md#6-limitations) explicitly say acquisition fields, scanner settings, and processing history needed for reproducibility are unavailable. |
-| 14 | Reference-standard definition and labeling instructions | No | Both reference standards and the frozen exact-label external mapping are reported. VinDr consensus construction is cited, but complete source reader instructions and all case-level adjudication details are not reproduced locally. |
-| 15 | Rationale for the reference standard and assessment of possible errors | Yes | [`docs/DATASET_CHOICE.md`](DATASET_CHOICE.md) records why RSNA was selected, and [`paper_draft.md` §6](../report/paper_draft.md#6-limitations) describes coarse-box, disagreement, and absent re-reading limitations. |
-| 16 | Annotation sources, number and qualifications of annotators, and instructions | No | [`docs/DATASHEET.md`](DATASHEET.md) records 18 board-certified radiologists from 16 institutions, including 12 thoracic specialists, but the full instructions and case-assignment/adjudication detail are not reported locally. |
-| 17 | Annotation procedure and software for the internal-testing set | No | The source boxes were reused; local conversion is traceable, and the official RSNA description names md.ai, but the complete display and case-assignment/adjudication procedure is not reported for this internal-testing subset. |
-| 18 | Inter- and intrarater variability | No | No local rereading study or source-level inter/intrarater agreement statistic is available. |
-| 19 | Partition assignment, sizes, proportions, differences, and class imbalance | Yes | RSNA patient-grouped partition sizes, counts and differences are in §3.1 and the committed manifests. The complete VinDr test cohort and strict support are reported separately in §§3.5/4.6; it was not split, sampled or adapted. |
-| 20 | Disjointness level between partitions | Yes | Empty NIH patient-key intersections establish internal partition disjointness. The external release is independent as a dataset; no unverified patient linkage, within-VinDr independence or identical-task claim is made. |
-| 21 | Internal-testing sample size and how it was determined | Yes | [`paper_draft.md` §3.1](../report/paper_draft.md#31-dataset-target-and-patient-disjoint-split) reports 750 internal-testing studies/323 patient groups and explicitly states that the 5,000-study cohort was hardware-scoped with no formal sample-size or power calculation. The dedicated row below gives the complete interpretation. |
-| 22 | Sufficient model detail to reconstruct inputs, outputs, and architecture | Yes | [`paper_draft.md` §3.2](../report/paper_draft.md#32-detector-pipelines-and-controlled-training-factors), [`src/models/faster_rcnn_model.py`](../src/models/faster_rcnn_model.py), [`src/models/yolo_training.py`](../src/models/yolo_training.py), and [`configs/`](../configs/) identify the implemented pipelines and configuration-derived outputs. |
-| 23 | Software versions and hardware | Yes | Manuscript §§3.2/3.5/3.7/4.9, pinned environments and [timing provenance](../results/logs/phase45_inference_timing_v1/summary.json) disclose hardware/software and historical FP32 versus external bfloat16 YOLO accuracy paths. The [secondary internal numerical-path sensitivity](YOLO_NUMERICAL_PATH_SENSITIVITY_V1.md) verifies active bfloat16 execution and discloses unrecorded historical TF32 flags. |
-| 24 | Parameter initialization | Yes | [`paper_draft.md` §3.2](../report/paper_draft.md#32-detector-pipelines-and-controlled-training-factors), [`configs/faster_rcnn.yaml`](../configs/faster_rcnn.yaml), and [`configs/yolo.yaml`](../configs/yolo.yaml) record COCO initialization and the canonical seed; seed-specific configs and model-loader code record the remaining seeds and head adaptation. |
-| 25 | Training, augmentation, stopping, hyperparameters, objectives, and frozen parameters | Yes | [`paper_draft.md` §3.2](../report/paper_draft.md#32-detector-pipelines-and-controlled-training-factors), [`configs/faster_rcnn.yaml`](../configs/faster_rcnn.yaml), [`configs/yolo.yaml`](../configs/yolo.yaml), and per-run `resolved_config.json` files indexed in [`SUPPLEMENTARY.md` S2](SUPPLEMENTARY.md#s2-full-clean-seed-level-comparison) provide the exact record. |
-| 26 | Final-model selection | Yes | RSNA validation mAP selected each checkpoint. All ten checkpoint hashes/config identities are bound in [the release inventory](../results/checkpoint_release_manifest.json) and [external summary](../results/vindr_external_v1/inference_summary.json). No external checkpoint selection occurred. |
-| 27 | Ensembling method | Not Applicable | Neither arm is an ensemble; each reported run is one Faster R-CNN or YOLO11s checkpoint. Seed summaries quantify repeated training and do not combine predictions into an ensemble. |
-| 28 | Performance metrics, rationale, and comparison with prior models | No | [`paper_draft.md` §§3.3--3.5](../report/paper_draft.md#33-five-retained-runs-and-common-evaluation) defines the metrics and scientific rationale, but prior publications are contextual only and are not directly reproduced under this study's split/evaluator for quantitative comparison. |
-| 29 | Uncertainty/significance procedures and statistical software | Yes | Manuscript §3.6 and [external statistical methods](VINDR_STATISTICS.md) distinguish observation/run uncertainty, historical checkpoint-conditional tests, seed-17 external sensitivity and descriptive cross-dataset contrasts. Intervals are marginal; no interaction test or same-number stochastic seed pairing was introduced. |
-| 30 | Robustness or sensitivity analyses | Yes | Manuscript §§3.4/3.8/4.2/4.7/4.8 and [supplement](SUPPLEMENTARY.md) report post-hoc n=5 threshold sensitivity, finite-support bounds, conditional-checkpoint sensitivity and secondary synthetic stress analyses. |
-| 31 | Explainability methods, parameters, and validation/sanity checks | Yes | Manuscript §3.8 and Supplementary S6 link the existing Grad-CAM layers, proxy targets, localization and randomization controls; none establishes clinical reasoning or causal faithfulness. |
-| 32 | Evaluation on internal data | Yes | [`paper_draft.md` §§3.3 and 4.1](../report/paper_draft.md#33-five-retained-runs-and-common-evaluation) identifies the patient-disjoint held-out evaluation as internal testing and preserves its detector/seed-specific sample sizes. |
-| 33 | External testing, or an explicit absence and rationale | Yes | Manuscript §§3.5/4.6--4.8 and [external artifacts](VINDR_STATISTICS_RESULTS.md) report frozen, adaptation-free testing of every run on all 3,000 official VinDr images, with 84 strict-target-positive images/95 boxes. Non-identical ontology, unknown patient dependence, floor/cap limits and precision-path differences are explicit. This is cross-dataset/cross-annotation-ontology transportability, not identical-task validation. |
-| 34 | Registration information for a clinical trial | Not Applicable | Retrospective computational research without participant enrollment or intervention; no clinical trial. Internal analyses were not preregistered; external scientific settings were locally frozen before inference. |
-| 35 | Numbers included/excluded at each stage and a flow diagram | No | Source/subset/split counts and complete external inclusion are explicit, but a single participant/study flow diagram is absent. |
-| 36 | Demographic and clinical characteristics by partition | No | RSNA partition-wise study counts and limited header age/sex/projection are reported with missingness and unit caveats. VinDr strict-target support is complete, but a locally verified external demographic/clinical table and broader clinical descriptors are absent. Aggregate demographics do not establish fairness. |
-| 37 | Final performance for all partitions and relevant subgroups | No | All-run internal and external performance and uncertainty are reported; no demographic/clinical subgroup performance evaluation exists. |
-| 38 | Diagnostic-classification performance, uncertainty, calibration, and subpopulations | Not Applicable | The primary task is object localization, not participant-level diagnostic classification. Detection AP/FROC/uncertainty and emitted-detection D-ECE are reported, but they must not be relabeled as patient-level diagnostic sensitivity/specificity or clinical-risk calibration. |
-| 39 | Failure analysis | Yes | Manuscript §§4.1--4.8 reports the retained seed-271 behavior, failed threshold transport, low emissions, support bounds and checkpoint-conditional disagreements. Existing corruption/XAI failure analysis remains supplementary. |
-| 40 | Study limitations | Yes | Manuscript §6 and [limitations](LIMITATIONS.md) cover internal sampling/training, ontology/support/patient/precision confounds, coarse run variability, secondary scope and lack of prospective/reader/clinical/fairness evaluation. |
-| 41 | Implications and intended role | Yes | [`paper_draft.md` §§5--6](../report/paper_draft.md#5-discussion) limits conclusions to controlled pipeline trade-offs and prohibits clinical use. |
-| 42 | Protocol and additional technical detail availability | Yes | [README Batch 51](../README.md#final-manuscript-verification-batch-51), frozen v1 protocol, public aggregate manifests and [supplement](SUPPLEMENTARY.md) provide exact commands and separate portable evidence checks from authorized-data replay. Historical editorial baseline bytes are preserved without modifying the scientific freeze. |
-| 43 | Software, model, and data availability statement | No | [`paper_draft.md` §8](../report/paper_draft.md#8-declarations) now gives the public repository, software license, source-data access routes, restricted derivative boundary and authors' decision to keep all ten checkpoints unpublished. The exact submitted public commit/release/archive identifier is still pending; see [`AUTHOR_DECLARATIONS_TODO.md`](AUTHOR_DECLARATIONS_TODO.md). This is an incomplete release record, not a requirement to publish restricted data or weights. |
-| 44 | Funding/support and the funder's role | Yes | Pouyan confirmed no external funding, project-specific scholarship, institutional research support or sponsored computing/equipment for either author; their own resources supported the work. [`paper_draft.md` §8](../report/paper_draft.md#8-declarations) states these facts, so there is no external funder role to report. Provenance is recorded in [`AUTHOR_DECLARATIONS_TODO.md`](AUTHOR_DECLARATIONS_TODO.md). |
+| 1 | AI identification | Yes | Abstract identifies deep-learning detection and both pipelines. |
+| 2 | Abstract scope | Yes | Abstract reports retrospective design, cohorts, splits, runs, uncertainty, results, bounded conclusions and current access restrictions. Final journal length remains author action. |
+| 3 | Rationale/use | Yes | Sections 1-2 and 5 state the research comparison and exclude diagnostic use. |
+| 4 | Objectives/hypotheses | Yes | Section 1 states the scientific questions and distinguishes retrospective internal aims, locally frozen external settings and subsequent exploratory analyses. This is transparent aim/design reporting, not evidence that internal hypotheses were prospective. |
+| 5 | Study timing | Yes | Abstract and Sections 1/8 identify retrospective secondary analysis. |
+| 6 | Study goal | Yes | Sections 1 and 3.1 define object localization and methodological comparison. |
+| 7 | Data provenance | Yes | Sections 3.1/3.5 identify RSNA/NIH and official VinDr test data and research-only applicability; S1/S9 bind provenance. |
+| 8 | Eligibility/sampling | No | Section 3.1 reports deterministic hardware-scoped selection and 3.5 complete external inclusion. Detailed source accrual/clinical eligibility and local external clinical descriptors are unavailable. |
+| 9 | Preprocessing | Yes | Sections 3.1/3.5 describe conversion/native transforms; 3.10 separates the exploratory display intervention. S1/S9/S12 retain exact settings. |
+| 10 | Subset selection | Yes | Sections 3.1/3.8/3.10 and S1/S5/S6/S12 identify primary and secondary samples. Complete official external testing is distinct from the enriched diagnostic cohort. |
+| 11 | De-identification | No | Section 8 cites de-identified source releases; complete upstream RSNA processes are not locally documented. Local private-file controls do not fill that gap. |
+| 12 | Missingness | Yes | Section 3.1/Table 1 records available-field missingness and age caveats; Sections 3.3/3.6 state undefined-metric handling; absent clinical variables remain absent. |
+| 13 | Acquisition | No | Section 6 discloses missing acquisition/processing history. Neither scanner-level comparability nor a clinical display pipeline is established. |
+| 14 | Reference definition | No | Sections 3.1/3.5 specify released boxes and strict mapping, but complete original reader instructions and case-level adjudication details are unavailable. Future protocol approval is not present evidence. |
+| 15 | Reference rationale | Yes | Sections 1/3.1/3.5/6 and S1 explain opacity-localization scope, dataset choice and reference limitations. |
+| 16 | Reader provenance | No | Published source workflows are cited in Sections 2.2/3.5 and DATASHEET.md, but complete per-case original reader assignments/instructions are not reported. |
+| 17 | Test annotation | No | Both test cohorts reuse source references; conversion is verified. Complete source annotation/display procedures for these subsets and a local independent rereading are unavailable. |
+| 18 | Reader variability | No | No executed local inter/intrarater study. CLINICAL_ANNOTATION_ADJUDICATION_V1.md specifies future measurement only. |
+| 19 | Partition allocation | Yes | Section 3.1/Table 1 and S1 give grouped RSNA allocation; Sections 3.5/4.6 give complete external inclusion without adaptation. |
+| 20 | Partition independence | Yes | Section 3.1 documents internal patient grouping; 3.5/6 explicitly disclose unknown within-VinDr patient linkage. Reporting does not establish independent external patients. |
+| 21 | Sample rationale | Yes | Section 3.1 reports the hardware-scoped sample and no formal power calculation; 3.5 reports the full official external set. Adequate power is not inferred. |
+| 22 | Model definition | Yes | Sections 2.3/3.2 and S8 identify exact Faster R-CNN and YOLO11s implementations. |
+| 23 | Software | Yes | Sections 3.2/3.7 and S8 record pinned environments and implementation settings. |
+| 24 | Initialization | Yes | Section 3.2 states pretrained COCO initialization; configs/checkpoint manifests are linked in S8/S9. |
+| 25 | Training | Yes | Section 3.2 records budgets, augmentation, optimizer/normalization/precision asymmetries and selection. Full configs are available. |
+| 26 | Model selection | Yes | Sections 3.2-3.4 preserve validation checkpoint selection and all five runs; no external seed selection. |
+| 27 | Ensemble | NA | Section 3.3 averages per-run metrics, not detections from an ensemble. |
+| 28 | Metric choice | Yes | Sections 3.3-3.6/3.9-3.10 define metrics and scientific rationale for comparing two established pipelines. Section 2.2 supplies contextual prior comparisons while explaining why their published scores are not interchangeable. This does not reproduce their experiments. |
+| 29 | Statistical methods | Yes | Sections 3.6/3.9/3.10 distinguish original intervals, later joint change intervals and paired diagnostic effects, with dependence and conditioning stated. Table 3's conditioning label is clarified. |
+| 30 | Sensitivity | Yes | Sections 3.4/3.8-3.10 and 4.2/4.7-4.11 report completed sensitivities, all runs and finite support; S3-S6/S9-S12 give detail. |
+| 31 | Explanation | Yes | Section 3.8 and S6 describe Grad-CAM targets and controls with an explicit noncausal/secondary scope. |
+| 32 | Internal testing | Yes | Sections 3.1/3.3/4.1-4.4 and S1-S3/S7 document held-out patients and all runs. |
+| 33 | External testing | Yes | Sections 3.5/4.6-4.8 and S9 report all official images/checkpoints and the non-identical reference task. |
+| 34 | Trial registration | NA | Sections 1/8 describe retrospective computational research without a clinical intervention or participant enrollment. Local protocol freezing is not trial registration. |
+| 35 | Cohort flow | No | Sections 3.1/4.6 and Table 1 disclose source, selected/excluded and split counts. A consolidated source-to-analysis flow diagram is still absent; this is a fixable presentation gap, not missing observations. |
+| 36 | Case characteristics | No | Table 1 supplies limited internal header descriptors with caveats. External clinical/demographic characterization and many acquisition fields are unavailable. |
+| 37 | Performance coverage | No | Sections 4.1-4.11 cover all retained runs and primary test endpoints; demographic/clinical subgroup performance is absent. Counts are not fairness evidence. |
+| 38 | Diagnostic classification | NA | This study evaluates localization, not an exam-level diagnostic classifier. Detection uncertainty appears under 28/29/37; D-ECE is not clinical-risk calibration. |
+| 39 | Error analysis | Yes | Sections 4.1/4.7/4.10/4.11 and S11/S12 report adverse runs, candidate categories, reference overlap and controls, without clinical relabeling. |
+| 40 | Limitations | Yes | Section 6 states confounding, missing fields, few runs/positives, image dependence, selection/support and clinical boundaries. |
+| 41 | Implications | Yes | Sections 5/7 frame an empirical transportability contribution and exclude deployment benefit/universal superiority. |
+| 42 | Protocol access | Yes | S1-S12 and README identify frozen protocols, exploratory versions, code and provenance. Future adjudication is explicitly unexecuted. |
+| 43 | Resource access | Yes | Abstract/Section 8 state public code/aggregates, licensed data, unpublished checkpoints and their consequences. The final immutable submission revision remains a separate author gate. |
+| 44 | Funding | Yes | Section 8 states previously supplied no-external-funding/support facts; authors must reconfirm current disclosures. |
+
+Item 43 now distinguishes completeness of the access statement from release
+selection. Item 2 includes the added availability sentence. These reporting
+changes do not mean checkpoint access improved or a final release was chosen.
+This review treats items 4 and 28 as reporting checks: the aims and metric
+comparison are explicit, while retrospective design and literature-score
+noncomparability remain limitations. A Yes does not invent prospective
+hypotheses or require another training campaign to reproduce every comparator.
+See the official explanations for
+[objectives](https://rsna.github.io/claim/item-04.html),
+[metrics](https://rsna.github.io/claim/item-28.html),
+[cohort flow](https://rsna.github.io/claim/item-35.html) and
+[resource access](https://rsna.github.io/claim/item-43.html).
+
+## Submission disposition
+
+**Ready for supervisor/author scientific review; not cleared for submission.**
+The PDF is current and technically reviewed when the linked execution record
+reports completion. Authors should resolve the gates above, decide which
+reporting gaps the journal will accept as disclosed limitations, supply the
+final cohort-flow presentation, and complete the publisher's form against the
+accepted paginated revision. No overall compliance percentage is calculated.
+Clinical-adjudication conclusions and expanded-candidate results cannot be
+included as if executed. Passing tests verifies implementation and provenance,
+not medical truth, ethics approval or legal compliance.
+
+## Preserved earlier context
+
+The sections below preserve the earlier sample-size and secondary-framework
+review. References to an earlier snapshot, source audit or unresolved flow
+remain historical; the 44-item table and author gates above control this review.
 
 ## Required sample-size and subset-selection row
 
