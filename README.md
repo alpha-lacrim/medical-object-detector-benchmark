@@ -1486,6 +1486,8 @@ new public aggregates once without refreshing any previous evidence:
 ## Supervisor review and publication gaps (2026-11-06)
 
 Start with the [supervisor briefing](docs/SUPERVISOR_BRIEFING_2026-11-06.md).
+It answers the professor's four requests directly, explains the exact label
+mapping and remaining causal uncertainty, and includes a suggested Persian reply.
 The [scientific review](docs/SUPERVISOR_SCIENTIFIC_REVIEW_2026-11-06.md) records
 scope corrections and recommends deferring full-cohort expanded-candidate
 inference unless its narrower question becomes central to the paper.
@@ -1502,4 +1504,6 @@ The canonical PDF is current with the reviewed Markdown; 478 claims/42 guards
 pass and frozen scientific artifacts are unchanged. Software correctness is
 not clinical correctness. This is an author-review package, not submission
 clearance. No GPU inference, training, threshold tuning, ontology merging,
-commit or push was performed for this preparation task.
+commit or push was performed during that preparation task. The completed
+diagnostic was subsequently published in commit `0b5e1dd`, and the review package
+and refreshed PDF in `85269e5`; both are on `origin/main`.
