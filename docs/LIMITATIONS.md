@@ -523,3 +523,24 @@ participant-flow diagram and demographic subgroup/fairness evaluation. Frozen
 VinDr external testing is complete; it does not resolve these remaining gaps. Narrative reporting cannot repair those gaps without new
 traceable evidence; the unresolved declarations are isolated in
 [`AUTHOR_DECLARATIONS_TODO.md`](AUTHOR_DECLARATIONS_TODO.md).
+
+## Fixed-output repairability extension
+
+The exploratory v2 audit conditions on original retained candidates and strict
+reference annotations. Its cutoff envelope is optimistic per run, not one
+deployable common threshold. Strictly increasing global score rescaling leaves
+that envelope unchanged only when membership, ties and postprocessing remain
+fixed. Feature-dependent reranking, modified NMS/geometry/retention and changed
+ontology are outside that statement. Geometric coverage is annotation-informed.
+
+The joint bootstrap preserves within-cohort observations and checkpoint coupling
+across domains, but assumes independent external images without known patient
+linkage. Marginal intervals condition on five checkpoints, fixed training data
+and source labels. The historical-policy feasibility flags remain explicit;
+negative signed differences are not removed. Software perturbations are
+controlled diagnostic examples, not models of clinical domain-shift mechanisms.
+
+This is an empirical audit, not a new theorem or accuracy metric. No direct
+TIDE/LRP superiority benchmark, calibrated repair model or third-cohort
+validation was executed. The user has no radiologist access; no clinical
+adjudication or equivalence of the two annotation constructs is established.

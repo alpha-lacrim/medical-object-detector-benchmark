@@ -1041,3 +1041,26 @@ model-access and final-release decisions remain author responsibilities. No
 GPU inference, training, threshold tuning, merging, commit or push was performed.
 
 Evidence: docs/SUPERVISOR_REVIEW_VERIFICATION_2026-11-06.md.
+
+## D-027 - Implement fixed-output threshold repairability (2026-11-06)
+
+The user authorized implementing the proposed direction and updating the paper.
+No radiologist access is available. Extend the existing-output pilot to both
+complete cohorts and all original runs/budgets, with joint observation/run
+uncertainty and a prospectively specified set of exploratory output controls.
+Keep original clinical mapping, checkpoints, candidate sets and studies intact.
+
+Use a four-term recall identity independent of historical-policy feasibility.
+Report historical feasibility and signed differences separately: an internal
+policy may exceed the FP budget, so a nonnegative "repair headroom" is not
+assumed. Couple the same checkpoints across domains while sampling different
+detectors' runs independently. Controls never refilter transformed scores at
+the old numerical floor or rerun NMS.
+
+All full computations and exact replays passed. Both pipelines lose substantial
+retained geometric coverage externally, while optimal retained cutoff recall
+remains very low at the primary analytical budget. Reframe the paper around
+these bounded repair limits. Do not claim a new theorem, new metric, causal
+clinical explanation, superiority over TIDE/LRP or an implemented successful
+repair. The previous broader-support inference NO-GO remains for these claims.
+See the [v2 verification record](THRESHOLD_REPAIRABILITY_VERIFICATION_V2.md).

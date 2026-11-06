@@ -1,0 +1,66 @@
+{
+  "inputs": [
+    {
+      "path": "results/threshold_repairability_v2/summary.json",
+      "sha256": "d86a45febb465c2513e5fd9d788484ef1697c87137519158faa14fe6ba4ab040",
+      "size_bytes": 30564
+    },
+    {
+      "path": "results/threshold_repairability_v2/per_run.csv",
+      "sha256": "81c00a3cce1f5b3216a882e2f63bbc96a7361b217f9861ee1b341ed2e4feba0f",
+      "size_bytes": 19452
+    },
+    {
+      "path": "results/threshold_repairability_v2/intervals.csv",
+      "sha256": "8b3fa68242283f374d0adb9225c194d6ea19c600cd30cb3ca8d5d8aee22aff0e",
+      "size_bytes": 22988
+    },
+    {
+      "path": "results/threshold_repairability_v2/contrasts.csv",
+      "sha256": "0a9b4a9dcdeae849d8b73684610c6ca3421b73c7fac3e52898033f6b4a0aa1db",
+      "size_bytes": 32596
+    },
+    {
+      "path": "results/threshold_repairability_v2/perturbations.csv",
+      "sha256": "fc82476146b9bcd5ea8f80416f0d0046bb1cdb998c24f5c3ea14beec356bbdc4",
+      "size_bytes": 965825
+    },
+    {
+      "path": "results/threshold_repairability_v2/perturbation_summary.csv",
+      "sha256": "2edcabaf1ad32f5070eed44c29d37ccf96227d21c206cfc733063c8896abe84c",
+      "size_bytes": 77237
+    },
+    {
+      "path": "configs/threshold_repairability_v2_report.yaml",
+      "sha256": "31c2e64ed6715f66534ce4d6b47b03d01156ad7f7a7c0effb000984bd3e053b2",
+      "size_bytes": 659
+    },
+    {
+      "path": "configs/threshold_repairability_v2.yaml",
+      "sha256": "9fc27c066cfa8d4da23a3adc7586d67631b5db60d0435510734f91477024f3e0",
+      "size_bytes": 1470
+    },
+    {
+      "path": "scripts/report_threshold_repairability.py",
+      "sha256": "d50c360355f379a353ac2678049f6800b1c176cd50a99878368914dd75fa1909",
+      "size_bytes": 14343
+    }
+  ],
+  "outputs": [
+    {
+      "path": "results/threshold_repairability_v2/repairability.png",
+      "sha256": "220c92a28b754efc9c8dbcb2b640e2a5dabfcef8020e2adc9b8882b30595f3ce",
+      "size_bytes": 89071
+    },
+    {
+      "path": "results/threshold_repairability_v2/controls.png",
+      "sha256": "62c403677972240e98e28f3299f72aa3d9f8e83e6bfdc519e5d5458adef7a8ff",
+      "size_bytes": 180893
+    },
+    {
+      "path": "docs/THRESHOLD_REPAIRABILITY_RESULTS_V2.md",
+      "sha256": "08af716ec04d79af1ccae0f095384e2a179fb81a7dec3e5fb8df83c7b4fcb3cd",
+      "size_bytes": 15618
+    }
+  ]
+}

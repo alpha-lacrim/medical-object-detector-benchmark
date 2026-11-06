@@ -768,9 +768,9 @@
     "semantic_hash": ""
   },
   "results/publication_artifact_manifest.json": {
-    "mtime": 1793901741.7428863,
-    "seen": 1793902088.2931657,
-    "ast_hash": "1daea899c48821f3ae6ced9dbc9df346",
+    "mtime": 1793993617.8477924,
+    "seen": 1793993730.7775269,
+    "ast_hash": "d948e5c0c6de95ef201ecfff8bf8e375",
     "semantic_hash": ""
   },
   "results/scientific_artifact_manifest.json": {
@@ -1638,9 +1638,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1793991112.6076834,
-    "seen": 1793991166.2741668,
-    "ast_hash": "7c9fa6f6f64b44a9e004142ae08408d5",
+    "mtime": 1793993694.3328102,
+    "seen": 1793993730.7959797,
+    "ast_hash": "e45f1417cb5a1fd06469d4c695515ab9",
     "semantic_hash": ""
   },
   "RELEASE_NOTES_v2.0.0.md": {
@@ -2166,9 +2166,9 @@
     "semantic_hash": ""
   },
   "docs/SUPPLEMENTARY.md": {
-    "mtime": 1793949597.1018426,
-    "seen": 1793991166.2965484,
-    "ast_hash": "8df5a77b2e847dfd795fcbb777d8d8fd",
+    "mtime": 1793993527.1916454,
+    "seen": 1793993730.8065464,
+    "ast_hash": "ebd83af7dfcf3b782d1fc2de0949e1ea",
     "semantic_hash": ""
   },
   "docs/THRESHOLD_ANALYSIS.md": {
@@ -2268,15 +2268,15 @@
     "semantic_hash": ""
   },
   "report/paper_claim_sources.yaml": {
-    "mtime": 1793901731.2963433,
-    "seen": 1793902088.319351,
-    "ast_hash": "5c0aa5284fead4ecad74b33cdaefa7a8",
+    "mtime": 1793993614.2163532,
+    "seen": 1793993730.8065464,
+    "ast_hash": "932950ce1429fced9db6dd0db3fd0be8",
     "semantic_hash": ""
   },
   "report/paper_draft.md": {
-    "mtime": 1793948651.204133,
-    "seen": 1793991166.2975483,
-    "ast_hash": "35a61b7e9ffa1547c61f36017fe02471",
+    "mtime": 1793993527.1906445,
+    "seen": 1793993730.8065464,
+    "ast_hash": "f7e5e7e84060e7003c072c2587b3756d",
     "semantic_hash": ""
   },
   "report/pdf/requirements.txt": {
@@ -2994,9 +2994,9 @@
     "semantic_hash": ""
   },
   "docs/SUPERVISOR_BRIEFING_2026-11-06.md": {
-    "mtime": 1793991148.7868967,
-    "seen": 1793991166.2965484,
-    "ast_hash": "05e69e11e4b7cd6e38cc58a56012613d",
+    "mtime": 1793993694.335355,
+    "seen": 1793993730.8065464,
+    "ast_hash": "c2da394cfdc04d72fcbef7ba5e56a9f0",
     "semantic_hash": ""
   },
   "docs/SUPERVISOR_REVIEW_VERIFICATION_2026-11-06.md": {
@@ -3012,15 +3012,99 @@
     "semantic_hash": ""
   },
   "docs/THRESHOLD_REPAIRABILITY_RESEARCH_DIRECTION.md": {
-    "mtime": 1793991148.7868967,
-    "seen": 1793991166.2965484,
-    "ast_hash": "0b58ef3fd8de35a94058b7a17155adfc",
+    "mtime": 1793993694.3348503,
+    "seen": 1793993730.8065464,
+    "ast_hash": "2537feabdb111ebb720623231ed6be89",
     "semantic_hash": ""
   },
   "results/threshold_repairability_v1/repairability.png": {
     "mtime": 1793991154.4985878,
     "seen": 1793991166.304466,
     "ast_hash": "10feee8509c43045df8054b42e5e4155",
+    "semantic_hash": ""
+  },
+  "results/threshold_repairability_v2/report_build.json": {
+    "mtime": 1793993235.2895815,
+    "seen": 1793993730.7775269,
+    "ast_hash": "f24eb6ebff19a5d95ceec94ef200cf35",
+    "semantic_hash": ""
+  },
+  "results/threshold_repairability_v2/summary.json": {
+    "mtime": 1793993175.0159006,
+    "seen": 1793993730.7775269,
+    "ast_hash": "52fa2680cae8fabd48360a97a952a11f",
+    "semantic_hash": ""
+  },
+  "scripts/register_threshold_repairability.py": {
+    "mtime": 1793993324.5236845,
+    "seen": 1793993730.779533,
+    "ast_hash": "8139641a1ba4cd2f91737ea3e135a16f",
+    "semantic_hash": ""
+  },
+  "scripts/report_threshold_repairability.py": {
+    "mtime": 1793993158.9048743,
+    "seen": 1793993730.779533,
+    "ast_hash": "d39f369e18b5f655b1283e2993dda422",
+    "semantic_hash": ""
+  },
+  "src/stats/run_threshold_repairability.py": {
+    "mtime": 1793992934.3843708,
+    "seen": 1793993730.7879632,
+    "ast_hash": "69959c994b890aec470ff9cea0e48342",
+    "semantic_hash": ""
+  },
+  "src/stats/threshold_repairability.py": {
+    "mtime": 1793993022.8954127,
+    "seen": 1793993730.7879632,
+    "ast_hash": "4ba926bb8c26d6ce120e4f58e733cc74",
+    "semantic_hash": ""
+  },
+  "tests/test_threshold_repairability_manifest.py": {
+    "mtime": 1793993324.5236845,
+    "seen": 1793993730.7939172,
+    "ast_hash": "883a5ee9ab3c4afa4b30ea57a4c48496",
+    "semantic_hash": ""
+  },
+  "tests/test_threshold_repairability_v2.py": {
+    "mtime": 1793993022.8954127,
+    "seen": 1793993730.7939172,
+    "ast_hash": "96c030c76678636a8ea3d7fa92323cfc",
+    "semantic_hash": ""
+  },
+  "configs/threshold_repairability_v2.yaml": {
+    "mtime": 1793992402.7693257,
+    "seen": 1793993730.8008316,
+    "ast_hash": "c532e3cbe9e3e94ad57b757637978e93",
+    "semantic_hash": ""
+  },
+  "configs/threshold_repairability_v2_report.yaml": {
+    "mtime": 1793993124.6109715,
+    "seen": 1793993730.8008316,
+    "ast_hash": "ae9f9a75e38866845ffb40930f2a725f",
+    "semantic_hash": ""
+  },
+  "docs/THRESHOLD_REPAIRABILITY_PROTOCOL_V2.md": {
+    "mtime": 1793992757.272204,
+    "seen": 1793993730.8065464,
+    "ast_hash": "f838fe2b953c1b3357acc480f59b1645",
+    "semantic_hash": ""
+  },
+  "docs/THRESHOLD_REPAIRABILITY_RESULTS_V2.md": {
+    "mtime": 1793993235.2895815,
+    "seen": 1793993730.8065464,
+    "ast_hash": "44d196ec7ae9fa3e2c2f631d8e2af7c6",
+    "semantic_hash": ""
+  },
+  "results/threshold_repairability_v2/controls.png": {
+    "mtime": 1793993235.2895815,
+    "seen": 1793993730.8216183,
+    "ast_hash": "703a4b2beafe77ab2a509159b384dc46",
+    "semantic_hash": ""
+  },
+  "results/threshold_repairability_v2/repairability.png": {
+    "mtime": 1793993235.2895815,
+    "seen": 1793993730.8216183,
+    "ast_hash": "90913005446c124d5681d1a845f66dce",
     "semantic_hash": ""
   }
 }

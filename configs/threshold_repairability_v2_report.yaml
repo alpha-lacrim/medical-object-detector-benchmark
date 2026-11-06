@@ -1,0 +1,15 @@
+schema_version: 1
+analysis_config: configs/threshold_repairability_v2.yaml
+outputs:
+  figure: results/threshold_repairability_v2/repairability.png
+  controls: results/threshold_repairability_v2/controls.png
+  report: docs/THRESHOLD_REPAIRABILITY_RESULTS_V2.md
+  receipt: results/threshold_repairability_v2/report_build.json
+plot:
+  dpi: 180
+  figure_size: [11.2, 4.8]
+  controls_size: [11.2, 6.4]
+  detector_labels: {faster_rcnn: Faster R-CNN, yolo11s: YOLO11s}
+  dataset_labels: {internal: RSNA internal, external: VinDr external}
+  component_colors: ['#1F7297', '#DF9B3D', '#925F9C', '#CCD2D8']
+  series_colors: ['#126D94', '#C76626', '#126D94', '#C76626']

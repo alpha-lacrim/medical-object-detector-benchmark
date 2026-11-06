@@ -1500,15 +1500,16 @@ checkpoint-access and final-release decisions.
 The [execution/verification record](docs/SUPERVISOR_REVIEW_VERIFICATION_2026-11-06.md)
 records fresh saved-inference checks, full original/generalization/diagnostic
 bootstrap replays, all software checks, PDF provenance and every-page visual QA.
-The canonical PDF is current with the reviewed Markdown; 478 claims/42 guards
-pass and frozen scientific artifacts are unchanged. Software correctness is
+At that earlier checkpoint, the PDF matched the reviewed Markdown and 478
+claims/42 guards passed. The repairability revision and its PDF status are
+recorded below. Frozen scientific artifacts are unchanged. Software correctness is
 not clinical correctness. This is an author-review package, not submission
 clearance. No GPU inference, training, threshold tuning, ontology merging,
 commit or push was performed during that preparation task. The completed
 diagnostic was subsequently published in commit `0b5e1dd`, and the review package
 and refreshed PDF in `85269e5`; both are on `origin/main`.
 
-## Proposed research focus: limits of threshold repair
+## Initial feasibility audit: limits of threshold repair
 
 The [research-direction note](docs/THRESHOLD_REPAIRABILITY_RESEARCH_DIRECTION.md)
 examines a computational follow-up that does not require radiologist access:
@@ -1534,6 +1535,53 @@ hashes and reproduces both tables, the figure and summary exactly. See the
 [aggregate table](results/threshold_repairability_v1/aggregate.csv),
 [figure](results/threshold_repairability_v1/repairability.png) and
 [input/output bindings](results/threshold_repairability_v1/summary.json).
-This feasibility package is separate from the current manuscript's unchanged
-112-artifact publication inventory; it is not a new validated method or clinical
-result. The canonical manuscript and PDF retain their reviewed conclusions.
+This v1 feasibility package remains a separate historical pilot. The completed
+v2 extension below adds saved-output controls and joint uncertainty; it does
+not replace or modify the v1 files.
+
+## Threshold repairability v2
+
+The [protocol](docs/THRESHOLD_REPAIRABILITY_PROTOCOL_V2.md) and
+[complete results](docs/THRESHOLD_REPAIRABILITY_RESULTS_V2.md) extend the audit
+to both full cohorts, all five runs per detector and all original FP/image
+budgets. A joint 2,000-draw patient/image and detector-run bootstrap preserves
+checkpoint coupling across domains. All 580 controlled output interventions
+are retained. This is exploratory computational evidence, not causal clinical
+attribution, threshold fitting or a new detection metric. No models were run.
+
+At 0.25 FP/image, external cutoff ceilings are 0.086316 and 0.033684.
+Unavailable retained geometry rises from 0.026866 to 0.431579 for Faster R-CNN
+and from 0.214179 to 0.818947 for YOLO11s. The exact decomposition and intervals
+are in [S13](docs/SUPPLEMENTARY.md#s13-fixed-output-threshold-repairability).
+Strictly monotone global rescoring cannot raise the fixed-output cutoff ceiling;
+the imposed controls distinguish score ordering from candidate geometry.
+
+Existing-bundle CPU checks and replay (authorized local evidence required):
+
+```powershell
+.venv/Scripts/python.exe -m src.stats.run_threshold_repairability --config configs/threshold_repairability_v2.yaml --smoke
+.venv/Scripts/python.exe -m src.stats.run_threshold_repairability --config configs/threshold_repairability_v2.yaml --verify
+.venv/Scripts/python.exe -m src.stats.run_threshold_repairability --config configs/threshold_repairability_v2.yaml --replay
+.venv/Scripts/python.exe -m pytest tests/test_threshold_repairability_v2.py tests/test_threshold_repairability_manifest.py -q
+```
+
+Initial execution omits `--smoke`, `--verify` and `--replay`, and refuses an
+existing output namespace. The complete execution and fresh numerical replay
+each took about 142 seconds on this host. Replay reconstructs all five tables
+and every joint draw exactly. Source hashes are checked before and after work;
+private image-linked arrays and bootstrap draws stay outside Git.
+
+Public-only report reconstruction and one-time inventory maintenance:
+
+```powershell
+.venv/Scripts/python.exe -m scripts.report_threshold_repairability --config configs/threshold_repairability_v2_report.yaml --replay
+# Initial report creation omits --replay and refuses existing outputs.
+# Register once only, after exact analysis/report replay and visual review:
+.venv/Scripts/python.exe -m scripts.register_threshold_repairability --config configs/threshold_repairability_v2_report.yaml --manifest results/publication_artifact_manifest.json
+.venv/Scripts/python.exe -m scripts.verify_scientific_artifacts --manifest results/publication_artifact_manifest.json
+```
+
+The inventory adds nine v2 artifacts and preserves all 112 previous records.
+The public reports replay byte-exactly from the aggregate tables. The paper
+integration and PDF verification are recorded in
+[the v2 verification note](docs/THRESHOLD_REPAIRABILITY_VERIFICATION_V2.md).

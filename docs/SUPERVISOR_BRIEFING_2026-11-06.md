@@ -4,8 +4,9 @@
 working tree initially clean. This briefing concerns the current canonical
 [manuscript](../report/paper_draft.md), not the historical long report.
 Follow-up review at `85269e5` checked the completed diagnostic, refreshed PDF
-and pushed review package before refining the answers below. No new experiment
-is represented by this update.
+and pushed review package before refining the answers below. The subsequent
+threshold-repairability v2 update adds an executed CPU analysis and controlled
+changes to copies of saved outputs; it runs no new model inference.
 
 ## Direct answers to the professor's four requests
 
@@ -14,25 +15,32 @@ explanation or clinical equivalence of the two reference standards.**
 
 | Request | Current answer | What remains open |
 |---|---|---|
-| Explain the external collapse | Partly addressed by measured failure categories and controlled retention/display tests. More retained low-score boxes did not improve recall at the original operating thresholds; relaxing the AP evaluation filter left absolute AP very low. | The tested controls narrow particular implementation explanations. They do not partition the total loss among annotation, acquisition, population, training or other pipeline differences. |
+| Explain the external collapse | Now bounded more directly: changing a global cutoff alone cannot restore recall under a fixed FP budget. Internal/external geometric coverage and controlled output changes distinguish score-order limitations from missing retained geometry. | This isolates limits of proposed computational repairs, not the medical or dataset mechanisms that produced the errors. Annotation, acquisition, population and training effects remain confounded. |
 | Clarify label mapping and evaluation | Addressed at the implementation/protocol level: exact local-label mapping, native coordinates, common evaluator, all official test images and frozen RSNA-selected thresholds. Details below. | Matching class IDs does not establish that RSNA and VinDr boxes represent the same clinical construct or lesion instances. Expert review is specified but unexecuted. |
-| Establish statistical stability | Quantified across all five runs per detector and resampled observations. Severe degradation is supported; the AP contrast and historical-threshold contrasts have different uncertainty conclusions. | Five runs, few positive external images, unavailable external patient linkage and marginal intervals limit generalization. A reproducible result is not automatically a precise or confirmatory result. |
-| Define the scientific contribution | A focused empirical transportability study separating detector ranking, absolute performance, transported thresholds and finite candidate support, with paired uncertainty and bounded failure diagnostics. | This is not a new detector or proof of a new causal mechanism. The professor and authors must judge whether the evidence and positioning meet a journal's contribution threshold. |
+| Establish statistical stability | Joint 2,000-draw uncertainty now covers repairability components and paired domain changes, sharing observations and reusing the same checkpoints across domains. Both geometric losses have negative intervals. | Five runs, few positive external images, unavailable external patient linkage and marginal intervals limit generalization. The between-detector difference in cutoff-ceiling loss still includes zero. |
+| Define the scientific contribution | A reproducible audit of which failures global confidence-cutoff repair can and cannot address, combining full-cohort bounds, maximum matching, coupled uncertainty and controlled output checks. | FROC and error diagnostics already exist. This is an empirical diagnostic contribution, not a new detector, theorem, clinical cause or demonstrated improvement over TIDE/LRP. |
 
 ## Central contribution
 
-**Research question:** When fixed RSNA-trained pipelines are transported to
-VinDr's strict opacity target, do relative detector rankings, absolute detection
-performance and validation-selected operating rules remain consistent, and
-which observed failure patterns change under specified implementation controls?
+**Research question:** After external detection failure, how much recall can a
+global confidence cutoff recover under a fixed false-positive budget, and how
+much remains limited by score ordering or unavailable retained geometry?
 
-The defensible contribution is an empirical demonstration that detector ranking,
-absolute performance, transported operating thresholds and finite false-positive
-frontiers answer different questions. Five retained runs per pipeline, shared
-evaluation, explicit candidate limits and observation/run uncertainty make this
-more informative than an accuracy/speed comparison. It contributes neither a
-new detector nor a causal account of domain shift. Its external task also has a
-different annotation ontology, and its training recipes are not interchangeable.
+The completed computational audit answers this on both full saved cohorts.
+At 0.25 FP/image, even an optimistic per-run cutoff reaches only 8.63% / 3.37%
+external recall for Faster R-CNN / YOLO11s. Missing retained geometry accounts
+for 43.16% / 81.89% of external reference boxes, compared with 2.69% / 21.42%
+internally. Score-power controls leave whole frontiers unchanged; reranking can
+change budget recall without changing geometry; annotation-informed removals
+separate these limits. All 580 imposed interventions and 2,000 joint draws
+are reported, without selecting favorable arms. See the
+[complete v2 results](THRESHOLD_REPAIRABILITY_RESULTS_V2.md).
+
+These are limits within original retained candidates and source labels, not
+causal percentages of the external loss. Missing geometry may still depend on
+floor, cap, NMS, localisation and reference definition. No radiologist access
+is assumed. Publication novelty must be judged against existing FROC, TIDE,
+LRP and calibration research; the paper now states its incremental scope.
 
 ## Label mapping and evaluation, in concrete terms
 
@@ -95,12 +103,10 @@ because its computation was replayed exactly.
 
 **Follow-up constraint:** the user reports no access to radiologists. Expert
 adjudication therefore remains an unresolved evidence gap, not the immediate
-work plan. A [proposed computational focus](THRESHOLD_REPAIRABILITY_RESEARCH_DIRECTION.md)
-asks what a confidence cutoff can and cannot repair within a fixed FP budget.
-It includes an executed public-table feasibility analysis and a Persian pitch.
-The potential contribution needs further joint uncertainty/controlled-output
-validation and comparison with existing methods; novelty is not established by
-the new framing. The current manuscript has not been replaced by this proposal.
+work plan. The [computational focus](THRESHOLD_REPAIRABILITY_RESEARCH_DIRECTION.md)
+has now been implemented with internal comparison, joint uncertainty and
+controlled outputs. Methods 3.11, Results 4.12, Table 9, Figure 5 and S13
+incorporate the evidence. Novelty is not established merely by this framing.
 
 **Recommend proceeding to substantive author review of a methods/transportability
 paper, with a NO-GO for full-cohort expanded-candidate inference at present.**
@@ -135,27 +141,21 @@ clearance. See the current [CLAIM 2024 readiness crosswalk](REPORTING_CHECKLIST.
 
 ## Suggested reply in Persian
 
-استاد گرامی، بر اساس نکات شما، تحلیل‌های تکمیلی انجام شده و متن مقاله و نسخهٔ
-PDF به‌روز شده‌اند. پرسش اصلی اکنون این است که آیا حفظ رتبهٔ نسبی دو مدل روی
-دیتاست خارجی با حفظ عملکرد واقعی و اعتبار آستانه‌های انتخاب‌شده روی دیتاست
-داخلی همراه است یا خیر. نتایج نشان می‌دهند این موارد لزوماً همراه نیستند.
+استاد گرامی، بر اساس نکات شما، تمرکز مقاله را مشخص‌تر کرده‌ایم: آیا افت عملکرد
+خارجی با تغییر آستانهٔ اطمینان قابل جبران است، یا محدودیت در رتبه‌بندی و جعبه‌های
+باقی‌مانده اجازهٔ این جبران را نمی‌دهد؟ این تحلیل اکنون روی هر دو مجموعه و تمام
+اجراهای اصلی انجام شده، همراه با بازنمونه‌گیری مشترک برای عدم‌قطعیت و آزمون‌های
+کنترل‌شده روی خروجی‌های ذخیره‌شده.
 
-برای بررسی افت عملکرد، الگوهای خطا را تفکیک کردیم و اثر حداقل امتیاز ذخیرهٔ
-پیش‌بینی‌ها، سقف تعداد کادرها و یک روش مشخص نمایش تصویر را به‌صورت کنترل‌شده
-بررسی کردیم. افزایش کادرهای کم‌امتیاز، حساسیت را در آستانه‌های اصلی بهبود نداد؛
-کاهش فیلتر ارزیابی نیز عملکرد خارجی را به سطح داخلی برنگرداند. بنابراین برخی
-توضیحات فنی محدودتر شده‌اند، اما هنوز نمی‌توان علت کل افت یا سهم هر عامل را
-به‌طور علّی تعیین کرد.
+در بودجهٔ ۰٫۲۵ مثبت کاذب به ازای هر تصویر، حتی بهترین آستانهٔ ممکن روی خروجی‌های
+موجود فقط حدود ۸٫۶٪ و ۳٫۴٪ از ضایعات مرجع خارجی را برای Faster R-CNN و YOLO11s
+بازیابی می‌کند. برای حدود ۴۳٪ و ۸۲٪ از ضایعات مرجع خارجی نیز جعبهٔ باقی‌مانده با
+هم‌پوشانی کافی وجود ندارد؛ این محدودیت نسبت به مجموعهٔ داخلی بسیار شدیدتر است.
+بنابراین مشکل صرفاً انتخاب نامناسب آستانه نیست. البته این اعداد سهم علّی عوامل
+بالینی، جمعیتی یا تفاوت برچسب‌گذاری را تعیین نمی‌کنند.
 
-تطبیق برچسب‌ها و پروتکل ارزیابی اکنون صریح و قابل بازبینی است: فقط کادرهای
-دارای برچسب محلی دقیق «Lung Opacity» هدف هستند، سایر یافته‌ها ادغام نشده‌اند و
-آستانه‌ها با دادهٔ خارجی تنظیم نشده‌اند. بااین‌حال، برابری بالینی تعریف ضایعه
-در دو دیتاست اثبات نشده است. برای بررسی این مسئله پروتکل داوری متخصص تهیه
-شده، ولی این داوری هنوز اجرا نشده است.
-
-پایداری نتایج با حفظ هر پنج اجرای هر مدل و تحلیل عدم‌قطعیت بررسی شده است.
-افت شدید عملکرد پشتیبانی آماری دارد، اما برتری بین مدل‌ها به شاخص ارزیابی
-وابسته است و همهٔ اختلاف‌ها قطعی نیستند. سهم علمی پیشنهادی، یک مطالعهٔ تجربی
-و بازتولیدپذیر دربارهٔ تعمیم‌پذیری و محدودیت‌های ارزیابی است؛ ادعای معماری جدید
-یا توضیح کامل علل شکست نداریم. شواهد برای بازبینی مجدد شما آماده است؛ کفایت
-نوآوری و انتخاب مجله همچنان نیازمند قضاوت علمی شما و تصمیم نویسندگان است.
+نگاشت دقیق برچسب‌ها و پروتکل ارزیابی حفظ شده و عدم‌قطعیت مؤلفه‌ها و تغییرات بین
+دو مجموعه گزارش شده است. سهم علمی پیشنهادی، یک تحلیل تجربی و بازتولیدپذیر از
+محدودیت‌های اصلاح با آستانه است، نه معماری جدید یا قضیهٔ ریاضی جدید. بدون بازخوانی
+رادیولوژی نیز ادعای هم‌ارزی بالینی دو تعریف برچسب نداریم. اکنون شواهد برای ارزیابی
+این سهم مشخص‌تر است؛ کفایت نوآوری برای مقاله همچنان نیازمند نظر علمی شماست.

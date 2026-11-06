@@ -102,6 +102,18 @@ manuscript_semantic_guards:
 - id: geometric_coverage_not_operating_recall
   required_regex: was an annotation-informed upper bound, distinct from canonical
     threshold\s+recall
+- id: repair_v2_noncausal
+  required_regex: shortfall, not causal shares of cross-domain loss
+- id: repair_v2_monotone_scope
+  required_regex: score map preserves prefixes and ties.{0,150}membership,\s+matching and postprocessing
+    stay fixed
+- id: repair_v2_no_common_cutoff
+  required_regex: Per-run ceilings are optimistic test-set envelopes.{0,70}not the\s+performance of one
+    common cutoff
+- id: repair_v2_no_prior_art_superiority
+  required_regex: claim of superiority over TIDE or LRP\. No such benchmark comparison was performed
+- id: repair_v2_no_causal_simulation
+  required_regex: are software interventions, not simulations of real clinical domain-shift\s+mechanisms
 claims:
 - id: source_radiograph_count
   description: Full labeled RSNA source cohort size.
@@ -6439,3 +6451,907 @@ claims:
       detector: yolo11s
     column: lower_evaluation_floor_ap50
   absolute_tolerance: 5.0e-07
+- id: repair_v2_table_internal_faster_rcnn_threshold_ceiling_point
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ Faster\ R\-CNN\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[0\.299,\ 0\.439\]\ \|\
+      0\.607\ \[0\.530,\ 0\.679\]\ \|\ 0\.027\ \[0\.012,\ 0\.044\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: threshold_ceiling
+    column: point
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_internal_faster_rcnn_threshold_ceiling_lower
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ Faster\ R\-CNN\ \|\ 0\.366\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.439\]\ \|\
+      0\.607\ \[0\.530,\ 0\.679\]\ \|\ 0\.027\ \[0\.012,\ 0\.044\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: threshold_ceiling
+    column: lower
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_internal_faster_rcnn_threshold_ceiling_upper
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ Faster\ R\-CNN\ \|\ 0\.366\ \[0\.299,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ \|\
+      0\.607\ \[0\.530,\ 0\.679\]\ \|\ 0\.027\ \[0\.012,\ 0\.044\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: threshold_ceiling
+    column: upper
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_internal_faster_rcnn_budget_barrier_point
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ Faster\ R\-CNN\ \|\ 0\.366\ \[0\.299,\ 0\.439\]\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\
+      \[0\.530,\ 0\.679\]\ \|\ 0\.027\ \[0\.012,\ 0\.044\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: budget_barrier
+    column: point
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_internal_faster_rcnn_budget_barrier_lower
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ Faster\ R\-CNN\ \|\ 0\.366\ \[0\.299,\ 0\.439\]\ \|\ 0\.607\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\
+      0\.679\]\ \|\ 0\.027\ \[0\.012,\ 0\.044\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: budget_barrier
+    column: lower
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_internal_faster_rcnn_budget_barrier_upper
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ Faster\ R\-CNN\ \|\ 0\.366\ \[0\.299,\ 0\.439\]\ \|\ 0\.607\ \[0\.530,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\
+      \|\ 0\.027\ \[0\.012,\ 0\.044\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: budget_barrier
+    column: upper
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_internal_faster_rcnn_unavailable_geometry_point
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ Faster\ R\-CNN\ \|\ 0\.366\ \[0\.299,\ 0\.439\]\ \|\ 0\.607\ \[0\.530,\ 0\.679\]\
+      \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[0\.012,\ 0\.044\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: unavailable_geometry
+    column: point
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_internal_faster_rcnn_unavailable_geometry_lower
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ Faster\ R\-CNN\ \|\ 0\.366\ \[0\.299,\ 0\.439\]\ \|\ 0\.607\ \[0\.530,\ 0\.679\]\
+      \|\ 0\.027\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.044\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: unavailable_geometry
+    column: lower
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_internal_faster_rcnn_unavailable_geometry_upper
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ Faster\ R\-CNN\ \|\ 0\.366\ \[0\.299,\ 0\.439\]\ \|\ 0\.607\ \[0\.530,\ 0\.679\]\
+      \|\ 0\.027\ \[0\.012,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: unavailable_geometry
+    column: upper
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_internal_yolo11s_threshold_ceiling_point
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ YOLO11s\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[0\.206,\ 0\.335\]\ \|\ 0\.519\
+      \[0\.380,\ 0\.628\]\ \|\ 0\.214\ \[0\.124,\ 0\.335\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: yolo11s
+      budget: '0.25'
+      metric: threshold_ceiling
+    column: point
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_internal_yolo11s_threshold_ceiling_lower
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ YOLO11s\ \|\ 0\.266\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.335\]\ \|\ 0\.519\
+      \[0\.380,\ 0\.628\]\ \|\ 0\.214\ \[0\.124,\ 0\.335\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: yolo11s
+      budget: '0.25'
+      metric: threshold_ceiling
+    column: lower
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_internal_yolo11s_threshold_ceiling_upper
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ YOLO11s\ \|\ 0\.266\ \[0\.206,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ \|\ 0\.519\
+      \[0\.380,\ 0\.628\]\ \|\ 0\.214\ \[0\.124,\ 0\.335\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: yolo11s
+      budget: '0.25'
+      metric: threshold_ceiling
+    column: upper
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_internal_yolo11s_budget_barrier_point
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ YOLO11s\ \|\ 0\.266\ \[0\.206,\ 0\.335\]\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\
+      \[0\.380,\ 0\.628\]\ \|\ 0\.214\ \[0\.124,\ 0\.335\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: yolo11s
+      budget: '0.25'
+      metric: budget_barrier
+    column: point
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_internal_yolo11s_budget_barrier_lower
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ YOLO11s\ \|\ 0\.266\ \[0\.206,\ 0\.335\]\ \|\ 0\.519\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\
+      0\.628\]\ \|\ 0\.214\ \[0\.124,\ 0\.335\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: yolo11s
+      budget: '0.25'
+      metric: budget_barrier
+    column: lower
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_internal_yolo11s_budget_barrier_upper
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ YOLO11s\ \|\ 0\.266\ \[0\.206,\ 0\.335\]\ \|\ 0\.519\ \[0\.380,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\
+      \|\ 0\.214\ \[0\.124,\ 0\.335\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: yolo11s
+      budget: '0.25'
+      metric: budget_barrier
+    column: upper
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_internal_yolo11s_unavailable_geometry_point
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ YOLO11s\ \|\ 0\.266\ \[0\.206,\ 0\.335\]\ \|\ 0\.519\ \[0\.380,\ 0\.628\]\ \|\
+      (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[0\.124,\ 0\.335\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: yolo11s
+      budget: '0.25'
+      metric: unavailable_geometry
+    column: point
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_internal_yolo11s_unavailable_geometry_lower
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ YOLO11s\ \|\ 0\.266\ \[0\.206,\ 0\.335\]\ \|\ 0\.519\ \[0\.380,\ 0\.628\]\ \|\
+      0\.214\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.335\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: yolo11s
+      budget: '0.25'
+      metric: unavailable_geometry
+    column: lower
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_internal_yolo11s_unavailable_geometry_upper
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ RSNA\ /\ YOLO11s\ \|\ 0\.266\ \[0\.206,\ 0\.335\]\ \|\ 0\.519\ \[0\.380,\ 0\.628\]\ \|\
+      0\.214\ \[0\.124,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: yolo11s
+      budget: '0.25'
+      metric: unavailable_geometry
+    column: upper
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_faster_rcnn_threshold_ceiling_point
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ Faster\ R\-CNN\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[0\.036,\ 0\.150\]\ \|\
+      0\.482\ \[0\.395,\ 0\.574\]\ \|\ 0\.432\ \[0\.335,\ 0\.521\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: threshold_ceiling
+    column: point
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_faster_rcnn_threshold_ceiling_lower
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ Faster\ R\-CNN\ \|\ 0\.086\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.150\]\ \|\
+      0\.482\ \[0\.395,\ 0\.574\]\ \|\ 0\.432\ \[0\.335,\ 0\.521\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: threshold_ceiling
+    column: lower
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_faster_rcnn_threshold_ceiling_upper
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ Faster\ R\-CNN\ \|\ 0\.086\ \[0\.036,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ \|\
+      0\.482\ \[0\.395,\ 0\.574\]\ \|\ 0\.432\ \[0\.335,\ 0\.521\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: threshold_ceiling
+    column: upper
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_faster_rcnn_budget_barrier_point
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ Faster\ R\-CNN\ \|\ 0\.086\ \[0\.036,\ 0\.150\]\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\
+      \[0\.395,\ 0\.574\]\ \|\ 0\.432\ \[0\.335,\ 0\.521\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: budget_barrier
+    column: point
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_faster_rcnn_budget_barrier_lower
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ Faster\ R\-CNN\ \|\ 0\.086\ \[0\.036,\ 0\.150\]\ \|\ 0\.482\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\
+      0\.574\]\ \|\ 0\.432\ \[0\.335,\ 0\.521\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: budget_barrier
+    column: lower
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_faster_rcnn_budget_barrier_upper
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ Faster\ R\-CNN\ \|\ 0\.086\ \[0\.036,\ 0\.150\]\ \|\ 0\.482\ \[0\.395,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\
+      \|\ 0\.432\ \[0\.335,\ 0\.521\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: budget_barrier
+    column: upper
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_faster_rcnn_unavailable_geometry_point
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ Faster\ R\-CNN\ \|\ 0\.086\ \[0\.036,\ 0\.150\]\ \|\ 0\.482\ \[0\.395,\ 0\.574\]\
+      \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[0\.335,\ 0\.521\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: unavailable_geometry
+    column: point
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_faster_rcnn_unavailable_geometry_lower
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ Faster\ R\-CNN\ \|\ 0\.086\ \[0\.036,\ 0\.150\]\ \|\ 0\.482\ \[0\.395,\ 0\.574\]\
+      \|\ 0\.432\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.521\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: unavailable_geometry
+    column: lower
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_faster_rcnn_unavailable_geometry_upper
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ Faster\ R\-CNN\ \|\ 0\.086\ \[0\.036,\ 0\.150\]\ \|\ 0\.482\ \[0\.395,\ 0\.574\]\
+      \|\ 0\.432\ \[0\.335,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: unavailable_geometry
+    column: upper
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_yolo11s_threshold_ceiling_point
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ YOLO11s\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[0\.009,\ 0\.070\]\ \|\ 0\.147\
+      \[0\.083,\ 0\.221\]\ \|\ 0\.819\ \[0\.736,\ 0\.890\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: yolo11s
+      budget: '0.25'
+      metric: threshold_ceiling
+    column: point
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_yolo11s_threshold_ceiling_lower
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ YOLO11s\ \|\ 0\.034\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.070\]\ \|\ 0\.147\
+      \[0\.083,\ 0\.221\]\ \|\ 0\.819\ \[0\.736,\ 0\.890\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: yolo11s
+      budget: '0.25'
+      metric: threshold_ceiling
+    column: lower
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_yolo11s_threshold_ceiling_upper
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ YOLO11s\ \|\ 0\.034\ \[0\.009,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ \|\ 0\.147\
+      \[0\.083,\ 0\.221\]\ \|\ 0\.819\ \[0\.736,\ 0\.890\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: yolo11s
+      budget: '0.25'
+      metric: threshold_ceiling
+    column: upper
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_yolo11s_budget_barrier_point
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ YOLO11s\ \|\ 0\.034\ \[0\.009,\ 0\.070\]\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\
+      \[0\.083,\ 0\.221\]\ \|\ 0\.819\ \[0\.736,\ 0\.890\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: yolo11s
+      budget: '0.25'
+      metric: budget_barrier
+    column: point
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_yolo11s_budget_barrier_lower
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ YOLO11s\ \|\ 0\.034\ \[0\.009,\ 0\.070\]\ \|\ 0\.147\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\
+      0\.221\]\ \|\ 0\.819\ \[0\.736,\ 0\.890\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: yolo11s
+      budget: '0.25'
+      metric: budget_barrier
+    column: lower
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_yolo11s_budget_barrier_upper
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ YOLO11s\ \|\ 0\.034\ \[0\.009,\ 0\.070\]\ \|\ 0\.147\ \[0\.083,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\
+      \|\ 0\.819\ \[0\.736,\ 0\.890\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: yolo11s
+      budget: '0.25'
+      metric: budget_barrier
+    column: upper
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_yolo11s_unavailable_geometry_point
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ YOLO11s\ \|\ 0\.034\ \[0\.009,\ 0\.070\]\ \|\ 0\.147\ \[0\.083,\ 0\.221\]\ \|\
+      (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[0\.736,\ 0\.890\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: yolo11s
+      budget: '0.25'
+      metric: unavailable_geometry
+    column: point
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_yolo11s_unavailable_geometry_lower
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ YOLO11s\ \|\ 0\.034\ \[0\.009,\ 0\.070\]\ \|\ 0\.147\ \[0\.083,\ 0\.221\]\ \|\
+      0\.819\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.890\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: yolo11s
+      budget: '0.25'
+      metric: unavailable_geometry
+    column: lower
+  absolute_tolerance: 0.0005
+- id: repair_v2_table_external_yolo11s_unavailable_geometry_upper
+  manuscript:
+    section: Threshold repairability
+    regex: \|\ VinDr\ /\ YOLO11s\ \|\ 0\.034\ \[0\.009,\ 0\.070\]\ \|\ 0\.147\ \[0\.083,\ 0\.221\]\ \|\
+      0\.819\ \[0\.736,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ \|
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: yolo11s
+      budget: '0.25'
+      metric: unavailable_geometry
+    column: upper
+  absolute_tolerance: 0.0005
+- id: repair_v2_abstract_faster_rcnn_threshold_ceiling
+  manuscript:
+    section: Threshold repairability
+    regex: 'cutoff\ ceilings\ were\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)/0\.033684;\ unavailable\ retained\
+      geometry\ accounted\
+
+      for\ 0\.431579/0\.818947\ of\ reference\ boxes,\ respectively\.'
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: threshold_ceiling
+    column: point
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_abstract_yolo11s_threshold_ceiling
+  manuscript:
+    section: Threshold repairability
+    regex: 'cutoff\ ceilings\ were\ 0\.086316/(?P<value>[+-]?[\d,]+(?:\.\d+)?);\ unavailable\ retained\
+      geometry\ accounted\
+
+      for\ 0\.431579/0\.818947\ of\ reference\ boxes,\ respectively\.'
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: yolo11s
+      budget: '0.25'
+      metric: threshold_ceiling
+    column: point
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_abstract_faster_rcnn_unavailable_geometry
+  manuscript:
+    section: Threshold repairability
+    regex: 'cutoff\ ceilings\ were\ 0\.086316/0\.033684;\ unavailable\ retained\ geometry\ accounted\
+
+      for\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)/0\.818947\ of\ reference\ boxes,\ respectively\.'
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: unavailable_geometry
+    column: point
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_abstract_yolo11s_unavailable_geometry
+  manuscript:
+    section: Threshold repairability
+    regex: 'cutoff\ ceilings\ were\ 0\.086316/0\.033684;\ unavailable\ retained\ geometry\ accounted\
+
+      for\ 0\.431579/(?P<value>[+-]?[\d,]+(?:\.\d+)?)\ of\ reference\ boxes,\ respectively\.'
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: yolo11s
+      budget: '0.25'
+      metric: unavailable_geometry
+    column: point
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_geometry_internal_faster_rcnn
+  manuscript:
+    section: Threshold repairability
+    regex: 'Maximum\ geometric\ coverage\ decreased\ from\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ internally\
+      to\ 0\.568421\
+
+      externally\ for\ Faster\ R\-CNN,\ and\ from\ 0\.785821\ to\ 0\.181053\ for\ YOLO11s\.'
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: geometry_ceiling
+    column: point
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_geometry_external_faster_rcnn
+  manuscript:
+    section: Threshold repairability
+    regex: 'Maximum\ geometric\ coverage\ decreased\ from\ 0\.973134\ internally\ to\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\
+
+      externally\ for\ Faster\ R\-CNN,\ and\ from\ 0\.785821\ to\ 0\.181053\ for\ YOLO11s\.'
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: faster_rcnn
+      budget: '0.25'
+      metric: geometry_ceiling
+    column: point
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_geometry_internal_yolo11s
+  manuscript:
+    section: Threshold repairability
+    regex: 'Maximum\ geometric\ coverage\ decreased\ from\ 0\.973134\ internally\ to\ 0\.568421\
+
+      externally\ for\ Faster\ R\-CNN,\ and\ from\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ to\ 0\.181053\ for\
+      YOLO11s\.'
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: internal
+      detector: yolo11s
+      budget: '0.25'
+      metric: geometry_ceiling
+    column: point
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_geometry_external_yolo11s
+  manuscript:
+    section: Threshold repairability
+    regex: 'Maximum\ geometric\ coverage\ decreased\ from\ 0\.973134\ internally\ to\ 0\.568421\
+
+      externally\ for\ Faster\ R\-CNN,\ and\ from\ 0\.785821\ to\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ for\
+      YOLO11s\.'
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/intervals.csv
+    filters:
+      dataset: external
+      detector: yolo11s
+      budget: '0.25'
+      metric: geometry_ceiling
+    column: point
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_geometry_change_faster_rcnn_point
+  manuscript:
+    section: Threshold repairability
+    regex: 'The\ corresponding\ paired\ changes\ were\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[\-0\.494324,\
+      \-0\.305426\]\ and\
+
+      \-0\.604768\ \[\-0\.693854,\ \-0\.502586\]\.'
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/contrasts.csv
+    filters:
+      contrast: external-internal:faster_rcnn
+      budget: '0.25'
+      metric: geometry_ceiling
+    column: point
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_geometry_change_faster_rcnn_lower
+  manuscript:
+    section: Threshold repairability
+    regex: 'The\ corresponding\ paired\ changes\ were\ \-0\.404713\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\
+      \-0\.305426\]\ and\
+
+      \-0\.604768\ \[\-0\.693854,\ \-0\.502586\]\.'
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/contrasts.csv
+    filters:
+      contrast: external-internal:faster_rcnn
+      budget: '0.25'
+      metric: geometry_ceiling
+    column: lower
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_geometry_change_faster_rcnn_upper
+  manuscript:
+    section: Threshold repairability
+    regex: 'The\ corresponding\ paired\ changes\ were\ \-0\.404713\ \[\-0\.494324,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\
+      and\
+
+      \-0\.604768\ \[\-0\.693854,\ \-0\.502586\]\.'
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/contrasts.csv
+    filters:
+      contrast: external-internal:faster_rcnn
+      budget: '0.25'
+      metric: geometry_ceiling
+    column: upper
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_geometry_change_yolo11s_point
+  manuscript:
+    section: Threshold repairability
+    regex: 'The\ corresponding\ paired\ changes\ were\ \-0\.404713\ \[\-0\.494324,\ \-0\.305426\]\ and\
+
+      (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[\-0\.693854,\ \-0\.502586\]\.'
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/contrasts.csv
+    filters:
+      contrast: external-internal:yolo11s
+      budget: '0.25'
+      metric: geometry_ceiling
+    column: point
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_geometry_change_yolo11s_lower
+  manuscript:
+    section: Threshold repairability
+    regex: 'The\ corresponding\ paired\ changes\ were\ \-0\.404713\ \[\-0\.494324,\ \-0\.305426\]\ and\
+
+      \-0\.604768\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ \-0\.502586\]\.'
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/contrasts.csv
+    filters:
+      contrast: external-internal:yolo11s
+      budget: '0.25'
+      metric: geometry_ceiling
+    column: lower
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_geometry_change_yolo11s_upper
+  manuscript:
+    section: Threshold repairability
+    regex: 'The\ corresponding\ paired\ changes\ were\ \-0\.404713\ \[\-0\.494324,\ \-0\.305426\]\ and\
+
+      \-0\.604768\ \[\-0\.693854,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\.'
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/contrasts.csv
+    filters:
+      contrast: external-internal:yolo11s
+      budget: '0.25'
+      metric: geometry_ceiling
+    column: upper
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_ceiling_interaction_point
+  manuscript:
+    section: Threshold repairability
+    regex: changes\ remained\ uncertain:\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \[\-0\.109369,\ 0\.024273\]\.
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/contrasts.csv
+    filters:
+      contrast: difference_of_domain_changes
+      budget: '0.25'
+      metric: threshold_ceiling
+    column: point
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_ceiling_interaction_lower
+  manuscript:
+    section: Threshold repairability
+    regex: changes\ remained\ uncertain:\ \-0\.047368\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.024273\]\.
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/contrasts.csv
+    filters:
+      contrast: difference_of_domain_changes
+      budget: '0.25'
+      metric: threshold_ceiling
+    column: lower
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_ceiling_interaction_upper
+  manuscript:
+    section: Threshold repairability
+    regex: changes\ remained\ uncertain:\ \-0\.047368\ \[\-0\.109369,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\.
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/contrasts.csv
+    filters:
+      contrast: difference_of_domain_changes
+      budget: '0.25'
+      metric: threshold_ceiling
+    column: upper
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_control_permute_scores_faster_rcnn
+  manuscript:
+    section: Threshold repairability
+    regex: 'external\ cutoff\-ceiling\ means\ to\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ for\ Faster\ R\-CNN\
+      and\ 0\.013333\ for\
+
+      YOLO11s'
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/perturbation_summary.csv
+    filters:
+      dataset: external
+      detector: faster_rcnn
+      family: permute_scores
+      level: '1.0'
+      budget: '0.25'
+    column: threshold_ceiling
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_control_permute_scores_yolo11s
+  manuscript:
+    section: Threshold repairability
+    regex: 'external\ cutoff\-ceiling\ means\ to\ 0\.002105\ for\ Faster\ R\-CNN\ and\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\
+      for\
+
+      YOLO11s'
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/perturbation_summary.csv
+    filters:
+      dataset: external
+      detector: yolo11s
+      family: permute_scores
+      level: '1.0'
+      budget: '0.25'
+    column: threshold_ceiling
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_control_remove_incompatible_faster_rcnn
+  manuscript:
+    section: Threshold repairability
+    regex: incompatible\ candidates\ raised\ those\ means\ to\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ and\
+      0\.181053;
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/perturbation_summary.csv
+    filters:
+      dataset: external
+      detector: faster_rcnn
+      family: remove_incompatible
+      level: '1.0'
+      budget: '0.25'
+    column: threshold_ceiling
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_control_remove_incompatible_yolo11s
+  manuscript:
+    section: Threshold repairability
+    regex: incompatible\ candidates\ raised\ those\ means\ to\ 0\.568421\ and\ (?P<value>[+-]?[\d,]+(?:\.\d+)?);
+  source:
+    kind: csv_cell
+    path: results/threshold_repairability_v2/perturbation_summary.csv
+    filters:
+      dataset: external
+      detector: yolo11s
+      family: remove_incompatible
+      level: '1.0'
+      budget: '0.25'
+    column: threshold_ceiling
+  absolute_tolerance: 5.0e-07
+- id: repair_v2_interventions
+  manuscript:
+    section: Threshold repairability
+    regex: All\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ imposed\ interventions\ passed\ their\ prespecified\
+      integrity\ checks\.
+  source:
+    kind: json_value
+    path: results/threshold_repairability_v2/summary.json
+    pointer:
+    - control_interventions
+  absolute_tolerance: 0
+- id: repair_v2_power_controls
+  manuscript:
+    section: Threshold repairability
+    regex: The\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ score\-power\ controls\ preserved\ every\ exact\ frontier
+  source:
+    kind: csv_row_count
+    path: results/threshold_repairability_v2/perturbations.csv
+    filters:
+      family: power
+      budget: '0.25'
+  absolute_tolerance: 0
+- id: repair_v2_joint_draws
+  manuscript:
+    section: Threshold repairability
+    regex: Joint\ uncertainty\ used\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ draws\.
+  source:
+    kind: json_value
+    path: results/threshold_repairability_v2/summary.json
+    pointer:
+    - bootstrap_resamples
+  absolute_tolerance: 0

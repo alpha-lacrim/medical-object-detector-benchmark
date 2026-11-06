@@ -1,0 +1,41 @@
+schema_version: 1
+analysis_id: threshold-repairability-v2
+status: posthoc_exploratory
+baseline_commit: 8ceb55ebc47306a33655d23f1b2a262b2dfb813c
+statistics_config: configs/vindr_statistics_v1.yaml
+protocol_document: docs/THRESHOLD_REPAIRABILITY_PROTOCOL_V2.md
+reference_per_run: results/vindr_external_v1/statistics/per_run.csv
+reference_geometry: results/external_failure_isolation_v1/per_run.csv
+pilot_config: configs/threshold_repairability_v1.yaml
+analysis:
+  datasets: [internal, external]
+  primary_budget: 0.25
+  bootstrap_resamples: 2000
+  bootstrap_seed: 20261106
+  confidence_level: 0.95
+  progress_every: 100
+  smoke_resamples: 8
+  runtime_limit_seconds: 3600
+perturbations:
+  seed: 20261107
+  powers: [0.5, 2.0]
+  fractions: [0.25, 0.5, 1.0]
+  replicates: 3
+  families: [permute_scores, remove_compatible, remove_incompatible]
+  recompute_after_transform_floor: 0.0
+outputs:
+  public_root: results/threshold_repairability_v2
+  private_root: data/processed/vindr-cxr-external-v1/threshold_repairability_v2
+  summary: summary.json
+  per_run: per_run.csv
+  intervals: intervals.csv
+  contrasts: contrasts.csv
+  perturbations: perturbations.csv
+  perturbation_summary: perturbation_summary.csv
+  draws: joint_bootstrap_draws.npz
+  report: docs/THRESHOLD_REPAIRABILITY_RESULTS_V2.md
+source_files:
+  - src/stats/threshold_repairability.py
+  - src/stats/run_threshold_repairability.py
+  - src/analyze_external_failure.py
+  - tests/test_threshold_repairability_v2.py

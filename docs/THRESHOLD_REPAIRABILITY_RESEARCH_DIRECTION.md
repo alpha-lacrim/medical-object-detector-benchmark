@@ -1,9 +1,17 @@
 # Research direction: limits of threshold repair under external shift
 
-6 November 2026. **Exploratory feasibility analysis and proposed research focus.**
+6 November 2026. **Historical feasibility analysis and proposed research focus.**
 The user has no access to radiologists. This direction therefore uses frozen
 predictions and existing reference annotations without clinical relabeling.
-It does not replace the current manuscript or declare a new method validated.
+The original proposal below did not replace the manuscript or validate a new method.
+
+**Implementation update:** the user subsequently authorized the follow-up.
+The [v2 protocol](THRESHOLD_REPAIRABILITY_PROTOCOL_V2.md) and
+[complete results](THRESHOLD_REPAIRABILITY_RESULTS_V2.md) now add the internal
+comparison, joint component/contrast uncertainty and all controlled output
+perturbations. The v1 results below remain unchanged. The stronger empirical
+evidence still does not establish a new theorem, clinical causal mechanism or
+publication-level originality; the v2 verification note records paper integration.
 
 ## Recommendation and question
 

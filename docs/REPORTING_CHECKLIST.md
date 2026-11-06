@@ -16,6 +16,12 @@ pagination and author attestations must be reconfirmed.
 
 ## Author-only release gates
 
+The subsequent threshold-repairability extension is documented in the
+[v2 verification record](THRESHOLD_REPAIRABILITY_VERIFICATION_V2.md).
+Methods 3.11, Results 4.12 and S13 add coupled uncertainty and controlled-output
+evidence; no clinical adjudication, deployment evidence or author-only release
+decision follows from that computational work.
+
 | Gate | Current evidence | Decision and owner |
 |---|---|---|
 | Ethics and consent | Authors previously reported no separate institutional determination; source-study approval and consent waiver are described separately in Section 8. | Responsible authors must establish applicable institutional/journal requirements and retain any written determination. Do not invent exemption or retrospective approval. |
@@ -28,7 +34,7 @@ pagination and author attestations must be reconfirmed.
 
 ## CLAIM 2024 primary crosswalk
 
-All manuscript references below are to the current canonical paper; S1-S12 are
+All manuscript references below are to the current canonical paper; S1-S13 are
 sections of [the supplementary index](SUPPLEMENTARY.md). The exact manuscript,
 PDF hashes and verification outcomes are in
 [the review record](SUPERVISOR_REVIEW_VERIFICATION_2026-11-06.md).

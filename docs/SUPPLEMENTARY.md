@@ -335,3 +335,30 @@ coverage is annotation-informed, rather than canonical score-ordered recall.
 Marginal arm intervals do not define a simultaneous or between-detector test.
 The full-cohort AP-floor control changes evaluation support only; no threshold,
 target mapping or checkpoint is selected using its outcome.
+
+## S13. Fixed-output threshold repairability
+
+The [new protocol](THRESHOLD_REPAIRABILITY_PROTOCOL_V2.md) extends the earlier
+public-table feasibility audit to both complete saved cohorts, every original
+run and all original FP/image budgets. It preserves original evidence and adds
+joint uncertainty for the recall accounting, within-cohort contrasts and
+checkpoint-coupled domain changes. It was specified after the original outcomes,
+before these computations; it is exploratory, not public preregistration.
+
+- [Complete results and figures](THRESHOLD_REPAIRABILITY_RESULTS_V2.md).
+- [Per-run components](../results/threshold_repairability_v2/per_run.csv),
+  [marginal intervals](../results/threshold_repairability_v2/intervals.csv) and
+  [coupled contrasts](../results/threshold_repairability_v2/contrasts.csv).
+- [All controlled interventions](../results/threshold_repairability_v2/perturbations.csv)
+  and [replicate-averaged summaries](../results/threshold_repairability_v2/perturbation_summary.csv).
+- [Exact source/output bindings](../results/threshold_repairability_v2/summary.json)
+  and [reproduction commands](../README.md#threshold-repairability-v2).
+
+The cutoff ceiling is an optimistic per-run envelope on retained candidates,
+not performance of one deployable cutoff. Strictly monotone score rescaling
+preserves this envelope only with candidate membership, ties and postprocessing
+fixed. Geometry uses annotation-informed maximum matching. Neither the accounting
+identity nor the imposed perturbations identify clinical causes of domain shift.
+Internal patients and external images are resampled with shared within-cohort
+observations and checkpoint coupling across domains; external patient dependence
+is unknown. Infeasible historical policies remain in the signed summaries.
