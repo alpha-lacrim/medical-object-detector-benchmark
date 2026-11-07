@@ -1,21 +1,21 @@
 {
   "status": "author_review_derivative_not_submission_clearance",
   "canonical_manuscript": "report/paper_draft.md",
-  "support_revision": "0b5e1dd4b7ff1cd94072ebc981d18c3cea2d9c2b",
+  "support_revision": "c29f86374b545d5a6abd10ff034a7edb68109a9e",
   "pandoc_version": "pandoc 3.9",
   "tex_version": "pdfTeX 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX)",
   "inputs": [
     {
       "path": "configs/paper_build.yaml",
-      "sha256": "569b873fb0ce96dc3244bcdf77b72e6fc41fbf7e20134d25bd41fba5c1bb9d0d"
+      "sha256": "ed07d8d150a73d293c8e239cc1c82b9d06442594c3ee2425352078c4e2076bdf"
     },
     {
       "path": "report/paper_draft.md",
-      "sha256": "c7c83a98cfd48674e726f93d3fcfc9e4e4a787eca5dc5400287b56f8f53455bd"
+      "sha256": "39d265d9380f9855292da0d94fbdd113bbdd1586605bbd1927acb32888519a2f"
     },
     {
       "path": "report/references.bib",
-      "sha256": "49eb2c3006cc68a2c6587000edcc1ffaf7c20d5a278a86f04e13f15685f4a072"
+      "sha256": "73d22741fed78c0388cd0bae75883c5054167c3380469cf6b656f008432a5493"
     },
     {
       "path": "report/pdf/header.tex",
@@ -48,12 +48,16 @@
     {
       "path": "results/vindr_external_v1/statistics/frozen_threshold_transport.png",
       "sha256": "a16570845ab8a730531b89e77887744814173eb96190ef3d891c567ea4ecfa17"
+    },
+    {
+      "path": "results/threshold_repairability_v2/repairability.png",
+      "sha256": "220c92a28b754efc9c8dbcb2b640e2a5dabfcef8020e2adc9b8882b30595f3ce"
     }
   ],
   "output": {
     "path": "output/pdf/rsna_vindr_article.pdf",
-    "sha256": "06d3d38b36f2eaa9a04920ab28e39ad5a4ba7136d2dcfb3224172cd830a22215",
-    "size_bytes": 993010
+    "sha256": "f0044daf1f99572d28e57105c4644a08a5201ff230e05cfafe1e72b134acde82",
+    "size_bytes": 1099534
   },
   "reproduction": "python -m scripts.build_paper_pdf --config configs/paper_build.yaml",
   "note": "PDF timestamps/tool versions can change byte hashes; scientific content comes only from the canonical source."

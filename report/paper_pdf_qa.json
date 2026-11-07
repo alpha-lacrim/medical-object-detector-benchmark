@@ -1,143 +1,164 @@
 {
   "pdf": "output/pdf/rsna_vindr_article.pdf",
-  "sha256": "06d3d38b36f2eaa9a04920ab28e39ad5a4ba7136d2dcfb3224172cd830a22215",
-  "page_count": 19,
+  "sha256": "f0044daf1f99572d28e57105c4644a08a5201ff230e05cfafe1e72b134acde82",
+  "page_count": 22,
   "pages": [
     {
       "page": 1,
-      "text_characters": 3780,
+      "text_characters": 3930,
       "embedded_images": 0,
       "links": 2,
       "rotation": 0
     },
     {
       "page": 2,
-      "text_characters": 4505,
+      "text_characters": 4899,
       "embedded_images": 0,
       "links": 11,
       "rotation": 0
     },
     {
       "page": 3,
-      "text_characters": 4253,
+      "text_characters": 4403,
       "embedded_images": 0,
-      "links": 11,
+      "links": 15,
       "rotation": 0
     },
     {
       "page": 4,
-      "text_characters": 4110,
+      "text_characters": 3642,
+      "embedded_images": 0,
+      "links": 3,
+      "rotation": 0
+    },
+    {
+      "page": 5,
+      "text_characters": 5274,
       "embedded_images": 0,
       "links": 4,
       "rotation": 0
     },
     {
-      "page": 5,
-      "text_characters": 5094,
-      "embedded_images": 0,
-      "links": 6,
-      "rotation": 0
-    },
-    {
       "page": 6,
-      "text_characters": 5024,
+      "text_characters": 4860,
       "embedded_images": 0,
       "links": 6,
       "rotation": 0
     },
     {
       "page": 7,
-      "text_characters": 4734,
+      "text_characters": 4886,
       "embedded_images": 0,
-      "links": 6,
+      "links": 7,
       "rotation": 0
     },
     {
       "page": 8,
-      "text_characters": 2415,
-      "embedded_images": 1,
-      "links": 0,
+      "text_characters": 4568,
+      "embedded_images": 0,
+      "links": 3,
       "rotation": 0
     },
     {
       "page": 9,
-      "text_characters": 2067,
+      "text_characters": 2039,
       "embedded_images": 1,
       "links": 0,
       "rotation": 0
     },
     {
       "page": 10,
-      "text_characters": 2255,
+      "text_characters": 2068,
       "embedded_images": 1,
       "links": 0,
       "rotation": 0
     },
     {
       "page": 11,
-      "text_characters": 1817,
+      "text_characters": 2255,
       "embedded_images": 1,
       "links": 0,
       "rotation": 0
     },
     {
       "page": 12,
+      "text_characters": 1817,
+      "embedded_images": 1,
+      "links": 0,
+      "rotation": 0
+    },
+    {
+      "page": 13,
       "text_characters": 4175,
       "embedded_images": 0,
       "links": 0,
       "rotation": 0
     },
     {
-      "page": 13,
+      "page": 14,
       "text_characters": 2464,
       "embedded_images": 1,
       "links": 0,
       "rotation": 0
     },
     {
-      "page": 14,
+      "page": 15,
       "text_characters": 4208,
       "embedded_images": 0,
       "links": 0,
       "rotation": 0
     },
     {
-      "page": 15,
-      "text_characters": 5424,
-      "embedded_images": 0,
-      "links": 3,
-      "rotation": 0
-    },
-    {
       "page": 16,
-      "text_characters": 5322,
-      "embedded_images": 0,
+      "text_characters": 2991,
+      "embedded_images": 1,
       "links": 0,
       "rotation": 0
     },
     {
       "page": 17,
-      "text_characters": 3928,
+      "text_characters": 5487,
       "embedded_images": 0,
-      "links": 6,
+      "links": 4,
       "rotation": 0
     },
     {
       "page": 18,
-      "text_characters": 4683,
+      "text_characters": 5479,
       "embedded_images": 0,
-      "links": 24,
+      "links": 0,
       "rotation": 0
     },
     {
       "page": 19,
-      "text_characters": 1086,
+      "text_characters": 4639,
       "embedded_images": 0,
-      "links": 5,
+      "links": 2,
+      "rotation": 0
+    },
+    {
+      "page": 20,
+      "text_characters": 1284,
+      "embedded_images": 0,
+      "links": 4,
+      "rotation": 0
+    },
+    {
+      "page": 21,
+      "text_characters": 4597,
+      "embedded_images": 0,
+      "links": 25,
+      "rotation": 0
+    },
+    {
+      "page": 22,
+      "text_characters": 1648,
+      "embedded_images": 0,
+      "links": 8,
       "rotation": 0
     }
   ],
-  "internal_links": 34,
+  "internal_links": 38,
   "external_uris": [
     "https://doi.org/10.1007/978-3-031-72664-4_11",
     "https://doi.org/10.1007/978-3-319-10602-1_48",
@@ -156,24 +177,27 @@
     "https://doi.org/10.1371/journal.pmed.1002683",
     "https://doi.org/10.2202/1544-6115.1585",
     "https://doi.org/10.2307/4615733",
+    "https://doi.org/10.48550/arXiv.2011.10772",
     "https://github.com/Alpha-lacrim/medical-object-detector-benchmark",
-    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/0b5e1dd4b7ff1cd94072ebc981d18c3cea2d9c2b/docs/COMPUTE_TIMING.md",
-    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/0b5e1dd4b7ff1cd94072ebc981d18c3cea2d9c2b/docs/SUPPLEMENTARY.md",
-    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/0b5e1dd4b7ff1cd94072ebc981d18c3cea2d9c2b/docs/SUPPLEMENTARY.md#s1-cohort-split-and-provenance-records",
-    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/0b5e1dd4b7ff1cd94072ebc981d18c3cea2d9c2b/docs/SUPPLEMENTARY.md#s10-yolo-numerical-inference-path-sensitivity",
-    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/0b5e1dd4b7ff1cd94072ebc981d18c3cea2d9c2b/docs/SUPPLEMENTARY.md#s11-post-hoc-external-generalization-analysis",
-    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/0b5e1dd4b7ff1cd94072ebc981d18c3cea2d9c2b/docs/SUPPLEMENTARY.md#s12-controlled-external-failure-diagnostic",
-    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/0b5e1dd4b7ff1cd94072ebc981d18c3cea2d9c2b/docs/SUPPLEMENTARY.md#s3-operating-point-and-threshold-evidence",
-    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/0b5e1dd4b7ff1cd94072ebc981d18c3cea2d9c2b/docs/SUPPLEMENTARY.md#s4-calibration-and-exploratory-raw-score-utility",
-    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/0b5e1dd4b7ff1cd94072ebc981d18c3cea2d9c2b/docs/SUPPLEMENTARY.md#s5-complete-digital-corruption-and-acquisition-shift-grids",
-    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/0b5e1dd4b7ff1cd94072ebc981d18c3cea2d9c2b/docs/SUPPLEMENTARY.md#s8-decisions-limitations-and-reproduction",
-    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/0b5e1dd4b7ff1cd94072ebc981d18c3cea2d9c2b/docs/SUPPLEMENTARY.md#s9-frozen-external-testing-and-transportability",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/c29f86374b545d5a6abd10ff034a7edb68109a9e/docs/COMPUTE_TIMING.md",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/c29f86374b545d5a6abd10ff034a7edb68109a9e/docs/SUPPLEMENTARY.md",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/c29f86374b545d5a6abd10ff034a7edb68109a9e/docs/SUPPLEMENTARY.md#s1-cohort-split-and-provenance-records",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/c29f86374b545d5a6abd10ff034a7edb68109a9e/docs/SUPPLEMENTARY.md#s10-yolo-numerical-inference-path-sensitivity",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/c29f86374b545d5a6abd10ff034a7edb68109a9e/docs/SUPPLEMENTARY.md#s11-post-hoc-external-generalization-analysis",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/c29f86374b545d5a6abd10ff034a7edb68109a9e/docs/SUPPLEMENTARY.md#s12-controlled-external-failure-diagnostic",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/c29f86374b545d5a6abd10ff034a7edb68109a9e/docs/SUPPLEMENTARY.md#s13-fixed-output-threshold-repairability",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/c29f86374b545d5a6abd10ff034a7edb68109a9e/docs/SUPPLEMENTARY.md#s3-operating-point-and-threshold-evidence",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/c29f86374b545d5a6abd10ff034a7edb68109a9e/docs/SUPPLEMENTARY.md#s4-calibration-and-exploratory-raw-score-utility",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/c29f86374b545d5a6abd10ff034a7edb68109a9e/docs/SUPPLEMENTARY.md#s5-complete-digital-corruption-and-acquisition-shift-grids",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/c29f86374b545d5a6abd10ff034a7edb68109a9e/docs/SUPPLEMENTARY.md#s8-decisions-limitations-and-reproduction",
+    "https://github.com/alpha-lacrim/medical-object-detector-benchmark/blob/c29f86374b545d5a6abd10ff034a7edb68109a9e/docs/SUPPLEMENTARY.md#s9-frozen-external-testing-and-transportability",
     "https://github.com/ultralytics/ultralytics/blob/v8.4.110/ultralytics/cfg/models/11/yolo11.yaml",
     "https://physionet.org/content/vindr-cxr/1.0.0/",
     "https://proceedings.mlr.press/v80/lipton18a.html",
     "https://proceedings.mlsys.org/paper_files/paper/2021/file/0184b0cd3cfb185989f858a1d9f5c1eb-Paper.pdf",
     "https://proceedings.neurips.cc/paper/2015/hash/14bfa6bb14875e45bba028a21ed38046-Abstract.html",
     "https://pypi.org/project/ultralytics/8.4.110/",
+    "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123480562.pdf",
     "https://www.kaggle.com/c/rsna-pneumonia-detection-challenge/data",
     "https://www.kaggle.com/c/rsna-pneumonia-detection-challenge/overview/evaluation",
     "https://www.rsna.org/rsnai/-/media/Files/RSNA/Education/AI%20resources%20and%20training/AI%20image%20challenge/RSNA-2018-Pneumonia-Detection-Challenge-Dataset-Description.ashx?hash=8331DDFA52AA5EE9C3C99B5983BB680D7BD2ABBF&la=en",

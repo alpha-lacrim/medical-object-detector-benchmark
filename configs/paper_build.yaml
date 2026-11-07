@@ -3,12 +3,12 @@ manuscript: report/paper_draft.md
 bibliography: report/references.bib
 output: output/pdf/rsna_vindr_article.pdf
 manifest: report/paper_build_manifest.json
-work_directory: tmp/pdfs/supervisor-review-20261106/final
+work_directory: tmp/pdfs/threshold-repairability-v2/final
 header: report/pdf/header.tex
 filter: report/pdf/layout.lua
 repository_url: https://github.com/alpha-lacrim/medical-object-detector-benchmark
-# Supporting evidence includes the completed controlled diagnostic (not a release designation).
-support_revision: 0b5e1dd4b7ff1cd94072ebc981d18c3cea2d9c2b
+# Supporting evidence includes verified repairability v2; not a final release designation.
+support_revision: c29f86374b545d5a6abd10ff034a7edb68109a9e
 pdf_engine: pdflatex
 latex_passes: 3
 variables:

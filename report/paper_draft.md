@@ -587,7 +587,8 @@ had to eliminate coverage, while incompatible removal had to preserve geometry
 and never worsen the frontier. Imposed replicates were averaged within runs;
 they were not extra patient or training samples. Candidates were not refiltered
 at the old numerical floor after score transformation. All original budgets,
-intervention strengths and replicates are retained in Supplementary Section S13.
+intervention strengths and replicates are retained in
+[Supplementary Section S13](../docs/SUPPLEMENTARY.md#s13-fixed-output-threshold-repairability).
 
 ## 4. Results
 
@@ -979,7 +980,8 @@ YOLO11s while leaving geometric coverage unchanged. Removing all individually
 incompatible candidates raised those means to 0.568421 and 0.181053; even this
 annotation-informed positive control could not exceed retained geometry.
 Complete compatible-candidate removal eliminated coverage. All intermediate,
-null and adverse outcomes are available in S13; these software interventions
+null and adverse outcomes are available in
+[S13](../docs/SUPPLEMENTARY.md#s13-fixed-output-threshold-repairability); these software interventions
 validate diagnostic behavior, not the clinical causes of the real shift.
 
 ## 5. Discussion

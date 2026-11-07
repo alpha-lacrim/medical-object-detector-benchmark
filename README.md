@@ -1585,3 +1585,8 @@ The inventory adds nine v2 artifacts and preserves all 112 previous records.
 The public reports replay byte-exactly from the aggregate tables. The paper
 integration and PDF verification are recorded in
 [the v2 verification note](docs/THRESHOLD_REPAIRABILITY_VERIFICATION_V2.md).
+The [current paper PDF](output/pdf/rsna_vindr_article.pdf) has 22 visually reviewed
+pages and includes the new Table 9/Figure 5. Its evidence links are pinned to
+the pushed, CI-passing `c29f863`. All 538 numerical claims and 47 semantic guards
+pass; 541 tests passed across portable and licensed-data scopes. This is an
+author-review revision with bounded computational conclusions.

@@ -1,5 +1,31 @@
 # Final submission audit and author-declaration follow-up
 
+## 2026-11-07 threshold-repairability revision and current PDF
+
+The [v2 verification record](THRESHOLD_REPAIRABILITY_VERIFICATION_V2.md) supersedes
+the PDF status in the historical entries below. The paper now focuses on the
+limits of global cutoff repair, with completed internal/external comparison,
+joint component uncertainty and controlled saved-output perturbations.
+Methods 3.11, Results 4.12, Table 9, Figure 5 and S13 contain the new evidence.
+
+The current 22-page PDF was rebuilt and every page visually inspected at
+120 dpi. Automated QA reports zero errors; all 12 build inputs/output hashes,
+38 internal links and 12 pinned supporting paths passed checks. All 60 added
+numerical values and all 36 Table 9 entries were verified in extracted text.
+Its supporting evidence revision is the pushed, CI-passing `c29f863`.
+
+PDF SHA-256:
+`f0044daf1f99572d28e57105c4644a08a5201ff230e05cfafe1e72b134acde82`.
+
+All 538 numerical claims, 47 semantic guards, 121 publication artifacts and 38
+frozen-file checks pass. The analysis and public reports replay exactly;
+534 portable plus seven scientific tests pass. This strengthens
+the empirical research contribution but does not establish clinical causes,
+ontology equivalence or publication novelty. No radiologist access is available;
+author/journal/release decisions remain separate from this completed task.
+
+---
+
 ## 2026-11-06 supervisor-review preparation and current PDF
 
 The current [review record](SUPERVISOR_REVIEW_VERIFICATION_2026-11-06.md)
