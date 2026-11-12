@@ -1,0 +1,36 @@
+{
+  "artifacts": [
+    {
+      "path": "results/constrained_repairability_v1/cost_surface.png",
+      "sha256": "b52eea7bbf3b4ecb531bf3ad5db3a22011f3e3150a2bdf8b057e8364f23e8651",
+      "size_bytes": 322188
+    },
+    {
+      "path": "results/constrained_repairability_v1/annotation_sensitivity.png",
+      "sha256": "b831457aaa428c776cd1cb0de080237c5557d3c3ad5db231d4fc8daa6351fe9f",
+      "size_bytes": 148658
+    },
+    {
+      "path": "docs/CONSTRAINED_REPAIRABILITY_RESULTS_V1.md",
+      "sha256": "497b2eabf2d611c02fb9eacaebe6c45042b0d2ea3f07f0f6b2d1a6e6b9b6e517",
+      "size_bytes": 6235
+    }
+  ],
+  "inputs": [
+    {
+      "path": "configs/constrained_repairability_v1_report.yaml",
+      "sha256": "0d63833604bb001d3620180494ab81524033c45d95ff22bda20964bd6624f032",
+      "size_bytes": 484
+    },
+    {
+      "path": "scripts/report_constrained_repairability.py",
+      "sha256": "b3aaec486feb32c420fa94df288df2e8eaf73c1adf47ba72f84bfe3e79c31bd1",
+      "size_bytes": 15341
+    },
+    {
+      "path": "results/constrained_repairability_v1/summary.json",
+      "sha256": "f3a91252ec313806cb7d666930c97a5482db75921b6a2d31502fa5a9d7f7038a",
+      "size_bytes": 32246
+    }
+  ]
+}

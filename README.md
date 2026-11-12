@@ -1590,3 +1590,48 @@ pages and includes the new Table 9/Figure 5. Its evidence links are pinned to
 the pushed, CI-passing `c29f863`. All 538 numerical claims and 47 semantic guards
 pass; 541 tests passed across portable and licensed-data scopes. This is an
 author-review revision with bounded computational conclusions.
+
+## Constrained repairability research assessment
+
+The subsequent [assessment with full proofs](docs/CONSTRAINED_REPAIRABILITY_RESEARCH_ASSESSMENT.md)
+tests the proposed minimum-cost intervention and annotation-stability theorems.
+Its verdict is **NO-GO for a new theorem-driven method claim**: the mathematical
+results hold, but uniform promotion/suppression costs reduce exactly to historical
+selected count, historical matching rank and full matching rank. All 500 real
+target/budget/run cells agree with the exact flow solver. Heterogeneous costs are
+supported and tested, but the study supplies no validated clinical cost model.
+
+This research is isolated on `research/constrained-repairability-v1`; the canonical
+paper/PDF and frozen results remain unchanged. See the
+[protocol](docs/CONSTRAINED_REPAIRABILITY_PROTOCOL_V1.md),
+[generated results and figures](docs/CONSTRAINED_REPAIRABILITY_RESULTS_V1.md), and
+[verification record](docs/CONSTRAINED_REPAIRABILITY_VERIFICATION_V1.md).
+All five seeds on both cohorts, every original FP budget, five target recalls,
+220 imposed output controls and 2,000 joint bootstrap draws are included.
+Infeasible costs remain infinite, including in uncertainty summaries. The
+annotation-edit bound concerns geometric matching counts, not FROC or label
+correctness. An equation-based OC-cost comparison uses published weights without
+tuning. No model inference, ground-truth editing or repair policy fitting occurs.
+
+Use the locked CPU environment above. NetworkX 3.6.1 is already in `uv.lock` via
+Torch; [the research requirements](requirements-constrained-repairability.txt)
+also declare it explicitly for environments assembled separately. With authorized
+saved predictions available locally:
+
+```powershell
+# Confirm the completed v2 evidence before the new research replay.
+.venv/Scripts/python.exe -m src.stats.run_threshold_repairability --config configs/threshold_repairability_v2.yaml --replay
+.venv/Scripts/python.exe -m src.stats.run_constrained_repairability --config configs/constrained_repairability_v1.yaml --smoke
+.venv/Scripts/python.exe -m src.stats.run_constrained_repairability --config configs/constrained_repairability_v1.yaml --verify
+.venv/Scripts/python.exe -m src.stats.run_constrained_repairability --config configs/constrained_repairability_v1.yaml --replay
+.venv/Scripts/python.exe -m scripts.report_constrained_repairability --config configs/constrained_repairability_v1_report.yaml --replay
+.venv/Scripts/python.exe -m pytest -q tests/test_constrained_repairability.py tests/test_constrained_diagnostics.py tests/test_constrained_research_package.py
+```
+
+Initial analysis/report creation omits the mode flag and refuses existing outputs.
+The full analysis took about 99 seconds and its fresh exact replay about 102
+seconds on this host; the figures/report replay byte-for-byte. The analysis receipt
+binds 149 inputs and six outputs. Private observation-linked bootstrap arrays
+stay in the ignored data tree; public CSVs contain aggregate run-level results.
+The assessment explicitly maps findings and remaining limitations to the
+professor's requests and distinguishes proven results from unverified novelty.

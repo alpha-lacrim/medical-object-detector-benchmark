@@ -1,0 +1,12 @@
+summary: results/constrained_repairability_v1/summary.json
+source: scripts/report_constrained_repairability.py
+primary_budget: 0.25
+outputs:
+  report: docs/CONSTRAINED_REPAIRABILITY_RESULTS_V1.md
+  costs_figure: results/constrained_repairability_v1/cost_surface.png
+  annotation_figure: results/constrained_repairability_v1/annotation_sensitivity.png
+  receipt: results/constrained_repairability_v1/report_build.json
+style:
+  dpi: 180
+  costs_size: [12, 8]
+  annotation_size: [11, 4]
