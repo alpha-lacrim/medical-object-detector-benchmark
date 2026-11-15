@@ -1638,9 +1638,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1794512412.0014164,
-    "seen": 1794512429.0708163,
-    "ast_hash": "8f17e119d12841b8cae3c29231776d1e",
+    "mtime": 1794745089.655617,
+    "seen": 1794745108.019135,
+    "ast_hash": "579140492b12da2c05758ece7d1e21b4",
     "semantic_hash": ""
   },
   "RELEASE_NOTES_v2.0.0.md": {
@@ -3180,9 +3180,9 @@
     "semantic_hash": ""
   },
   "docs/CONSTRAINED_REPAIRABILITY_RESEARCH_ASSESSMENT.md": {
-    "mtime": 1794512225.0225544,
-    "seen": 1794512429.0808856,
-    "ast_hash": "368c0125ddcd6fbde29413c841caa279",
+    "mtime": 1794512599.5713775,
+    "seen": 1794745108.0332081,
+    "ast_hash": "3809e314ea8f30d9770b8a6a94536275",
     "semantic_hash": ""
   },
   "docs/CONSTRAINED_REPAIRABILITY_RESULTS_V1.md": {
@@ -3192,9 +3192,9 @@
     "semantic_hash": ""
   },
   "docs/CONSTRAINED_REPAIRABILITY_VERIFICATION_V1.md": {
-    "mtime": 1794512412.0025935,
-    "seen": 1794512429.0808856,
-    "ast_hash": "81e92a9f052c64704d76647c0ea467ff",
+    "mtime": 1794512599.57213,
+    "seen": 1794745108.0332081,
+    "ast_hash": "2d58150baea2b5cc427c742fcbd9a4af",
     "semantic_hash": ""
   },
   "docs/THRESHOLD_REPAIRABILITY_VERIFICATION_V2.md": {
@@ -3219,6 +3219,72 @@
     "mtime": 1794511967.4036746,
     "seen": 1794512429.0939717,
     "ast_hash": "030629d91abad853da0603e84f0f4a61",
+    "semantic_hash": ""
+  },
+  "results/froc_annotation_v1/report_build.json": {
+    "mtime": 1794744718.7588203,
+    "seen": 1794745107.9602025,
+    "ast_hash": "6591f0a295a608396670ebe5e61ac522",
+    "semantic_hash": ""
+  },
+  "results/froc_annotation_v1/summary.json": {
+    "mtime": 1794601220.2403145,
+    "seen": 1794745107.9602025,
+    "ast_hash": "4f64521da253030e9e4b13564c00ace7",
+    "semantic_hash": ""
+  },
+  "scripts/report_froc_annotation.py": {
+    "mtime": 1794744706.8030875,
+    "seen": 1794745107.9912145,
+    "ast_hash": "4c17504ee423cb5ec06aba672cb65303",
+    "semantic_hash": ""
+  },
+  "src/stats/froc_annotation.py": {
+    "mtime": 1794601067.1910684,
+    "seen": 1794745108.0041304,
+    "ast_hash": "2fe8d160d6d7bbd2b240669717e1b672",
+    "semantic_hash": ""
+  },
+  "src/stats/run_froc_annotation.py": {
+    "mtime": 1794601067.1920695,
+    "seen": 1794745108.005135,
+    "ast_hash": "34a3152bade280d52d9c18bc76f2cd36",
+    "semantic_hash": ""
+  },
+  "tests/test_froc_annotation.py": {
+    "mtime": 1794600672.1651635,
+    "seen": 1794745108.01314,
+    "ast_hash": "554a481da981b014d6f4ce500ccf84c0",
+    "semantic_hash": ""
+  },
+  "tests/test_froc_annotation_artifacts.py": {
+    "mtime": 1794744989.0421796,
+    "seen": 1794745108.01314,
+    "ast_hash": "6f3836fc13a05fc51f8955b13e861db9",
+    "semantic_hash": ""
+  },
+  "configs/froc_annotation_v1.yaml": {
+    "mtime": 1794600483.603226,
+    "seen": 1794745108.0241332,
+    "ast_hash": "f9d21b94da099294b866d7a76345e436",
+    "semantic_hash": ""
+  },
+  "configs/froc_annotation_v1_report.yaml": {
+    "mtime": 1794744328.9720132,
+    "seen": 1794745108.0241332,
+    "ast_hash": "28d71a11e695d586c0656d404f02bca0",
+    "semantic_hash": ""
+  },
+  "results/froc_annotation_v1/domain_gap_certificates.png": {
+    "mtime": 1794744718.753822,
+    "seen": 1794745108.0637574,
+    "ast_hash": "444fdfa0cdcae68c4b7fb65eaa1cf0f3",
+    "semantic_hash": ""
+  },
+  "results/froc_annotation_v1/shared_deletion_ranges.png": {
+    "mtime": 1794744718.754819,
+    "seen": 1794745108.0637574,
+    "ast_hash": "6a42bbed284163b00881bad99683862d",
     "semantic_hash": ""
   }
 }

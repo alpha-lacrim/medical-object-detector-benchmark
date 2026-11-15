@@ -1,0 +1,41 @@
+{
+  "artifacts": [
+    {
+      "path": "results/froc_annotation_v1/domain_gap_certificates.png",
+      "sha256": "c67457a3dae350eb9137816b34509248337fb7ca204360c4393a98cc15d4c3a0",
+      "size_bytes": 153031
+    },
+    {
+      "path": "results/froc_annotation_v1/shared_deletion_ranges.png",
+      "sha256": "695c67ef762ea5900e1bd9640d6e1301792fefa742f4a6bf1f06d1189ca7b446",
+      "size_bytes": 68192
+    },
+    {
+      "path": "docs/FROC_ANNOTATION_RESULTS_V1.md",
+      "sha256": "57e0eb31b318cefb51f57a3b281be737a104838f5a0c0c9ce87e4a825028ea8c",
+      "size_bytes": 3557
+    }
+  ],
+  "inputs": [
+    {
+      "path": "configs/froc_annotation_v1_report.yaml",
+      "sha256": "4f2ec352bb215608fb41839fcacdb9031662159baafb7251e9d35cc1f4492f75",
+      "size_bytes": 369
+    },
+    {
+      "path": "scripts/report_froc_annotation.py",
+      "sha256": "0c845e2a5baaadc77297e3d49263dac87e501f1f6b1eb395cadd710073150711",
+      "size_bytes": 11947
+    },
+    {
+      "path": "configs/froc_annotation_v1.yaml",
+      "sha256": "5eb1693d26700c1c007210830f129eb938c4b116c26f7c2ee8f9d552153dfb37",
+      "size_bytes": 962
+    },
+    {
+      "path": "results/froc_annotation_v1/summary.json",
+      "sha256": "6b51b5b50d89d53c882074515afe521cb390084774f0d1d8fe6bc1324b1d583b",
+      "size_bytes": 31592
+    }
+  ]
+}

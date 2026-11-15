@@ -1635,3 +1635,47 @@ binds 149 inputs and six outputs. Private observation-linked bootstrap arrays
 stay in the ignored data tree; public CSVs contain aggregate run-level results.
 The assessment explicitly maps findings and remaining limitations to the
 professor's requests and distinguishes proven results from unverified novelty.
+
+## Shared-annotation FROC certificates (exploratory v1)
+
+The [research assessment](docs/FROC_ANNOTATION_RESEARCH_ASSESSMENT.md) recommends
+**GO for a bounded methodological addition** after the previous oracle-cost
+NO-GO. This work is isolated on `research/froc-annotation-certificates-v1`.
+It asks whether an operating-budget conclusion survives changes to the same
+reference annotations for every detector and run. The
+[method and full proofs](docs/FROC_ANNOTATION_METHOD_V1.md) distinguish conservative
+insertion/deletion bounds from exact shared one/two-reference deletion extrema.
+The latter provably add information absent from complete marginal FROC curves.
+
+See the [protocol](docs/FROC_ANNOTATION_PROTOCOL_V1.md) and
+[results and figures](docs/FROC_ANNOTATION_RESULTS_V1.md). Both complete cohorts,
+all five seeds and original FP/image budgets are included. At 0.25 FP/image,
+common external single/pair-deletion comparison ranges are half as wide as an
+independent-edit relaxation. Conservative domain-gap bounds and their joint
+bootstrap intervals answer a separate question. None of these hypothetical
+edits is asserted to be a clinical annotation error or exported as corrected data.
+
+```powershell
+# Authorized saved predictions are required for these CPU-only checks.
+.venv/Scripts/python.exe -m src.stats.run_froc_annotation --config configs/froc_annotation_v1.yaml --verify
+.venv/Scripts/python.exe -m src.stats.run_froc_annotation --config configs/froc_annotation_v1.yaml --replay
+# This renderer needs public aggregate tables only.
+.venv/Scripts/python.exe -m scripts.report_froc_annotation --config configs/froc_annotation_v1_report.yaml --replay
+.venv/Scripts/python.exe -m pytest -q tests/test_froc_annotation.py tests/test_froc_annotation_artifacts.py
+.venv/Scripts/python.exe -m pytest -q tests/test_froc_annotation_artifacts.py --run-scientific
+```
+
+Initial creation omits the mode flag and refuses existing outputs; `--smoke`
+executes a reduced bootstrap without writing analysis artifacts. Full execution
+took 118 seconds locally, and a fresh replay reproduced five tables and all
+2,000 draws. The analysis receipt binds 146 inputs and six outputs. The separate
+report receipt binds four inputs and three outputs. Private observation-linked
+arrays remain ignored. Local data moved to `D:\vindr-rsna-dataset`; the frozen
+replayers require their recorded relative paths, so only 39 hash-verified analysis
+inputs were copied back (56.08 MiB), preserving the D-drive originals.
+
+This improves evaluation validity, annotation sensitivity and the definition of
+a contribution beyond two-model comparison. It does not establish clinical
+label equivalence, causal acquisition mechanisms, publication priority or
+journal acceptance. The exact subset census has no sampling CI; the universal
+bound endpoints have marginal joint patient/image/run bootstrap intervals.

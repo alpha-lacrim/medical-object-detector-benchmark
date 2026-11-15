@@ -1,0 +1,28 @@
+schema_version: 1
+analysis_id: froc-annotation-v1
+status: posthoc_exploratory
+baseline_commit: d27373d26325768602545d0c9aa8b170b2129d1d
+statistics_config: configs/vindr_statistics_v1.yaml
+v2_summary: results/threshold_repairability_v2/summary.json
+v2_per_run: results/threshold_repairability_v2/per_run.csv
+protocol_document: docs/FROC_ANNOTATION_PROTOCOL_V1.md
+analysis:
+  datasets: [internal, external]
+  modes: [mixed, insertions, deletions]
+  primary_budget: 0.25
+  maximum_edits: 60
+  exact_deletion_counts: [1, 2]
+  bootstrap_edits: [0, 1, 2, 5, 10, 20, 30, 40]
+  bootstrap_resamples: 2000
+  bootstrap_seed: 20261113
+  confidence_level: 0.95
+  smoke_resamples: 8
+  progress_every: 100
+  runtime_limit_seconds: 3600
+outputs:
+  public_root: results/froc_annotation_v1
+  private_root: data/processed/vindr-cxr-external-v1/froc_annotation_v1
+source_files:
+  - src/stats/froc_annotation.py
+  - src/stats/run_froc_annotation.py
+  - tests/test_froc_annotation.py
