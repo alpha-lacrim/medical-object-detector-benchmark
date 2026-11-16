@@ -1640,7 +1640,7 @@ professor's requests and distinguishes proven results from unverified novelty.
 
 The [research assessment](docs/FROC_ANNOTATION_RESEARCH_ASSESSMENT.md) recommends
 **GO for a bounded methodological addition** after the previous oracle-cost
-NO-GO. This work is isolated on `research/froc-annotation-certificates-v1`.
+NO-GO. This independently versioned extension preserves the frozen primary results.
 It asks whether an operating-budget conclusion survives changes to the same
 reference annotations for every detector and run. The
 [method and full proofs](docs/FROC_ANNOTATION_METHOD_V1.md) distinguish conservative
@@ -1680,7 +1680,7 @@ label equivalence, causal acquisition mechanisms, publication priority or
 journal acceptance. The exact subset census has no sampling CI; the universal
 bound endpoints have marginal joint patient/image/run bootstrap intervals.
 
-The research-branch article includes the method and proof sketches, Table 10,
+The canonical article includes the method and proof sketches, Table 10,
 Figures 6-7 and Supplement S14. The earlier 121 publication-manifest records are
 preserved and nine entries added. The numerical verifier binds 579 values to
 their sources, with explicit semantic guards for the new interpretation limits.
