@@ -1,0 +1,11 @@
+analysis_summary: results/froc_annotation_v1/summary.json
+analysis_config: configs/froc_annotation_v1.yaml
+output_root: results/froc_annotation_v1
+report: docs/FROC_ANNOTATION_RESULTS_V1.md
+receipt: report_build.json
+figures:
+  domain_gap: domain_gap_certificates.png
+  shared_deletions: shared_deletion_ranges.png
+dpi: 180
+font_size: 10
+colors: ['#2367a0', '#c36c25']

@@ -114,6 +114,18 @@ manuscript_semantic_guards:
   required_regex: claim of superiority over TIDE or LRP\. No such benchmark comparison was performed
 - id: repair_v2_no_causal_simulation
   required_regex: are software interventions, not simulations of real clinical domain-shift\s+mechanisms
+- id: annotation_bounds_conservative
+  required_regex: They are conservative, not necessarily attainable extrema
+- id: annotation_census_not_sampling_ci
+  required_regex: exact\s+deletion census is conditional on the observed cohort/runs and has no claimed\s+sampling
+    CI
+- id: annotation_bootstrap_copy_units
+  required_regex: Edit units in a draw are sampled observation\s+copies, not an original subject edited
+    across all copies
+- id: annotation_no_clinical_error_budget
+  required_regex: They do not establish that those edit budgets are clinically plausible
+- id: annotation_nonredundancy_not_priority
+  required_regex: it does not establish priority over every prior sensitivity method
 claims:
 - id: source_radiograph_count
   description: Full labeled RSNA source cohort size.
@@ -4233,25 +4245,12 @@ claims:
   rounding: displayed precision
 - id: external_count_images_0
   manuscript:
-    regex: '\*\*Methods:\*\*\ This\ retrospective\ study\ used\ 5,000\ RSNA\ radiographs\ in\
+    regex: 'A\ protocol\ frozen\ before\ external\ inference\ applied\
 
-      patient\-disjoint\ training,\ validation,\ and\ internal\-testing\ partitions\
+      the\ same\ checkpoints\ without\ adaptation\ to\ (?P<value>-?\d[\d,]*(?:\.\d+)?)\ VinDr\-CXR\ images,\
+      including\
 
-      \(3,500/750/750\)\.\ Faster\ R\-CNN\ and\ YOLO11s\ shared\ canonical\ inputs,\ disabled\
-
-      stochastic\ augmentation,\ and\ a\ common\ evaluator\.\ All\ five\ training\ runs\ per\
-
-      detector\ were\ retained\.\ A\ protocol\ frozen\ before\ external\ inference\ applied\
-
-      the\ same\ checkpoints\ without\ adaptation\ to\ (?P<value>-?\d[\d,]*(?:\.\d+)?)\ VinDr\-CXR\ images,\ including\
-
-      84\ images\ with\ 95\ strict\-target\ boxes\.\ Historical\ three\-run\ RSNA\ validation\
-
-      thresholds\ remained\ primary;\ five\-run\ selection\ was\ post\-hoc\ sensitivity\.\
-
-      Primary\ uncertainty\ resampled\ held\-out\ observations\ and\ independent\ detector\
-
-      runs\.\ Timing\ used\ a\ matched\ boundary\ on\ an\ RTX\ 4060\ laptop\.'
+      84\ images\ with\ 95\ strict\-target\ boxes\.'
   source:
     kind: json_value
     path: results/vindr_external_v1/statistics/summary.json
@@ -4316,26 +4315,11 @@ claims:
   rounding: displayed precision
 - id: external_count_positive_images_0
   manuscript:
-    regex: '\*\*Methods:\*\*\ This\ retrospective\ study\ used\ 5,000\ RSNA\ radiographs\ in\
-
-      patient\-disjoint\ training,\ validation,\ and\ internal\-testing\ partitions\
-
-      \(3,500/750/750\)\.\ Faster\ R\-CNN\ and\ YOLO11s\ shared\ canonical\ inputs,\ disabled\
-
-      stochastic\ augmentation,\ and\ a\ common\ evaluator\.\ All\ five\ training\ runs\ per\
-
-      detector\ were\ retained\.\ A\ protocol\ frozen\ before\ external\ inference\ applied\
+    regex: 'A\ protocol\ frozen\ before\ external\ inference\ applied\
 
       the\ same\ checkpoints\ without\ adaptation\ to\ 3,000\ VinDr\-CXR\ images,\ including\
 
-      (?P<value>-?\d[\d,]*(?:\.\d+)?)\ images\ with\ 95\ strict\-target\ boxes\.\ Historical\ three\-run\ RSNA\
-      validation\
-
-      thresholds\ remained\ primary;\ five\-run\ selection\ was\ post\-hoc\ sensitivity\.\
-
-      Primary\ uncertainty\ resampled\ held\-out\ observations\ and\ independent\ detector\
-
-      runs\.\ Timing\ used\ a\ matched\ boundary\ on\ an\ RTX\ 4060\ laptop\.'
+      (?P<value>-?\d[\d,]*(?:\.\d+)?)\ images\ with\ 95\ strict\-target\ boxes\.'
   source:
     kind: json_value
     path: results/vindr_external_v1/statistics/summary.json
@@ -4382,26 +4366,11 @@ claims:
   rounding: displayed precision
 - id: external_count_target_boxes_0
   manuscript:
-    regex: '\*\*Methods:\*\*\ This\ retrospective\ study\ used\ 5,000\ RSNA\ radiographs\ in\
-
-      patient\-disjoint\ training,\ validation,\ and\ internal\-testing\ partitions\
-
-      \(3,500/750/750\)\.\ Faster\ R\-CNN\ and\ YOLO11s\ shared\ canonical\ inputs,\ disabled\
-
-      stochastic\ augmentation,\ and\ a\ common\ evaluator\.\ All\ five\ training\ runs\ per\
-
-      detector\ were\ retained\.\ A\ protocol\ frozen\ before\ external\ inference\ applied\
+    regex: 'A\ protocol\ frozen\ before\ external\ inference\ applied\
 
       the\ same\ checkpoints\ without\ adaptation\ to\ 3,000\ VinDr\-CXR\ images,\ including\
 
-      84\ images\ with\ (?P<value>-?\d[\d,]*(?:\.\d+)?)\ strict\-target\ boxes\.\ Historical\ three\-run\ RSNA\
-      validation\
-
-      thresholds\ remained\ primary;\ five\-run\ selection\ was\ post\-hoc\ sensitivity\.\
-
-      Primary\ uncertainty\ resampled\ held\-out\ observations\ and\ independent\ detector\
-
-      runs\.\ Timing\ used\ a\ matched\ boundary\ on\ an\ RTX\ 4060\ laptop\.'
+      84\ images\ with\ (?P<value>-?\d[\d,]*(?:\.\d+)?)\ strict\-target\ boxes\.'
   source:
     kind: json_value
     path: results/vindr_external_v1/statistics/summary.json
@@ -7355,3 +7324,748 @@ claims:
     pointer:
     - bootstrap_resamples
   absolute_tolerance: 0
+- id: annotation_v1_table_internal_1_deletions
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ Internal\ /\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \|\ 268\ \|\ \[0\.095131,\ 0\.104120\]\
+      \|\ \[0\.095131,\ 0\.105618\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: internal
+      entity: faster_rcnn-yolo11s
+      deletions: '1'
+      budget: '0.25'
+    column: deletions
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_internal_1_cases
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ Internal\ /\ 1\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \|\ \[0\.095131,\ 0\.104120\]\ \|\
+      \[0\.095131,\ 0\.105618\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: internal
+      entity: faster_rcnn-yolo11s
+      deletions: '1'
+      budget: '0.25'
+    column: cases
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_internal_1_lower
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ Internal\ /\ 1\ \|\ 268\ \|\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.104120\]\ \|\ \[0\.095131,\
+      0\.105618\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: internal
+      entity: faster_rcnn-yolo11s
+      deletions: '1'
+      budget: '0.25'
+    column: lower
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_internal_1_upper
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ Internal\ /\ 1\ \|\ 268\ \|\ \[0\.095131,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ \|\ \[0\.095131,\
+      0\.105618\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: internal
+      entity: faster_rcnn-yolo11s
+      deletions: '1'
+      budget: '0.25'
+    column: upper
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_internal_1_independent_lower
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ Internal\ /\ 1\ \|\ 268\ \|\ \[0\.095131,\ 0\.104120\]\ \|\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\
+      0\.105618\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: internal
+      entity: faster_rcnn-yolo11s
+      deletions: '1'
+      budget: '0.25'
+    column: independent_lower
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_internal_1_independent_upper
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ Internal\ /\ 1\ \|\ 268\ \|\ \[0\.095131,\ 0\.104120\]\ \|\ \[0\.095131,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\
+      \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: internal
+      entity: faster_rcnn-yolo11s
+      deletions: '1'
+      budget: '0.25'
+    column: independent_upper
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_internal_2_deletions
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ Internal\ /\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \|\ 35,778\ \|\ \[0\.091729,\ 0\.106767\]\
+      \|\ \[0\.091729,\ 0\.109774\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: internal
+      entity: faster_rcnn-yolo11s
+      deletions: '2'
+      budget: '0.25'
+    column: deletions
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_internal_2_cases
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ Internal\ /\ 2\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \|\ \[0\.091729,\ 0\.106767\]\ \|\
+      \[0\.091729,\ 0\.109774\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: internal
+      entity: faster_rcnn-yolo11s
+      deletions: '2'
+      budget: '0.25'
+    column: cases
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_internal_2_lower
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ Internal\ /\ 2\ \|\ 35,778\ \|\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.106767\]\ \|\ \[0\.091729,\
+      0\.109774\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: internal
+      entity: faster_rcnn-yolo11s
+      deletions: '2'
+      budget: '0.25'
+    column: lower
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_internal_2_upper
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ Internal\ /\ 2\ \|\ 35,778\ \|\ \[0\.091729,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ \|\ \[0\.091729,\
+      0\.109774\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: internal
+      entity: faster_rcnn-yolo11s
+      deletions: '2'
+      budget: '0.25'
+    column: upper
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_internal_2_independent_lower
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ Internal\ /\ 2\ \|\ 35,778\ \|\ \[0\.091729,\ 0\.106767\]\ \|\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\
+      0\.109774\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: internal
+      entity: faster_rcnn-yolo11s
+      deletions: '2'
+      budget: '0.25'
+    column: independent_lower
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_internal_2_independent_upper
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ Internal\ /\ 2\ \|\ 35,778\ \|\ \[0\.091729,\ 0\.106767\]\ \|\ \[0\.091729,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\
+      \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: internal
+      entity: faster_rcnn-yolo11s
+      deletions: '2'
+      budget: '0.25'
+    column: independent_upper
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_external_1_deletions
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ External\ /\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \|\ 95\ \|\ \[0\.044681,\ 0\.055319\]\ \|\
+      \[0\.042553,\ 0\.063830\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: external
+      entity: faster_rcnn-yolo11s
+      deletions: '1'
+      budget: '0.25'
+    column: deletions
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_external_1_cases
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ External\ /\ 1\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \|\ \[0\.044681,\ 0\.055319\]\ \|\
+      \[0\.042553,\ 0\.063830\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: external
+      entity: faster_rcnn-yolo11s
+      deletions: '1'
+      budget: '0.25'
+    column: cases
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_external_1_lower
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ External\ /\ 1\ \|\ 95\ \|\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.055319\]\ \|\ \[0\.042553,\
+      0\.063830\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: external
+      entity: faster_rcnn-yolo11s
+      deletions: '1'
+      budget: '0.25'
+    column: lower
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_external_1_upper
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ External\ /\ 1\ \|\ 95\ \|\ \[0\.044681,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ \|\ \[0\.042553,\
+      0\.063830\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: external
+      entity: faster_rcnn-yolo11s
+      deletions: '1'
+      budget: '0.25'
+    column: upper
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_external_1_independent_lower
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ External\ /\ 1\ \|\ 95\ \|\ \[0\.044681,\ 0\.055319\]\ \|\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\
+      0\.063830\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: external
+      entity: faster_rcnn-yolo11s
+      deletions: '1'
+      budget: '0.25'
+    column: independent_lower
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_external_1_independent_upper
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ External\ /\ 1\ \|\ 95\ \|\ \[0\.044681,\ 0\.055319\]\ \|\ \[0\.042553,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\
+      \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: external
+      entity: faster_rcnn-yolo11s
+      deletions: '1'
+      budget: '0.25'
+    column: independent_upper
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_external_2_deletions
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ External\ /\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \|\ 4,465\ \|\ \[0\.036559,\ 0\.058065\]\
+      \|\ \[0\.032258,\ 0\.075269\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: external
+      entity: faster_rcnn-yolo11s
+      deletions: '2'
+      budget: '0.25'
+    column: deletions
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_external_2_cases
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ External\ /\ 2\ \|\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ \|\ \[0\.036559,\ 0\.058065\]\ \|\
+      \[0\.032258,\ 0\.075269\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: external
+      entity: faster_rcnn-yolo11s
+      deletions: '2'
+      budget: '0.25'
+    column: cases
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_external_2_lower
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ External\ /\ 2\ \|\ 4,465\ \|\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.058065\]\ \|\ \[0\.032258,\
+      0\.075269\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: external
+      entity: faster_rcnn-yolo11s
+      deletions: '2'
+      budget: '0.25'
+    column: lower
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_external_2_upper
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ External\ /\ 2\ \|\ 4,465\ \|\ \[0\.036559,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ \|\ \[0\.032258,\
+      0\.075269\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: external
+      entity: faster_rcnn-yolo11s
+      deletions: '2'
+      budget: '0.25'
+    column: upper
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_external_2_independent_lower
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ External\ /\ 2\ \|\ 4,465\ \|\ \[0\.036559,\ 0\.058065\]\ \|\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\
+      0\.075269\]\ \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: external
+      entity: faster_rcnn-yolo11s
+      deletions: '2'
+      budget: '0.25'
+    column: independent_lower
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_table_external_2_independent_upper
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: \|\ External\ /\ 2\ \|\ 4,465\ \|\ \[0\.036559,\ 0\.058065\]\ \|\ \[0\.032258,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\
+      \|
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: external
+      entity: faster_rcnn-yolo11s
+      deletions: '2'
+      budget: '0.25'
+    column: independent_upper
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_abstract_lower
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: '\ under\ two\ shared\
+
+      reference\ deletions\ was\ \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.058065\],\ compared\ with\
+
+      \[0\.032258,\ 0\.075269\]\ when\ edits\ were\ relaxed\ independently\ across\ runs/detectors\.'
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: external
+      entity: faster_rcnn-yolo11s
+      deletions: '2'
+      budget: '0.25'
+    column: lower
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_abstract_upper
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: '\ under\ two\ shared\
+
+      reference\ deletions\ was\ \[0\.036559,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\],\ compared\ with\
+
+      \[0\.032258,\ 0\.075269\]\ when\ edits\ were\ relaxed\ independently\ across\ runs/detectors\.'
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: external
+      entity: faster_rcnn-yolo11s
+      deletions: '2'
+      budget: '0.25'
+    column: upper
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_abstract_independent_lower
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: '\ under\ two\ shared\
+
+      reference\ deletions\ was\ \[0\.036559,\ 0\.058065\],\ compared\ with\
+
+      \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.075269\]\ when\ edits\ were\ relaxed\ independently\ across\
+      runs/detectors\.'
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: external
+      entity: faster_rcnn-yolo11s
+      deletions: '2'
+      budget: '0.25'
+    column: independent_lower
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_abstract_independent_upper
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: '\ under\ two\ shared\
+
+      reference\ deletions\ was\ \[0\.036559,\ 0\.058065\],\ compared\ with\
+
+      \[0\.032258,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\ when\ edits\ were\ relaxed\ independently\ across\
+      runs/detectors\.'
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/exact_deletions.csv
+    filters:
+      dataset: external
+      entity: faster_rcnn-yolo11s
+      deletions: '2'
+      budget: '0.25'
+    column: independent_upper
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_gap_0
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: 'At\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ FP/image,\ the\ conservative\ internal\-minus\-external\
+      gap\ lower\ bound\ for\
+
+      Faster\ R\-CNN\ with\ 20\ allowed\ external\ reference\ edits\ was\ 0\.119461\
+
+      \[0\.025995,\ 0\.203687\];\ for\ YOLO11s\ with\ 10\ edits\ it\ was\ 0\.140704\
+
+      \[0\.070139,\ 0\.211927\]\.'
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/contrasts.csv
+    filters:
+      detector: faster_rcnn
+      budget: '0.25'
+      external_edits: '20'
+      endpoint: lower
+    column: budget
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_gap_1
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: 'At\ 0\.25\ FP/image,\ the\ conservative\ internal\-minus\-external\ gap\ lower\ bound\ for\
+
+      Faster\ R\-CNN\ with\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ allowed\ external\ reference\ edits\ was\
+      0\.119461\
+
+      \[0\.025995,\ 0\.203687\];\ for\ YOLO11s\ with\ 10\ edits\ it\ was\ 0\.140704\
+
+      \[0\.070139,\ 0\.211927\]\.'
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/contrasts.csv
+    filters:
+      detector: faster_rcnn
+      budget: '0.25'
+      external_edits: '20'
+      endpoint: lower
+    column: external_edits
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_gap_2
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: 'At\ 0\.25\ FP/image,\ the\ conservative\ internal\-minus\-external\ gap\ lower\ bound\ for\
+
+      Faster\ R\-CNN\ with\ 20\ allowed\ external\ reference\ edits\ was\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\
+
+      \[0\.025995,\ 0\.203687\];\ for\ YOLO11s\ with\ 10\ edits\ it\ was\ 0\.140704\
+
+      \[0\.070139,\ 0\.211927\]\.'
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/contrasts.csv
+    filters:
+      detector: faster_rcnn
+      budget: '0.25'
+      external_edits: '20'
+      endpoint: lower
+    column: point
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_gap_3
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: 'At\ 0\.25\ FP/image,\ the\ conservative\ internal\-minus\-external\ gap\ lower\ bound\ for\
+
+      Faster\ R\-CNN\ with\ 20\ allowed\ external\ reference\ edits\ was\ 0\.119461\
+
+      \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.203687\];\ for\ YOLO11s\ with\ 10\ edits\ it\ was\ 0\.140704\
+
+      \[0\.070139,\ 0\.211927\]\.'
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/contrasts.csv
+    filters:
+      detector: faster_rcnn
+      budget: '0.25'
+      external_edits: '20'
+      endpoint: lower
+    column: lower
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_gap_4
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: 'At\ 0\.25\ FP/image,\ the\ conservative\ internal\-minus\-external\ gap\ lower\ bound\ for\
+
+      Faster\ R\-CNN\ with\ 20\ allowed\ external\ reference\ edits\ was\ 0\.119461\
+
+      \[0\.025995,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\];\ for\ YOLO11s\ with\ 10\ edits\ it\ was\ 0\.140704\
+
+      \[0\.070139,\ 0\.211927\]\.'
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/contrasts.csv
+    filters:
+      detector: faster_rcnn
+      budget: '0.25'
+      external_edits: '20'
+      endpoint: lower
+    column: upper
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_gap_5
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: 'At\ 0\.25\ FP/image,\ the\ conservative\ internal\-minus\-external\ gap\ lower\ bound\ for\
+
+      Faster\ R\-CNN\ with\ 20\ allowed\ external\ reference\ edits\ was\ 0\.119461\
+
+      \[0\.025995,\ 0\.203687\];\ for\ YOLO11s\ with\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ edits\ it\ was\
+      0\.140704\
+
+      \[0\.070139,\ 0\.211927\]\.'
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/contrasts.csv
+    filters:
+      detector: yolo11s
+      budget: '0.25'
+      external_edits: '10'
+      endpoint: lower
+    column: external_edits
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_gap_6
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: 'At\ 0\.25\ FP/image,\ the\ conservative\ internal\-minus\-external\ gap\ lower\ bound\ for\
+
+      Faster\ R\-CNN\ with\ 20\ allowed\ external\ reference\ edits\ was\ 0\.119461\
+
+      \[0\.025995,\ 0\.203687\];\ for\ YOLO11s\ with\ 10\ edits\ it\ was\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\
+
+      \[0\.070139,\ 0\.211927\]\.'
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/contrasts.csv
+    filters:
+      detector: yolo11s
+      budget: '0.25'
+      external_edits: '10'
+      endpoint: lower
+    column: point
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_gap_7
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: 'At\ 0\.25\ FP/image,\ the\ conservative\ internal\-minus\-external\ gap\ lower\ bound\ for\
+
+      Faster\ R\-CNN\ with\ 20\ allowed\ external\ reference\ edits\ was\ 0\.119461\
+
+      \[0\.025995,\ 0\.203687\];\ for\ YOLO11s\ with\ 10\ edits\ it\ was\ 0\.140704\
+
+      \[(?P<value>[+-]?[\d,]+(?:\.\d+)?),\ 0\.211927\]\.'
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/contrasts.csv
+    filters:
+      detector: yolo11s
+      budget: '0.25'
+      external_edits: '10'
+      endpoint: lower
+    column: lower
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_gap_8
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: 'At\ 0\.25\ FP/image,\ the\ conservative\ internal\-minus\-external\ gap\ lower\ bound\ for\
+
+      Faster\ R\-CNN\ with\ 20\ allowed\ external\ reference\ edits\ was\ 0\.119461\
+
+      \[0\.025995,\ 0\.203687\];\ for\ YOLO11s\ with\ 10\ edits\ it\ was\ 0\.140704\
+
+      \[0\.070139,\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\]\.'
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/contrasts.csv
+    filters:
+      detector: yolo11s
+      budget: '0.25'
+      external_edits: '10'
+      endpoint: lower
+    column: upper
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_unresolved_faster_rcnn
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: 'At\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ edits\ for\ Faster\ R\-CNN\ and\ 20\ for\ YOLO11s\ the\
+
+      intervals\ crossed\ zero\.'
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/contrasts.csv
+    filters:
+      detector: faster_rcnn
+      budget: '0.25'
+      external_edits: '30'
+      endpoint: lower
+    column: external_edits
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_unresolved_yolo11s
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: 'At\ 30\ edits\ for\ Faster\ R\-CNN\ and\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)\ for\ YOLO11s\ the\
+
+      intervals\ crossed\ zero\.'
+  source:
+    kind: csv_cell
+    path: results/froc_annotation_v1/contrasts.csv
+    filters:
+      detector: yolo11s
+      budget: '0.25'
+      external_edits: '20'
+      endpoint: lower
+    column: external_edits
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_width_reduction_1
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: by\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)%\ relative\ to\ independent\ edits,\ for\ both\ single\
+      and\ pair\ deletions\.
+  source:
+    kind: calculation
+    operation: percent_reduction
+    operands:
+    - kind: calculation
+      operation: subtract
+      operands:
+      - kind: csv_cell
+        path: results/froc_annotation_v1/exact_deletions.csv
+        filters:
+          dataset: external
+          entity: faster_rcnn-yolo11s
+          deletions: '1'
+          budget: '0.25'
+        column: independent_upper
+      - kind: csv_cell
+        path: results/froc_annotation_v1/exact_deletions.csv
+        filters:
+          dataset: external
+          entity: faster_rcnn-yolo11s
+          deletions: '1'
+          budget: '0.25'
+        column: independent_lower
+    - kind: calculation
+      operation: subtract
+      operands:
+      - kind: csv_cell
+        path: results/froc_annotation_v1/exact_deletions.csv
+        filters:
+          dataset: external
+          entity: faster_rcnn-yolo11s
+          deletions: '1'
+          budget: '0.25'
+        column: upper
+      - kind: csv_cell
+        path: results/froc_annotation_v1/exact_deletions.csv
+        filters:
+          dataset: external
+          entity: faster_rcnn-yolo11s
+          deletions: '1'
+          budget: '0.25'
+        column: lower
+  absolute_tolerance: 5.0e-07
+- id: annotation_v1_width_reduction_2
+  manuscript:
+    section: Shared-annotation FROC sensitivity
+    regex: by\ (?P<value>[+-]?[\d,]+(?:\.\d+)?)%\ relative\ to\ independent\ edits,\ for\ both\ single\
+      and\ pair\ deletions\.
+  source:
+    kind: calculation
+    operation: percent_reduction
+    operands:
+    - kind: calculation
+      operation: subtract
+      operands:
+      - kind: csv_cell
+        path: results/froc_annotation_v1/exact_deletions.csv
+        filters:
+          dataset: external
+          entity: faster_rcnn-yolo11s
+          deletions: '2'
+          budget: '0.25'
+        column: independent_upper
+      - kind: csv_cell
+        path: results/froc_annotation_v1/exact_deletions.csv
+        filters:
+          dataset: external
+          entity: faster_rcnn-yolo11s
+          deletions: '2'
+          budget: '0.25'
+        column: independent_lower
+    - kind: calculation
+      operation: subtract
+      operands:
+      - kind: csv_cell
+        path: results/froc_annotation_v1/exact_deletions.csv
+        filters:
+          dataset: external
+          entity: faster_rcnn-yolo11s
+          deletions: '2'
+          budget: '0.25'
+        column: upper
+      - kind: csv_cell
+        path: results/froc_annotation_v1/exact_deletions.csv
+        filters:
+          dataset: external
+          entity: faster_rcnn-yolo11s
+          deletions: '2'
+          budget: '0.25'
+        column: lower
+  absolute_tolerance: 5.0e-07

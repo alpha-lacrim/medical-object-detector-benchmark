@@ -1,0 +1,2 @@
+# Additional direct research dependency; use the repository's locked CPU environment.
+networkx==3.6.1

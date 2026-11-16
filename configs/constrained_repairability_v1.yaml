@@ -1,0 +1,42 @@
+schema_version: 1
+analysis_id: constrained-repairability-v1
+status: retrospective_exploratory
+baseline_commit: cc00ae5a53187d23ba87262b76f025ccbd9de983
+statistics_config: configs/vindr_statistics_v1.yaml
+v2_summary: results/threshold_repairability_v2/summary.json
+v2_per_run: results/threshold_repairability_v2/per_run.csv
+protocol_document: docs/CONSTRAINED_REPAIRABILITY_PROTOCOL_V1.md
+analysis:
+  datasets: [internal, external]
+  target_recalls: [0.10, 0.25, 0.50, 0.75, 0.90]
+  primary_budget: 0.25
+  primary_target: 0.25
+  promotion_cost: 1
+  suppression_cost: 1
+  bootstrap_resamples: 2000
+  bootstrap_seed: 20261107
+  confidence_level: 0.95
+  progress_every: 250
+  runtime_limit_seconds: 3600
+  smoke_resamples: 8
+  annotation_max_edits: 100
+perturbations:
+  seed: 20261107
+  powers: [0.5, 2.0]
+  fractions: [0.25, 0.5, 1.0]
+  families: [permute_scores, remove_compatible, remove_incompatible]
+  replicates: 1
+oc_cost:
+  localization_weight: 0.5
+  dummy_cost: 0.6
+  empty_empty_cost: 0.0
+outputs:
+  public_root: results/constrained_repairability_v1
+  private_root: data/processed/vindr-cxr-external-v1/constrained_repairability_v1
+source_files:
+  - src/stats/constrained_repairability.py
+  - src/stats/constrained_diagnostics.py
+  - src/stats/run_constrained_repairability.py
+  - tests/test_constrained_repairability.py
+  - tests/test_constrained_diagnostics.py
+  - requirements-constrained-repairability.txt

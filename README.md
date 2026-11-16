@@ -1219,16 +1219,16 @@ unchanged), with pdfLaTeX/TeX Live, Latin Modern fonts and Poppler available on 
 uv venv --python .venv/Scripts/python.exe .tools/paper-build
 uv pip install --python .tools/paper-build/Scripts/python.exe -r report/pdf/requirements.txt
 & .tools/paper-build/Scripts/python.exe -m scripts.build_paper_pdf --config configs/paper_build.yaml
-& .tools/paper-build/Scripts/python.exe -m scripts.check_paper_pdf --pdf output/pdf/rsna_vindr_article.pdf --output report/paper_pdf_qa.json --text tmp/pdfs/supervisor-review-20261106/final/extracted-final.txt
-pdftoppm -r 120 -png output/pdf/rsna_vindr_article.pdf tmp/pdfs/supervisor-review-20261106/final/page
+& .tools/paper-build/Scripts/python.exe -m scripts.check_paper_pdf --pdf output/pdf/rsna_vindr_article.pdf --output report/paper_pdf_qa.json --text tmp/pdfs/froc-annotation-v1/final/extracted-final.txt
+pdftoppm -r 120 -png output/pdf/rsna_vindr_article.pdf tmp/pdfs/froc-annotation-v1/final/page
 ```
 
 The builder uses Pandoc/citeproc, the versioned formatting filter/header, and
 three configured pdfLaTeX passes to resolve cross-references from a fresh build.
 It preserves captions and scientific content, sizes table
 columns for portrait pages, and pins supporting repository links to commit
-`0b5e1dd4b7ff1cd94072ebc981d18c3cea2d9c2b`, the committed controlled-diagnostic
-evidence supporting Supplement S12. This supporting revision is not a selected submission
+`ee4f354f9b742bf22dfa464b363c6240ca631aa9`, the committed repairability and
+shared-annotation evidence supporting Supplements S13-S14. This supporting revision is not a selected submission
 release. The source/output hash receipt is
 [`report/paper_build_manifest.json`](report/paper_build_manifest.json).
 PDF timestamps and tool versions can alter byte hashes; matching scientific
@@ -1590,3 +1590,105 @@ pages and includes the new Table 9/Figure 5. Its evidence links are pinned to
 the pushed, CI-passing `c29f863`. All 538 numerical claims and 47 semantic guards
 pass; 541 tests passed across portable and licensed-data scopes. This is an
 author-review revision with bounded computational conclusions.
+
+## Constrained repairability research assessment
+
+The subsequent [assessment with full proofs](docs/CONSTRAINED_REPAIRABILITY_RESEARCH_ASSESSMENT.md)
+tests the proposed minimum-cost intervention and annotation-stability theorems.
+Its verdict is **NO-GO for a new theorem-driven method claim**: the mathematical
+results hold, but uniform promotion/suppression costs reduce exactly to historical
+selected count, historical matching rank and full matching rank. All 500 real
+target/budget/run cells agree with the exact flow solver. Heterogeneous costs are
+supported and tested, but the study supplies no validated clinical cost model.
+
+This research is isolated on `research/constrained-repairability-v1`; the canonical
+paper/PDF and frozen results remain unchanged. See the
+[protocol](docs/CONSTRAINED_REPAIRABILITY_PROTOCOL_V1.md),
+[generated results and figures](docs/CONSTRAINED_REPAIRABILITY_RESULTS_V1.md), and
+[verification record](docs/CONSTRAINED_REPAIRABILITY_VERIFICATION_V1.md).
+All five seeds on both cohorts, every original FP budget, five target recalls,
+220 imposed output controls and 2,000 joint bootstrap draws are included.
+Infeasible costs remain infinite, including in uncertainty summaries. The
+annotation-edit bound concerns geometric matching counts, not FROC or label
+correctness. An equation-based OC-cost comparison uses published weights without
+tuning. No model inference, ground-truth editing or repair policy fitting occurs.
+
+Use the locked CPU environment above. NetworkX 3.6.1 is already in `uv.lock` via
+Torch; [the research requirements](requirements-constrained-repairability.txt)
+also declare it explicitly for environments assembled separately. With authorized
+saved predictions available locally:
+
+```powershell
+# Confirm the completed v2 evidence before the new research replay.
+.venv/Scripts/python.exe -m src.stats.run_threshold_repairability --config configs/threshold_repairability_v2.yaml --replay
+.venv/Scripts/python.exe -m src.stats.run_constrained_repairability --config configs/constrained_repairability_v1.yaml --smoke
+.venv/Scripts/python.exe -m src.stats.run_constrained_repairability --config configs/constrained_repairability_v1.yaml --verify
+.venv/Scripts/python.exe -m src.stats.run_constrained_repairability --config configs/constrained_repairability_v1.yaml --replay
+.venv/Scripts/python.exe -m scripts.report_constrained_repairability --config configs/constrained_repairability_v1_report.yaml --replay
+.venv/Scripts/python.exe -m pytest -q tests/test_constrained_repairability.py tests/test_constrained_diagnostics.py tests/test_constrained_research_package.py
+```
+
+Initial analysis/report creation omits the mode flag and refuses existing outputs.
+The full analysis took about 99 seconds and its fresh exact replay about 102
+seconds on this host; the figures/report replay byte-for-byte. The analysis receipt
+binds 149 inputs and six outputs. Private observation-linked bootstrap arrays
+stay in the ignored data tree; public CSVs contain aggregate run-level results.
+The assessment explicitly maps findings and remaining limitations to the
+professor's requests and distinguishes proven results from unverified novelty.
+
+## Shared-annotation FROC certificates (exploratory v1)
+
+The [research assessment](docs/FROC_ANNOTATION_RESEARCH_ASSESSMENT.md) recommends
+**GO for a bounded methodological addition** after the previous oracle-cost
+NO-GO. This independently versioned extension preserves the frozen primary results.
+It asks whether an operating-budget conclusion survives changes to the same
+reference annotations for every detector and run. The
+[method and full proofs](docs/FROC_ANNOTATION_METHOD_V1.md) distinguish conservative
+insertion/deletion bounds from exact shared one/two-reference deletion extrema.
+The latter provably add information absent from complete marginal FROC curves.
+
+See the [protocol](docs/FROC_ANNOTATION_PROTOCOL_V1.md) and
+[results and figures](docs/FROC_ANNOTATION_RESULTS_V1.md). Both complete cohorts,
+all five seeds and original FP/image budgets are included. At 0.25 FP/image,
+common external single/pair-deletion comparison ranges are half as wide as an
+independent-edit relaxation. Conservative domain-gap bounds and their joint
+bootstrap intervals answer a separate question. None of these hypothetical
+edits is asserted to be a clinical annotation error or exported as corrected data.
+
+```powershell
+# Authorized saved predictions are required for these CPU-only checks.
+.venv/Scripts/python.exe -m src.stats.run_froc_annotation --config configs/froc_annotation_v1.yaml --verify
+.venv/Scripts/python.exe -m src.stats.run_froc_annotation --config configs/froc_annotation_v1.yaml --replay
+# This renderer needs public aggregate tables only.
+.venv/Scripts/python.exe -m scripts.report_froc_annotation --config configs/froc_annotation_v1_report.yaml --replay
+.venv/Scripts/python.exe -m pytest -q tests/test_froc_annotation.py tests/test_froc_annotation_artifacts.py
+.venv/Scripts/python.exe -m pytest -q tests/test_froc_annotation_artifacts.py --run-scientific
+```
+
+Initial creation omits the mode flag and refuses existing outputs; `--smoke`
+executes a reduced bootstrap without writing analysis artifacts. Full execution
+took 118 seconds locally, and a fresh replay reproduced five tables and all
+2,000 draws. The analysis receipt binds 146 inputs and six outputs. The separate
+report receipt binds four inputs and three outputs. Private observation-linked
+arrays remain ignored. Local data moved to `D:\vindr-rsna-dataset`; the frozen
+replayers require their recorded relative paths, so only 39 hash-verified analysis
+inputs were copied back (56.08 MiB), preserving the D-drive originals.
+
+This improves evaluation validity, annotation sensitivity and the definition of
+a contribution beyond two-model comparison. It does not establish clinical
+label equivalence, causal acquisition mechanisms, publication priority or
+journal acceptance. The exact subset census has no sampling CI; the universal
+bound endpoints have marginal joint patient/image/run bootstrap intervals.
+
+The canonical article includes the method and proof sketches, Table 10,
+Figures 6-7 and Supplement S14. The earlier 121 publication-manifest records are
+preserved and nine entries added. The numerical verifier binds 579 values to
+their sources, with explicit semantic guards for the new interpretation limits.
+To register this version into a copy of the earlier inventory exactly once:
+
+```powershell
+.venv/Scripts/python.exe -m scripts.register_froc_annotation --config configs/froc_annotation_v1_report.yaml --manifest results/publication_artifact_manifest.json
+```
+
+The committed inventory already contains these entries; registration refuses
+duplicates and never refreshes old hashes. Use verification/replay for routine checks.
