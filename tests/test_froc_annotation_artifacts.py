@@ -63,3 +63,25 @@ def test_joint_intervals_and_shared_extrema_from_saved_arrays():
             m, b = entities.index(row.entity), budgets.index(row.budget)
             values = (means[m] if m < 2 else means[0] - means[1])[:, b]
             np.testing.assert_allclose([row.lower, row.upper], [values.min(), values.max()])
+
+
+@pytest.mark.scientific_data
+def test_registration_preserves_prior_inventory_and_refuses_duplicates(tmp_path):
+    from scripts.register_froc_annotation import register
+
+    original = json.loads(Path("results/publication_artifact_manifest.json").read_text())
+    earlier = [e for e in original["artifacts"] if not e["path"].startswith(ROOT.as_posix())]
+    original["artifacts"] = earlier
+    original["manuscript_critical_paths"] = [e["path"] for e in earlier]
+    original["publication_extension"].pop("froc_annotation_v1")
+    destination = tmp_path / "inventory.json"
+    destination.write_text(json.dumps(original), encoding="utf-8")
+    report_config = Path("configs/froc_annotation_v1_report.yaml")
+    added = register(report_config, destination)
+    updated = json.loads(destination.read_text())
+    assert updated["artifacts"][: len(earlier)] == earlier
+    assert added == len(updated["artifacts"]) - len(earlier)
+    before = destination.read_bytes()
+    with pytest.raises(ValueError, match="Already registered"):
+        register(report_config, destination)
+    assert destination.read_bytes() == before

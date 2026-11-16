@@ -18,21 +18,21 @@
     "semantic_hash": ""
   },
   "report/paper_build_manifest.json": {
-    "mtime": 1793994494.686202,
-    "seen": 1794512429.0318098,
-    "ast_hash": "259db1e8f9ff3acc2ff2825aab663828",
+    "mtime": 1794746300.2929194,
+    "seen": 1794827150.3938735,
+    "ast_hash": "46e45539bf248b2d15650ac3a344fc26",
     "semantic_hash": ""
   },
   "report/paper_pdf_qa.json": {
-    "mtime": 1793994495.3863513,
-    "seen": 1794512429.0318098,
-    "ast_hash": "66c15eab159bbc10435b51dc7ab7c24f",
+    "mtime": 1794746301.1784935,
+    "seen": 1794827150.3938735,
+    "ast_hash": "1909917b23587d830839af61137859b6",
     "semantic_hash": ""
   },
   "report/pdf/layout.lua": {
-    "mtime": 1790357888.919299,
-    "seen": 1793261255.2461512,
-    "ast_hash": "77931deda8c7d63e949a24e52341209d",
+    "mtime": 1794746282.4301062,
+    "seen": 1794827150.3938735,
+    "ast_hash": "f926d8e4988f58d79934e6d6c8a2e638",
     "semantic_hash": ""
   },
   "report/provenance/batch46/baseline_bindings.json": {
@@ -768,9 +768,9 @@
     "semantic_hash": ""
   },
   "results/publication_artifact_manifest.json": {
-    "mtime": 1793993617.8477924,
-    "seen": 1793993730.7775269,
-    "ast_hash": "d948e5c0c6de95ef201ecfff8bf8e375",
+    "mtime": 1794746289.263183,
+    "seen": 1794827150.4068737,
+    "ast_hash": "927c0f217cbb2d32d328b312f041220f",
     "semantic_hash": ""
   },
   "results/scientific_artifact_manifest.json": {
@@ -1638,9 +1638,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1794745089.655617,
-    "seen": 1794745108.019135,
-    "ast_hash": "579140492b12da2c05758ece7d1e21b4",
+    "mtime": 1794745635.7527432,
+    "seen": 1794745999.485107,
+    "ast_hash": "92ae76a962cde52bd77198e05fc2b9d3",
     "semantic_hash": ""
   },
   "RELEASE_NOTES_v2.0.0.md": {
@@ -1806,9 +1806,9 @@
     "semantic_hash": ""
   },
   "configs/paper_build.yaml": {
-    "mtime": 1793994172.084988,
-    "seen": 1794512429.0738785,
-    "ast_hash": "a3ea76eecb832a38671370ee208dbe59",
+    "mtime": 1794745635.7507403,
+    "seen": 1794745999.4921072,
+    "ast_hash": "6e1796e965cc3161156ebffcf524f26b",
     "semantic_hash": ""
   },
   "configs/pareto.yaml": {
@@ -2166,9 +2166,9 @@
     "semantic_hash": ""
   },
   "docs/SUPPLEMENTARY.md": {
-    "mtime": 1793993527.1916454,
-    "seen": 1793993730.8065464,
-    "ast_hash": "ebd83af7dfcf3b782d1fc2de0949e1ea",
+    "mtime": 1794745376.5080462,
+    "seen": 1794745999.510603,
+    "ast_hash": "af0caa47a8804a3a03955eef52c9b8b3",
     "semantic_hash": ""
   },
   "docs/THRESHOLD_ANALYSIS.md": {
@@ -2268,15 +2268,15 @@
     "semantic_hash": ""
   },
   "report/paper_claim_sources.yaml": {
-    "mtime": 1793994083.5854914,
-    "seen": 1794512429.0889728,
-    "ast_hash": "ede28ab1862a7a2497b10b738bcdf177",
+    "mtime": 1794746005.9188735,
+    "seen": 1794827150.4379973,
+    "ast_hash": "549342d3042cb5948d5a49ffc49b1415",
     "semantic_hash": ""
   },
   "report/paper_draft.md": {
-    "mtime": 1793994479.8362288,
-    "seen": 1794512429.0889728,
-    "ast_hash": "b077b2118cb37660d4893174ea33e69b",
+    "mtime": 1794745952.9269407,
+    "seen": 1794745999.5146034,
+    "ast_hash": "746a89b68ec37f6e6293477c17a09daf",
     "semantic_hash": ""
   },
   "report/pdf/requirements.txt": {
@@ -2538,9 +2538,9 @@
     "semantic_hash": ""
   },
   "output/pdf/rsna_vindr_article.pdf": {
-    "mtime": 1793994494.247578,
-    "seen": 1794512429.0939717,
-    "ast_hash": "962579dd3b2a2b1ff4d1cd6f48267611",
+    "mtime": 1794746299.8790178,
+    "seen": 1794827150.4419923,
+    "ast_hash": "4c35bccd2062a8cd5d92d1fc26f3a873",
     "semantic_hash": ""
   },
   "report/provenance/batch52/rsna_vindr_article.pdf": {
@@ -3258,9 +3258,9 @@
     "semantic_hash": ""
   },
   "tests/test_froc_annotation_artifacts.py": {
-    "mtime": 1794744989.0421796,
-    "seen": 1794745108.01314,
-    "ast_hash": "6f3836fc13a05fc51f8955b13e861db9",
+    "mtime": 1794745730.3313842,
+    "seen": 1794745999.4771004,
+    "ast_hash": "0e2169dd267bc546c25bae2ba42e5f1d",
     "semantic_hash": ""
   },
   "configs/froc_annotation_v1.yaml": {
@@ -3285,6 +3285,42 @@
     "mtime": 1794744718.754819,
     "seen": 1794745108.0637574,
     "ast_hash": "6a42bbed284163b00881bad99683862d",
+    "semantic_hash": ""
+  },
+  "scripts/register_froc_annotation.py": {
+    "mtime": 1794746282.4310553,
+    "seen": 1794827150.4088745,
+    "ast_hash": "a588e28e3433ab079ed18d50db92527c",
+    "semantic_hash": ""
+  },
+  "docs/FROC_ANNOTATION_METHOD_V1.md": {
+    "mtime": 1794744953.9907787,
+    "seen": 1794745999.504604,
+    "ast_hash": "7c7d5ccb10b7ef78a9dcc00801be8948",
+    "semantic_hash": ""
+  },
+  "docs/FROC_ANNOTATION_PROTOCOL_V1.md": {
+    "mtime": 1794600113.6475222,
+    "seen": 1794745999.504604,
+    "ast_hash": "c9f4ced5774565ce67c3c145db802630",
+    "semantic_hash": ""
+  },
+  "docs/FROC_ANNOTATION_RESEARCH_ASSESSMENT.md": {
+    "mtime": 1794744953.9917827,
+    "seen": 1794745999.504604,
+    "ast_hash": "5c99d2b209252ef3313432bd5fe71b60",
+    "semantic_hash": ""
+  },
+  "docs/FROC_ANNOTATION_RESULTS_V1.md": {
+    "mtime": 1794744718.7558203,
+    "seen": 1794745999.504604,
+    "ast_hash": "dadb3736c0329d21473f7c1c209e2f36",
+    "semantic_hash": ""
+  },
+  "docs/FROC_ANNOTATION_VERIFICATION_V1.md": {
+    "mtime": 1794745203.2583408,
+    "seen": 1794745999.504604,
+    "ast_hash": "af7384e70c204a60b68a2f10bc2b5fe2",
     "semantic_hash": ""
   }
 }

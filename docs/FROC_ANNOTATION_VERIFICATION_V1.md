@@ -40,3 +40,42 @@ See [README commands](../README.md#shared-annotation-froc-certificates-explorato
 [assessment](FROC_ANNOTATION_RESEARCH_ASSESSMENT.md), and
 [results](FROC_ANNOTATION_RESULTS_V1.md). These checks establish implementation
 and reproduction evidence, not publication priority or clinical truth.
+
+## Manuscript integration and PDF completion, 16 November 2026
+
+- Scientific checkpoint `ee4f354f9b742bf22dfa464b363c6240ca631aa9` was pushed;
+  [its exact-commit CI](https://github.com/alpha-lacrim/medical-object-detector-benchmark/actions/runs/43713326808)
+  passed on Windows and Ubuntu.
+- Integrated the method and two propositions into Sections 2.6/3.12, results in
+  Section 4.13, Table 10, Figures 6-7 and Supplement S14; revised the question,
+  title, abstract, discussion and conclusion with explicit scope limitations.
+- Added 41 numerical bindings and five semantic guards: 579 values / 52 guards
+  pass. Three old abstract-count regexes were narrowed after shortening the
+  prose; their sources, values and tolerances are unchanged. The numerical trace
+  was regenerated from the verified manifest.
+- Added nine publication entries while preserving the original 121 records
+  exactly by value. All 130 public artifacts and the original 72-artifact
+  inventory pass verification; the 38-file external freeze is unchanged.
+- All 574 portable tests and nine licensed-data tests passed (583 total, one
+  expected metadata-only skip). The added registration test verifies preservation
+  of earlier entries and refusal of duplicate registration. After preserving
+  JSON key order in the writer, the three annotation-artifact tests passed again.
+- Ruff check/format passed for 169 Python files. AST graph updates include the
+  new code; the graph tool's optional PDF text extractor is unavailable, so the
+  graph is not evidence of semantic PDF review. PDF extraction/rendering used
+  the separate document environment and Poppler successfully.
+- Built the 25-page article with the prescribed marker, Pandoc/citeproc and
+  three TeX passes. All 25 pages were visually inspected at 120 dpi. Shortening
+  the abstract kept it on the title page; a table-space adjustment fixed an
+  empty repeated Table 9 header. Only pages 17-19 changed in the final layout
+  pass, and all three were reinspected. Automated QA reports zero errors.
+- Verified 18 supporting PDF links against files in the pinned scientific
+  commit and checked the new numerical strings in extracted PDF text. Source,
+  figure, bibliography and output hashes match the build receipt.
+
+Final PDF SHA-256:
+`3bc53b11a95b8c66bdb5d2f8f54a81c05dc2852d9bad3efe774d825dbd5ec922`.
+The [article](../output/pdf/rsna_vindr_article.pdf) is an author-review derivative,
+not a final submission release. The research assessment's GO verdict concerns
+a bounded methodological addition; priority, clinical causality and ontology
+equivalence are still not established.

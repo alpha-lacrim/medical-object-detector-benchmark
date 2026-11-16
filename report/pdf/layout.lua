@@ -69,6 +69,8 @@ function Blocks(blocks)
       end
       local label = caption and pandoc.utils.stringify(caption) or ''
       local needed = label:match('^Table 2%.') and 16 or 10
+      -- Keep the short accounting table together; avoid an empty repeated header.
+      if label:match('^Table 9%.') then needed = 18 end
       result:insert(pandoc.RawBlock('latex', '\\begingroup\\Needspace{' .. needed .. '\\baselineskip}'))
       if caption then result:insert(caption) end
       result:insert(block)

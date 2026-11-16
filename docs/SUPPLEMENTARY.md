@@ -362,3 +362,31 @@ identity nor the imposed perturbations identify clinical causes of domain shift.
 Internal patients and external images are resampled with shared within-cohort
 observations and checkpoint coupling across domains; external patient dependence
 is unknown. Infeasible historical policies remain in the signed summaries.
+
+## S14. Shared-annotation FROC certificates
+
+This exploratory extension studies the same reference edits for all detectors
+and runs, with fixed predictions and images. It complements S13's repairability
+decomposition without changing primary evidence or fitting an external policy.
+
+- [Full definitions, proofs and counterexamples](FROC_ANNOTATION_METHOD_V1.md).
+- [Protocol](FROC_ANNOTATION_PROTOCOL_V1.md),
+  [assessment and closest prior work](FROC_ANNOTATION_RESEARCH_ASSESSMENT.md), and
+  [verification](FROC_ANNOTATION_VERIFICATION_V1.md).
+- [Generated results and both figures](FROC_ANNOTATION_RESULTS_V1.md).
+- [All conservative envelopes](../results/froc_annotation_v1/envelopes.csv),
+  [exact common-subset deletion extrema](../results/froc_annotation_v1/exact_deletions.csv),
+  [marginal endpoint intervals](../results/froc_annotation_v1/intervals.csv) and
+  [coupled domain contrasts](../results/froc_annotation_v1/contrasts.csv).
+- [Per-run baselines](../results/froc_annotation_v1/per_run.csv),
+  [source/output receipt](../results/froc_annotation_v1/summary.json), and
+  [reproduction commands](../README.md#shared-annotation-froc-certificates-exploratory-v1).
+
+Universal insertion/deletion bounds are conservative and exact enumeration is
+limited to one/two deleted references. The same edit allocation or subset is
+shared before averaging runs. The exact census describes hypothetical annotation
+sensitivity, not sampling uncertainty; joint bootstrap intervals describe
+universal-bound endpoints with edits to sampled observation copies. No clinical
+error budget is asserted. Stable matching preferences, whole ties and absence
+of crowd/ignore rules are necessary assumptions. The full proofs distinguish
+nonredundancy from unverified priority and clinical validity.

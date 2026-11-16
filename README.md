@@ -1219,16 +1219,16 @@ unchanged), with pdfLaTeX/TeX Live, Latin Modern fonts and Poppler available on 
 uv venv --python .venv/Scripts/python.exe .tools/paper-build
 uv pip install --python .tools/paper-build/Scripts/python.exe -r report/pdf/requirements.txt
 & .tools/paper-build/Scripts/python.exe -m scripts.build_paper_pdf --config configs/paper_build.yaml
-& .tools/paper-build/Scripts/python.exe -m scripts.check_paper_pdf --pdf output/pdf/rsna_vindr_article.pdf --output report/paper_pdf_qa.json --text tmp/pdfs/supervisor-review-20261106/final/extracted-final.txt
-pdftoppm -r 120 -png output/pdf/rsna_vindr_article.pdf tmp/pdfs/supervisor-review-20261106/final/page
+& .tools/paper-build/Scripts/python.exe -m scripts.check_paper_pdf --pdf output/pdf/rsna_vindr_article.pdf --output report/paper_pdf_qa.json --text tmp/pdfs/froc-annotation-v1/final/extracted-final.txt
+pdftoppm -r 120 -png output/pdf/rsna_vindr_article.pdf tmp/pdfs/froc-annotation-v1/final/page
 ```
 
 The builder uses Pandoc/citeproc, the versioned formatting filter/header, and
 three configured pdfLaTeX passes to resolve cross-references from a fresh build.
 It preserves captions and scientific content, sizes table
 columns for portrait pages, and pins supporting repository links to commit
-`0b5e1dd4b7ff1cd94072ebc981d18c3cea2d9c2b`, the committed controlled-diagnostic
-evidence supporting Supplement S12. This supporting revision is not a selected submission
+`ee4f354f9b742bf22dfa464b363c6240ca631aa9`, the committed repairability and
+shared-annotation evidence supporting Supplements S13-S14. This supporting revision is not a selected submission
 release. The source/output hash receipt is
 [`report/paper_build_manifest.json`](report/paper_build_manifest.json).
 PDF timestamps and tool versions can alter byte hashes; matching scientific
@@ -1679,3 +1679,16 @@ a contribution beyond two-model comparison. It does not establish clinical
 label equivalence, causal acquisition mechanisms, publication priority or
 journal acceptance. The exact subset census has no sampling CI; the universal
 bound endpoints have marginal joint patient/image/run bootstrap intervals.
+
+The research-branch article includes the method and proof sketches, Table 10,
+Figures 6-7 and Supplement S14. The earlier 121 publication-manifest records are
+preserved and nine entries added. The numerical verifier binds 579 values to
+their sources, with explicit semantic guards for the new interpretation limits.
+To register this version into a copy of the earlier inventory exactly once:
+
+```powershell
+.venv/Scripts/python.exe -m scripts.register_froc_annotation --config configs/froc_annotation_v1_report.yaml --manifest results/publication_artifact_manifest.json
+```
+
+The committed inventory already contains these entries; registration refuses
+duplicates and never refreshes old hashes. Use verification/replay for routine checks.
