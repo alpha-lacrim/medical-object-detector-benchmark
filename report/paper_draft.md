@@ -14,30 +14,31 @@ author-details: |
 bibliography: references.bib
 link-citations: true
 reference-section-title: References
-draft-status: "Final scientific draft for author review; declarations and submission details unresolved"
+draft-status: "Research manuscript for supervisor review"
 ---
 
 ## Abstract
 
-**Background:** Severe external detection failure may invite confidence-cutoff
-adjustment, but a cutoff cannot recover every missed lesion. We examined the
-limits of this repair under fixed false-positive budgets and retained outputs
-from two deep-learning lung-opacity pipelines, and whether conclusions survive
-bounded changes to their common reference annotations.
+**Background:** When a detector performs poorly on a new dataset, lowering its
+confidence cutoff may recover missed opacities but also admit more false
+positives. We asked how much sensitivity this adjustment could recover from
+the saved predictions, and whether the comparison between detectors would
+survive specified changes to their shared reference annotations.
 
 **Methods:** This retrospective study used 5,000 RSNA radiographs in
 patient-disjoint training, validation, and internal-testing partitions
-(3,500/750/750). Faster R-CNN and YOLO11s shared canonical inputs, disabled
+(3,500/750/750). Faster R-CNN and YOLO11s used the same source inputs, no
 stochastic augmentation, and a common evaluator. All five training runs per
 detector were retained. A protocol frozen before external inference applied
 the same checkpoints without adaptation to 3,000 VinDr-CXR images, including
 84 images with 95 strict-target boxes. Historical three-run RSNA validation
 thresholds remained primary; five-run selection was post-hoc sensitivity.
-Joint observation/run resampling quantified uncertainty. Exploratory
-fixed-output analyses separated cutoff from geometric ceilings and checked
-controlled perturbations. We derived conservative reference-edit FROC bounds
-and exact shared-reference deletion extrema, retaining dependence across
-detectors and runs without clinical relabeling or fitting a repair.
+Joint observation/run resampling quantified uncertainty. Exploratory analyses
+measured the best recall available by changing the cutoff and the upper limit
+set by the predicted boxes. For free-response receiver operating characteristic
+(FROC) evaluation, we derived conservative annotation-edit bounds and computed
+exact ranges under shared reference deletions. These calculations used fixed
+predictions; they did not fit a repair or change the clinical labels.
 
 **Results:** Mean AP@0.50 fell from 0.304224 to 0.002505 for Faster R-CNN and
 from 0.162612 to 0.000501 for YOLO11s. External AP contrasts retained positive
@@ -45,31 +46,23 @@ marginal intervals, but historical-threshold recall fell from 0.350746/0.194776
 to 0.018947/0.004211, respectively. External precision was 0.010830/0.004271;
 all historical-threshold metric contrast intervals included zero. Observed
 FROC means retained the internal ordering, but most external contrast intervals
-included zero. Missing candidate support allowed an ordering reversal beyond
-the observed frontier at the upper budgets; detection-cap saturation imposed
-an additional limit. One low-score YOLO run emitted nothing at the historical
-threshold and remained included. YOLO11s had 2.75-fold higher measured
-throughput under the matched timing protocol. Post-hoc diagnostics showed
-different mixtures of below-threshold localization and missing retained
-candidates. Other-finding overlap and population weighting informed sensitivity
-without identifying causes of external failure. At 0.25 FP/image, external
+included zero. The candidate floor and detection cap prevented a conclusion
+about the complete FROC curves. One low-score YOLO run emitted nothing at the
+historical threshold and remained included. YOLO11s had 2.75-fold higher measured
+throughput under the matched timing protocol. At 0.25 FP/image, external
 cutoff ceilings were 0.086316/0.033684; unavailable retained geometry accounted
 for 0.431579/0.818947 of reference boxes, respectively.
 At the same budget, the external detector-difference range under two shared
 reference deletions was [0.036559, 0.058065], compared with
 [0.032258, 0.075269] when edits were relaxed independently across runs/detectors.
 
-**Conclusions:** Cutoff adjustment alone could not restore external recall
-within the stated budget and retained support. Preserved observed AP ordering
-did not imply preserved performance or successful operating-point transport. Ranking, score scale,
-training variability, false-positive regimes, and implementation efficiency
-require separate interpretation. This is cross-dataset and cross-annotation-
-ontology transportability testing, with remaining confounding among dataset
-and pipeline factors. Shared-annotation sensitivity adds information absent from
-marginal FROC curves, but cannot establish label correctness or clinical causes.
-The study does not establish diagnostic utility. Code and
-aggregate results are public; source-data access is governed by provider terms,
-and trained checkpoints are not publicly released.
+**Conclusions:** Changing the cutoff alone could not restore external recall
+within the stated false-positive budget and saved candidate sets. Faster R-CNN's
+higher external AP did not mean that either detector transferred successfully.
+The exact shared-deletion analysis reveals sensitivity that separate FROC curves
+cannot show. Differences in the datasets, label definitions and implementation
+still prevent a clinical explanation of the collapse or a claim of diagnostic
+utility.
 
 ## 1. Introduction
 
@@ -87,41 +80,42 @@ pulmonary opacities rather than clinically confirmed pneumonia
 [@shih2019rsna]. Our intended use is methodological comparison of research
 pipelines, not diagnosis or patient prioritization.
 
-The central research question is: after external failure, how much recall
-could a global confidence cutoff recover within a fixed false-positive budget,
-and how much remains constrained by candidate ranking or unavailable retained
-geometry? This follow-up question was formulated after the original external
-results. A further question is whether the operating-budget conclusion survives
-bounded edits to the reference set shared by all runs and detectors. The original comparison examined whether conclusions from ranking,
-shared raw thresholds and validation-selected operating points transported
-under a non-identical opacity ontology. We compare Faster R-CNN and YOLO11s using common
-data, canonical preprocessing, no stochastic augmentation, a common evaluator,
-and five retained training runs per detector. Patient-cluster and detector-run
-resampling characterize uncertainty; standardized timing describes the measured
-implementation costs.
+Our starting observation was severe performance loss when the RSNA-trained
+detectors were applied to VinDr-CXR without adaptation. This led to two
+questions. How much recall could a different confidence cutoff recover while
+respecting a fixed allowance of false positives per image? And how sensitive
+is that conclusion to the reference annotations used to evaluate both models?
+These questions were formulated after the original external results; the
+follow-up analyses are exploratory.
 
-The contribution is a controlled separation of these evaluation objects under
-a leakage-aware internal protocol and frozen external testing. The RSNA-trained
-checkpoints and operating rules are applied to VinDr-CXR without adaptation;
-the question concerns both relative ordering and absolute performance. We do not claim the first discovery of
-detector score-scale mismatch. Optimization and numerical-precision differences
-remain disclosed, so conclusions apply to the evaluated pipelines. Secondary
-calibration, stress-test, and explanation analyses are indexed in the
-[supplement](../docs/SUPPLEMENTARY.md). The internal analysis is retrospective and was not preregistered. The external
-protocol was locally frozen before full inference, not publicly preregistered.
+We compare Faster R-CNN and YOLO11s using common data, preprocessing and
+evaluation, with stochastic augmentation disabled and five training runs per
+detector. The internal partitions are patient-disjoint. The external protocol
+was locally frozen before full inference, not publicly preregistered; the
+internal analysis was retrospective. Optimization and numerical-precision
+differences remain, so the comparison concerns these implementations rather
+than architecture alone. We do not claim the first discovery of
+detector score-scale mismatch. Instead, we examine what that mismatch can and
+cannot explain about the observed external failure.
 
-The subsequent exploratory contribution is a reproducible audit of threshold
-repairability: exact cutoff envelopes, maximum compatible geometric coverage,
-joint observation/run uncertainty across domains, and controlled output
-perturbations that distinguish score-order changes from lost geometry. Earlier
-annotation-overlap, population-weight and retention sensitivities support its
-interpretation. The additional methodological contribution is a shared-annotation
-FROC audit: a budget-transport bound, exact small-deletion extrema reconstructed
-from sparse matching changes, and a proof that this common-reference sensitivity
-is not determined by the complete marginal FROC curves. We evaluate its additional
-information against independent-edit relaxations on both cohorts. The frozen
-target is preserved, and measurable repair limits remain separate from
-unidentified clinical causes.
+We first ask how much recall a cutoff could recover and how many reference
+objects any one-to-one assignment of the saved boxes could cover. The cutoff ceiling is
+the best recall available within the false-positive allowance; the geometric
+ceiling asks how many reference objects could be matched if candidate scores
+and assignment order were ignored. Together, these ceilings distinguish limits
+imposed by score ordering and assignment from limits of the available boxes.
+Joint resampling across images or
+patients and training runs measures the uncertainty of these comparisons.
+
+We then examine hypothetical annotation changes that are shared across all
+detectors and runs. We derive conservative FROC bounds for reference insertions
+and deletions, and compute exact ranges for shared single and pair deletions.
+A counterexample proves that these paired ranges cannot be recovered from
+the individual FROC curves alone. This provides a specific methodological
+contribution beyond comparing detector accuracy. The analysis measures how
+annotations could affect the conclusion; it does not identify which annotations
+are wrong. Supporting calibration, stress-test, explanation and implementation
+analyses are provided in the [supplement](../docs/SUPPLEMENTARY.md).
 
 ## 2. Related Work
 
@@ -157,9 +151,8 @@ accuracy and speed and selecting a confidence cutoff using validation
 [@chinnam2026modern]. Their reported input resolutions differ by detector;
 their split, model scales, and evaluation choices also differ from ours.
 Neither paper's numerical results are directly interchangeable with this
-benchmark. The present focus is the effect of operating-point definition and
-training variability within two disclosed pipelines, rather than a new claim
-that detector comparisons are absent.
+benchmark. Our focus is how much of the external performance loss is recoverable by a
+cutoff change, and how reference uncertainty affects that assessment.
 
 ### 2.3 Implementation and reporting context
 
@@ -198,8 +191,8 @@ methods rely on assumptions about stable conditional distributions that are
 not established across these datasets [@lipton2018labelshift]. Training-run
 resampling reflects benchmark variability [@bouthillier2021variance], while
 FROC describes lesion localization against false-positive burden
-[@chakraborty2010freeresponse]. None of these established ideas is claimed as
-a new method; the contribution is their joint, reproducible empirical use.
+[@chakraborty2010freeresponse]. These methods provide the basis for our evaluation. The shared-reference
+sensitivity question is addressed separately below.
 
 ### 2.5 Error diagnostics and the incremental contribution
 
@@ -591,7 +584,11 @@ matching count divided by the reference-box count at the same IoU. Then
 $$1 = R_b + (R_{all}-R_b) + (G-R_{all}) + (1-G).$$
 
 The terms are the cutoff ceiling, current-order FP-budget barrier, assignment
-gap and unavailable retained geometry. They account for a fixed-output recall
+gap and unavailable retained geometry. In practical terms, the components
+quantify recall available within the false-positive budget, additional recall
+blocked by that budget, the loss from greedy assignment, and the reference
+fraction that no one-to-one assignment of the retained boxes can cover.
+They account for a fixed-output recall
 shortfall, not causal shares of cross-domain loss. A strictly increasing global
 score map preserves prefixes and ties, so cannot raise $R_b$ when membership,
 matching and postprocessing stay fixed. Feature-dependent reranking, changed
@@ -634,7 +631,11 @@ No original labels were changed or corrections exported.
 Let $T(j),F(j)$ be cumulative TP and FP counts at whole-score prefixes, including
 reject-all, and $N$ the reference count. Write $B=\lfloor b n_{images}\rfloor$,
 $C(B)=\max_{F(j)\leq B}T(j)$ and $j_x=\max\{j:F(j)\leq x\}$.
-For $a$ insertions and $d$ deletions, let $N'=N+a-d>0$.
+For $a$ insertions and $d$ deletions, let $N'=N+a-d>0$, and let $R'(B)$
+denote recall after editing at the same FP budget. Here, a score prefix contains
+all detections at or above a given score; detections with equal scores enter
+together. A certificate is a bound that holds for every edit allowed by the
+specified budget and matching assumptions.
 
 **Proposition 1 (FP-budget transport).** Under this matching contract,
 
@@ -813,8 +814,8 @@ wholly above zero. Fixed-threshold precision did not: its interval crossed
 zero, so it did not support a training-procedure difference. The
 small checkpoint-conditional precision p-value instead says that the observed
 checkpoints favored YOLO11s at the common numerical cutoff across patient
-clusters. The CI and p-value differ because the former also resamples trained
-runs; neither arithmetic result is wrong, and they do not test the same target.
+clusters. The CI and p-value address different sources of uncertainty: the bootstrap
+also includes variation between independently trained runs.
 Conditional localization excluded missed annotations and remained
 inconclusive.
 
@@ -839,9 +840,8 @@ Table 4. Measured implementation timing and model size on the reporting laptop.
 
 All 600 timed-image checks agreed exactly with ordinary inference in counts,
 category labels, boxes, and scores. These are technical repetitions of one checkpoint per detector, not a new
-training-replicate analysis. The machine-readable source is
-`results/tables/inference_timing_v1.csv`; full protocol, individual repetitions,
-raw intervals, and provenance are indexed in `docs/COMPUTE_TIMING.md`.
+training-replicate analysis. The [compute record](../docs/COMPUTE_TIMING.md) provides the full protocol,
+individual repetitions and source measurements.
 
 The matched throughput ratio was 2.75 in favor of YOLO11s, which had 78% fewer
 parameters. This compares measured implementations on one machine, not
@@ -908,7 +908,7 @@ endpoint- and policy-specific.
 YOLO11s seed 271 emitted no external detection at 0.05 and remained in the
 five-run zero-valued precision/recall/F1 summaries. At the secondary cutoff of
 0.01 it emitted 54 detections, all false positives against the strict target.
-Its AP still contributed. No inconvenient run was removed or downweighted.
+Its AP still contributed. The zero-emission run retained the same weight as the other runs.
 
 At the common AP support, mean detections/image changed from 16.326133/1.080800
 internally to 11.502800/0.217200 externally. The equal-run percentage of images
@@ -1120,107 +1120,88 @@ Images, predictions and surviving reference geometry remain fixed.
 
 ## 5. Discussion
 
-The repairability audit provides a concrete reason to avoid treating the
-external collapse as a score-cutoff problem alone. Within the evaluated
-candidate sets, strictly monotone score rescaling cannot change the best recall
-under a fixed FP budget. Reranking or removing false positives can release
-budget-blocked detections, but recovering lesions outside the geometric ceiling
-requires changing candidate generation, retention, localisation or the reference
-task. The latter possibilities are distinct research interventions; this study
-does not select a successful repair or validate a new ontology.
+The external loss was not explained by an unsuitable confidence cutoff alone.
+Even the best cutoff chosen retrospectively within the fixed false-positive
+budget left recall far below internal performance. Many reference opacities
+had no sufficiently overlapping box among the saved predictions. Lowering a
+cutoff can admit an existing box, but it cannot create the missing one.
 
-The internal comparison makes the diagnosis more informative than the external
-ceiling alone: available geometric coverage contracted sharply, especially for
-the evaluated YOLO11s pipeline. The output controls demonstrate
-that the audit distinguishes score ordering from lost geometry. Nevertheless,
-the earlier accounting identity and monotone invariance are elementary properties,
-and FROC already supplies the cutoff envelope. The scientific contribution is
-the reproducible empirical characterization and bounded repair interpretation,
-extended here by a common-annotation sensitivity method. Its shared-deletion
-result is not recoverable from the complete marginal FROC curves and tightened
-the observed comparison against an independent-edit relaxation. This supports a
-specific methodological addition, not a claim of a new general-purpose metric
-or the first annotation-robustness theorem.
+The two detectors reached this limit in different ways. Faster R-CNN retained
+more compatible geometry externally, but false positives earlier in the score
+order restricted how much of it could be used within the budget. YOLO11s had
+much less compatible geometry to begin with. A strictly increasing rescaling
+of scores preserves their order and therefore cannot raise the cutoff ceiling.
+Reranking candidates or removing false positives could change that ceiling;
+recovering objects outside the geometric limit would require different boxes,
+candidate retention or a different reference task. We did not evaluate a
+successful repair, and changing the reference task would need its own clinical
+justification.
 
-The annotation certificates also narrow interpretation of the external shortfall:
-under the stated assumptions, small bounded reference edits cannot erase the
-gap. They do not establish that those edit budgets are clinically plausible,
-that reference errors are absent, or that acquisition shift caused the remaining
-loss. Annotation construction can affect rankings, as established previously;
-our contribution is a computable, shared-reference operating-budget audit.
-Its conservative mixed-edit bounds can be loose and exact enumeration becomes
-combinatorial beyond small deletion sets. Joint intervals and hypothetical
-annotation extrema must remain separate in any interpretation.
+The shared-annotation analysis addresses a different concern: the apparent
+gap might depend on how the reference boxes were drawn or included. With
+internal annotations and all predictions fixed, the conditional domain-gap
+bounds remained positive at the edit budgets reported in Section 4.13.
+They do not establish that those edit budgets are clinically plausible,
+that the annotations are correct, or that acquisition shift caused the
+remaining loss. The exact deletion analysis nevertheless shows why the same
+hypothetical edit must be applied to every detector and run. Allowing each
+evaluation to choose its own reference set widened the comparison range by
+combining scenarios that could not occur together.
 
-The central finding is the separation between relative ordering and performance
-transport. Faster R-CNN retained higher observed equal-run AP on VinDr, while
-both pipelines' AP and the recall of their RSNA-selected operating rules fell
-severely. **Preserved ordering is not preserved performance** here refers to
+This dependence is the methodological contribution. The counterexample in
+Section 3.12 shows that complete individual FROC curves do not determine the
+paired shared-deletion range. The method therefore supplies information absent
+from those summaries. Its ingredients include established matching properties
+and exhaustive enumeration; the contribution is their use for a shared-reference
+comparison under a false-positive constraint. The conservative bounds may be
+loose, and exact enumeration becomes expensive beyond small deletion sets.
+Neither the theorem nor the observed tightening establishes that this is the
+first annotation-sensitivity method.
+
+Faster R-CNN's higher external AP should also be read alongside the absolute
+performance of both pipelines. **Preserved ordering is not preserved performance** here refers to
 the observed equal-run AP direction. It does not mean that every external
-endpoint resolves the same detector difference, that the complete FROC frontier
-was observed, or that external generalization succeeded.
+endpoint resolves the same detector difference or that either detector
+generalized successfully. At the transported RSNA thresholds, both emitted
+few detections and missed most reference objects. Lower FP/image in that
+setting is not evidence of a useful operating point.
 
-Internally, a shared numerical cutoff suggested higher YOLO11s precision,
-whereas ranking curves and detector-specific validation selection gave different
-comparisons. The post-hoc five-run selection also reversed FP/image ordering
-relative to the historical policy. Externally, both policies produced very
-low recall and emission; lower FP/image was therefore an incomplete account
-of their behavior. Confidence scales are not interchangeable across detectors,
-and higher AP does not imply better performance at every operating point.
-Score-scale mismatch is established prior knowledge [@kuzucu2024calibration];
-the contribution is its controlled examination alongside training variability,
-false-positive support, measured efficiency, and external transport.
+The low-score YOLO11s run makes the distinction between ranking and score
+scale especially clear: its internal AP was within the other runs' range,
+but it emitted nothing at conventional cutoffs. Keeping it in the comparison
+exposes a property of the training recipe that exclusion would conceal.
+Resampling training runs as well as patients or images captures this source
+of variability. Intervals conditional on a single checkpoint answer a narrower
+question. Confidence-scale mismatch is already established
+[@kuzucu2024calibration]; here it helps explain why a shared numerical cutoff
+and validation-selected cutoffs produced different internal comparisons.
 
-The retained low-score run illustrates why stochastic training variability
-matters. Its nonzero internal AP coexisted with zero emissions at conventional
-cutoffs; excluding it would conceal behavior of the evaluated recipe. Likewise,
-image/patient-only uncertainty for fixed checkpoints answers a narrower question
-than resampling both observations and independently trained detector runs.
-The external seed-17 sensitivity and the historical internal precision analysis
-show why these interpretations should remain separate.
+The implementation checks narrowed some explanations without identifying a
+cause of the external collapse. Applying the external YOLO numerical path to
+internal images produced modest aggregate changes and preserved the major
+comparisons. The tested change did not reproduce the scale of the cross-dataset
+loss. Lowering the collection floor recovered some compatible boxes, but did
+not recover historical-threshold recall. The tested header-window mapping
+also did not establish improved threshold recall. These results concern the
+specific interventions tested, not every possible preprocessing or numerical
+choice.
 
-Measured implementation costs provided another distinct comparison. YOLO11s'
-smaller parameter count and higher matched-boundary throughput coexisted with
-lower AP for the studied pipelines. Timing on one machine does not establish
-an architecture-family efficiency law or clinical workflow benefit. The
-comparison controls several data and evaluation factors but does not isolate
-architecture from optimization, normalization, precision, losses, or native API
-behavior, and it does not compare fully tuned native recipes. Prior RSNA
-comparisons [@wu2024pneumonia; @chinnam2026modern] give context without supplying
-interchangeable scores.
+Label definitions and population differences remain harder to separate.
+Some strict false positives overlapped other annotated findings, making target
+mismatch a plausible contributor, but overlap does not establish clinical
+correctness. Reweighting the internal positive-image frequency reduced precision
+and custom AP without reproducing the external values. Neither calculation
+assigns a causal share of the loss to prevalence or annotation. The study uses
+different sites, populations and reference definitions, so these factors remain
+confounded. Merging labels after seeing the outcome would not resolve that
+problem.
 
-VinDr external testing was deliberately frozen without adaptation, so it
-measures transport of established pipelines and rules. Its strict local opacity
-ontology differs from RSNA's reference standard. Acquisition, hospital/site,
-country, population, annotation ontology and preprocessing effects remain
-confounded. Internal numerical-path harmonisation produced modest aggregate
-changes and preserved the major observed comparisons. This tested numerical-path
-change did not reproduce the magnitude of the observed cross-dataset loss.
-It does not establish that every remaining difference is a dataset effect or
-attribute the collapse to any one factor. Nor would combining labels after seeing results repair
-that inference. The adverse result motivates separately designed future
-transport studies; it does not justify post-hoc tuning on this external test set.
-
-The post-hoc decomposition makes these limits more specific. Compatible
-below-threshold candidates coexist with localization failures and missing
-retained support, in different proportions across pipelines. Overlap with
-other local findings makes annotation mismatch plausible, while preserving
-the strict evaluation. Population weighting lowers internal precision and
-custom AP without reproducing the external results. Together these observations
-constrain explanations; they do not partition causation among prevalence,
-ontology, image appearance or model behavior. The paired cross-domain changes
-quantify absolute loss, conditional on retained candidates, rather than rank
-intrinsic detector robustness. The FROC difference-in-changes interval remains
-compatible with either direction.
-
-The subsequent controlled diagnostic confirms that some apparent candidate
-absence depends on the collection floor. Recovering low-score geometric
-coverage did not recover historical-threshold recall, and relaxing the AP
-evaluation floor left absolute performance very low. The tested header-window
-mapping likewise did not establish improved threshold recall. These bounded
-interventions narrow specific implementation explanations; they do not isolate
-population, acquisition or annotation effects, or demonstrate that a different
-preprocessing policy would generalize.
+Finally, YOLO11s combined higher measured throughput and a smaller parameter
+count with lower AP in these experiments. These are implementation-specific
+trade-offs on one machine, not general properties of detector families or
+clinical workflow benefits. The results identify limits of the current
+predictions and questions for a separately evaluated repair study; they do
+not select a model for clinical use.
 
 ## 6. Limitations
 
@@ -1313,26 +1294,22 @@ unresolved in the reporting crosswalk.
 
 ## 7. Conclusion
 
-A leakage-aware, multi-run comparison separated ranking performance, raw-score
-behavior, validation-selected operating points, false-positive regimes,
-training variability, and measured implementation efficiency. Frozen VinDr
-testing preserved the observed equal-run AP ordering while exposing severe
-loss of absolute performance and failure of internal operating rules to
-transport well. Uncertain endpoint contrasts and finite FROC support limit
-broader ordering claims. Post-hoc error, annotation-overlap and weighting
-analyses sharpen the description of failure without isolating its causes.
-The repairability audit further shows that global cutoff adjustment alone has
-limited headroom under a fixed FP budget and cannot overcome absent retained
-geometry. Internal/external contrasts and controlled output changes support
-this restricted computational conclusion without identifying a clinical cause.
-The shared-annotation audit adds a conditional test of whether reference edits
-could undermine the operating-budget conclusion, retaining dependence across
-all runs and detectors. It supports a methodological contribution beyond the
-original two-model comparison while leaving clinical equivalence and causality
-unresolved.
-Reporting these evaluation objects separately makes
-the comparison informative without implying clinical validation or universal
-superiority of either detector family.
+Both detectors lost substantial performance on VinDr-CXR, even though Faster
+R-CNN retained higher mean AP. Changing the confidence cutoff alone could not
+restore internal-level recall within the specified false-positive budget.
+Recall was limited both by the score order and by how many reference objects
+the saved boxes could cover in a one-to-one matching. Changing the former does
+not remove the latter limit.
+
+The shared-annotation method extends this analysis by asking how the same
+hypothetical reference changes affect every detector run. The bounds quantify
+sensitivity to specified annotation edits, while the exact shared-deletion
+ranges reveal dependence that separate FROC curves cannot provide. Together,
+these analyses make the study more informative than an
+accuracy comparison: they show what can be recovered from existing predictions
+and how that assessment depends on the references. They do not identify the
+clinical cause of the external failure, establish equivalent targets across
+datasets, or demonstrate a repair that generalizes to new patients.
 
 ## 8. Declarations
 

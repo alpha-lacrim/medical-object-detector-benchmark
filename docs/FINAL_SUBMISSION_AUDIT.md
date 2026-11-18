@@ -1,5 +1,48 @@
 # Final submission audit and author-declaration follow-up
 
+## 2026-11-19 supervisor-review edition
+
+This entry supersedes the PDF descriptions in the dated records below.
+The canonical manuscript was edited on 18-19 November for a direct, natural
+scholarly voice. The abstract, introduction, discussion and conclusion now
+follow the research question from external failure to cutoff limits and shared
+annotation sensitivity. Technical definitions are explained at their first use;
+unnecessary process language and repeated caveats were reduced.
+
+Independent editorial review checked the complete manuscript. Its corrections
+distinguish a maximum one-to-one matching deficit from individually absent
+candidates, restrict the nonredundancy claim to exact shared-deletion ranges,
+and avoid implying an evaluated speed-accuracy utility trade-off. The front
+matter says "Research manuscript for supervisor review." All author declarations,
+including unresolved ethics/consent applicability, are unchanged.
+
+Validation:
+
+- All 579 numerical binding records (sources, values, tolerances and locators)
+  are identical to the preceding version. Verification passes; the numerical
+  trace has refreshed manuscript line numbers.
+- All 51 scientific semantic guards are unchanged. Only the review-status
+  guard was updated to match the supervisor-review label (52 guards total).
+- The 24 manuscript/artifact/freeze/bibliography regression tests pass.
+- All 130 publication artifacts and the 38-file external freeze verify.
+  The bibliography has 52 unique entries and 31 keys cited in the canonical paper.
+- The final PDF has 24 pages and zero automated errors. Every page was visually
+  inspected at 100 dpi, including equations, tables, figures, declarations and
+  references. No clipping, empty table headers or broken glyphs were found.
+- The evidence links now pin the merged scientific revision `30ec499`, which
+  includes the completed shared-annotation supplement. No analyses, predictions,
+  clinical labels, figures or frozen scientific outcomes were changed.
+
+Final PDF SHA-256:
+`a0b5ec40b7c2b7a62ead04722fbc3b9acc95385a544090b65e79336abf4afdf0`.
+
+The [paper](../output/pdf/rsna_vindr_article.pdf) is ready for another supervisor
+review of the research direction and contribution. This editorial preparation
+does not establish a clinical cause, equivalent label standards, publication
+priority or readiness for a particular journal.
+
+---
+
 ## 2026-11-07 threshold-repairability revision and current PDF
 
 The [v2 verification record](THRESHOLD_REPAIRABILITY_VERIFICATION_V2.md) supersedes

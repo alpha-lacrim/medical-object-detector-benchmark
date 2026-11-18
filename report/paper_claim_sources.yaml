@@ -44,8 +44,7 @@ manuscript_semantic_guards:
 - id: no_calibration_fitting
   required_regex: No calibration map was fitted; this is not clinical-risk calibration
 - id: final_review_status
-  required_regex: 'draft-status: "Final scientific draft for author review; declarations and submission details
-    unresolved"'
+  required_regex: 'draft-status: "Research manuscript for supervisor review"'
 - id: strict_external_ontology
   required_regex: The strict target concept was `Lung opacity`,\s+mapped only to the exact released local label
     `Lung Opacity`

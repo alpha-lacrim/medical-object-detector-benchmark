@@ -1182,21 +1182,23 @@ and binds the external public summaries/tables/figures to their existing sources
 The [audit](docs/FINAL_MANUSCRIPT_AUDIT.md) maps manuscript methods, tables,
 figures and inferential statements to deterministic commands and artifacts.
 
-## Final submission audit and article PDF (Batch 52)
+## Professor-review manuscript and PDF
 
-The current [submission audit](docs/FINAL_SUBMISSION_AUDIT.md) records the
-author-declaration update and links the preserved [full scientific gate](docs/FINAL_SUBMISSION_AUDIT_2026-09-24.md):
-exact-HEAD Windows/Ubuntu CI, fresh public checkout, authorized replay,
-21 analysis scopes and a 51-value review selection. The
+The 24-page manuscript was edited for supervisor review on 18-19 November 2026.
+The abstract, introduction, discussion and conclusion now explain the research
+question and findings more directly. The review clarified the one-to-one
+geometric coverage limit and restricted the additional-information claim to
+exact shared-deletion ranges. No scientific result or author declaration changed.
+The [review record](docs/FINAL_SUBMISSION_AUDIT.md) documents the checks and
+preserves the earlier scientific audits. The
 [complete numerical trace](docs/SUBMISSION_NUMERICAL_TRACE.csv) contains all
-478 verified bindings with current manuscript lines. Supplied author details,
-declarations and the Batch 53 sensitivity are incorporated into
-the refreshed 19-page review PDF, including the controlled diagnostic and
-2026-11-06 supervisor-review clarifications. The two pending declaration items use factual status
-statements rather than drafting instructions.
-Ethics/consent applicability, the exact submission release and journal decisions
-remain unresolved; the disposition is **ready for author review**. The authors
-will keep all ten trained checkpoints unpublished at initial submission.
+579 verified bindings with current manuscript lines. All 24 PDF pages were
+visually reviewed; automated PDF checks found no errors.
+
+The paper is **ready for supervisor review**. Clinical causality, label
+equivalence, sufficient journal novelty, ethics/consent applicability and the
+submission release remain separate questions. The authors will keep all ten
+trained checkpoints unpublished at initial submission.
 
 ```powershell
 & .\.venv\Scripts\python.exe -m scripts.export_paper_trace --manifest report/paper_claim_sources.yaml --output docs/SUBMISSION_NUMERICAL_TRACE.csv
@@ -1219,15 +1221,15 @@ unchanged), with pdfLaTeX/TeX Live, Latin Modern fonts and Poppler available on 
 uv venv --python .venv/Scripts/python.exe .tools/paper-build
 uv pip install --python .tools/paper-build/Scripts/python.exe -r report/pdf/requirements.txt
 & .tools/paper-build/Scripts/python.exe -m scripts.build_paper_pdf --config configs/paper_build.yaml
-& .tools/paper-build/Scripts/python.exe -m scripts.check_paper_pdf --pdf output/pdf/rsna_vindr_article.pdf --output report/paper_pdf_qa.json --text tmp/pdfs/froc-annotation-v1/final/extracted-final.txt
-pdftoppm -r 120 -png output/pdf/rsna_vindr_article.pdf tmp/pdfs/froc-annotation-v1/final/page
+& .tools/paper-build/Scripts/python.exe -m scripts.check_paper_pdf --pdf output/pdf/rsna_vindr_article.pdf --output report/paper_pdf_qa.json --text tmp/pdfs/professor-review-2026-11-18/final/extracted-final.txt
+pdftoppm -r 100 -png output/pdf/rsna_vindr_article.pdf tmp/pdfs/professor-review-2026-11-18/final/page
 ```
 
 The builder uses Pandoc/citeproc, the versioned formatting filter/header, and
 three configured pdfLaTeX passes to resolve cross-references from a fresh build.
 It preserves captions and scientific content, sizes table
 columns for portrait pages, and pins supporting repository links to commit
-`ee4f354f9b742bf22dfa464b363c6240ca631aa9`, the committed repairability and
+`30ec499bce727cd1b57f49fb488d57b12890df37`, the merged repairability and
 shared-annotation evidence supporting Supplements S13-S14. This supporting revision is not a selected submission
 release. The source/output hash receipt is
 [`report/paper_build_manifest.json`](report/paper_build_manifest.json).

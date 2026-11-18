@@ -3,12 +3,12 @@ manuscript: report/paper_draft.md
 bibliography: report/references.bib
 output: output/pdf/rsna_vindr_article.pdf
 manifest: report/paper_build_manifest.json
-work_directory: tmp/pdfs/froc-annotation-v1/final
+work_directory: tmp/pdfs/professor-review-2026-11-18/final
 header: report/pdf/header.tex
 filter: report/pdf/layout.lua
 repository_url: https://github.com/alpha-lacrim/medical-object-detector-benchmark
 # Verified shared-annotation evidence; not a final submission-release designation.
-support_revision: ee4f354f9b742bf22dfa464b363c6240ca631aa9
+support_revision: 30ec499bce727cd1b57f49fb488d57b12890df37
 pdf_engine: pdflatex
 latex_passes: 3
 variables:
